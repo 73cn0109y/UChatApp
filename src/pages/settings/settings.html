@@ -1,0 +1,57 @@
+<div class="card">
+	<div class="card-header">
+		Services
+	</div>
+
+	<div class="card-block">
+		<div class="row">
+			<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">Beam</div>
+			<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+				<span class="platform-status"
+					  [ngClass]="!user.Services ? '' : user.Services.Beam.Connected ? 'connected' : ''"></span>
+			</div>
+
+			<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">LiveEdu</div>
+			<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+				<span class="platform-status"
+					  [ngClass]="!user.Services ? '' : user.Services.Liveedu.Connected ? 'connected' : ''"></span>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">Twitch</div>
+			<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+				<span class="platform-status"
+					  [ngClass]="!user.Services ? '' : user.Services.Twitch.Connected ? 'connected' : ''"></span>
+			</div>
+
+			<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">Youtube</div>
+			<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+				<span class="platform-status"
+					  [ngClass]="!user.Services ? '' : (user.Services.Youtube.Connected ? 'connected' : '')"></span>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="card">
+	<div class="card-header">
+		Settings
+	</div>
+
+	<div class="card-block row">
+		<div class="col-md-6">Chroma Key</div>
+		<div class="col-md-6">
+			<select [(ngModel)]="settings.ChromaKey">
+				<option value="None">None</option>
+				<option value="Green">Green</option>
+				<option value="Blue">Blue</option>
+				<option value="Magenta">Magenta</option>
+			</select>
+		</div>
+
+		<div class="col-md-12 form-group text-right">
+			<button type="button" class="btn btn-success" (click)="saveSettings()">Save</button>
+		</div>
+	</div>
+</div>

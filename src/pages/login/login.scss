@@ -1,0 +1,15 @@
+:host {
+  display: flex;
+  align-items: center;
+  height: 100%;
+
+  > .row {
+    flex: 1 1 100%;
+  }
+
+  .register-text {
+    cursor: default;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+  }
+}

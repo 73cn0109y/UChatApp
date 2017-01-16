@@ -1,0 +1,67 @@
+<div class="container"
+	 [ngStyle]="{ 'background-color': (_settings.ChromaKey.toLowerCase() === 'none' ? 'transparent' : _settings.ChromaKey) }">
+	<div class="row header">
+		<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+			<h1>Chat</h1>
+		</div>
+
+		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 row service-status">
+			<div class="col-md-3">Beam:</div>
+			<div class="col-md-3"
+				 [ngClass]="serviceStatus.Beam === 'Connected' ? 'connected' : (serviceStatus.Beam === 'Connecting' ? 'pending' : 'disconnected')">
+				{{ serviceStatus.Beam || 'UNKNOWN' }}
+			</div>
+			<div class="col-md-3">LiveEdu:</div>
+			<div class="col-md-3"
+				 [ngClass]="serviceStatus.Liveedu === 'Connected' ? 'connected' : (serviceStatus.Liveedu === 'Connecting' ? 'pending' : 'disconnected')">
+				{{ serviceStatus.Liveedu || 'UNKNOWN' }}
+			</div>
+			<div class="col-md-3">Twitch:</div>
+			<div class="col-md-3"
+				 [ngClass]="serviceStatus.Twitch === 'Connected' ? 'connected' : (serviceStatus.Twitch === 'Connecting' ? 'pending' : 'disconnected')">
+				{{ serviceStatus.Twitch || 'UNKNOWN' }}
+			</div>
+			<div class="col-md-3">Youtube:</div>
+			<div class="col-md-3"
+				 [ngClass]="serviceStatus.Youtube === 'Connected' ? 'connected' : (serviceStatus.Youtube === 'Connecting' ? 'pending' : 'disconnected')">
+				{{ serviceStatus.Youtube || 'UNKNOWN' }}
+			</div>
+		</div>
+
+		<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-right">
+			<button type="button" class="btn btn-sm" (click)="toggleConnection()"
+					[ngClass]="{ 'btn-success': !connected, 'btn-danger': connected }">
+				{{ connected ? 'Disconnect' : 'Connect' }}
+			</button>
+		</div>
+	</div>
+
+	<div class="row message-container">
+		<ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<li *ngFor="let message of messages" class="message"
+				[ngClass]="{ 'mention-self': message.Message.toLowerCase().indexOf(chatProvider.getNameForPlatform(message.Service)) >= 0 }">
+				<div class="sender">
+					<div class="icons"></div>
+					{{ message.UserInfo.Username }}
+				</div>
+
+				<div class="timestamp">{{ message.Timestamp }}</div>
+				<div class="message">{{ message.Message }}</div>
+			</li>
+		</ul>
+	</div>
+
+	<form (submit)="sendMessage()" class="row send-message">
+		<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+				<textarea placeholder="Type here to send a message..." [(ngModel)]="data.message"
+						  name="message" (keyup)="keyUp($event)"></textarea>
+		</div>
+
+		<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+			<button type="submit" class="btn btn-primary btn-block"
+					[disabled]="!data.message || data.message.trim().length <= 0">
+				Send
+			</button>
+		</div>
+	</form>
+</div>

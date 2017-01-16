@@ -1,0 +1,25 @@
+:host {
+  overflow-y: auto;
+
+  .card {
+    margin: 15px 0;
+
+    .card-block {
+      .platform-status {
+        color: red;
+
+        &:after {
+          content: 'Disconnected';
+        }
+
+        &.connected {
+          color: limegreen;
+
+          &:after {
+            content: 'Connected';
+          }
+        }
+      }
+    }
+  }
+}

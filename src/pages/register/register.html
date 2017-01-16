@@ -1,0 +1,44 @@
+<div class="row">
+	<div class="col-md-6 offset-md-3">
+		<form (submit)="register()" [formGroup]="registerForm">
+			<div class="form-group text-center">
+				<h1>Register</h1>
+			</div>
+
+			<div class="form-group row">
+				<div class="col-md-4 text-right">Name</div>
+				<div class="col-md-8">
+					<input type="text" class="form-control" formControlName="name" [(ngModel)]="data.name">
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<div class="col-md-4 text-right">Email</div>
+				<div class="col-md-8">
+					<input type="text" class="form-control" formControlName="email" [(ngModel)]="data.email">
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<div class="col-md-4 text-right">Password</div>
+				<div class="col-md-8">
+					<input type="password" class="form-control" formControlName="password" [(ngModel)]="data.password">
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<div class="col-md-4 text-right">Confirm Password</div>
+				<div class="col-md-8">
+					<input type="password" class="form-control" formControlName="confirm_password"
+						   [(ngModel)]="data.confirm_password">
+				</div>
+			</div>
+
+			<div class="form-group text-right">
+				<span class="login-text text-muted">Already have an account? <a
+						routerLink="/login">Login Here</a></span>
+				<button type="submit" class="btn btn-primary" [disabled]="!registerForm.valid">Register</button>
+			</div>
+		</form>
+	</div>
+</div>

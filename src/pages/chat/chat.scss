@@ -1,0 +1,127 @@
+@import '../../app/theme.variables';
+
+@media (max-width: 768px) {
+  .service-status {
+    display: none;
+  }
+}
+
+:host {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0.5rem;
+
+    .header {
+      margin: 0;
+      flex: 1 0 52px;
+
+      .service-status {
+        font-size: 0.9rem;
+
+        > div {
+          &.connected {
+            color: limegreen;
+          }
+
+          &.pending {
+            color: orange;
+          }
+
+          &.disconnected {
+            color: red;
+          }
+        }
+      }
+    }
+
+    .message-container {
+      margin: 0;
+      flex: 1 1 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+
+    .send-message {
+      margin: 0;
+      flex: 1 0 75px;
+
+      .col-md-10 {
+        textarea {
+          width: 100%;
+          height: 100%;
+          resize: none;
+          border: solid 1px lighten($back-color, 10%);
+          background-color: lighten($back-color, 5%);
+          color: $color;
+        }
+      }
+
+      .col-md-2 {
+        padding: 0;
+        position: relative;
+
+        .btn {
+          position: absolute;
+          top: 50%;
+          margin-top: -19px;
+        }
+      }
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    > .message {
+      position: relative;
+      margin-bottom: 0.5rem;
+      padding: 0.5rem;
+      animation: MessageSlide ease-in-out forwards 0.5s;
+      background-color: rgba(0, 50, 175, 0.3);
+
+      &.mention-self {
+        background-color: rgba(255, 75, 75, 0.4);
+      }
+
+      .sender {
+        font-size: 1.1rem;
+        margin-left: 0.5rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+      }
+
+      .timestamp {
+        position: absolute;
+        right: 1rem;
+        top: 0.5rem;
+        font-size: 0.9rem;
+        opacity: 0.5;
+      }
+
+      .message {
+        margin-left: 1rem;
+      }
+    }
+  }
+}
+
+@keyframes MessageSlide {
+  0% {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
