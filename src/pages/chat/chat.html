@@ -36,7 +36,7 @@
 		</div>
 	</div>
 
-	<div class="row message-container">
+	<div class="row message-container" #messageContainer>
 		<ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<li *ngFor="let message of messages" class="message"
 				[ngClass]="{ 'mention-self': message.Message.toLowerCase().indexOf(chatProvider.getNameForPlatform(message.Service)) >= 0 }">

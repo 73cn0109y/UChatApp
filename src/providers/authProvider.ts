@@ -26,7 +26,10 @@ export class AuthProvider {
 
 		return new Promise((resolve, reject) => {
 			this.http.post(this._api + '/login', data).map((res: any) => res.json()).subscribe((data: any) => {
-				if(data.success) this.setToken(data.user.Token, true);
+				if(data.success) {
+					this.setToken(data.user.Token, true);
+					this.setUser(data.user);
+				}
 				resolve(data.success || false);
 			}, err => {
 				console.error(err);

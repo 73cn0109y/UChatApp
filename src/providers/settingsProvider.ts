@@ -25,7 +25,6 @@ export class SettingsProvider {
 	}
 
 	updateSettings() {
-		console.log(this.authProvider.token);
 		this.http.get(this.authProvider.api + '/settings?token=' + this.authProvider.token)
 			.map((res: any) => res.json())
 			.subscribe(data => {
