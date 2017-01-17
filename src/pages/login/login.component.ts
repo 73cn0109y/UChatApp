@@ -17,6 +17,8 @@ export class LoginPage {
 		password: ''
 	};
 	private loginForm: FormGroup;
+	private loginError: string = null;
+	private showError: boolean = false;
 
 	constructor(private formBuilder: FormBuilder, private authProvider: AuthProvider) {
 		this.loginForm = this.formBuilder.group({
@@ -26,6 +28,12 @@ export class LoginPage {
 	}
 
 	login() {
-		this.authProvider.login(this.loginData);
+		this.authProvider.login(this.loginData).then(success => {
+			if(!success) {
+				this.loginError = "Invalid Username/Password!";
+				this.showError = true;
+				setTimeout(() => this.showError = false, 3000);
+			}
+		}).catch(err => console.error(err));
 	}
 }

@@ -2,7 +2,7 @@
  * Created by texpe on 13/01/2017.
  */
 
-import { Injectable } from '@angular/core';
+import { Injectable, isDevMode } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Http } from '@angular/http';
 
@@ -11,7 +11,7 @@ let ipc: any = electron.ipcRenderer;
 
 @Injectable()
 export class AuthProvider {
-	protected _api: string = 'http://localhost:8080/api';
+	protected _api: string = (isDevMode() ? 'http://localhost:8080/api' : 'https://uchatapi-frosenos.rhcloud.com/api');
 	private _token: string = null;
 	private _user: any = {};
 	public isLoggedIn: Subject<boolean> = new Subject<boolean>();
@@ -78,7 +78,7 @@ export class AuthProvider {
 
 	private setToken(e: string, ipcEmit: boolean = false) {
 		if(ipcEmit) {
-			ipc.once('set-token', (e: any, data: any) => this.setToken(data.token));
+			ipc.once('set-token', (e: any, data: any) => this.setToken(data.token || data));
 			ipc.send('set-token', { token: e });
 			return;
 		}

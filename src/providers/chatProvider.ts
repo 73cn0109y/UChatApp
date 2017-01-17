@@ -2,7 +2,7 @@
  * Created by texpe on 13/01/2017.
  */
 
-import { Injectable } from '@angular/core';
+import { Injectable, isDevMode } from '@angular/core';
 import { Http } from "@angular/http";
 import { Subject } from "rxjs";
 
@@ -53,8 +53,11 @@ export class ChatProvider {
 		if(!this._token) return;
 		if(this._socket) this._socket.disconnect();
 
-		const host = (process.env.NODE_ENV === 'production' ? '' : 'http://localhost:8080') + '?token=' + this._token;
-		this._socket = io.connect(host);
+		const host = (isDevMode() ? 'http://localhost:8080' : 'https://uchatapi-frosenos.rhcloud.com:8443/') + '?token=' + this._token;
+		this._socket = io.connect(host, {
+			forceNew  : true,
+			transports: [ 'websocket', 'polling' ]
+		});
 
 		this._socket.on('connect', () => {
 			console.log('Socket.io Connected');
@@ -116,6 +119,7 @@ export class ChatProvider {
 
 	getNameForPlatform(platform: string): string {
 		const user = this.authProvider.user;
+		if(platform.toLowerCase() === 'broadcaster') return 'Broadcaster';
 		if(!user.Services[ platform ] || !user.Services[ platform ].Connected) return null;
 		const userInfo = user.Services[ platform ].UserServiceInfo;
 		return userInfo.UserName;

@@ -7,12 +7,12 @@ const storage = require('electron-json-storage');
 
 ipcMain.on('get-token', (e, arg) => {
 	storage.get('data', (err, data) => {
-		e.sender.send('get-token', data);
+		e.sender.send('get-token', data.token);
 	});
 });
 
 ipcMain.on('set-token', (e, arg) => {
 	storage.set('data', { token: arg.token }, err => {
-		e.sender.send('set-token', { token: err ? null : arg || null });
+		e.sender.send('set-token', err ? null : arg || null);
 	});
 });

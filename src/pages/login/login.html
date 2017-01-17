@@ -1,3 +1,7 @@
+<div class="alert alert-danger" role="alert" [ngClass]="{ 'show': showError }">
+	<strong>Oh snap!</strong> <span [innerHTML]="loginError"></span>
+</div>
+
 <div class="row">
 	<div class="col-md-6 offset-md-3">
 		<form (submit)="login()" [formGroup]="loginForm">

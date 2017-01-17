@@ -6,7 +6,7 @@ var isProduction = (process.env.NODE_ENV === 'production');
 
 var plugins = [
 	new webpack.optimize.CommonsChunkPlugin({
-		name: ['app', 'vendor', 'polyfills', 'ipc']
+		name: ['app', 'vendor', 'polyfills']
 	}),
 	new webpack.ProvidePlugin({
 		jQuery: 'jquery',
@@ -21,7 +21,6 @@ if(isProduction)
 
 module.exports = {
 	entry: {
-		'ipc': './src/ipc.ts',
 		'polyfills': './src/polyfills.ts',
 		'vendor': './src/vendor.ts',
 		'app': './src/main.ts'

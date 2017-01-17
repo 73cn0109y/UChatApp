@@ -26,7 +26,6 @@ export class SettingsPage {
 		this.authProvider.User.subscribe(value => this.user = value);
 		this.settingsProvider.Settings.subscribe(value => {
 			this._ngZone.run(() => this.settings = value);
-			console.log(value);
 		});
 	}
 

@@ -12,4 +12,21 @@
     font-size: 0.9rem;
     margin-right: 0.5rem;
   }
+
+  > .alert {
+    position: fixed;
+    top: 40px;
+    left: 50%;
+    width: 35%;
+    min-width: 350px;
+    text-align: center;
+    margin-left: -175px;
+    opacity: 0;
+    transition: opacity ease-in-out 1s;
+    cursor: default;
+
+    &.show {
+      opacity: 1;
+    }
+  }
 }
