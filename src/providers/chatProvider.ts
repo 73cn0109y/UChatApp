@@ -5,12 +5,15 @@
 import { Injectable, isDevMode } from '@angular/core';
 import { Http } from "@angular/http";
 import { Subject } from "rxjs";
+import { bttv } from './bttv';
 
 import { AuthProvider } from "./authProvider";
 
 /// <reference path="../../typings/globals/socket.io-client.index.d.ts" />
 import * as io from 'socket.io-client';
 declare var process: any;
+declare var twitchEmoji: any;
+declare var $: any;
 
 export interface UserInfo {
 	Username: string;
@@ -23,7 +26,10 @@ export interface Message {
 	Service: string;
 	Channel: string;
 	UserInfo: UserInfo;
-	Message: string;
+	Message: {
+		Raw: String,
+		Formatted: String
+	};
 	Timstamp: string;
 }
 
@@ -77,18 +83,36 @@ export class ChatProvider {
 		});
 
 		this._socket.on('message', (data: any) => {
-			this._messages.push(data);
+			this.parseImage(data.Message).then(url => {
+				data.Message = {
+					Raw      : data.Message,
+					Formatted: `<img src='${url}' />`
+				};
 
-			if(this._messages.length > 100)
-				this._messages.splice(0, this._messages.length - 100);
+				this.addMessage(data);
+			}).catch(err => {
+				data.Message = {
+					Raw      : data.Message,
+					Formatted: this.parseEmotes(data.Message)
+				};
 
-			this.Messages.next(this._messages);
+				this.addMessage(data);
+			});
 		});
 
 		this._socket.on('service', (data: any) => {
 			this._serviceStatus[ data.Service ] = data.Status;
 			this.ServiceStatus.next(this._serviceStatus);
 		});
+	}
+
+	addMessage(data: any) {
+		this._messages.push(data);
+
+		if(this._messages.length > 100)
+			this._messages.splice(0, this._messages.length - 100);
+
+		this.Messages.next(this._messages);
 	}
 
 	join(): boolean {
@@ -123,6 +147,39 @@ export class ChatProvider {
 		if(!user.Services[ platform ] || !user.Services[ platform ].Connected) return null;
 		const userInfo = user.Services[ platform ].UserServiceInfo;
 		return userInfo.UserName;
+	}
+
+	parseEmotes(e: string): string {
+		const emotes = bttv.getEmotes();
+		let bttvUrl = emotes.urlTemplate;
+		for(let emote in emotes.emotes) {
+			let data = emotes.emotes[ emote ];
+			if(e.indexOf(data.code) < 0) continue;
+			const url = ('http:' + bttvUrl).replace('{{id}}', data.id).replace('{{image}}', '1x');
+			let reg = new RegExp('\\b' + data.code + '\\b', 'g');
+			e = e.replace(reg, `<img class='twitch-emoji twitch-emoji-small' src='${url}' alt='${data.code}' />`);
+		}
+		e = twitchEmoji.parse(e, {
+			emojiSize: 'small'
+		}).replace('https://', 'http://');
+		return e;
+	}
+
+	parseImage(e: string): Promise<any> {
+		return new Promise((resolve, reject) => {
+			const match = e.trim().match(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)/gi);
+			if(match.length <= 0) return reject();
+			let url = match[ 0 ];
+			if(url.startsWith('https:')) url = 'http:' + url.substr(6, url.length - 6);
+			let img = new Image();
+			img.onerror = () => {
+				reject();
+			};
+			img.onload = () => {
+				resolve(url);
+			};
+			img.src = url;
+		});
 	}
 
 	get getMessages(): Message[] {
