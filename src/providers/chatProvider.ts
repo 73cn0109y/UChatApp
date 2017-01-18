@@ -107,12 +107,24 @@ export class ChatProvider {
 	}
 
 	addMessage(data: any) {
+		data.Timestamp = this.humanTimestamp();
+
 		this._messages.push(data);
 
 		if(this._messages.length > 100)
 			this._messages.splice(0, this._messages.length - 100);
 
 		this.Messages.next(this._messages);
+	}
+
+	humanTimestamp(): string {
+		const now = new Date();
+		let hour   = now.getHours(),
+		    minute = now.getMinutes(),
+		    isPM   = now.getHours() >= 12;
+		if(hour > 12) hour -= 12;
+		if(hour === 0) hour = 12;
+		return (hour < 10 && hour >= 0 ? '0' + hour : hour) + ':' + (minute < 10 ? '0' + minute : minute) + (isPM ? ' PM' : ' AM');
 	}
 
 	join(): boolean {
