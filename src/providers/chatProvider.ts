@@ -141,6 +141,14 @@ export class ChatProvider {
 		return true;
 	}
 
+	messageHasMention(msg: any): boolean {
+		const name = this.getNameForPlatform(msg.Service);
+		if(!name) return false;
+		const reg = new RegExp('(?:^|\\W)(' + name + '+)(?!\\w)', 'gi')
+		if(msg.Message.Raw.toLowerCase().match(reg)) return true;
+		return false;
+	}
+
 	getNameForPlatform(platform: string): string {
 		const user = this.authProvider.user;
 		if(platform.toLowerCase() === 'broadcaster') return 'Broadcaster';

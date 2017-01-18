@@ -37,21 +37,103 @@
 <div class="card">
 	<div class="card-header">
 		Settings
+		<button type="button" class="btn btn-success float-right" (click)="saveSettings()">Save</button>
 	</div>
 
 	<div class="card-block row">
-		<div class="col-md-6">Chroma Key</div>
-		<div class="col-md-6">
-			<select [(ngModel)]="settings.ChromaKey">
-				<option value="None">None</option>
-				<option value="Green">Green</option>
-				<option value="Blue">Blue</option>
-				<option value="Magenta">Magenta</option>
-			</select>
+		<div class="col-md-12 row form-group color-group">
+			<h5 class="col-md-12">Chroma Key</h5>
+
+			<div class="col-md-12">
+				<div class="dropdown">
+					<a class="btn btn-secondary dropdown-toggle" href="javascript:void(0)" id="chromaDropdown"
+					   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						{{ settings.ChromaKey }}
+					</a>
+
+					<div class="dropdown-menu" aria-labelledby="chromaDropdown">
+						<a class="dropdown-item" href="javascript:void(0)" (click)="settings.ChromaKey='None'">None</a>
+						<a class="dropdown-item" href="javascript:void(0)"
+						   (click)="settings.ChromaKey='Green'">Green</a>
+						<a class="dropdown-item" href="javascript:void(0)" (click)="settings.ChromaKey='Blue'">Blue</a>
+						<a class="dropdown-item" href="javascript:void(0)" (click)="settings.ChromaKey='Magenta'">Magenta</a>
+					</div>
+				</div>
+			</div>
 		</div>
 
-		<div class="col-md-12 form-group text-right">
-			<button type="button" class="btn btn-success" (click)="saveSettings()">Save</button>
+		<div class="col-md-12 row form-group color-group">
+			<h5 class="col-md-12">Message Background Color</h5>
+
+			<div class="col-md-12 input-group">
+				<div class="input-placeholder">
+					<span class="placeholder">Red</span>
+					<input max="255" min="0" type="number" class="form-control" [value]="getColor('MessageBack', 'r')"
+						   (input)="setColor('MessageBack', 'r', $event)">
+				</div>
+
+				<div class="input-placeholder">
+					<span class="placeholder">Green</span>
+					<input max="255" min="0" type="number" class="form-control" [value]="getColor('MessageBack', 'g')"
+						   (input)="setColor('MessageBack', 'g', $event)">
+				</div>
+
+				<div class="input-placeholder">
+					<span class="placeholder">Blue</span>
+					<input max="255" min="0" type="number" class="form-control" [value]="getColor('MessageBack', 'b')"
+						   (input)="setColor('MessageBack', 'b', $event)">
+				</div>
+
+				<div class="input-placeholder">
+					<span class="placeholder">Alpha</span>
+					<input max="1" min="0" step="0.1" type="number" class="form-control"
+						   [value]="getColor('MessageBack', 'a')"
+						   (input)="setColor('MessageBack', 'a', $event)">
+				</div>
+
+				<div class="input-placeholder color-preview" [ngStyle]="{ 'background-color': settings.MessageBack }">
+					COLOR PREVIEW
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-12 row form-group color-group">
+			<h5 class="col-md-12">Message Mention Background Color</h5>
+
+			<div class="col-md-12 input-group">
+				<div class="input-placeholder">
+					<span class="placeholder">Red</span>
+					<input max="255" min="0" type="number" class="form-control"
+						   [value]="getColor('MessageMentionBack', 'r')"
+						   (input)="setColor('MessageMentionBack', 'r', $event)">
+				</div>
+
+				<div class="input-placeholder">
+					<span class="placeholder">Green</span>
+					<input max="255" min="0" type="number" class="form-control"
+						   [value]="getColor('MessageMentionBack', 'g')"
+						   (input)="setColor('MessageMentionBack', 'g', $event)">
+				</div>
+
+				<div class="input-placeholder">
+					<span class="placeholder">Blue</span>
+					<input max="255" min="0" type="number" class="form-control"
+						   [value]="getColor('MessageMentionBack', 'b')"
+						   (input)="setColor('MessageMentionBack', 'b', $event)">
+				</div>
+
+				<div class="input-placeholder">
+					<span class="placeholder">Alpha</span>
+					<input max="1" min="0" step="0.1" type="number" class="form-control"
+						   [value]="getColor('MessageMentionBack', 'a')"
+						   (input)="setColor('MessageMentionBack', 'a', $event)">
+				</div>
+
+				<div class="input-placeholder color-preview"
+					 [ngStyle]="{ 'background-color': settings.MessageMentionBack }">
+					COLOR PREVIEW
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

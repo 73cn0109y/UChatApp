@@ -6,6 +6,7 @@ import { Component, ViewEncapsulation, NgZone } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
 import { AuthProvider } from "../providers/authProvider";
 
+
 @Component({
 	selector     : 'app',
 	templateUrl  : './app.html',
