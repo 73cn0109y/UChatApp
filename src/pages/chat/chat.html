@@ -5,7 +5,7 @@
 			<h1>Chat</h1>
 		</div>
 
-		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 row service-status">
+		<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 row service-status">
 			<div class="col-md-3">Beam:</div>
 			<div class="col-md-3"
 				 [ngClass]="serviceStatus.Beam === 'Connected' ? 'connected' : (serviceStatus.Beam === 'Connecting' ? 'pending' : 'disconnected')">
@@ -28,7 +28,7 @@
 			</div>
 		</div>
 
-		<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-right">
+		<div class="col-xs-3 col-sm-3 col-md-2 col-lg-2 text-right">
 			<button type="button" class="btn btn-sm" (click)="toggleConnection()"
 					[ngClass]="{ 'btn-success': !connected, 'btn-danger': connected }">
 				{{ connected ? 'Disconnect' : 'Connect' }}

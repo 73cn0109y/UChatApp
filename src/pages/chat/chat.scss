@@ -25,19 +25,23 @@
       flex: 1 0 52px;
 
       .service-status {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
 
         > div {
           &.connected {
             color: limegreen;
+            padding-left: 0.25rem;
           }
 
           &.pending {
             color: orange;
-          }
+            padding-left: 0.25rem;
+          }git add .
+
 
           &.disconnected {
             color: red;
+            padding-left: 0.25rem;
           }
         }
       }
