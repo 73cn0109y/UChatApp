@@ -86,7 +86,7 @@ export class ChatProvider {
 			this.parseImage(data.Message).then(url => {
 				data.Message = {
 					Raw      : data.Message,
-					Formatted: `<img src='${url}' />`
+					Formatted: `<img src='${url}' class='img-fill' />`
 				};
 
 				this.addMessage(data);
@@ -192,6 +192,7 @@ export class ChatProvider {
 			let url = match[ 0 ];
 			if(url.startsWith('https:')) url = 'http:' + url.substr(6, url.length - 6);
 			let img = new Image();
+			img.className = 'img-fluid';
 			img.onerror = () => {
 				reject();
 			};
