@@ -41,7 +41,7 @@
 			<li *ngFor="let message of messages" class="message"
 				[ngStyle]="{ 'background-color': chatProvider.messageHasMention(message) ? _settings.MessageMentionBack : _settings.MessageBack }">
 				<div class="sender">
-					<div class="icons"></div>
+					<span class="icon {{ message.UserInfo.isBroadcaster ? 'broadcaster' : message.Service.toLowerCase() }}"></span>
 					{{ message.UserInfo.isBroadcaster ? 'Broadcaster' : message.UserInfo.Username }}
 				</div>
 

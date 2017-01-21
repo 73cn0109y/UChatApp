@@ -101,6 +101,37 @@
         margin-left: 0.5rem;
         font-weight: 600;
         letter-spacing: 1px;
+
+        .icon {
+          position: relative;
+          top: 3px;
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: 50%;
+
+          &.beam {
+            background-image: url('imgs/chat-icons/beam-icon.png');
+          }
+
+          &.liveedu {
+            background-image: url('imgs/chat-icons/liveedu-icon.png');
+          }
+
+          &.twitch {
+            background-image: url('imgs/chat-icons/twitch-icon.png');
+          }
+
+          &.youtube {
+            background-image: url('imgs/chat-icons/youtube-icon.png');
+          }
+
+          &.broadcaster {
+            background-image: url('imgs/chat-icons/broadcaster-icon.png');
+          }
+        }
       }
 
       .timestamp {
@@ -113,6 +144,7 @@
 
       .message {
         margin-left: 1rem;
+        word-wrap: break-word;
       }
     }
   }
