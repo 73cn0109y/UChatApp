@@ -2,7 +2,7 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var helpers = require('./helpers');
 
-var isProduction = (process.env.NODE_ENV === 'production');
+var isProduction = (process.env.NODE_ENV !== 'development');
 
 var plugins = [
 	new webpack.optimize.CommonsChunkPlugin({

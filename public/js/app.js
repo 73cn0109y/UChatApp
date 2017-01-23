@@ -7,6 +7,7 @@ webpackJsonp([0],{
 	var platform_browser_dynamic_1 = __webpack_require__(1);
 	var core_1 = __webpack_require__(3);
 	var app_module_1 = __webpack_require__(23);
+	console.log((false));
 	if (false)
 	    core_1.enableProdMode();
 	platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);

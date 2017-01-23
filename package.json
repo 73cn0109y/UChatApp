@@ -6,7 +6,7 @@
   "scripts": {
     "start": "electron .",
     "build-dev": "set NODE_ENV=development&& webpack --watch",
-    "build": "set NODE_ENV=production&& webpack",
+    "build": "webpack",
     "dist-win32": "npm run build && electron-packager . uchat --platform=win32 --arch=ia32 --out=dist/ --overwrite",
     "dist-win64": "npm run build && electron-packager . uchat --platform=win32 --arch=x64 --out=dist/ --overwrite",
     "dist-linux32": "npm run build && electron-packager . uchat --platform=linux --arch=ia32 --out=dist/ --overwrite",
