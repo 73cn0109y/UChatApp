@@ -41,7 +41,7 @@ export class ChatPage implements AfterViewInit {
 	}
 
 	ngAfterViewInit() {
-		$(this.messageContainer.nativeElement).on('mousewheel', function(e) {
+		$(this.messageContainer.nativeElement).on('mousewheel', function(e: any) {
 			const $this = $(this);
 			const scrollUp = e.originalEvent.deltaY < 0;
 			const scrollHeight = this.scrollHeight - $this.height();

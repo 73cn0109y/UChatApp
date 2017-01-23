@@ -1,6 +1,6 @@
 <div class="card">
 	<div class="card-header">
-		Services
+		<h4>Services</h4>
 	</div>
 
 	<div class="card-block">
@@ -36,8 +36,10 @@
 
 <div class="card">
 	<div class="card-header">
-		Settings
-		<button type="button" class="btn btn-success float-right" (click)="saveSettings()">Save</button>
+		<h4 class="float-left">Settings</h4>
+		<button type="button" class="btn btn-success btn-sm float-right" (click)="saveSettings()">
+			<span class="fa fa-spinner spinner" *ngIf="saving"></span>Save - {{ saving }}
+		</button>
 	</div>
 
 	<div class="card-block row">

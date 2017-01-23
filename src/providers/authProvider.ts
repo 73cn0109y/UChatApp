@@ -6,6 +6,7 @@ import { Injectable, isDevMode } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Http } from '@angular/http';
 
+declare var PRODUCTION: boolean;
 declare var electron: any;
 let ipc: any = electron.ipcRenderer;
 
@@ -15,7 +16,8 @@ export class AuthProvider {
 	private _token: string = null;
 	private _user: any = {};
 	public isLoggedIn: Subject<boolean> = new Subject<boolean>();
-	public User: Subject<string> = new Subject<string>();
+	public User: Subject<any> = new Subject<any>();
+	private _initialLogin: boolean = false;
 
 	constructor(private http: Http) {
 		this.getToken();
@@ -54,7 +56,7 @@ export class AuthProvider {
 
 	private getToken() {
 		ipc.once('get-token', (e: any, data: any) => {
-			if(data && data.token) this.validateToken(data.token);
+			if(data) this.validateToken(data);
 			else this.setToken(null);
 		});
 		ipc.send('get-token');
@@ -76,7 +78,7 @@ export class AuthProvider {
 	private setUser(user: any) {
 		this._user = user;
 		this.User.next(this._user);
-		this.setToken(this._user.Token);
+		this.setToken(this._user.Token, true);
 	}
 
 	private setToken(e: string, ipcEmit: boolean = false) {

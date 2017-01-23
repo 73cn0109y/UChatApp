@@ -33,13 +33,19 @@ export class SettingsProvider {
 			}, err => console.error(err));
 	}
 
-	save(data: any) {
-		this.http.put(this.authProvider.api + '/settings?token=' + this.authProvider.token, data)
-			.map((res: any) => res.json())
-			.subscribe(data => {
-				if(data.success) this._settings = data.settings;
-				this.Settings.next(this._settings);
-			}, err => console.error(err));
+	save(data: any): Promise<any> {
+		return new Promise((resolve, reject) => {
+			this.http.put(this.authProvider.api + '/settings?token=' + this.authProvider.token, data)
+				.map((res: any) => res.json())
+				.subscribe(data => {
+					if(data.success) this._settings = data.settings;
+					this.Settings.next(this._settings);
+					resolve(true);
+				}, err => {
+					console.error(err);
+					reject(false);
+				});
+		});
 	}
 
 	get settings(): any {

@@ -190,6 +190,7 @@ export class ChatProvider {
 			const match = e.trim().match(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)/gi);
 			if(match.length <= 0) return reject();
 			let url = match[ 0 ];
+			if(e.trim() != url) return reject();
 			if(url.startsWith('https:')) url = 'http:' + url.substr(6, url.length - 6);
 			let img = new Image();
 			img.className = 'img-fluid';

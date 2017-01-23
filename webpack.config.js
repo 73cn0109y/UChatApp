@@ -13,6 +13,9 @@ var plugins = [
 		$: 'jquery',
 		jquery: 'jquery',
 		'window.Tether': 'tether'
+	}),
+	new webpack.DefinePlugin({
+		PRODUCTION: JSON.stringify(isProduction)
 	})
 ];
 
@@ -26,7 +29,7 @@ module.exports = {
 		'app': './src/main.ts'
 	},
 	output: {
-		filename: 'public/js/[name]' + (isProduction ? '.min' : '') + '.js'
+		filename: 'public/js/[name].js'
 	},
 	resolve: {
 		extensions: ['', '.ts', '.js']
@@ -35,7 +38,7 @@ module.exports = {
 		loaders: [
 			{
 				test: /\.ts$/,
-				loaders: ['awesome-typescript-loader', 'angular2-template-loader']
+				loaders: ['ts-loader', 'angular2-template-loader']
 			},
 			{
 				test: /\.html$/,

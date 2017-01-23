@@ -70,4 +70,28 @@ app {
   .form-group:last-child {
     margin-bottom: 0;
   }
+
+  .spinner {
+    margin-right: 5px;
+    animation: spin 1s linear infinite;
+
+    &#searchSpinner {
+      position: absolute;
+      z-index: 1;
+      right: 1rem;
+      top: 0;
+      padding: 0.5rem 0.75rem;
+      line-height: 1.25rem;
+      color: #999;
+    }
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 }

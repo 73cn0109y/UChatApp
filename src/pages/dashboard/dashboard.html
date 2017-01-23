@@ -1,0 +1,86 @@
+<div class="card">
+	<div class="card-header">
+		<h4 class="float-left">Stream Info</h4>
+		<button type="button" class="btn btn-success btn-sm float-right" (click)="save()">
+			<span class="fa fa-spinner spinner" *ngIf="saving"></span>Save
+		</button>
+	</div>
+
+	<div class="card-block">
+		<div class="form-group row">
+			<div class="col-md-4">Title</div>
+
+			<div class="col-md-8">
+				<textarea placeholder="Stream Title" class="form-control" [(ngModel)]="info.Title"></textarea>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<div class="col-md-4">Category</div>
+
+			<div class="col-md-8">
+				<input type="text" class="form-control" placeholder="Game Name" [(ngModel)]="info.Category"
+					   (keypress)="search()" [ngClass]="{ 'results-open': searchResults.length > 0 }">
+				<span class="fa fa-spinner spinner float-right" id="searchSpinner" *ngIf="searching"></span>
+
+				<div class="form-control search-results scrollbar-inverse" *ngIf="searchResults.length > 0">
+					<a class="dropdown-item" href="javascript:;"
+					   *ngFor="let result of searchResults; let i = index" (click)="selectCategory(i)">
+						{{ result }}
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<div class="col-md-4">Delay</div>
+
+			<div class="col-md-8">
+				<input type="number" class="form-control" min="0" [(ngModel)]="info.Delay">
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<div class="col-md-4 exclude-height">Channel Feed</div>
+
+			<div class="col-md-8">
+				<input type="checkbox" [(ngModel)]="info.ChannelFeed">
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<div class="col-md-4">History</div>
+
+			<div class="col-md-8">
+				<div class="dropdown">
+					<a class="btn btn-secondary dropdown-toggle" href="javascript:;" id="historyMenu"
+					   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" #historyDropdown>
+						{{ info.Category }} - {{ limitLength(info.Title, 25) }}
+					</a>
+
+					<div class="dropdown-menu" aria-labelledby="historyMenu">
+						<a class="dropdown-item" href="javascript:;" *ngFor="let history of info.History; let i = index"
+						   (click)="selectHistory(i)">
+							{{ history.Category }} - {{ limitLength(history.Title, 25) }}
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="card">
+	<div class="card-header">
+		<h4 class="float-left">Statistics</h4>
+		<small>(Provided by StreamerStats.com)</small>
+	</div>
+
+	<div class="card-block">
+		<div class="form-group row">
+			<div class="col-md-12">
+				<button type="button" class="btn btn-primary" (click)="optInStats()">Opt In</button>
+			</div>
+		</div>
+	</div>
+</div>

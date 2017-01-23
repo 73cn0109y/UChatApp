@@ -18,7 +18,7 @@ export class AppComponent {
 
 	constructor(private router: Router, private authProvider: AuthProvider, private zone: NgZone) {
 		this.authProvider.isLoggedIn.subscribe(value => {
-			this.router.navigate([ value ? '/home' : '/login' ]);
+			this.router.navigate([ value ? '/dashboard' : '/login' ]);
 			this.zone.run(() => this.isLoggedIn = value);
 		});
 

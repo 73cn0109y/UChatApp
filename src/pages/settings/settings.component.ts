@@ -17,14 +17,15 @@ declare var $: any;
 export class SettingsPage implements AfterViewInit {
 	private user: any = {};
 	private settings: any = {};
+	private saving: boolean = false;
 
-	constructor(private http: Http, private authProvider: AuthProvider, private settingsProvider: SettingsProvider, private _ngZone: NgZone) {
+	constructor(private http: Http, private authProvider: AuthProvider, private settingsProvider: SettingsProvider, private ngZone: NgZone) {
 		this.user = this.authProvider.user;
 		this.settings = this.settingsProvider.settings;
 
 		this.authProvider.User.subscribe(value => this.user = value);
 		this.settingsProvider.Settings.subscribe(value => {
-			this._ngZone.run(() => this.settings = value);
+			this.ngZone.run(() => this.settings = value);
 		});
 	}
 
@@ -33,7 +34,10 @@ export class SettingsPage implements AfterViewInit {
 	}
 
 	saveSettings() {
-		this.settingsProvider.save(this.settings);
+		this.ngZone.run(() => this.saving = true);
+		this.settingsProvider.save(this.settings)
+			.then(() => this.ngZone.run(() => this.saving = false))
+			.catch(() => this.ngZone.run(() => this.saving = false));
 	}
 
 	setColor(objName: string, property: string, e: Event) {

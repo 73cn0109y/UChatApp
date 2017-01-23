@@ -13,10 +13,10 @@
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true,
     "typeRoots": [
-      "node_modules/@types"
+      "./node_modules/@types"
     ],
     "exclude": [
-      "dist"
+      "./dist"
     ]
   }
 }

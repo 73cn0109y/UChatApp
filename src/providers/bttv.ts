@@ -1,5 +1,19 @@
+export interface Emote {
+	id: string;
+	code: string;
+	channel: string;
+	restrictions: any;
+	imageType: string;
+}
+
+export interface EmoteList {
+	status: number;
+	urlTemplate: string;
+	emotes: [ Emote ];
+}
+
 export class bttv {
-	static getEmotes() {
+	static getEmotes(): EmoteList {
 		return {
 			"status"     : 200,
 			"urlTemplate": "//cdn.betterttv.net/emote/{{id}}/{{image}}",
