@@ -7,7 +7,6 @@ webpackJsonp([0],{
 	var platform_browser_dynamic_1 = __webpack_require__(1);
 	var core_1 = __webpack_require__(3);
 	var app_module_1 = __webpack_require__(23);
-	console.log((false));
 	if (false)
 	    core_1.enableProdMode();
 	platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
@@ -40,11 +39,13 @@ webpackJsonp([0],{
 	var register_component_1 = __webpack_require__(365);
 	var chat_component_1 = __webpack_require__(368);
 	var dashboard_component_1 = __webpack_require__(424);
+	var commands_component_1 = __webpack_require__(428);
 	// Services
 	var authProvider_1 = __webpack_require__(60);
 	var chatProvider_1 = __webpack_require__(369);
 	var settingsProvider_1 = __webpack_require__(359);
 	var infoProvider_1 = __webpack_require__(425);
+	var commandsProvider_1 = __webpack_require__(429);
 	// Pipes
 	var appRoutes = [
 	    {
@@ -58,6 +59,10 @@ webpackJsonp([0],{
 	    {
 	        path: 'dashboard',
 	        component: dashboard_component_1.DashboardPage
+	    },
+	    {
+	        path: 'commands',
+	        component: commands_component_1.CommandsPage
 	    },
 	    {
 	        path: 'settings',
@@ -85,7 +90,8 @@ webpackJsonp([0],{
 	            login_component_1.LoginPage,
 	            register_component_1.RegisterPage,
 	            chat_component_1.ChatPage,
-	            dashboard_component_1.DashboardPage
+	            dashboard_component_1.DashboardPage,
+	            commands_component_1.CommandsPage
 	        ],
 	        imports: [
 	            platform_browser_1.BrowserModule,
@@ -98,7 +104,8 @@ webpackJsonp([0],{
 	            authProvider_1.AuthProvider,
 	            chatProvider_1.ChatProvider,
 	            settingsProvider_1.SettingsProvider,
-	            infoProvider_1.InfoProvider
+	            infoProvider_1.InfoProvider,
+	            commandsProvider_1.CommandsProvider
 	        ],
 	        bootstrap: [app_component_1.AppComponent]
 	    })
@@ -6069,7 +6076,7 @@ webpackJsonp([0],{
 /***/ 355:
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"top-bar\" style=\"-webkit-app-region: drag\">\r\n\t<div class=\"brand\">\r\n\t\tUChat\r\n\t</div>\r\n</div>\r\n\r\n<div class=\"content\">\r\n\t<nav class=\"sidebar\" *ngIf=\"isLoggedIn\">\r\n\t\t<a class=\"nav-link\" routerLink=\"/dashboard\" routerLinkActive=\"active\">Dashboard</a>\r\n\t\t<a class=\"nav-link\" routerLink=\"/chat\" routerLinkActive=\"active\">Chat</a>\r\n\t\t<a class=\"nav-link\" routerLink=\"/settings\" routerLinkActive=\"active\">Settings</a>\r\n\t</nav>\r\n\r\n\t<div class=\"container\">\r\n\t\t<router-outlet></router-outlet>\r\n\t</div>\r\n</div>"
+	module.exports = "<div class=\"top-bar\" style=\"-webkit-app-region: drag\">\r\n\t<div class=\"brand\">\r\n\t\tUChat\r\n\t</div>\r\n</div>\r\n\r\n<div class=\"content\">\r\n\t<nav class=\"sidebar\" *ngIf=\"isLoggedIn\">\r\n\t\t<a class=\"nav-link\" routerLink=\"/dashboard\" routerLinkActive=\"active\">Dashboard</a>\r\n\t\t<a class=\"nav-link\" routerLink=\"/commands\" routerLinkActive=\"active\">Commands</a>\r\n\t\t<a class=\"nav-link\" routerLink=\"/chat\" routerLinkActive=\"active\">Chat</a>\r\n\t\t<a class=\"nav-link\" routerLink=\"/settings\" routerLinkActive=\"active\">Settings</a>\r\n\t</nav>\r\n\r\n\t<div class=\"container\">\r\n\t\t<router-outlet></router-outlet>\r\n\t</div>\r\n</div>"
 
 /***/ },
 
@@ -6266,7 +6273,7 @@ webpackJsonp([0],{
 /***/ 360:
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"card\">\r\n\t<div class=\"card-header\">\r\n\t\t<h4>Services</h4>\r\n\t</div>\r\n\r\n\t<div class=\"card-block\">\r\n\t\t<div class=\"row\">\r\n\t\t\t<div class=\"col-xs-6 col-sm-6 col-md-3 col-lg-3\">Beam</div>\r\n\t\t\t<div class=\"col-xs-6 col-sm-6 col-md-3 col-lg-3\">\r\n\t\t\t\t<span class=\"platform-status\"\r\n\t\t\t\t\t  [ngClass]=\"!user.Services ? '' : user.Services.Beam.Connected ? 'connected' : ''\"></span>\r\n\t\t\t</div>\r\n\r\n\t\t\t<div class=\"col-xs-6 col-sm-6 col-md-3 col-lg-3\">LiveEdu</div>\r\n\t\t\t<div class=\"col-xs-6 col-sm-6 col-md-3 col-lg-3\">\r\n\t\t\t\t<span class=\"platform-status\"\r\n\t\t\t\t\t  [ngClass]=\"!user.Services ? '' : user.Services.Liveedu.Connected ? 'connected' : ''\"></span>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\r\n\t\t<div class=\"row\">\r\n\t\t\t<div class=\"col-xs-6 col-sm-6 col-md-3 col-lg-3\">Twitch</div>\r\n\t\t\t<div class=\"col-xs-6 col-sm-6 col-md-3 col-lg-3\">\r\n\t\t\t\t<span class=\"platform-status\"\r\n\t\t\t\t\t  [ngClass]=\"!user.Services ? '' : user.Services.Twitch.Connected ? 'connected' : ''\"></span>\r\n\t\t\t</div>\r\n\r\n\t\t\t<div class=\"col-xs-6 col-sm-6 col-md-3 col-lg-3\">Youtube</div>\r\n\t\t\t<div class=\"col-xs-6 col-sm-6 col-md-3 col-lg-3\">\r\n\t\t\t\t<span class=\"platform-status\"\r\n\t\t\t\t\t  [ngClass]=\"!user.Services ? '' : (user.Services.Youtube.Connected ? 'connected' : '')\"></span>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n\r\n<div class=\"card\">\r\n\t<div class=\"card-header\">\r\n\t\t<h4 class=\"float-left\">Settings</h4>\r\n\t\t<button type=\"button\" class=\"btn btn-success btn-sm float-right\" (click)=\"saveSettings()\">\r\n\t\t\t<span class=\"fa fa-spinner spinner\" *ngIf=\"saving\"></span>Save - {{ saving }}\r\n\t\t</button>\r\n\t</div>\r\n\r\n\t<div class=\"card-block row\">\r\n\t\t<div class=\"col-md-12 row form-group color-group\">\r\n\t\t\t<h5 class=\"col-md-12\">Chroma Key</h5>\r\n\r\n\t\t\t<div class=\"col-md-12\">\r\n\t\t\t\t<div class=\"dropdown\">\r\n\t\t\t\t\t<a class=\"btn btn-secondary dropdown-toggle\" href=\"javascript:void(0)\" id=\"chromaDropdown\"\r\n\t\t\t\t\t   data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n\t\t\t\t\t\t{{ settings.ChromaKey }}\r\n\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t<div class=\"dropdown-menu\" aria-labelledby=\"chromaDropdown\">\r\n\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"javascript:void(0)\" (click)=\"settings.ChromaKey='None'\">None</a>\r\n\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"javascript:void(0)\"\r\n\t\t\t\t\t\t   (click)=\"settings.ChromaKey='Green'\">Green</a>\r\n\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"javascript:void(0)\" (click)=\"settings.ChromaKey='Blue'\">Blue</a>\r\n\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"javascript:void(0)\" (click)=\"settings.ChromaKey='Magenta'\">Magenta</a>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\r\n\t\t<div class=\"col-md-12 row form-group color-group\">\r\n\t\t\t<h5 class=\"col-md-12\">Message Background Color</h5>\r\n\r\n\t\t\t<div class=\"col-md-12 input-group\">\r\n\t\t\t\t<div class=\"input-placeholder\">\r\n\t\t\t\t\t<span class=\"placeholder\">Red</span>\r\n\t\t\t\t\t<input max=\"255\" min=\"0\" type=\"number\" class=\"form-control\" [value]=\"getColor('MessageBack', 'r')\"\r\n\t\t\t\t\t\t   (input)=\"setColor('MessageBack', 'r', $event)\">\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"input-placeholder\">\r\n\t\t\t\t\t<span class=\"placeholder\">Green</span>\r\n\t\t\t\t\t<input max=\"255\" min=\"0\" type=\"number\" class=\"form-control\" [value]=\"getColor('MessageBack', 'g')\"\r\n\t\t\t\t\t\t   (input)=\"setColor('MessageBack', 'g', $event)\">\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"input-placeholder\">\r\n\t\t\t\t\t<span class=\"placeholder\">Blue</span>\r\n\t\t\t\t\t<input max=\"255\" min=\"0\" type=\"number\" class=\"form-control\" [value]=\"getColor('MessageBack', 'b')\"\r\n\t\t\t\t\t\t   (input)=\"setColor('MessageBack', 'b', $event)\">\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"input-placeholder\">\r\n\t\t\t\t\t<span class=\"placeholder\">Alpha</span>\r\n\t\t\t\t\t<input max=\"1\" min=\"0\" step=\"0.1\" type=\"number\" class=\"form-control\"\r\n\t\t\t\t\t\t   [value]=\"getColor('MessageBack', 'a')\"\r\n\t\t\t\t\t\t   (input)=\"setColor('MessageBack', 'a', $event)\">\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"input-placeholder color-preview\" [ngStyle]=\"{ 'background-color': settings.MessageBack }\">\r\n\t\t\t\t\tCOLOR PREVIEW\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\r\n\t\t<div class=\"col-md-12 row form-group color-group\">\r\n\t\t\t<h5 class=\"col-md-12\">Message Mention Background Color</h5>\r\n\r\n\t\t\t<div class=\"col-md-12 input-group\">\r\n\t\t\t\t<div class=\"input-placeholder\">\r\n\t\t\t\t\t<span class=\"placeholder\">Red</span>\r\n\t\t\t\t\t<input max=\"255\" min=\"0\" type=\"number\" class=\"form-control\"\r\n\t\t\t\t\t\t   [value]=\"getColor('MessageMentionBack', 'r')\"\r\n\t\t\t\t\t\t   (input)=\"setColor('MessageMentionBack', 'r', $event)\">\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"input-placeholder\">\r\n\t\t\t\t\t<span class=\"placeholder\">Green</span>\r\n\t\t\t\t\t<input max=\"255\" min=\"0\" type=\"number\" class=\"form-control\"\r\n\t\t\t\t\t\t   [value]=\"getColor('MessageMentionBack', 'g')\"\r\n\t\t\t\t\t\t   (input)=\"setColor('MessageMentionBack', 'g', $event)\">\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"input-placeholder\">\r\n\t\t\t\t\t<span class=\"placeholder\">Blue</span>\r\n\t\t\t\t\t<input max=\"255\" min=\"0\" type=\"number\" class=\"form-control\"\r\n\t\t\t\t\t\t   [value]=\"getColor('MessageMentionBack', 'b')\"\r\n\t\t\t\t\t\t   (input)=\"setColor('MessageMentionBack', 'b', $event)\">\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"input-placeholder\">\r\n\t\t\t\t\t<span class=\"placeholder\">Alpha</span>\r\n\t\t\t\t\t<input max=\"1\" min=\"0\" step=\"0.1\" type=\"number\" class=\"form-control\"\r\n\t\t\t\t\t\t   [value]=\"getColor('MessageMentionBack', 'a')\"\r\n\t\t\t\t\t\t   (input)=\"setColor('MessageMentionBack', 'a', $event)\">\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"input-placeholder color-preview\"\r\n\t\t\t\t\t [ngStyle]=\"{ 'background-color': settings.MessageMentionBack }\">\r\n\t\t\t\t\tCOLOR PREVIEW\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>"
+	module.exports = "<div class=\"card\">\r\n\t<div class=\"card-header\">\r\n\t\t<h4>Services</h4>\r\n\t</div>\r\n\r\n\t<div class=\"card-block\">\r\n\t\t<div class=\"row\">\r\n\t\t\t<div class=\"col-xs-6 col-sm-6 col-md-3 col-lg-3\">Beam</div>\r\n\t\t\t<div class=\"col-xs-6 col-sm-6 col-md-3 col-lg-3\">\r\n\t\t\t\t<span class=\"platform-status\"\r\n\t\t\t\t\t  [ngClass]=\"!user.Services ? '' : user.Services.Beam.Connected ? 'connected' : ''\"></span>\r\n\t\t\t</div>\r\n\r\n\t\t\t<div class=\"col-xs-6 col-sm-6 col-md-3 col-lg-3\">LiveEdu</div>\r\n\t\t\t<div class=\"col-xs-6 col-sm-6 col-md-3 col-lg-3\">\r\n\t\t\t\t<span class=\"platform-status\"\r\n\t\t\t\t\t  [ngClass]=\"!user.Services ? '' : user.Services.Liveedu.Connected ? 'connected' : ''\"></span>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\r\n\t\t<div class=\"row\">\r\n\t\t\t<div class=\"col-xs-6 col-sm-6 col-md-3 col-lg-3\">Twitch</div>\r\n\t\t\t<div class=\"col-xs-6 col-sm-6 col-md-3 col-lg-3\">\r\n\t\t\t\t<span class=\"platform-status\"\r\n\t\t\t\t\t  [ngClass]=\"!user.Services ? '' : user.Services.Twitch.Connected ? 'connected' : ''\"></span>\r\n\t\t\t</div>\r\n\r\n\t\t\t<div class=\"col-xs-6 col-sm-6 col-md-3 col-lg-3\">Youtube</div>\r\n\t\t\t<div class=\"col-xs-6 col-sm-6 col-md-3 col-lg-3\">\r\n\t\t\t\t<span class=\"platform-status\"\r\n\t\t\t\t\t  [ngClass]=\"!user.Services ? '' : (user.Services.Youtube.Connected ? 'connected' : '')\"></span>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n\r\n<div class=\"card\">\r\n\t<div class=\"card-header\">\r\n\t\t<h4 class=\"float-left\">Settings</h4>\r\n\t\t<button type=\"button\" class=\"btn btn-success btn-sm float-right\" (click)=\"saveSettings()\">\r\n\t\t\t<span class=\"fa fa-spinner spinner\" *ngIf=\"saving\"></span>Save - {{ saving }}\r\n\t\t</button>\r\n\t</div>\r\n\r\n\t<div class=\"card-block row\">\r\n\t\t<div class=\"col-md-12 row form-group color-group\">\r\n\t\t\t<h5 class=\"col-md-12\">Chroma Key</h5>\r\n\r\n\t\t\t<div class=\"col-md-12\">\r\n\t\t\t\t<div class=\"dropdown\">\r\n\t\t\t\t\t<a class=\"btn btn-secondary dropdown-toggle\" href=\"javascript:void(0)\" id=\"chromaDropdown\"\r\n\t\t\t\t\t   data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n\t\t\t\t\t\t{{ settings.ChromaKey }}\r\n\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t<div class=\"dropdown-menu\" aria-labelledby=\"chromaDropdown\">\r\n\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"javascript:void(0)\"\r\n\t\t\t\t\t\t   (click)=\"settings.ChromaKey='None'\">None</a>\r\n\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"javascript:void(0)\"\r\n\t\t\t\t\t\t   (click)=\"settings.ChromaKey='Green'\">Green</a>\r\n\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"javascript:void(0)\" (click)=\"settings.ChromaKey='Blue'\">Blue</a>\r\n\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"javascript:void(0)\" (click)=\"settings.ChromaKey='Magenta'\">Magenta</a>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\r\n\t\t<div class=\"col-md-12 row form-group color-group\">\r\n\t\t\t<h5 class=\"col-md-12\">Message Background Color</h5>\r\n\r\n\t\t\t<div class=\"col-md-12 input-group\">\r\n\t\t\t\t<div class=\"input-placeholder\">\r\n\t\t\t\t\t<span class=\"placeholder\">Red</span>\r\n\t\t\t\t\t<input max=\"255\" min=\"0\" type=\"number\" class=\"form-control\" [value]=\"getColor('MessageBack', 'r')\"\r\n\t\t\t\t\t\t   (input)=\"setColor('MessageBack', 'r', $event)\">\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"input-placeholder\">\r\n\t\t\t\t\t<span class=\"placeholder\">Green</span>\r\n\t\t\t\t\t<input max=\"255\" min=\"0\" type=\"number\" class=\"form-control\" [value]=\"getColor('MessageBack', 'g')\"\r\n\t\t\t\t\t\t   (input)=\"setColor('MessageBack', 'g', $event)\">\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"input-placeholder\">\r\n\t\t\t\t\t<span class=\"placeholder\">Blue</span>\r\n\t\t\t\t\t<input max=\"255\" min=\"0\" type=\"number\" class=\"form-control\" [value]=\"getColor('MessageBack', 'b')\"\r\n\t\t\t\t\t\t   (input)=\"setColor('MessageBack', 'b', $event)\">\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"input-placeholder\">\r\n\t\t\t\t\t<span class=\"placeholder\">Alpha</span>\r\n\t\t\t\t\t<input max=\"1\" min=\"0\" step=\"0.1\" type=\"number\" class=\"form-control\"\r\n\t\t\t\t\t\t   [value]=\"getColor('MessageBack', 'a')\"\r\n\t\t\t\t\t\t   (input)=\"setColor('MessageBack', 'a', $event)\">\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"input-placeholder color-preview\" [ngStyle]=\"{ 'background-color': settings.MessageBack }\">\r\n\t\t\t\t\tCOLOR PREVIEW\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\r\n\t\t<div class=\"col-md-12 row form-group color-group\">\r\n\t\t\t<h5 class=\"col-md-12\">Message Mention Background Color</h5>\r\n\r\n\t\t\t<div class=\"col-md-12 input-group\">\r\n\t\t\t\t<div class=\"input-placeholder\">\r\n\t\t\t\t\t<span class=\"placeholder\">Red</span>\r\n\t\t\t\t\t<input max=\"255\" min=\"0\" type=\"number\" class=\"form-control\"\r\n\t\t\t\t\t\t   [value]=\"getColor('MessageMentionBack', 'r')\"\r\n\t\t\t\t\t\t   (input)=\"setColor('MessageMentionBack', 'r', $event)\">\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"input-placeholder\">\r\n\t\t\t\t\t<span class=\"placeholder\">Green</span>\r\n\t\t\t\t\t<input max=\"255\" min=\"0\" type=\"number\" class=\"form-control\"\r\n\t\t\t\t\t\t   [value]=\"getColor('MessageMentionBack', 'g')\"\r\n\t\t\t\t\t\t   (input)=\"setColor('MessageMentionBack', 'g', $event)\">\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"input-placeholder\">\r\n\t\t\t\t\t<span class=\"placeholder\">Blue</span>\r\n\t\t\t\t\t<input max=\"255\" min=\"0\" type=\"number\" class=\"form-control\"\r\n\t\t\t\t\t\t   [value]=\"getColor('MessageMentionBack', 'b')\"\r\n\t\t\t\t\t\t   (input)=\"setColor('MessageMentionBack', 'b', $event)\">\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"input-placeholder\">\r\n\t\t\t\t\t<span class=\"placeholder\">Alpha</span>\r\n\t\t\t\t\t<input max=\"1\" min=\"0\" step=\"0.1\" type=\"number\" class=\"form-control\"\r\n\t\t\t\t\t\t   [value]=\"getColor('MessageMentionBack', 'a')\"\r\n\t\t\t\t\t\t   (input)=\"setColor('MessageMentionBack', 'a', $event)\">\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"input-placeholder color-preview\"\r\n\t\t\t\t\t [ngStyle]=\"{ 'background-color': settings.MessageMentionBack }\">\r\n\t\t\t\t\tCOLOR PREVIEW\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>"
 
 /***/ },
 
@@ -16379,6 +16386,244 @@ webpackJsonp([0],{
 /***/ function(module, exports) {
 
 	module.exports = ":host .card {\n  margin: 15px 0; }\n\n:host .form-control.results-open {\n  border-bottom-left-radius: 0;\n  border-bottom-right-radius: 0;\n  border-color: transparent; }\n\n:host .search-results {\n  position: absolute;\n  z-index: 1;\n  width: calc(100% - 30px);\n  border-top-left-radius: 0;\n  border-top-right-radius: 0;\n  margin-top: -2px;\n  padding: 0;\n  max-height: 200px;\n  overflow-y: auto; }\n  :host .search-results > .dropdown-item {\n    padding: 0.5rem 1rem; }\n\n:host .col-md-4:not(.exclude-height) {\n  padding: 0.5rem 0.75rem;\n  line-height: 1.25rem; }\n"
+
+/***/ },
+
+/***/ 428:
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Created by texpe on 28/01/2017.
+	 */
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(3);
+	var commandsProvider_1 = __webpack_require__(429);
+	var CommandsPage = (function () {
+	    function CommandsPage(commandsProvider) {
+	        var _this = this;
+	        this.commandsProvider = commandsProvider;
+	        this.commands = [];
+	        this.newCommand = {};
+	        this.saving = false;
+	        this.editing = false;
+	        this.error = '';
+	        this.displayError = false;
+	        this.commands = this.commandsProvider.commands;
+	        this.commandsProvider.Commands.subscribe(function (value) { return _this.commands = value; });
+	    }
+	    CommandsPage.prototype.save = function () {
+	        var _this = this;
+	        this.saving = true;
+	        if (this.editing) {
+	            this.commandsProvider.updateCommand(this.newCommand)
+	                .then(function (result) {
+	                if (result.success)
+	                    _this.clearCommand();
+	                _this.editing = !result.success;
+	                _this.saving = false;
+	                _this.showError(result.errorMsg);
+	            }).catch(function () {
+	                _this.saving = false;
+	            });
+	        }
+	        else {
+	            this.commandsProvider.saveCommand(this.newCommand)
+	                .then(function (result) {
+	                if (result.success)
+	                    _this.clearCommand();
+	                _this.saving = false;
+	                _this.showError(result.errorMsg);
+	            }).catch(function () {
+	                _this.saving = false;
+	            });
+	        }
+	    };
+	    CommandsPage.prototype.clearCommand = function () {
+	        this.newCommand = {
+	            Input: '',
+	            Output: ''
+	        };
+	    };
+	    CommandsPage.prototype.deleteCommand = function (i) {
+	        this.commandsProvider.deleteCommand(this.commands[i]._id);
+	    };
+	    CommandsPage.prototype.editCommand = function (i, cancel) {
+	        if (cancel === void 0) { cancel = false; }
+	        if (cancel) {
+	            this.clearCommand();
+	            this.editing = false;
+	            this.displayError = false;
+	            this.error = '';
+	            return;
+	        }
+	        this.newCommand = {
+	            _id: this.commands[i]._id,
+	            Input: this.commands[i].Input,
+	            Output: this.commands[i].Output
+	        };
+	        this.editing = true;
+	    };
+	    CommandsPage.prototype.showError = function (msg) {
+	        var _this = this;
+	        if (!msg)
+	            return;
+	        this.error = msg;
+	        this.displayError = true;
+	        setTimeout(function () {
+	            _this.displayError = false;
+	            setTimeout(function () { return _this.error = ''; }, 500);
+	        }, 5000);
+	    };
+	    return CommandsPage;
+	}());
+	CommandsPage = __decorate([
+	    core_1.Component({
+	        selector: 'page-commands',
+	        template: __webpack_require__(430),
+	        styles: [__webpack_require__(431)]
+	    }),
+	    __metadata("design:paramtypes", [commandsProvider_1.CommandsProvider])
+	], CommandsPage);
+	exports.CommandsPage = CommandsPage;
+
+
+/***/ },
+
+/***/ 429:
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Created by texpe on 28/01/2017.
+	 */
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(3);
+	var rxjs_1 = __webpack_require__(61);
+	var http_1 = __webpack_require__(28);
+	var authProvider_1 = __webpack_require__(60);
+	var CommandsProvider = (function () {
+	    function CommandsProvider(http, authProvider) {
+	        this.http = http;
+	        this.authProvider = authProvider;
+	        this._commands = [];
+	        this.Commands = new rxjs_1.Subject();
+	        this.getCommands();
+	    }
+	    Object.defineProperty(CommandsProvider.prototype, "commands", {
+	        get: function () {
+	            return this._commands;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    CommandsProvider.prototype.getCommands = function () {
+	        var _this = this;
+	        this.http.get(this.authProvider.api + '/commands?token=' + this.authProvider.token)
+	            .map(function (res) { return res.json(); })
+	            .subscribe(function (data) {
+	            _this._commands = data.success ? data.commands : {};
+	            _this.Commands.next(_this._commands);
+	        }, function (err) { return console.error(err); });
+	    };
+	    CommandsProvider.prototype.saveCommand = function (data) {
+	        var _this = this;
+	        return new Promise(function (resolve, reject) {
+	            _this.http.post(_this.authProvider.api + '/commands?token=' + _this.authProvider.token, data)
+	                .map(function (res) { return res.json(); })
+	                .subscribe(function (data) {
+	                if (data.success) {
+	                    _this._commands.push(data.command);
+	                    _this.Commands.next(_this._commands);
+	                }
+	                resolve(data);
+	            }, function (err) {
+	                console.error(err);
+	                reject(false);
+	            });
+	        });
+	    };
+	    CommandsProvider.prototype.updateCommand = function (data) {
+	        var _this = this;
+	        return new Promise(function (resolve, reject) {
+	            _this.http.put(_this.authProvider.api + '/commands?token=' + _this.authProvider.token, data)
+	                .map(function (res) { return res.json(); })
+	                .subscribe(function (data) {
+	                if (data.success) {
+	                    for (var i = 0; i < _this._commands.length; i++) {
+	                        if (_this._commands[i]._id === data.command._id) {
+	                            _this._commands[i] = data.command;
+	                            break;
+	                        }
+	                    }
+	                    _this.Commands.next(_this._commands);
+	                }
+	                resolve(data);
+	            }, function (err) {
+	                console.log(err);
+	                reject(err);
+	            });
+	        });
+	    };
+	    CommandsProvider.prototype.deleteCommand = function (id) {
+	        var _this = this;
+	        return new Promise(function (resolve, reject) {
+	            _this.http.delete(_this.authProvider.api + '/commands?token=' + _this.authProvider.token + '&id=' + id)
+	                .map(function (res) { return res.json(); })
+	                .subscribe(function (data) {
+	                if (data.success) {
+	                    for (var i = 0; i < _this._commands.length; i++) {
+	                        if (_this._commands[i]._id === id) {
+	                            _this._commands.splice(i, 1);
+	                            break;
+	                        }
+	                    }
+	                }
+	                resolve(data.success);
+	            }, function (err) {
+	                console.error(err);
+	                reject(false);
+	            });
+	        });
+	    };
+	    return CommandsProvider;
+	}());
+	CommandsProvider = __decorate([
+	    core_1.Injectable(),
+	    __metadata("design:paramtypes", [http_1.Http, authProvider_1.AuthProvider])
+	], CommandsProvider);
+	exports.CommandsProvider = CommandsProvider;
+
+
+/***/ },
+
+/***/ 430:
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"card\">\r\n\t<div class=\"card-header row no-margin\">\r\n\t\t<div class=\"col-md-4\">\r\n\t\t\t<h4 class=\"float-left\">New Command</h4>\r\n\t\t</div>\r\n\r\n\t\t<div class=\"col-md-5 error-message\" [ngClass]=\"{ 'show': displayError }\">\r\n\t\t\t{{ error }}\r\n\t\t</div>\r\n\r\n\t\t<div class=\"col-md-3\">\r\n\t\t\t<button type=\"button\" class=\"btn btn-success btn-sm float-right\" (click)=\"save()\">\r\n\t\t\t\t<span class=\"fa fa-spinner spinner\" *ngIf=\"saving\"></span>Save\r\n\t\t\t</button>\r\n\t\t\t<button type=\"button\" class=\"btn btn-danger btn-sm float-right\" style=\"margin-right: 0.5rem;\"\r\n\t\t\t\t\t(click)=\"editCommand(-1, true)\"\r\n\t\t\t\t\t*ngIf=\"editing\">\r\n\t\t\t\tCancel\r\n\t\t\t</button>\r\n\t\t</div>\r\n\t</div>\r\n\r\n\t<div class=\"card-block\">\r\n\t\t<div class=\"form-group row\">\r\n\t\t\t<div class=\"col-md-4\">\r\n\t\t\t\tCommand\r\n\t\t\t</div>\r\n\r\n\t\t\t<div class=\"col-md-8\">\r\n\t\t\t\t<input type=\"text\" class=\"form-control\" [(ngModel)]=\"newCommand.Input\">\r\n\t\t\t</div>\r\n\t\t</div>\r\n\r\n\t\t<div class=\"form-group row\">\r\n\t\t\t<div class=\"col-md-4\">\r\n\t\t\t\tOutput\r\n\t\t\t</div>\r\n\r\n\t\t\t<div class=\"col-md-8\">\r\n\t\t\t\t<textarea type=\"text\" class=\"form-control\" [(ngModel)]=\"newCommand.Output\"></textarea>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n\r\n<div class=\"card\">\r\n\t<div class=\"card-header\">\r\n\t\t<h4>Commands</h4>\r\n\t</div>\r\n\r\n\t<div class=\"card-block\">\r\n\t\t<div class=\"row\" *ngFor=\"let command of commands; let i = index\">\r\n\t\t\t<div class=\"col-md-4\">{{ command.Input }}</div>\r\n\t\t\t<div class=\"col-md-6\">{{ command.Output }}</div>\r\n\r\n\t\t\t<div class=\"col-md-2 text-right\">\r\n\t\t\t\t<button type=\"button\" class=\"btn btn-warning btn-sm\" (click)=\"editCommand(i)\">\r\n\t\t\t\t\t<span class=\"fa fa-pencil\"></span>\r\n\t\t\t\t</button>\r\n\t\t\t\t<button type=\"button\" class=\"btn btn-danger btn-sm\" (click)=\"deleteCommand(i)\">\r\n\t\t\t\t\t<span class=\"fa fa-times\"></span>\r\n\t\t\t\t</button>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\r\n\t\t<div class=\"col-md-12\" *ngIf=\"!commands || commands.length <= 0\">\r\n\t\t\tYou don't have any commands yet\r\n\t\t</div>\r\n\t</div>\r\n</div>"
+
+/***/ },
+
+/***/ 431:
+/***/ function(module, exports) {
+
+	module.exports = ":host .card {\n  margin: 15px 0; }\n\n:host .row.no-margin {\n  margin: 0; }\n\n:host .row .btn.btn-sm {\n  margin-right: 0.5rem;\n  margin-bottom: 0.25rem; }\n\n:host .no-margin {\n  margin: 0; }\n\n:host .error-message {\n  opacity: 0;\n  text-align: center;\n  color: red;\n  line-height: 2rem;\n  transition: opacity ease-in-out 0.5s; }\n  :host .error-message.show {\n    opacity: 1; }\n"
 
 /***/ }
 

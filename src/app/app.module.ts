@@ -15,12 +15,14 @@ import { LoginPage } from '../pages/login/login.component';
 import { RegisterPage } from '../pages/register/register.component';
 import { ChatPage } from '../pages/chat/chat.component';
 import { DashboardPage } from '../pages/dashboard/dashboard.component';
+import { CommandsPage } from '../pages/commands/commands.component';
 
 // Services
 import { AuthProvider } from '../providers/authProvider';
 import { ChatProvider } from '../providers/chatProvider';
 import { SettingsProvider } from '../providers/settingsProvider';
 import { InfoProvider } from '../providers/infoProvider';
+import { CommandsProvider } from '../providers/commandsProvider';
 
 // Pipes
 
@@ -36,6 +38,10 @@ const appRoutes: Routes = [
 	{
 		path     : 'dashboard',
 		component: DashboardPage
+	},
+	{
+		path     : 'commands',
+		component: CommandsPage
 	},
 	{
 		path     : 'settings',
@@ -58,7 +64,8 @@ const appRoutes: Routes = [
 		LoginPage,
 		RegisterPage,
 		ChatPage,
-		DashboardPage
+		DashboardPage,
+		CommandsPage
 	],
 	imports     : [
 		BrowserModule,
@@ -71,7 +78,8 @@ const appRoutes: Routes = [
 		AuthProvider,
 		ChatProvider,
 		SettingsProvider,
-		InfoProvider
+		InfoProvider,
+		CommandsProvider
 	],
 	bootstrap   : [ AppComponent ]
 })

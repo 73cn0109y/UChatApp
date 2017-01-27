@@ -1,0 +1,30 @@
+:host {
+  .card {
+    margin: 15px 0;
+  }
+
+  .row.no-margin {
+    margin: 0;
+  }
+
+  .row .btn.btn-sm {
+    margin-right: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .no-margin {
+    margin: 0;
+  }
+
+  .error-message {
+    opacity: 0;
+    text-align: center;
+    color: red;
+    line-height: 2rem;
+    transition: opacity ease-in-out 0.5s;
+
+    &.show {
+      opacity: 1;
+    }
+  }
+}
