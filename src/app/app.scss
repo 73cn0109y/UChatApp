@@ -95,3 +95,20 @@ app {
     }
   }
 }
+
+.chat-hyperlink {
+  cursor: pointer;
+  color: deepskyblue;
+  display: inline-block;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+code {
+  border-radius: 0;
+  background-color: #333;
+  color: #CCC;
+  border: solid 1px #444;
+}

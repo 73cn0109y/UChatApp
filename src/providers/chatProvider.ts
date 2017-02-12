@@ -89,12 +89,16 @@ export class ChatProvider {
 					Formatted: `<img src='${url}' class='img-fill' />`
 				};
 
+				data.Message.Formatted = this.parseLinks(data.Message.Formatted);
+
 				this.addMessage(data);
 			}).catch(err => {
 				data.Message = {
 					Raw      : data.Message,
 					Formatted: this.parseEmotes(data.Message)
 				};
+
+				data.Message.Formatted = this.parseLinks(data.Message.Formatted);
 
 				this.addMessage(data);
 			});
@@ -202,6 +206,39 @@ export class ChatProvider {
 			};
 			img.src = url;
 		});
+	}
+
+	parseLinks(e: string): string {
+		e = e.trim();
+
+		let regex = /<a.*?>(.*?)<\/a>/im;
+		let match = regex.exec(e);
+		let i = 0;
+
+		while(match && i++ < 20) {
+			let url = null;
+			if(match[ 0 ].indexOf('href=') >= 0) url = (/href=["|'](.*)["|']/gi).exec(match[ 0 ])[ 1 ];
+			else url = (/>(.*?)<\/a>/gi).exec(match[ 0 ])[ 1 ];
+			e = e.replace(match[ 0 ], `<div class="chat-hyperlink" href='javascript:;'>${url}</div>`);
+			match = regex.exec(e);
+		}
+
+		if(i >= 20)
+			console.error("[0] Hyperlink detection might have exited before it could finish!");
+
+		regex = /(?:^|[^'">])(https?|ftps?):\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)/gim;
+		match = regex.exec(e);
+		i = 0;
+
+		while(match && i++ < 20) {
+			e = e.replace(match[ 0 ], `<div class="chat-hyperlink" href='javascript:;'>${match[ 0 ].trim()}</div>`);
+			match = regex.exec(e);
+		}
+
+		if(i >= 20)
+			console.error("[1] Hyperlink detection might have exited before it could finish!");
+
+		return e;
 	}
 
 	get getMessages(): Message[] {

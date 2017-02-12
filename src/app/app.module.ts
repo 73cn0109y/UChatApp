@@ -17,6 +17,8 @@ import { ChatPage } from '../pages/chat/chat.component';
 import { DashboardPage } from '../pages/dashboard/dashboard.component';
 import { CommandsPage } from '../pages/commands/commands.component';
 
+// Components
+
 // Services
 import { AuthProvider } from '../providers/authProvider';
 import { ChatProvider } from '../providers/chatProvider';
@@ -25,6 +27,7 @@ import { InfoProvider } from '../providers/infoProvider';
 import { CommandsProvider } from '../providers/commandsProvider';
 
 // Pipes
+import { UnsafeHTMLPipe } from '../pipes/unsafeHTML';
 
 const appRoutes: Routes = [
 	{
@@ -65,7 +68,8 @@ const appRoutes: Routes = [
 		RegisterPage,
 		ChatPage,
 		DashboardPage,
-		CommandsPage
+		CommandsPage,
+		UnsafeHTMLPipe,
 	],
 	imports     : [
 		BrowserModule,

@@ -46,7 +46,7 @@
 				</div>
 
 				<div class="timestamp">{{ message.Timestamp }}</div>
-				<div class="message" [innerHTML]="message.Message.Formatted"></div>
+				<div class="message" [innerHTML]="message.Message.Formatted | unsafeHTML"></div>
 			</li>
 		</ul>
 	</div>

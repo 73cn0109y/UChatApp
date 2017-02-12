@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Client.iml" filepath="$PROJECT_DIR$/.idea/Client.iml" />
-      <module fileurl="file://E:/Documents/GitHub/uchatapi/.idea/Server.iml" filepath="E:/Documents/GitHub/uchatapi/.idea/Server.iml" />
     </modules>
   </component>
 </project>
