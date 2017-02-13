@@ -1,26 +1,16698 @@
-webpackJsonp([0],{0:function(t,e,n){"use strict";var r=n(1),o=n(3),i=n(23);o.enableProdMode(),r.platformBrowserDynamic().bootstrapModule(i.AppModule)},23:function(t,e,n){"use strict";var r=this&&this.__decorate||function(t,e,n,r){var o,i=arguments.length,s=i<3?e:null===r?r=Object.getOwnPropertyDescriptor(e,n):r;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(t,e,n,r);else for(var a=t.length-1;a>=0;a--)(o=t[a])&&(s=(i<3?o(s):i>3?o(e,n,s):o(e,n))||s);return i>3&&s&&Object.defineProperty(e,n,s),s},o=n(21),i=n(3),s=n(24),a=n(28),c=n(29),l=n(59),u=n(357),p=n(362),h=n(365),d=n(368),f=n(424),g=n(428),m=n(60),y=n(369),v=n(359),b=n(425),_=n(429),w=n(432),C=[{path:"login",component:p.LoginPage},{path:"register",component:h.RegisterPage},{path:"dashboard",component:f.DashboardPage},{path:"commands",component:g.CommandsPage},{path:"settings",component:u.SettingsPage},{path:"chat",component:d.ChatPage},{path:"**",redirectTo:"/login"}],k=function(){function t(){}return t}();k=r([i.NgModule({declarations:[l.AppComponent,u.SettingsPage,p.LoginPage,h.RegisterPage,d.ChatPage,f.DashboardPage,g.CommandsPage,w.UnsafeHTMLPipe],imports:[o.BrowserModule,s.FormsModule,s.ReactiveFormsModule,a.HttpModule,c.RouterModule.forRoot(C,{useHash:!0})],providers:[m.AuthProvider,y.ChatProvider,v.SettingsProvider,b.InfoProvider,_.CommandsProvider],bootstrap:[l.AppComponent]})],k),e.AppModule=k},24:function(t,e,n){/**
+webpackJsonp([0],{
+
+/***/ 0:
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var platform_browser_dynamic_1 = __webpack_require__(1);
+	var core_1 = __webpack_require__(3);
+	var app_module_1 = __webpack_require__(23);
+	if (false)
+	    core_1.enableProdMode();
+	platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
+
+
+/***/ },
+
+/***/ 23:
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Created by texpe on 25/12/2016.
+	 */
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var platform_browser_1 = __webpack_require__(21);
+	var core_1 = __webpack_require__(3);
+	var forms_1 = __webpack_require__(24);
+	var http_1 = __webpack_require__(28);
+	var router_1 = __webpack_require__(29);
+	// Pages
+	var app_component_1 = __webpack_require__(59);
+	var settings_component_1 = __webpack_require__(357);
+	var login_component_1 = __webpack_require__(362);
+	var register_component_1 = __webpack_require__(365);
+	var chat_component_1 = __webpack_require__(368);
+	var dashboard_component_1 = __webpack_require__(424);
+	var commands_component_1 = __webpack_require__(428);
+	// Components
+	// Services
+	var authProvider_1 = __webpack_require__(60);
+	var chatProvider_1 = __webpack_require__(369);
+	var settingsProvider_1 = __webpack_require__(359);
+	var infoProvider_1 = __webpack_require__(425);
+	var commandsProvider_1 = __webpack_require__(429);
+	// Pipes
+	var unsafeHTML_1 = __webpack_require__(432);
+	var appRoutes = [
+	    {
+	        path: 'login',
+	        component: login_component_1.LoginPage
+	    },
+	    {
+	        path: 'register',
+	        component: register_component_1.RegisterPage
+	    },
+	    {
+	        path: 'dashboard',
+	        component: dashboard_component_1.DashboardPage
+	    },
+	    {
+	        path: 'commands',
+	        component: commands_component_1.CommandsPage
+	    },
+	    {
+	        path: 'settings',
+	        component: settings_component_1.SettingsPage
+	    },
+	    {
+	        path: 'chat',
+	        component: chat_component_1.ChatPage
+	    },
+	    {
+	        path: '**',
+	        redirectTo: '/login'
+	    }
+	];
+	var AppModule = (function () {
+	    function AppModule() {
+	    }
+	    return AppModule;
+	}());
+	AppModule = __decorate([
+	    core_1.NgModule({
+	        declarations: [
+	            app_component_1.AppComponent,
+	            settings_component_1.SettingsPage,
+	            login_component_1.LoginPage,
+	            register_component_1.RegisterPage,
+	            chat_component_1.ChatPage,
+	            dashboard_component_1.DashboardPage,
+	            commands_component_1.CommandsPage,
+	            unsafeHTML_1.UnsafeHTMLPipe,
+	        ],
+	        imports: [
+	            platform_browser_1.BrowserModule,
+	            forms_1.FormsModule,
+	            forms_1.ReactiveFormsModule,
+	            http_1.HttpModule,
+	            router_1.RouterModule.forRoot(appRoutes, { useHash: true }),
+	        ],
+	        providers: [
+	            authProvider_1.AuthProvider,
+	            chatProvider_1.ChatProvider,
+	            settingsProvider_1.SettingsProvider,
+	            infoProvider_1.InfoProvider,
+	            commandsProvider_1.CommandsProvider
+	        ],
+	        bootstrap: [app_component_1.AppComponent]
+	    })
+	], AppModule);
+	exports.AppModule = AppModule;
+
+
+/***/ },
+
+/***/ 24:
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
 	 * @license Angular v2.4.2
 	 * (c) 2010-2016 Google, Inc. https://angular.io/
 	 * License: MIT
 	 */
-!function(t,r){r(e,n(3),n(25),n(4),n(5),n(26))}(this,function(t,e,n,r,o,i){"use strict";function s(t){return null!=t}function a(t){return null==t}function c(t,e){return t===e||"number"==typeof t&&"number"==typeof e&&isNaN(t)&&isNaN(e)}function l(t){return null!==t&&("function"==typeof t||"object"==typeof t)}function u(t){return!l(t)}function p(t){return null==t||0===t.length}function h(t){return H(t)?t:n.toPromise.call(t)}function d(t,e){return e.map(function(e){return e(t)})}function f(t,e){return e.map(function(e){return e(t)})}function g(t){var e=t.reduce(function(t,e){return s(e)?q.merge(t,e):t},{});return 0===Object.keys(e).length?null:e}/**
+	(function (global, factory) {
+	     true ? factory(exports, __webpack_require__(3), __webpack_require__(25), __webpack_require__(4), __webpack_require__(5), __webpack_require__(26)) :
+	    typeof define === 'function' && define.amd ? define(['exports', '@angular/core', 'rxjs/operator/toPromise', 'rxjs/Subject', 'rxjs/Observable', 'rxjs/observable/fromPromise'], factory) :
+	    (factory((global.ng = global.ng || {}, global.ng.forms = global.ng.forms || {}),global.ng.core,global.Rx.Observable.prototype,global.Rx,global.Rx,global.Rx.Observable));
+	}(this, function (exports,_angular_core,rxjs_operator_toPromise,rxjs_Subject,rxjs_Observable,rxjs_observable_fromPromise) { 'use strict';
+
+	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
 	     *
 	     * Use of this source code is governed by an MIT-style license that can be
 	     * found in the LICENSE file at https://angular.io/license
 	     */
-function m(t){return t.validate?function(e){return t.validate(e)}:t}function y(t){return t.validate?function(e){return t.validate(e)}:t}function v(){throw new Error("unimplemented")}function b(t,e){return null==t?""+e:(u(e)||(e="Object"),(t+": "+e).slice(0,50))}function _(t){return t.split(":")[0]}function w(t,e){return null==t?""+e:("string"==typeof e&&(e="'"+e+"'"),u(e)||(e="Object"),(t+": "+e).slice(0,50))}function C(t){return t.split(":")[0]}function k(t,e){return e.path.concat([t])}function x(t,e){t||A(e,"Cannot find control with"),e.valueAccessor||A(e,"No value accessor for form control with"),t.validator=W.compose([t.validator,e.validator]),t.asyncValidator=W.composeAsync([t.asyncValidator,e.asyncValidator]),e.valueAccessor.writeValue(t.value),e.valueAccessor.registerOnChange(function(n){e.viewToModelUpdate(n),t.markAsDirty(),t.setValue(n,{emitModelToViewChange:!1})}),e.valueAccessor.registerOnTouched(function(){return t.markAsTouched()}),t.registerOnChange(function(t,n){e.valueAccessor.writeValue(t),n&&e.viewToModelUpdate(t)}),e.valueAccessor.setDisabledState&&t.registerOnDisabledChange(function(t){e.valueAccessor.setDisabledState(t)}),e._rawValidators.forEach(function(e){e.registerOnValidatorChange&&e.registerOnValidatorChange(function(){return t.updateValueAndValidity()})}),e._rawAsyncValidators.forEach(function(e){e.registerOnValidatorChange&&e.registerOnValidatorChange(function(){return t.updateValueAndValidity()})})}function P(t,e){e.valueAccessor.registerOnChange(function(){return S(e)}),e.valueAccessor.registerOnTouched(function(){return S(e)}),e._rawValidators.forEach(function(t){t.registerOnValidatorChange&&t.registerOnValidatorChange(null)}),e._rawAsyncValidators.forEach(function(t){t.registerOnValidatorChange&&t.registerOnValidatorChange(null)}),t&&t._clearChangeFns()}function O(t,e){a(t)&&A(e,"Cannot find control with"),t.validator=W.compose([t.validator,e.validator]),t.asyncValidator=W.composeAsync([t.asyncValidator,e.asyncValidator])}function S(t){return A(t,"There is no FormControl instance attached to form control element with")}function A(t,e){var n;throw n=t.path.length>1?"path: '"+t.path.join(" -> ")+"'":t.path[0]?"name: '"+t.path+"'":"unspecified name attribute",new Error(e+" "+n)}function E(t){return s(t)?W.compose(t.map(m)):null}function T(t){return s(t)?W.composeAsync(t.map(y)):null}function j(t,e){if(!t.hasOwnProperty("model"))return!1;var n=t.model;return!!n.isFirstChange()||!c(e,n.currentValue)}function R(t){return ft.some(function(e){return t.constructor===e})}function M(t,e){if(!e)return null;var n,r,o;return e.forEach(function(e){e.constructor===Z?n=e:R(e)?(r&&A(t,"More than one built-in value accessor matches form control with"),r=e):(o&&A(t,"More than one custom value accessor matches form control with"),o=e)}),o?o:r?r:n?n:(A(t,"No valid value accessor for form control with"),null)}function V(t,e,n){return null==e?null:(e instanceof Array||(e=e.split(n)),e instanceof Array&&0===e.length?null:e.reduce(function(t,e){return t instanceof jt?t.controls[e]||null:t instanceof Rt?t.at(e)||null:null},t))}function N(t){return H(t)?i.fromPromise(t):t}function D(t){return Array.isArray(t)?E(t):t}function B(t){return Array.isArray(t)?T(t):t}function I(t){return!(t instanceof ee||t instanceof Zt||t instanceof re)}/**
+	    /**
+	     *  Base class for control directives.
+	      * *
+	      * Only used internally in the forms module.
+	      * *
+	     * @abstract
+	     */
+	    var AbstractControlDirective = (function () {
+	        function AbstractControlDirective() {
+	        }
+	        Object.defineProperty(AbstractControlDirective.prototype, "control", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { throw new Error('unimplemented'); },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControlDirective.prototype, "value", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return this.control ? this.control.value : null; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControlDirective.prototype, "valid", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return this.control ? this.control.valid : null; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControlDirective.prototype, "invalid", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return this.control ? this.control.invalid : null; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControlDirective.prototype, "pending", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return this.control ? this.control.pending : null; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControlDirective.prototype, "errors", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return this.control ? this.control.errors : null; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControlDirective.prototype, "pristine", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return this.control ? this.control.pristine : null; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControlDirective.prototype, "dirty", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return this.control ? this.control.dirty : null; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControlDirective.prototype, "touched", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return this.control ? this.control.touched : null; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControlDirective.prototype, "untouched", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return this.control ? this.control.untouched : null; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControlDirective.prototype, "disabled", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return this.control ? this.control.disabled : null; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControlDirective.prototype, "enabled", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return this.control ? this.control.enabled : null; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControlDirective.prototype, "statusChanges", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return this.control ? this.control.statusChanges : null; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControlDirective.prototype, "valueChanges", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return this.control ? this.control.valueChanges : null; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControlDirective.prototype, "path", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return null; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        /**
+	         * @param {?=} value
+	         * @return {?}
+	         */
+	        AbstractControlDirective.prototype.reset = function (value) {
+	            if (value === void 0) { value = undefined; }
+	            if (this.control)
+	                this.control.reset(value);
+	        };
+	        /**
+	         * @param {?} errorCode
+	         * @param {?=} path
+	         * @return {?}
+	         */
+	        AbstractControlDirective.prototype.hasError = function (errorCode, path) {
+	            if (path === void 0) { path = null; }
+	            return this.control ? this.control.hasError(errorCode, path) : false;
+	        };
+	        /**
+	         * @param {?} errorCode
+	         * @param {?=} path
+	         * @return {?}
+	         */
+	        AbstractControlDirective.prototype.getError = function (errorCode, path) {
+	            if (path === void 0) { path = null; }
+	            return this.control ? this.control.getError(errorCode, path) : null;
+	        };
+	        return AbstractControlDirective;
+	    }());
+
+	    /**
 	     * @license
 	     * Copyright Google Inc. All Rights Reserved.
 	     *
 	     * Use of this source code is governed by an MIT-style license that can be
 	     * found in the LICENSE file at https://angular.io/license
 	     */
-var F=function(){function t(){}return Object.defineProperty(t.prototype,"control",{get:function(){throw new Error("unimplemented")},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"value",{get:function(){return this.control?this.control.value:null},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"valid",{get:function(){return this.control?this.control.valid:null},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"invalid",{get:function(){return this.control?this.control.invalid:null},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"pending",{get:function(){return this.control?this.control.pending:null},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"errors",{get:function(){return this.control?this.control.errors:null},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"pristine",{get:function(){return this.control?this.control.pristine:null},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"dirty",{get:function(){return this.control?this.control.dirty:null},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"touched",{get:function(){return this.control?this.control.touched:null},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"untouched",{get:function(){return this.control?this.control.untouched:null},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"disabled",{get:function(){return this.control?this.control.disabled:null},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"enabled",{get:function(){return this.control?this.control.enabled:null},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"statusChanges",{get:function(){return this.control?this.control.statusChanges:null},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"valueChanges",{get:function(){return this.control?this.control.valueChanges:null},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"path",{get:function(){return null},enumerable:!0,configurable:!0}),t.prototype.reset=function(t){void 0===t&&(t=void 0),this.control&&this.control.reset(t)},t.prototype.hasError=function(t,e){return void 0===e&&(e=null),!!this.control&&this.control.hasError(t,e)},t.prototype.getError=function(t,e){return void 0===e&&(e=null),this.control?this.control.getError(t,e):null},t}(),L=this&&this.__extends||function(t,e){function n(){this.constructor=t}for(var r in e)e.hasOwnProperty(r)&&(t[r]=e[r]);t.prototype=null===e?Object.create(e):(n.prototype=e.prototype,new n)},U=function(t){function e(){t.apply(this,arguments)}return L(e,t),Object.defineProperty(e.prototype,"formDirective",{get:function(){return null},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"path",{get:function(){return null},enumerable:!0,configurable:!0}),e}(F),q=function(){function t(){}return t.merge=function(t,e){for(var n={},r=0,o=Object.keys(t);r<o.length;r++){var i=o[r];n[i]=t[i]}for(var s=0,a=Object.keys(e);s<a.length;s++){var i=a[s];n[i]=e[i]}return n},t.equals=function(t,e){var n=Object.keys(t),r=Object.keys(e);if(n.length!=r.length)return!1;for(var o=0;o<n.length;o++){var i=n[o];if(t[i]!==e[i])return!1}return!0},t}(),G=function(){function t(){}return t.findLast=function(t,e){for(var n=t.length-1;n>=0;n--)if(e(t[n]))return t[n];return null},t.removeAll=function(t,e){for(var n=0;n<e.length;++n){var r=t.indexOf(e[n]);r>-1&&t.splice(r,1)}},t.remove=function(t,e){var n=t.indexOf(e);return n>-1&&(t.splice(n,1),!0)},t.equals=function(t,e){if(t.length!=e.length)return!1;for(var n=0;n<t.length;++n)if(t[n]!==e[n])return!1;return!0},t.flatten=function(e){return e.reduce(function(e,n){var r=Array.isArray(n)?t.flatten(n):n;return e.concat(r)},[])},t}(),H=e.__core_private__.isPromise,z=new e.OpaqueToken("NgValidators"),$=new e.OpaqueToken("NgAsyncValidators"),W=function(){function t(){}return t.required=function(t){return p(t.value)?{required:!0}:null},t.requiredTrue=function(t){return t.value===!0?null:{required:!0}},t.minLength=function(t){return function(e){if(p(e.value))return null;var n=e.value?e.value.length:0;return n<t?{minlength:{requiredLength:t,actualLength:n}}:null}},t.maxLength=function(t){return function(e){var n=e.value?e.value.length:0;return n>t?{maxlength:{requiredLength:t,actualLength:n}}:null}},t.pattern=function(e){if(!e)return t.nullValidator;var n,r;return"string"==typeof e?(r="^"+e+"$",n=new RegExp(r)):(r=e.toString(),n=e),function(t){if(p(t.value))return null;var e=t.value;return n.test(e)?null:{pattern:{requiredPattern:r,actualValue:e}}}},t.nullValidator=function(t){return null},t.compose=function(t){if(!t)return null;var e=t.filter(s);return 0==e.length?null:function(t){return g(d(t,e))}},t.composeAsync=function(t){if(!t)return null;var e=t.filter(s);return 0==e.length?null:function(t){var n=f(t,e).map(h);return Promise.all(n).then(g)}},t}(),J=new e.OpaqueToken("NgValueAccessor"),Y={provide:J,useExisting:e.forwardRef(function(){return K}),multi:!0},K=function(){function t(t,e){this._renderer=t,this._elementRef=e,this.onChange=function(t){},this.onTouched=function(){}}return t.prototype.writeValue=function(t){this._renderer.setElementProperty(this._elementRef.nativeElement,"checked",t)},t.prototype.registerOnChange=function(t){this.onChange=t},t.prototype.registerOnTouched=function(t){this.onTouched=t},t.prototype.setDisabledState=function(t){this._renderer.setElementProperty(this._elementRef.nativeElement,"disabled",t)},t.decorators=[{type:e.Directive,args:[{selector:"input[type=checkbox][formControlName],input[type=checkbox][formControl],input[type=checkbox][ngModel]",host:{"(change)":"onChange($event.target.checked)","(blur)":"onTouched()"},providers:[Y]}]}],t.ctorParameters=function(){return[{type:e.Renderer},{type:e.ElementRef}]},t}(),X={provide:J,useExisting:e.forwardRef(function(){return Z}),multi:!0},Z=function(){function t(t,e){this._renderer=t,this._elementRef=e,this.onChange=function(t){},this.onTouched=function(){}}return t.prototype.writeValue=function(t){var e=null==t?"":t;this._renderer.setElementProperty(this._elementRef.nativeElement,"value",e)},t.prototype.registerOnChange=function(t){this.onChange=t},t.prototype.registerOnTouched=function(t){this.onTouched=t},t.prototype.setDisabledState=function(t){this._renderer.setElementProperty(this._elementRef.nativeElement,"disabled",t)},t.decorators=[{type:e.Directive,args:[{selector:"input:not([type=checkbox])[formControlName],textarea[formControlName],input:not([type=checkbox])[formControl],textarea[formControl],input:not([type=checkbox])[ngModel],textarea[ngModel],[ngDefaultControl]",host:{"(input)":"onChange($event.target.value)","(blur)":"onTouched()"},providers:[X]}]}],t.ctorParameters=function(){return[{type:e.Renderer},{type:e.ElementRef}]},t}(),Q={provide:J,useExisting:e.forwardRef(function(){return tt}),multi:!0},tt=function(){function t(t,e){this._renderer=t,this._elementRef=e,this.onChange=function(t){},this.onTouched=function(){}}return t.prototype.writeValue=function(t){var e=null==t?"":t;this._renderer.setElementProperty(this._elementRef.nativeElement,"value",e)},t.prototype.registerOnChange=function(t){this.onChange=function(e){t(""==e?null:parseFloat(e))}},t.prototype.registerOnTouched=function(t){this.onTouched=t},t.prototype.setDisabledState=function(t){this._renderer.setElementProperty(this._elementRef.nativeElement,"disabled",t)},t.decorators=[{type:e.Directive,args:[{selector:"input[type=number][formControlName],input[type=number][formControl],input[type=number][ngModel]",host:{"(change)":"onChange($event.target.value)","(input)":"onChange($event.target.value)","(blur)":"onTouched()"},providers:[Q]}]}],t.ctorParameters=function(){return[{type:e.Renderer},{type:e.ElementRef}]},t}(),et=this&&this.__extends||function(t,e){function n(){this.constructor=t}for(var r in e)e.hasOwnProperty(r)&&(t[r]=e[r]);t.prototype=null===e?Object.create(e):(n.prototype=e.prototype,new n)},nt=function(t){function e(){t.apply(this,arguments),this._parent=null,this.name=null,this.valueAccessor=null,this._rawValidators=[],this._rawAsyncValidators=[]}return et(e,t),Object.defineProperty(e.prototype,"validator",{get:function(){return v()},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"asyncValidator",{get:function(){return v()},enumerable:!0,configurable:!0}),e.prototype.viewToModelUpdate=function(t){},e}(F),rt={provide:J,useExisting:e.forwardRef(function(){return it}),multi:!0},ot=function(){function t(){this._accessors=[]}return t.prototype.add=function(t,e){this._accessors.push([t,e])},t.prototype.remove=function(t){for(var e=this._accessors.length-1;e>=0;--e)if(this._accessors[e][1]===t)return void this._accessors.splice(e,1)},t.prototype.select=function(t){var e=this;this._accessors.forEach(function(n){e._isSameGroup(n,t)&&n[1]!==t&&n[1].fireUncheck(t.value)})},t.prototype._isSameGroup=function(t,e){return!!t[0].control&&(t[0]._parent===e._control._parent&&t[1].name===e.name)},t.decorators=[{type:e.Injectable}],t.ctorParameters=function(){return[]},t}(),it=function(){function t(t,e,n,r){this._renderer=t,this._elementRef=e,this._registry=n,this._injector=r,this.onChange=function(){},this.onTouched=function(){}}return t.prototype.ngOnInit=function(){this._control=this._injector.get(nt),this._checkName(),this._registry.add(this._control,this)},t.prototype.ngOnDestroy=function(){this._registry.remove(this)},t.prototype.writeValue=function(t){this._state=t===this.value,this._renderer.setElementProperty(this._elementRef.nativeElement,"checked",this._state)},t.prototype.registerOnChange=function(t){var e=this;this._fn=t,this.onChange=function(){t(e.value),e._registry.select(e)}},t.prototype.fireUncheck=function(t){this.writeValue(t)},t.prototype.registerOnTouched=function(t){this.onTouched=t},t.prototype.setDisabledState=function(t){this._renderer.setElementProperty(this._elementRef.nativeElement,"disabled",t)},t.prototype._checkName=function(){this.name&&this.formControlName&&this.name!==this.formControlName&&this._throwNameError(),!this.name&&this.formControlName&&(this.name=this.formControlName)},t.prototype._throwNameError=function(){throw new Error('\n      If you define both a name and a formControlName attribute on your radio button, their values\n      must match. Ex: <input type="radio" formControlName="food" name="food">\n    ')},t.decorators=[{type:e.Directive,args:[{selector:"input[type=radio][formControlName],input[type=radio][formControl],input[type=radio][ngModel]",host:{"(change)":"onChange()","(blur)":"onTouched()"},providers:[rt]}]}],t.ctorParameters=function(){return[{type:e.Renderer},{type:e.ElementRef},{type:ot},{type:e.Injector}]},t.propDecorators={name:[{type:e.Input}],formControlName:[{type:e.Input}],value:[{type:e.Input}]},t}(),st={provide:J,useExisting:e.forwardRef(function(){return at}),multi:!0},at=function(){function t(t,e){this._renderer=t,this._elementRef=e,this.onChange=function(t){},this.onTouched=function(){}}return t.prototype.writeValue=function(t){this._renderer.setElementProperty(this._elementRef.nativeElement,"value",parseFloat(t))},t.prototype.registerOnChange=function(t){this.onChange=function(e){t(""==e?null:parseFloat(e))}},t.prototype.registerOnTouched=function(t){this.onTouched=t},t.prototype.setDisabledState=function(t){this._renderer.setElementProperty(this._elementRef.nativeElement,"disabled",t)},t.decorators=[{type:e.Directive,args:[{selector:"input[type=range][formControlName],input[type=range][formControl],input[type=range][ngModel]",host:{"(change)":"onChange($event.target.value)","(input)":"onChange($event.target.value)","(blur)":"onTouched()"},providers:[st]}]}],t.ctorParameters=function(){return[{type:e.Renderer},{type:e.ElementRef}]},t}(),ct={provide:J,useExisting:e.forwardRef(function(){return lt}),multi:!0},lt=function(){function t(t,e){this._renderer=t,this._elementRef=e,this._optionMap=new Map,this._idCounter=0,this.onChange=function(t){},this.onTouched=function(){}}return t.prototype.writeValue=function(t){this.value=t;var e=b(this._getOptionId(t),t);this._renderer.setElementProperty(this._elementRef.nativeElement,"value",e)},t.prototype.registerOnChange=function(t){var e=this;this.onChange=function(n){e.value=n,t(e._getOptionValue(n))}},t.prototype.registerOnTouched=function(t){this.onTouched=t},t.prototype.setDisabledState=function(t){this._renderer.setElementProperty(this._elementRef.nativeElement,"disabled",t)},t.prototype._registerOption=function(){return(this._idCounter++).toString()},t.prototype._getOptionId=function(t){for(var e=0,n=Array.from(this._optionMap.keys());e<n.length;e++){var r=n[e];if(c(this._optionMap.get(r),t))return r}return null},t.prototype._getOptionValue=function(t){var e=_(t);return this._optionMap.has(e)?this._optionMap.get(e):t},t.decorators=[{type:e.Directive,args:[{selector:"select:not([multiple])[formControlName],select:not([multiple])[formControl],select:not([multiple])[ngModel]",host:{"(change)":"onChange($event.target.value)","(blur)":"onTouched()"},providers:[ct]}]}],t.ctorParameters=function(){return[{type:e.Renderer},{type:e.ElementRef}]},t}(),ut=function(){function t(t,e,n){this._element=t,this._renderer=e,this._select=n,this._select&&(this.id=this._select._registerOption())}return Object.defineProperty(t.prototype,"ngValue",{set:function(t){null!=this._select&&(this._select._optionMap.set(this.id,t),this._setElementValue(b(this.id,t)),this._select.writeValue(this._select.value))},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"value",{set:function(t){this._setElementValue(t),this._select&&this._select.writeValue(this._select.value)},enumerable:!0,configurable:!0}),t.prototype._setElementValue=function(t){this._renderer.setElementProperty(this._element.nativeElement,"value",t)},t.prototype.ngOnDestroy=function(){this._select&&(this._select._optionMap.delete(this.id),this._select.writeValue(this._select.value))},t.decorators=[{type:e.Directive,args:[{selector:"option"}]}],t.ctorParameters=function(){return[{type:e.ElementRef},{type:e.Renderer},{type:lt,decorators:[{type:e.Optional},{type:e.Host}]}]},t.propDecorators={ngValue:[{type:e.Input,args:["ngValue"]}],value:[{type:e.Input,args:["value"]}]},t}(),pt={provide:J,useExisting:e.forwardRef(function(){return ht}),multi:!0},ht=function(){function t(t,e){this._renderer=t,this._elementRef=e,this._optionMap=new Map,this._idCounter=0,this.onChange=function(t){},this.onTouched=function(){}}return t.prototype.writeValue=function(t){var e=this;this.value=t;var n;if(Array.isArray(t)){var r=t.map(function(t){return e._getOptionId(t)});n=function(t,e){t._setSelected(r.indexOf(e.toString())>-1)}}else n=function(t,e){t._setSelected(!1)};this._optionMap.forEach(n)},t.prototype.registerOnChange=function(t){var e=this;this.onChange=function(n){var r=[];if(n.hasOwnProperty("selectedOptions"))for(var o=n.selectedOptions,i=0;i<o.length;i++){var s=o.item(i),a=e._getOptionValue(s.value);r.push(a)}else for(var o=n.options,i=0;i<o.length;i++){var s=o.item(i);if(s.selected){var a=e._getOptionValue(s.value);r.push(a)}}e.value=r,t(r)}},t.prototype.registerOnTouched=function(t){this.onTouched=t},t.prototype.setDisabledState=function(t){this._renderer.setElementProperty(this._elementRef.nativeElement,"disabled",t)},t.prototype._registerOption=function(t){var e=(this._idCounter++).toString();return this._optionMap.set(e,t),e},t.prototype._getOptionId=function(t){for(var e=0,n=Array.from(this._optionMap.keys());e<n.length;e++){var r=n[e];if(c(this._optionMap.get(r)._value,t))return r}return null},t.prototype._getOptionValue=function(t){var e=C(t);return this._optionMap.has(e)?this._optionMap.get(e)._value:t},t.decorators=[{type:e.Directive,args:[{selector:"select[multiple][formControlName],select[multiple][formControl],select[multiple][ngModel]",host:{"(change)":"onChange($event.target)","(blur)":"onTouched()"},providers:[pt]}]}],t.ctorParameters=function(){return[{type:e.Renderer},{type:e.ElementRef}]},t}(),dt=function(){function t(t,e,n){this._element=t,this._renderer=e,this._select=n,this._select&&(this.id=this._select._registerOption(this))}return Object.defineProperty(t.prototype,"ngValue",{set:function(t){null!=this._select&&(this._value=t,this._setElementValue(w(this.id,t)),this._select.writeValue(this._select.value))},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"value",{set:function(t){this._select?(this._value=t,this._setElementValue(w(this.id,t)),this._select.writeValue(this._select.value)):this._setElementValue(t)},enumerable:!0,configurable:!0}),t.prototype._setElementValue=function(t){this._renderer.setElementProperty(this._element.nativeElement,"value",t)},t.prototype._setSelected=function(t){this._renderer.setElementProperty(this._element.nativeElement,"selected",t)},t.prototype.ngOnDestroy=function(){this._select&&(this._select._optionMap.delete(this.id),this._select.writeValue(this._select.value))},t.decorators=[{type:e.Directive,args:[{selector:"option"}]}],t.ctorParameters=function(){return[{type:e.ElementRef},{type:e.Renderer},{type:ht,decorators:[{type:e.Optional},{type:e.Host}]}]},t.propDecorators={ngValue:[{type:e.Input,args:["ngValue"]}],value:[{type:e.Input,args:["value"]}]},t}(),ft=[K,at,tt,lt,ht,it],gt=this&&this.__extends||function(t,e){function n(){this.constructor=t}for(var r in e)e.hasOwnProperty(r)&&(t[r]=e[r]);t.prototype=null===e?Object.create(e):(n.prototype=e.prototype,new n)},mt=function(t){function e(){t.apply(this,arguments)}return gt(e,t),e.prototype.ngOnInit=function(){this._checkParentType(),this.formDirective.addFormGroup(this)},e.prototype.ngOnDestroy=function(){this.formDirective&&this.formDirective.removeFormGroup(this)},Object.defineProperty(e.prototype,"control",{get:function(){return this.formDirective.getFormGroup(this)},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"path",{get:function(){return k(this.name,this._parent)},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"formDirective",{get:function(){return this._parent?this._parent.formDirective:null},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"validator",{get:function(){return E(this._validators)},enumerable:!0,configurable:!0}),Object.defineProperty(e.prototype,"asyncValidator",{get:function(){return T(this._asyncValidators)},enumerable:!0,configurable:!0}),e.prototype._checkParentType=function(){},e}(U),yt=this&&this.__extends||function(t,e){function n(){this.constructor=t}for(var r in e)e.hasOwnProperty(r)&&(t[r]=e[r]);t.prototype=null===e?Object.create(e):(n.prototype=e.prototype,new n)},vt=function(){function t(t){this._cd=t}return Object.defineProperty(t.prototype,"ngClassUntouched",{get:function(){return!!this._cd.control&&this._cd.control.untouched},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"ngClassTouched",{get:function(){return!!this._cd.control&&this._cd.control.touched},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"ngClassPristine",{get:function(){return!!this._cd.control&&this._cd.control.pristine},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"ngClassDirty",{get:function(){return!!this._cd.control&&this._cd.control.dirty},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"ngClassValid",{get:function(){return!!this._cd.control&&this._cd.control.valid},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"ngClassInvalid",{get:function(){return!!this._cd.control&&this._cd.control.invalid},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"ngClassPending",{get:function(){return!!this._cd.control&&this._cd.control.pending},enumerable:!0,configurable:!0}),t}(),bt={"[class.ng-untouched]":"ngClassUntouched","[class.ng-touched]":"ngClassTouched","[class.ng-pristine]":"ngClassPristine","[class.ng-dirty]":"ngClassDirty","[class.ng-valid]":"ngClassValid","[class.ng-invalid]":"ngClassInvalid","[class.ng-pending]":"ngClassPending"},_t=function(t){function n(e){t.call(this,e)}return yt(n,t),n.decorators=[{type:e.Directive,args:[{selector:"[formControlName],[ngModel],[formControl]",host:bt}]}],n.ctorParameters=function(){return[{type:nt,decorators:[{type:e.Self}]}]},n}(vt),wt=function(t){function n(e){t.call(this,e)}return yt(n,t),n.decorators=[{type:e.Directive,args:[{selector:"[formGroupName],[formArrayName],[ngModelGroup],[formGroup],form:not([ngNoForm]),[ngForm]",host:bt}]}],n.ctorParameters=function(){return[{type:U,decorators:[{type:e.Self}]}]},n}(vt),Ct=this&&this.__extends||function(t,e){function n(){this.constructor=t}for(var r in e)e.hasOwnProperty(r)&&(t[r]=e[r]);t.prototype=null===e?Object.create(e):(n.prototype=e.prototype,new n)},kt=function(t){function e(e){void 0===e&&(e=!1),t.call(this),this.__isAsync=e}return Ct(e,t),e.prototype.emit=function(e){t.prototype.next.call(this,e)},e.prototype.subscribe=function(e,n,r){var o,i=function(t){return null},s=function(){return null};return e&&"object"==typeof e?(o=this.__isAsync?function(t){setTimeout(function(){return e.next(t)})}:function(t){e.next(t)},e.error&&(i=this.__isAsync?function(t){setTimeout(function(){return e.error(t)})}:function(t){e.error(t)}),e.complete&&(s=this.__isAsync?function(){setTimeout(function(){return e.complete()})}:function(){e.complete()})):(o=this.__isAsync?function(t){setTimeout(function(){return e(t)})}:function(t){e(t)},n&&(i=this.__isAsync?function(t){setTimeout(function(){return n(t)})}:function(t){n(t)}),r&&(s=this.__isAsync?function(){setTimeout(function(){return r()})}:function(){r()})),t.prototype.subscribe.call(this,o,i,s)},e}(r.Subject),xt=this&&this.__extends||function(t,e){function n(){this.constructor=t}for(var r in e)e.hasOwnProperty(r)&&(t[r]=e[r]);t.prototype=null===e?Object.create(e):(n.prototype=e.prototype,new n)},Pt="VALID",Ot="INVALID",St="PENDING",At="DISABLED",Et=function(){function t(t,e){this.validator=t,this.asyncValidator=e,this._onCollectionChange=function(){},this._pristine=!0,this._touched=!1,this._onDisabledChange=[]}return Object.defineProperty(t.prototype,"value",{get:function(){return this._value},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"parent",{get:function(){return this._parent},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"status",{get:function(){return this._status},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"valid",{get:function(){return this._status===Pt},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"invalid",{get:function(){return this._status===Ot},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"pending",{get:function(){return this._status==St},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"disabled",{get:function(){return this._status===At},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"enabled",{get:function(){return this._status!==At},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"errors",{get:function(){return this._errors},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"pristine",{get:function(){return this._pristine},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"dirty",{get:function(){return!this.pristine},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"touched",{get:function(){return this._touched},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"untouched",{get:function(){return!this._touched},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"valueChanges",{get:function(){return this._valueChanges},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"statusChanges",{get:function(){return this._statusChanges},enumerable:!0,configurable:!0}),t.prototype.setValidators=function(t){this.validator=D(t)},t.prototype.setAsyncValidators=function(t){this.asyncValidator=B(t)},t.prototype.clearValidators=function(){this.validator=null},t.prototype.clearAsyncValidators=function(){this.asyncValidator=null},t.prototype.markAsTouched=function(t){var e=(void 0===t?{}:t).onlySelf;this._touched=!0,this._parent&&!e&&this._parent.markAsTouched({onlySelf:e})},t.prototype.markAsUntouched=function(t){var e=(void 0===t?{}:t).onlySelf;this._touched=!1,this._forEachChild(function(t){t.markAsUntouched({onlySelf:!0})}),this._parent&&!e&&this._parent._updateTouched({onlySelf:e})},t.prototype.markAsDirty=function(t){var e=(void 0===t?{}:t).onlySelf;this._pristine=!1,this._parent&&!e&&this._parent.markAsDirty({onlySelf:e})},t.prototype.markAsPristine=function(t){var e=(void 0===t?{}:t).onlySelf;this._pristine=!0,this._forEachChild(function(t){t.markAsPristine({onlySelf:!0})}),this._parent&&!e&&this._parent._updatePristine({onlySelf:e})},t.prototype.markAsPending=function(t){var e=(void 0===t?{}:t).onlySelf;this._status=St,this._parent&&!e&&this._parent.markAsPending({onlySelf:e})},t.prototype.disable=function(t){var e=void 0===t?{}:t,n=e.onlySelf,r=e.emitEvent;this._status=At,this._errors=null,this._forEachChild(function(t){t.disable({onlySelf:!0})}),this._updateValue(),r!==!1&&(this._valueChanges.emit(this._value),this._statusChanges.emit(this._status)),this._updateAncestors(n),this._onDisabledChange.forEach(function(t){return t(!0)})},t.prototype.enable=function(t){var e=void 0===t?{}:t,n=e.onlySelf,r=e.emitEvent;this._status=Pt,this._forEachChild(function(t){t.enable({onlySelf:!0})}),this.updateValueAndValidity({onlySelf:!0,emitEvent:r}),this._updateAncestors(n),this._onDisabledChange.forEach(function(t){return t(!1)})},t.prototype._updateAncestors=function(t){this._parent&&!t&&(this._parent.updateValueAndValidity(),this._parent._updatePristine(),this._parent._updateTouched())},t.prototype.setParent=function(t){this._parent=t},t.prototype.setValue=function(t,e){},t.prototype.patchValue=function(t,e){},t.prototype.reset=function(t,e){},t.prototype.updateValueAndValidity=function(t){var e=void 0===t?{}:t,n=e.onlySelf,r=e.emitEvent;this._setInitialStatus(),this._updateValue(),this.enabled&&(this._errors=this._runValidator(),this._status=this._calculateStatus(),this._status!==Pt&&this._status!==St||this._runAsyncValidator(r)),r!==!1&&(this._valueChanges.emit(this._value),this._statusChanges.emit(this._status)),this._parent&&!n&&this._parent.updateValueAndValidity({onlySelf:n,emitEvent:r})},t.prototype._updateTreeValidity=function(t){var e=(void 0===t?{emitEvent:!0}:t).emitEvent;this._forEachChild(function(t){return t._updateTreeValidity({emitEvent:e})}),this.updateValueAndValidity({onlySelf:!0,emitEvent:e})},t.prototype._setInitialStatus=function(){this._status=this._allControlsDisabled()?At:Pt},t.prototype._runValidator=function(){return this.validator?this.validator(this):null},t.prototype._runAsyncValidator=function(t){var e=this;if(this.asyncValidator){this._status=St,this._cancelExistingSubscription();var n=N(this.asyncValidator(this));this._asyncValidationSubscription=n.subscribe({next:function(n){return e.setErrors(n,{emitEvent:t})}})}},t.prototype._cancelExistingSubscription=function(){this._asyncValidationSubscription&&this._asyncValidationSubscription.unsubscribe()},t.prototype.setErrors=function(t,e){var n=(void 0===e?{}:e).emitEvent;this._errors=t,this._updateControlsErrors(n!==!1)},t.prototype.get=function(t){return V(this,t,".")},t.prototype.getError=function(t,e){void 0===e&&(e=null);var n=e?this.get(e):this;return n&&n._errors?n._errors[t]:null},t.prototype.hasError=function(t,e){return void 0===e&&(e=null),!!this.getError(t,e)},Object.defineProperty(t.prototype,"root",{get:function(){for(var t=this;t._parent;)t=t._parent;return t},enumerable:!0,configurable:!0}),t.prototype._updateControlsErrors=function(t){this._status=this._calculateStatus(),t&&this._statusChanges.emit(this._status),this._parent&&this._parent._updateControlsErrors(t)},t.prototype._initObservables=function(){this._valueChanges=new kt,this._statusChanges=new kt},t.prototype._calculateStatus=function(){return this._allControlsDisabled()?At:this._errors?Ot:this._anyControlsHaveStatus(St)?St:this._anyControlsHaveStatus(Ot)?Ot:Pt},t.prototype._updateValue=function(){},t.prototype._forEachChild=function(t){},t.prototype._anyControls=function(t){},t.prototype._allControlsDisabled=function(){},t.prototype._anyControlsHaveStatus=function(t){return this._anyControls(function(e){return e.status===t})},t.prototype._anyControlsDirty=function(){return this._anyControls(function(t){return t.dirty})},t.prototype._anyControlsTouched=function(){return this._anyControls(function(t){return t.touched})},t.prototype._updatePristine=function(t){var e=(void 0===t?{}:t).onlySelf;this._pristine=!this._anyControlsDirty(),this._parent&&!e&&this._parent._updatePristine({onlySelf:e})},t.prototype._updateTouched=function(t){var e=(void 0===t?{}:t).onlySelf;this._touched=this._anyControlsTouched(),this._parent&&!e&&this._parent._updateTouched({onlySelf:e})},t.prototype._isBoxedValue=function(t){return"object"==typeof t&&null!==t&&2===Object.keys(t).length&&"value"in t&&"disabled"in t},t.prototype._registerOnCollectionChange=function(t){this._onCollectionChange=t},t}(),Tt=function(t){function e(e,n,r){void 0===e&&(e=null),void 0===n&&(n=null),void 0===r&&(r=null),t.call(this,D(n),B(r)),this._onChange=[],this._applyFormState(e),this.updateValueAndValidity({onlySelf:!0,emitEvent:!1}),this._initObservables()}return xt(e,t),e.prototype.setValue=function(t,e){var n=this,r=void 0===e?{}:e,o=r.onlySelf,i=r.emitEvent,s=r.emitModelToViewChange,a=r.emitViewToModelChange;this._value=t,this._onChange.length&&s!==!1&&this._onChange.forEach(function(t){return t(n._value,a!==!1)}),this.updateValueAndValidity({onlySelf:o,emitEvent:i})},e.prototype.patchValue=function(t,e){void 0===e&&(e={}),this.setValue(t,e)},e.prototype.reset=function(t,e){void 0===t&&(t=null);var n=void 0===e?{}:e,r=n.onlySelf,o=n.emitEvent;this._applyFormState(t),this.markAsPristine({onlySelf:r}),this.markAsUntouched({onlySelf:r}),this.setValue(this._value,{onlySelf:r,emitEvent:o})},e.prototype._updateValue=function(){},e.prototype._anyControls=function(t){return!1},e.prototype._allControlsDisabled=function(){return this.disabled},e.prototype.registerOnChange=function(t){this._onChange.push(t)},e.prototype._clearChangeFns=function(){this._onChange=[],this._onDisabledChange=[],this._onCollectionChange=function(){}},e.prototype.registerOnDisabledChange=function(t){this._onDisabledChange.push(t)},e.prototype._forEachChild=function(t){},e.prototype._applyFormState=function(t){this._isBoxedValue(t)?(this._value=t.value,t.disabled?this.disable({onlySelf:!0,emitEvent:!1}):this.enable({onlySelf:!0,emitEvent:!1})):this._value=t},e}(Et),jt=function(t){function e(e,n,r){void 0===n&&(n=null),void 0===r&&(r=null),t.call(this,n,r),this.controls=e,this._initObservables(),this._setUpControls(),this.updateValueAndValidity({onlySelf:!0,emitEvent:!1})}return xt(e,t),e.prototype.registerControl=function(t,e){return this.controls[t]?this.controls[t]:(this.controls[t]=e,e.setParent(this),e._registerOnCollectionChange(this._onCollectionChange),e)},e.prototype.addControl=function(t,e){this.registerControl(t,e),this.updateValueAndValidity(),this._onCollectionChange()},e.prototype.removeControl=function(t){this.controls[t]&&this.controls[t]._registerOnCollectionChange(function(){}),delete this.controls[t],this.updateValueAndValidity(),this._onCollectionChange()},e.prototype.setControl=function(t,e){this.controls[t]&&this.controls[t]._registerOnCollectionChange(function(){}),delete this.controls[t],e&&this.registerControl(t,e),this.updateValueAndValidity(),this._onCollectionChange()},e.prototype.contains=function(t){return this.controls.hasOwnProperty(t)&&this.controls[t].enabled},e.prototype.setValue=function(t,e){var n=this,r=void 0===e?{}:e,o=r.onlySelf,i=r.emitEvent;this._checkAllValuesPresent(t),Object.keys(t).forEach(function(e){n._throwIfControlMissing(e),n.controls[e].setValue(t[e],{onlySelf:!0,emitEvent:i})}),this.updateValueAndValidity({
-onlySelf:o,emitEvent:i})},e.prototype.patchValue=function(t,e){var n=this,r=void 0===e?{}:e,o=r.onlySelf,i=r.emitEvent;Object.keys(t).forEach(function(e){n.controls[e]&&n.controls[e].patchValue(t[e],{onlySelf:!0,emitEvent:i})}),this.updateValueAndValidity({onlySelf:o,emitEvent:i})},e.prototype.reset=function(t,e){void 0===t&&(t={});var n=void 0===e?{}:e,r=n.onlySelf,o=n.emitEvent;this._forEachChild(function(e,n){e.reset(t[n],{onlySelf:!0,emitEvent:o})}),this.updateValueAndValidity({onlySelf:r,emitEvent:o}),this._updatePristine({onlySelf:r}),this._updateTouched({onlySelf:r})},e.prototype.getRawValue=function(){return this._reduceChildren({},function(t,e,n){return t[n]=e.value,t})},e.prototype._throwIfControlMissing=function(t){if(!Object.keys(this.controls).length)throw new Error("\n        There are no form controls registered with this group yet.  If you're using ngModel,\n        you may want to check next tick (e.g. use setTimeout).\n      ");if(!this.controls[t])throw new Error("Cannot find form control with name: "+t+".")},e.prototype._forEachChild=function(t){var e=this;Object.keys(this.controls).forEach(function(n){return t(e.controls[n],n)})},e.prototype._setUpControls=function(){var t=this;this._forEachChild(function(e){e.setParent(t),e._registerOnCollectionChange(t._onCollectionChange)})},e.prototype._updateValue=function(){this._value=this._reduceValue()},e.prototype._anyControls=function(t){var e=this,n=!1;return this._forEachChild(function(r,o){n=n||e.contains(o)&&t(r)}),n},e.prototype._reduceValue=function(){var t=this;return this._reduceChildren({},function(e,n,r){return(n.enabled||t.disabled)&&(e[r]=n.value),e})},e.prototype._reduceChildren=function(t,e){var n=t;return this._forEachChild(function(t,r){n=e(n,t,r)}),n},e.prototype._allControlsDisabled=function(){for(var t=0,e=Object.keys(this.controls);t<e.length;t++){var n=e[t];if(this.controls[n].enabled)return!1}return Object.keys(this.controls).length>0||this.disabled},e.prototype._checkAllValuesPresent=function(t){this._forEachChild(function(e,n){if(void 0===t[n])throw new Error("Must supply a value for form control with name: '"+n+"'.")})},e}(Et),Rt=function(t){function e(e,n,r){void 0===n&&(n=null),void 0===r&&(r=null),t.call(this,n,r),this.controls=e,this._initObservables(),this._setUpControls(),this.updateValueAndValidity({onlySelf:!0,emitEvent:!1})}return xt(e,t),e.prototype.at=function(t){return this.controls[t]},e.prototype.push=function(t){this.controls.push(t),this._registerControl(t),this.updateValueAndValidity(),this._onCollectionChange()},e.prototype.insert=function(t,e){this.controls.splice(t,0,e),this._registerControl(e),this.updateValueAndValidity(),this._onCollectionChange()},e.prototype.removeAt=function(t){this.controls[t]&&this.controls[t]._registerOnCollectionChange(function(){}),this.controls.splice(t,1),this.updateValueAndValidity(),this._onCollectionChange()},e.prototype.setControl=function(t,e){this.controls[t]&&this.controls[t]._registerOnCollectionChange(function(){}),this.controls.splice(t,1),e&&(this.controls.splice(t,0,e),this._registerControl(e)),this.updateValueAndValidity(),this._onCollectionChange()},Object.defineProperty(e.prototype,"length",{get:function(){return this.controls.length},enumerable:!0,configurable:!0}),e.prototype.setValue=function(t,e){var n=this,r=void 0===e?{}:e,o=r.onlySelf,i=r.emitEvent;this._checkAllValuesPresent(t),t.forEach(function(t,e){n._throwIfControlMissing(e),n.at(e).setValue(t,{onlySelf:!0,emitEvent:i})}),this.updateValueAndValidity({onlySelf:o,emitEvent:i})},e.prototype.patchValue=function(t,e){var n=this,r=void 0===e?{}:e,o=r.onlySelf,i=r.emitEvent;t.forEach(function(t,e){n.at(e)&&n.at(e).patchValue(t,{onlySelf:!0,emitEvent:i})}),this.updateValueAndValidity({onlySelf:o,emitEvent:i})},e.prototype.reset=function(t,e){void 0===t&&(t=[]);var n=void 0===e?{}:e,r=n.onlySelf,o=n.emitEvent;this._forEachChild(function(e,n){e.reset(t[n],{onlySelf:!0,emitEvent:o})}),this.updateValueAndValidity({onlySelf:r,emitEvent:o}),this._updatePristine({onlySelf:r}),this._updateTouched({onlySelf:r})},e.prototype.getRawValue=function(){return this.controls.map(function(t){return t.value})},e.prototype._throwIfControlMissing=function(t){if(!this.controls.length)throw new Error("\n        There are no form controls registered with this array yet.  If you're using ngModel,\n        you may want to check next tick (e.g. use setTimeout).\n      ");if(!this.at(t))throw new Error("Cannot find form control at index "+t)},e.prototype._forEachChild=function(t){this.controls.forEach(function(e,n){t(e,n)})},e.prototype._updateValue=function(){var t=this;this._value=this.controls.filter(function(e){return e.enabled||t.disabled}).map(function(t){return t.value})},e.prototype._anyControls=function(t){return this.controls.some(function(e){return e.enabled&&t(e)})},e.prototype._setUpControls=function(){var t=this;this._forEachChild(function(e){return t._registerControl(e)})},e.prototype._checkAllValuesPresent=function(t){this._forEachChild(function(e,n){if(void 0===t[n])throw new Error("Must supply a value for form control at index: "+n+".")})},e.prototype._allControlsDisabled=function(){for(var t=0,e=this.controls;t<e.length;t++){var n=e[t];if(n.enabled)return!1}return this.controls.length>0||this.disabled},e.prototype._registerControl=function(t){t.setParent(this),t._registerOnCollectionChange(this._onCollectionChange)},e}(Et),Mt=this&&this.__extends||function(t,e){function n(){this.constructor=t}for(var r in e)e.hasOwnProperty(r)&&(t[r]=e[r]);t.prototype=null===e?Object.create(e):(n.prototype=e.prototype,new n)},Vt={provide:U,useExisting:e.forwardRef(function(){return Dt})},Nt=Promise.resolve(null),Dt=function(t){function n(e,n){t.call(this),this._submitted=!1,this.ngSubmit=new kt,this.form=new jt({},E(e),T(n))}return Mt(n,t),Object.defineProperty(n.prototype,"submitted",{get:function(){return this._submitted},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"formDirective",{get:function(){return this},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"control",{get:function(){return this.form},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"path",{get:function(){return[]},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"controls",{get:function(){return this.form.controls},enumerable:!0,configurable:!0}),n.prototype.addControl=function(t){var e=this;Nt.then(function(){var n=e._findContainer(t.path);t._control=n.registerControl(t.name,t.control),x(t.control,t),t.control.updateValueAndValidity({emitEvent:!1})})},n.prototype.getControl=function(t){return this.form.get(t.path)},n.prototype.removeControl=function(t){var e=this;Nt.then(function(){var n=e._findContainer(t.path);n&&n.removeControl(t.name)})},n.prototype.addFormGroup=function(t){var e=this;Nt.then(function(){var n=e._findContainer(t.path),r=new jt({});O(r,t),n.registerControl(t.name,r),r.updateValueAndValidity({emitEvent:!1})})},n.prototype.removeFormGroup=function(t){var e=this;Nt.then(function(){var n=e._findContainer(t.path);n&&n.removeControl(t.name)})},n.prototype.getFormGroup=function(t){return this.form.get(t.path)},n.prototype.updateModel=function(t,e){var n=this;Nt.then(function(){var r=n.form.get(t.path);r.setValue(e)})},n.prototype.setValue=function(t){this.control.setValue(t)},n.prototype.onSubmit=function(t){return this._submitted=!0,this.ngSubmit.emit(t),!1},n.prototype.onReset=function(){this.resetForm()},n.prototype.resetForm=function(t){void 0===t&&(t=void 0),this.form.reset(t),this._submitted=!1},n.prototype._findContainer=function(t){return t.pop(),t.length?this.form.get(t):this.form},n.decorators=[{type:e.Directive,args:[{selector:"form:not([ngNoForm]):not([formGroup]),ngForm,[ngForm]",providers:[Vt],host:{"(submit)":"onSubmit($event)","(reset)":"onReset()"},outputs:["ngSubmit"],exportAs:"ngForm"}]}],n.ctorParameters=function(){return[{type:Array,decorators:[{type:e.Optional},{type:e.Self},{type:e.Inject,args:[z]}]},{type:Array,decorators:[{type:e.Optional},{type:e.Self},{type:e.Inject,args:[$]}]}]},n}(U),Bt={formControlName:'\n    <div [formGroup]="myGroup">\n      <input formControlName="firstName">\n    </div>\n\n    In your class:\n\n    this.myGroup = new FormGroup({\n       firstName: new FormControl()\n    });',formGroupName:'\n    <div [formGroup]="myGroup">\n       <div formGroupName="person">\n          <input formControlName="firstName">\n       </div>\n    </div>\n\n    In your class:\n\n    this.myGroup = new FormGroup({\n       person: new FormGroup({ firstName: new FormControl() })\n    });',formArrayName:'\n    <div [formGroup]="myGroup">\n      <div formArrayName="cities">\n        <div *ngFor="let city of cityArray.controls; let i=index">\n          <input [formControlName]="i">\n        </div>\n      </div>\n    </div>\n\n    In your class:\n\n    this.cityArray = new FormArray([new FormControl(\'SF\')]);\n    this.myGroup = new FormGroup({\n      cities: this.cityArray\n    });',ngModelGroup:'\n    <form>\n       <div ngModelGroup="person">\n          <input [(ngModel)]="person.name" name="firstName">\n       </div>\n    </form>',ngModelWithFormGroup:'\n    <div [formGroup]="myGroup">\n       <input formControlName="firstName">\n       <input [(ngModel)]="showMoreControls" [ngModelOptions]="{standalone: true}">\n    </div>\n  '},It=function(){function t(){}return t.modelParentException=function(){throw new Error('\n      ngModel cannot be used to register form controls with a parent formGroup directive.  Try using\n      formGroup\'s partner directive "formControlName" instead.  Example:\n\n      '+Bt.formControlName+"\n\n      Or, if you'd like to avoid registering this form control, indicate that it's standalone in ngModelOptions:\n\n      Example:\n\n      "+Bt.ngModelWithFormGroup)},t.formGroupNameException=function(){throw new Error("\n      ngModel cannot be used to register form controls with a parent formGroupName or formArrayName directive.\n\n      Option 1: Use formControlName instead of ngModel (reactive strategy):\n\n      "+Bt.formGroupName+"\n\n      Option 2:  Update ngModel's parent be ngModelGroup (template-driven strategy):\n\n      "+Bt.ngModelGroup)},t.missingNameException=function(){throw new Error('If ngModel is used within a form tag, either the name attribute must be set or the form\n      control must be defined as \'standalone\' in ngModelOptions.\n\n      Example 1: <input [(ngModel)]="person.firstName" name="first">\n      Example 2: <input [(ngModel)]="person.firstName" [ngModelOptions]="{standalone: true}">')},t.modelGroupParentException=function(){throw new Error("\n      ngModelGroup cannot be used with a parent formGroup directive.\n\n      Option 1: Use formGroupName instead of ngModelGroup (reactive strategy):\n\n      "+Bt.formGroupName+"\n\n      Option 2:  Use a regular form tag instead of the formGroup directive (template-driven strategy):\n\n      "+Bt.ngModelGroup)},t}(),Ft=this&&this.__extends||function(t,e){function n(){this.constructor=t}for(var r in e)e.hasOwnProperty(r)&&(t[r]=e[r]);t.prototype=null===e?Object.create(e):(n.prototype=e.prototype,new n)},Lt={provide:U,useExisting:e.forwardRef(function(){return Ut})},Ut=function(t){function n(e,n,r){t.call(this),this._parent=e,this._validators=n,this._asyncValidators=r}return Ft(n,t),n.prototype._checkParentType=function(){this._parent instanceof n||this._parent instanceof Dt||It.modelGroupParentException()},n.decorators=[{type:e.Directive,args:[{selector:"[ngModelGroup]",providers:[Lt],exportAs:"ngModelGroup"}]}],n.ctorParameters=function(){return[{type:U,decorators:[{type:e.Host},{type:e.SkipSelf}]},{type:Array,decorators:[{type:e.Optional},{type:e.Self},{type:e.Inject,args:[z]}]},{type:Array,decorators:[{type:e.Optional},{type:e.Self},{type:e.Inject,args:[$]}]}]},n.propDecorators={name:[{type:e.Input,args:["ngModelGroup"]}]},n}(mt),qt=this&&this.__extends||function(t,e){function n(){this.constructor=t}for(var r in e)e.hasOwnProperty(r)&&(t[r]=e[r]);t.prototype=null===e?Object.create(e):(n.prototype=e.prototype,new n)},Gt={provide:nt,useExisting:e.forwardRef(function(){return zt})},Ht=Promise.resolve(null),zt=function(t){function n(e,n,r,o){t.call(this),this._control=new Tt,this._registered=!1,this.update=new kt,this._parent=e,this._rawValidators=n||[],this._rawAsyncValidators=r||[],this.valueAccessor=M(this,o)}return qt(n,t),n.prototype.ngOnChanges=function(t){this._checkForErrors(),this._registered||this._setUpControl(),"isDisabled"in t&&this._updateDisabled(t),j(t,this.viewModel)&&(this._updateValue(this.model),this.viewModel=this.model)},n.prototype.ngOnDestroy=function(){this.formDirective&&this.formDirective.removeControl(this)},Object.defineProperty(n.prototype,"control",{get:function(){return this._control},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"path",{get:function(){return this._parent?k(this.name,this._parent):[this.name]},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"formDirective",{get:function(){return this._parent?this._parent.formDirective:null},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"validator",{get:function(){return E(this._rawValidators)},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"asyncValidator",{get:function(){return T(this._rawAsyncValidators)},enumerable:!0,configurable:!0}),n.prototype.viewToModelUpdate=function(t){this.viewModel=t,this.update.emit(t)},n.prototype._setUpControl=function(){this._isStandalone()?this._setUpStandalone():this.formDirective.addControl(this),this._registered=!0},n.prototype._isStandalone=function(){return!this._parent||this.options&&this.options.standalone},n.prototype._setUpStandalone=function(){x(this._control,this),this._control.updateValueAndValidity({emitEvent:!1})},n.prototype._checkForErrors=function(){this._isStandalone()||this._checkParentType(),this._checkName()},n.prototype._checkParentType=function(){!(this._parent instanceof Ut)&&this._parent instanceof mt?It.formGroupNameException():this._parent instanceof Ut||this._parent instanceof Dt||It.modelParentException()},n.prototype._checkName=function(){this.options&&this.options.name&&(this.name=this.options.name),this._isStandalone()||this.name||It.missingNameException()},n.prototype._updateValue=function(t){var e=this;Ht.then(function(){e.control.setValue(t,{emitViewToModelChange:!1})})},n.prototype._updateDisabled=function(t){var e=this,n=t.isDisabled.currentValue,r=""===n||n&&"false"!==n;Ht.then(function(){r&&!e.control.disabled?e.control.disable():!r&&e.control.disabled&&e.control.enable()})},n.decorators=[{type:e.Directive,args:[{selector:"[ngModel]:not([formControlName]):not([formControl])",providers:[Gt],exportAs:"ngModel"}]}],n.ctorParameters=function(){return[{type:U,decorators:[{type:e.Optional},{type:e.Host}]},{type:Array,decorators:[{type:e.Optional},{type:e.Self},{type:e.Inject,args:[z]}]},{type:Array,decorators:[{type:e.Optional},{type:e.Self},{type:e.Inject,args:[$]}]},{type:Array,decorators:[{type:e.Optional},{type:e.Self},{type:e.Inject,args:[J]}]}]},n.propDecorators={name:[{type:e.Input}],isDisabled:[{type:e.Input,args:["disabled"]}],model:[{type:e.Input,args:["ngModel"]}],options:[{type:e.Input,args:["ngModelOptions"]}],update:[{type:e.Output,args:["ngModelChange"]}]},n}(nt),$t=function(){function t(){}return t.controlParentException=function(){throw new Error("formControlName must be used with a parent formGroup directive.  You'll want to add a formGroup\n       directive and pass it an existing FormGroup instance (you can create one in your class).\n\n      Example:\n\n      "+Bt.formControlName)},t.ngModelGroupException=function(){throw new Error('formControlName cannot be used with an ngModelGroup parent. It is only compatible with parents\n       that also have a "form" prefix: formGroupName, formArrayName, or formGroup.\n\n       Option 1:  Update the parent to be formGroupName (reactive form strategy)\n\n        '+Bt.formGroupName+"\n\n        Option 2: Use ngModel instead of formControlName (template-driven strategy)\n\n        "+Bt.ngModelGroup)},t.missingFormException=function(){throw new Error("formGroup expects a FormGroup instance. Please pass one in.\n\n       Example:\n\n       "+Bt.formControlName)},t.groupParentException=function(){throw new Error("formGroupName must be used with a parent formGroup directive.  You'll want to add a formGroup\n      directive and pass it an existing FormGroup instance (you can create one in your class).\n\n      Example:\n\n      "+Bt.formGroupName)},t.arrayParentException=function(){throw new Error("formArrayName must be used with a parent formGroup directive.  You'll want to add a formGroup\n       directive and pass it an existing FormGroup instance (you can create one in your class).\n\n        Example:\n\n        "+Bt.formArrayName)},t.disabledAttrWarning=function(){console.warn("\n      It looks like you're using the disabled attribute with a reactive form directive. If you set disabled to true\n      when you set up this control in your component class, the disabled attribute will actually be set in the DOM for\n      you. We recommend using this approach to avoid 'changed after checked' errors.\n       \n      Example: \n      form = new FormGroup({\n        first: new FormControl({value: 'Nancy', disabled: true}, Validators.required),\n        last: new FormControl('Drew', Validators.required)\n      });\n    ")},t}(),Wt=this&&this.__extends||function(t,e){function n(){this.constructor=t}for(var r in e)e.hasOwnProperty(r)&&(t[r]=e[r]);t.prototype=null===e?Object.create(e):(n.prototype=e.prototype,new n)},Jt={provide:nt,useExisting:e.forwardRef(function(){return Yt})},Yt=function(t){function n(e,n,r){t.call(this),this.update=new kt,this._rawValidators=e||[],this._rawAsyncValidators=n||[],this.valueAccessor=M(this,r)}return Wt(n,t),Object.defineProperty(n.prototype,"isDisabled",{set:function(t){$t.disabledAttrWarning()},enumerable:!0,configurable:!0}),n.prototype.ngOnChanges=function(t){this._isControlChanged(t)&&(x(this.form,this),this.control.disabled&&this.valueAccessor.setDisabledState&&this.valueAccessor.setDisabledState(!0),this.form.updateValueAndValidity({emitEvent:!1})),j(t,this.viewModel)&&(this.form.setValue(this.model),this.viewModel=this.model)},Object.defineProperty(n.prototype,"path",{get:function(){return[]},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"validator",{get:function(){return E(this._rawValidators)},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"asyncValidator",{get:function(){return T(this._rawAsyncValidators)},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"control",{get:function(){return this.form},enumerable:!0,configurable:!0}),n.prototype.viewToModelUpdate=function(t){this.viewModel=t,this.update.emit(t)},n.prototype._isControlChanged=function(t){return t.hasOwnProperty("form")},n.decorators=[{type:e.Directive,args:[{selector:"[formControl]",providers:[Jt],exportAs:"ngForm"}]}],n.ctorParameters=function(){return[{type:Array,decorators:[{type:e.Optional},{type:e.Self},{type:e.Inject,args:[z]}]},{type:Array,decorators:[{type:e.Optional},{type:e.Self},{type:e.Inject,args:[$]}]},{type:Array,decorators:[{type:e.Optional},{type:e.Self},{type:e.Inject,args:[J]}]}]},n.propDecorators={form:[{type:e.Input,args:["formControl"]}],model:[{type:e.Input,args:["ngModel"]}],update:[{type:e.Output,args:["ngModelChange"]}],isDisabled:[{type:e.Input,args:["disabled"]}]},n}(nt),Kt=this&&this.__extends||function(t,e){function n(){this.constructor=t}for(var r in e)e.hasOwnProperty(r)&&(t[r]=e[r]);t.prototype=null===e?Object.create(e):(n.prototype=e.prototype,new n)},Xt={provide:U,useExisting:e.forwardRef(function(){return Zt})},Zt=function(t){function n(e,n){t.call(this),this._validators=e,this._asyncValidators=n,this._submitted=!1,this.directives=[],this.form=null,this.ngSubmit=new kt}return Kt(n,t),n.prototype.ngOnChanges=function(t){this._checkFormPresent(),t.hasOwnProperty("form")&&(this._updateValidators(),this._updateDomValue(),this._updateRegistrations())},Object.defineProperty(n.prototype,"submitted",{get:function(){return this._submitted},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"formDirective",{get:function(){return this},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"control",{get:function(){return this.form},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"path",{get:function(){return[]},enumerable:!0,configurable:!0}),n.prototype.addControl=function(t){var e=this.form.get(t.path);return x(e,t),e.updateValueAndValidity({emitEvent:!1}),this.directives.push(t),e},n.prototype.getControl=function(t){return this.form.get(t.path)},n.prototype.removeControl=function(t){G.remove(this.directives,t)},n.prototype.addFormGroup=function(t){var e=this.form.get(t.path);O(e,t),e.updateValueAndValidity({emitEvent:!1})},n.prototype.removeFormGroup=function(t){},n.prototype.getFormGroup=function(t){return this.form.get(t.path)},n.prototype.addFormArray=function(t){var e=this.form.get(t.path);O(e,t),e.updateValueAndValidity({emitEvent:!1})},n.prototype.removeFormArray=function(t){},n.prototype.getFormArray=function(t){return this.form.get(t.path)},n.prototype.updateModel=function(t,e){var n=this.form.get(t.path);n.setValue(e)},n.prototype.onSubmit=function(t){return this._submitted=!0,this.ngSubmit.emit(t),!1},n.prototype.onReset=function(){this.resetForm()},n.prototype.resetForm=function(t){void 0===t&&(t=void 0),this.form.reset(t),this._submitted=!1},n.prototype._updateDomValue=function(){var t=this;this.directives.forEach(function(e){var n=t.form.get(e.path);e._control!==n&&(P(e._control,e),n&&x(n,e),e._control=n)}),this.form._updateTreeValidity({emitEvent:!1})},n.prototype._updateRegistrations=function(){var t=this;this.form._registerOnCollectionChange(function(){return t._updateDomValue()}),this._oldForm&&this._oldForm._registerOnCollectionChange(function(){}),this._oldForm=this.form},n.prototype._updateValidators=function(){var t=E(this._validators);this.form.validator=W.compose([this.form.validator,t]);var e=T(this._asyncValidators);this.form.asyncValidator=W.composeAsync([this.form.asyncValidator,e])},n.prototype._checkFormPresent=function(){this.form||$t.missingFormException()},n.decorators=[{type:e.Directive,args:[{selector:"[formGroup]",providers:[Xt],host:{"(submit)":"onSubmit($event)","(reset)":"onReset()"},exportAs:"ngForm"}]}],n.ctorParameters=function(){return[{type:Array,decorators:[{type:e.Optional},{type:e.Self},{type:e.Inject,args:[z]}]},{type:Array,decorators:[{type:e.Optional},{type:e.Self},{type:e.Inject,args:[$]}]}]},n.propDecorators={form:[{type:e.Input,args:["formGroup"]}],ngSubmit:[{type:e.Output}]},n}(U),Qt=this&&this.__extends||function(t,e){function n(){this.constructor=t}for(var r in e)e.hasOwnProperty(r)&&(t[r]=e[r]);t.prototype=null===e?Object.create(e):(n.prototype=e.prototype,new n)},te={provide:U,useExisting:e.forwardRef(function(){return ee})},ee=function(t){function n(e,n,r){t.call(this),this._parent=e,this._validators=n,this._asyncValidators=r}return Qt(n,t),n.prototype._checkParentType=function(){I(this._parent)&&$t.groupParentException()},n.decorators=[{type:e.Directive,args:[{selector:"[formGroupName]",providers:[te]}]}],n.ctorParameters=function(){return[{type:U,decorators:[{type:e.Optional},{type:e.Host},{type:e.SkipSelf}]},{type:Array,decorators:[{type:e.Optional},{type:e.Self},{type:e.Inject,args:[z]}]},{type:Array,decorators:[{type:e.Optional},{type:e.Self},{type:e.Inject,args:[$]}]}]},n.propDecorators={name:[{type:e.Input,args:["formGroupName"]}]},n}(mt),ne={provide:U,useExisting:e.forwardRef(function(){return re})},re=function(t){function n(e,n,r){t.call(this),this._parent=e,this._validators=n,this._asyncValidators=r}return Qt(n,t),n.prototype.ngOnInit=function(){this._checkParentType(),this.formDirective.addFormArray(this)},n.prototype.ngOnDestroy=function(){this.formDirective&&this.formDirective.removeFormArray(this)},Object.defineProperty(n.prototype,"control",{get:function(){return this.formDirective.getFormArray(this)},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"formDirective",{get:function(){return this._parent?this._parent.formDirective:null},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"path",{get:function(){return k(this.name,this._parent)},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"validator",{get:function(){return E(this._validators)},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"asyncValidator",{get:function(){return T(this._asyncValidators)},enumerable:!0,configurable:!0}),n.prototype._checkParentType=function(){I(this._parent)&&$t.arrayParentException()},n.decorators=[{type:e.Directive,args:[{selector:"[formArrayName]",providers:[ne]}]}],n.ctorParameters=function(){return[{type:U,decorators:[{type:e.Optional},{type:e.Host},{type:e.SkipSelf}]},{type:Array,decorators:[{type:e.Optional},{type:e.Self},{type:e.Inject,args:[z]}]},{type:Array,decorators:[{type:e.Optional},{type:e.Self},{type:e.Inject,args:[$]}]}]},n.propDecorators={name:[{type:e.Input,args:["formArrayName"]}]},n}(U),oe=this&&this.__extends||function(t,e){function n(){this.constructor=t}for(var r in e)e.hasOwnProperty(r)&&(t[r]=e[r]);t.prototype=null===e?Object.create(e):(n.prototype=e.prototype,new n)},ie={provide:nt,useExisting:e.forwardRef(function(){return se})},se=function(t){function n(e,n,r,o){t.call(this),this._added=!1,this.update=new kt,this._parent=e,this._rawValidators=n||[],this._rawAsyncValidators=r||[],this.valueAccessor=M(this,o)}return oe(n,t),Object.defineProperty(n.prototype,"isDisabled",{set:function(t){$t.disabledAttrWarning()},enumerable:!0,configurable:!0}),n.prototype.ngOnChanges=function(t){this._added||this._setUpControl(),j(t,this.viewModel)&&(this.viewModel=this.model,this.formDirective.updateModel(this,this.model))},n.prototype.ngOnDestroy=function(){this.formDirective&&this.formDirective.removeControl(this)},n.prototype.viewToModelUpdate=function(t){this.viewModel=t,this.update.emit(t)},Object.defineProperty(n.prototype,"path",{get:function(){return k(this.name,this._parent)},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"formDirective",{get:function(){return this._parent?this._parent.formDirective:null},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"validator",{get:function(){return E(this._rawValidators)},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"asyncValidator",{get:function(){return T(this._rawAsyncValidators)},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"control",{get:function(){return this._control},enumerable:!0,configurable:!0}),n.prototype._checkParentType=function(){!(this._parent instanceof ee)&&this._parent instanceof mt?$t.ngModelGroupException():this._parent instanceof ee||this._parent instanceof Zt||this._parent instanceof re||$t.controlParentException()},n.prototype._setUpControl=function(){this._checkParentType(),this._control=this.formDirective.addControl(this),this.control.disabled&&this.valueAccessor.setDisabledState&&this.valueAccessor.setDisabledState(!0),this._added=!0},n.decorators=[{type:e.Directive,args:[{selector:"[formControlName]",providers:[ie]}]}],n.ctorParameters=function(){return[{type:U,decorators:[{type:e.Optional},{type:e.Host},{type:e.SkipSelf}]},{type:Array,decorators:[{type:e.Optional},{type:e.Self},{type:e.Inject,args:[z]}]},{type:Array,decorators:[{type:e.Optional},{type:e.Self},{type:e.Inject,args:[$]}]},{type:Array,decorators:[{type:e.Optional},{type:e.Self},{type:e.Inject,args:[J]}]}]},n.propDecorators={name:[{type:e.Input,args:["formControlName"]}],model:[{type:e.Input,args:["ngModel"]}],update:[{type:e.Output,args:["ngModelChange"]}],isDisabled:[{type:e.Input,args:["disabled"]}]},n}(nt),ae=this&&this.__extends||function(t,e){function n(){this.constructor=t}for(var r in e)e.hasOwnProperty(r)&&(t[r]=e[r]);t.prototype=null===e?Object.create(e):(n.prototype=e.prototype,new n)},ce={provide:z,useExisting:e.forwardRef(function(){return ue}),multi:!0},le={provide:z,useExisting:e.forwardRef(function(){return pe}),multi:!0},ue=function(){function t(){}return Object.defineProperty(t.prototype,"required",{get:function(){return this._required},set:function(t){this._required=null!=t&&t!==!1&&""+t!="false",this._onChange&&this._onChange()},enumerable:!0,configurable:!0}),t.prototype.validate=function(t){return this.required?W.required(t):null},t.prototype.registerOnValidatorChange=function(t){this._onChange=t},t.decorators=[{type:e.Directive,args:[{selector:":not([type=checkbox])[required][formControlName],:not([type=checkbox])[required][formControl],:not([type=checkbox])[required][ngModel]",providers:[ce],host:{"[attr.required]":'required ? "" : null'}}]}],t.ctorParameters=function(){return[]},t.propDecorators={required:[{type:e.Input}]},t}(),pe=function(t){function n(){t.apply(this,arguments)}return ae(n,t),n.prototype.validate=function(t){return this.required?W.requiredTrue(t):null},n.decorators=[{type:e.Directive,args:[{selector:"input[type=checkbox][required][formControlName],input[type=checkbox][required][formControl],input[type=checkbox][required][ngModel]",providers:[le],host:{"[attr.required]":'required ? "" : null'}}]}],n.ctorParameters=function(){return[]},n}(ue),he={provide:z,useExisting:e.forwardRef(function(){return de}),multi:!0},de=function(){function t(){}return t.prototype.ngOnChanges=function(t){"minlength"in t&&(this._createValidator(),this._onChange&&this._onChange())},t.prototype.validate=function(t){return null==this.minlength?null:this._validator(t)},t.prototype.registerOnValidatorChange=function(t){this._onChange=t},t.prototype._createValidator=function(){this._validator=W.minLength(parseInt(this.minlength,10))},t.decorators=[{type:e.Directive,args:[{selector:"[minlength][formControlName],[minlength][formControl],[minlength][ngModel]",providers:[he],host:{"[attr.minlength]":"minlength ? minlength : null"}}]}],t.ctorParameters=function(){return[]},t.propDecorators={minlength:[{type:e.Input}]},t}(),fe={provide:z,useExisting:e.forwardRef(function(){return ge}),multi:!0},ge=function(){function t(){}return t.prototype.ngOnChanges=function(t){"maxlength"in t&&(this._createValidator(),this._onChange&&this._onChange())},t.prototype.validate=function(t){return null!=this.maxlength?this._validator(t):null},t.prototype.registerOnValidatorChange=function(t){this._onChange=t},t.prototype._createValidator=function(){this._validator=W.maxLength(parseInt(this.maxlength,10))},t.decorators=[{type:e.Directive,args:[{selector:"[maxlength][formControlName],[maxlength][formControl],[maxlength][ngModel]",providers:[fe],host:{"[attr.maxlength]":"maxlength ? maxlength : null"}}]}],t.ctorParameters=function(){return[]},t.propDecorators={maxlength:[{type:e.Input}]},t}(),me={provide:z,useExisting:e.forwardRef(function(){return ye}),multi:!0},ye=function(){function t(){}return t.prototype.ngOnChanges=function(t){"pattern"in t&&(this._createValidator(),this._onChange&&this._onChange())},t.prototype.validate=function(t){return this._validator(t)},t.prototype.registerOnValidatorChange=function(t){this._onChange=t},t.prototype._createValidator=function(){this._validator=W.pattern(this.pattern)},t.decorators=[{type:e.Directive,args:[{selector:"[pattern][formControlName],[pattern][formControl],[pattern][ngModel]",providers:[me],host:{"[attr.pattern]":"pattern ? pattern : null"}}]}],t.ctorParameters=function(){return[]},t.propDecorators={pattern:[{type:e.Input}]},t}(),ve=function(){function t(){}return t.prototype.group=function(t,e){void 0===e&&(e=null);var n=this._reduceControls(t),r=s(e)?e.validator:null,o=s(e)?e.asyncValidator:null;return new jt(n,r,o)},t.prototype.control=function(t,e,n){return void 0===e&&(e=null),void 0===n&&(n=null),new Tt(t,e,n)},t.prototype.array=function(t,e,n){
-var r=this;void 0===e&&(e=null),void 0===n&&(n=null);var o=t.map(function(t){return r._createControl(t)});return new Rt(o,e,n)},t.prototype._reduceControls=function(t){var e=this,n={};return Object.keys(t).forEach(function(r){n[r]=e._createControl(t[r])}),n},t.prototype._createControl=function(t){if(t instanceof Tt||t instanceof jt||t instanceof Rt)return t;if(Array.isArray(t)){var e=t[0],n=t.length>1?t[1]:null,r=t.length>2?t[2]:null;return this.control(e,n,r)}return this.control(t)},t.decorators=[{type:e.Injectable}],t.ctorParameters=function(){return[]},t}(),be=new e.Version("2.4.2"),_e=[ut,dt,Z,tt,at,K,lt,ht,it,_t,wt,ue,de,ge,ye,pe],we=[zt,Ut,Dt],Ce=[Yt,Zt,se,ee,re],ke=function(){function t(){}return t.decorators=[{type:e.NgModule,args:[{declarations:_e,exports:_e}]}],t.ctorParameters=function(){return[]},t}(),xe=function(){function t(){}return t.decorators=[{type:e.NgModule,args:[{declarations:we,providers:[ot],exports:[ke,we]}]}],t.ctorParameters=function(){return[]},t}(),Pe=function(){function t(){}return t.decorators=[{type:e.NgModule,args:[{declarations:[Ce],providers:[ve,ot],exports:[ke,Ce]}]}],t.ctorParameters=function(){return[]},t}();t.AbstractControlDirective=F,t.AbstractFormGroupDirective=mt,t.CheckboxControlValueAccessor=K,t.ControlContainer=U,t.NG_VALUE_ACCESSOR=J,t.DefaultValueAccessor=Z,t.NgControl=nt,t.NgControlStatus=_t,t.NgControlStatusGroup=wt,t.NgForm=Dt,t.NgModel=zt,t.NgModelGroup=Ut,t.RadioControlValueAccessor=it,t.FormControlDirective=Yt,t.FormControlName=se,t.FormGroupDirective=Zt,t.FormArrayName=re,t.FormGroupName=ee,t.NgSelectOption=ut,t.SelectControlValueAccessor=lt,t.SelectMultipleControlValueAccessor=ht,t.CheckboxRequiredValidator=pe,t.MaxLengthValidator=ge,t.MinLengthValidator=de,t.PatternValidator=ye,t.RequiredValidator=ue,t.FormBuilder=ve,t.AbstractControl=Et,t.FormArray=Rt,t.FormControl=Tt,t.FormGroup=jt,t.NG_ASYNC_VALIDATORS=$,t.NG_VALIDATORS=z,t.Validators=W,t.VERSION=be,t.FormsModule=xe,t.ReactiveFormsModule=Pe})},59:function(t,e,n){"use strict";var r=this&&this.__decorate||function(t,e,n,r){var o,i=arguments.length,s=i<3?e:null===r?r=Object.getOwnPropertyDescriptor(e,n):r;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(t,e,n,r);else for(var a=t.length-1;a>=0;a--)(o=t[a])&&(s=(i<3?o(s):i>3?o(e,n,s):o(e,n))||s);return i>3&&s&&Object.defineProperty(e,n,s),s},o=this&&this.__metadata||function(t,e){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(t,e)},i=n(3),s=n(29),a=n(60),c=function(){function t(t,e,n){var r=this;this.router=t,this.authProvider=e,this.zone=n,this.isLoggedIn=!1,this.authProvider.isLoggedIn.subscribe(function(t){r.router.navigate([t?"/dashboard":"/login"]),r.zone.run(function(){return r.isLoggedIn=t})}),this.router.events.forEach(function(t){t instanceof s.NavigationStart&&(r.authProvider.isLoggedIn||"/login"===t.url||"/register"===t.url||r.router.navigate(["/login"]))})}return t}();c=r([i.Component({selector:"app",template:n(355),styles:[n(356)],encapsulation:i.ViewEncapsulation.None}),o("design:paramtypes",[s.Router,a.AuthProvider,i.NgZone])],c),e.AppComponent=c},60:function(t,e,n){"use strict";var r=this&&this.__decorate||function(t,e,n,r){var o,i=arguments.length,s=i<3?e:null===r?r=Object.getOwnPropertyDescriptor(e,n):r;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(t,e,n,r);else for(var a=t.length-1;a>=0;a--)(o=t[a])&&(s=(i<3?o(s):i>3?o(e,n,s):o(e,n))||s);return i>3&&s&&Object.defineProperty(e,n,s),s},o=this&&this.__metadata||function(t,e){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(t,e)},i=n(3),s=n(61),a=n(28),c=electron.ipcRenderer,l=function(){function t(t){this.http=t,this._api=i.isDevMode()?"http://localhost:8080/api":"https://uchatapi-frosenos.rhcloud.com/api",this._token=null,this._user={},this.isLoggedIn=new s.Subject,this.User=new s.Subject,this._initialLogin=!1,this.getToken()}return t.prototype.login=function(t){var e=this;return t.type="login",new Promise(function(n,r){e.http.post(e._api+"/login",t).map(function(t){return t.json()}).subscribe(function(t){t.success&&(e.setToken(t.user.Token,!0),e.setUser(t.user)),n(t.success||!1)},function(t){console.error(t),r(!1)})})},t.prototype.register=function(t){var e=this;return t.type="register",new Promise(function(n,r){e.http.post(e._api+"/login",t).map(function(t){return t.json()}).subscribe(function(t){t.success&&e.setToken(t.user.Token,!0),n(t.success||!1)},function(t){console.error(t),r(!1)})})},t.prototype.getToken=function(){var t=this;c.once("get-token",function(e,n){n?t.validateToken(n):t.setToken(null)}),c.send("get-token")},t.prototype.validateToken=function(t){var e=this;this.http.post(this._api+"/token",{Token:t}).map(function(t){return t.json()}).subscribe(function(t){t.success&&e.setUser(t.user)},function(t){return console.error(t)})},t.prototype.setUser=function(t){this._user=t,this.User.next(this._user),this.setToken(this._user.Token,!0)},t.prototype.setToken=function(t,e){var n=this;return void 0===e&&(e=!1),e?(c.once("set-token",function(t,e){return n.setToken(e.token||e)}),void c.send("set-token",{token:t})):(this._token=t,void this.isLoggedIn.next(!!this._token))},Object.defineProperty(t.prototype,"user",{get:function(){return this._user},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"token",{get:function(){return this._token},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"api",{get:function(){return this._api},enumerable:!0,configurable:!0}),t}();l=r([i.Injectable(),o("design:paramtypes",[a.Http])],l),e.AuthProvider=l},355:function(t,e){t.exports='<div class="top-bar" style="-webkit-app-region: drag">\r\n\t<div class="brand">\r\n\t\tUChat\r\n\t</div>\r\n</div>\r\n\r\n<div class="content">\r\n\t<nav class="sidebar" *ngIf="isLoggedIn">\r\n\t\t<a class="nav-link" routerLink="/dashboard" routerLinkActive="active">Dashboard</a>\r\n\t\t<a class="nav-link" routerLink="/commands" routerLinkActive="active">Commands</a>\r\n\t\t<a class="nav-link" routerLink="/chat" routerLinkActive="active">Chat</a>\r\n\t\t<a class="nav-link" routerLink="/settings" routerLinkActive="active">Settings</a>\r\n\t</nav>\r\n\r\n\t<div class="container">\r\n\t\t<router-outlet></router-outlet>\r\n\t</div>\r\n</div>'},356:function(t,e){t.exports="::-webkit-scrollbar{width:10px;height:10px}::-webkit-scrollbar-track{background-color:rgba(204,204,204,0.1)}::-webkit-scrollbar-thumb{background-color:rgba(204,204,204,0.1);box-shadow:inset 0 0 1px rgba(204,204,204,0.2)}::-webkit-scrollbar-thumb:hover{background-color:rgba(204,204,204,0.2)}::-webkit-scrollbar-thumb:active{background-color:rgba(204,204,204,0.3)}.scrollbar-inverse::-webkit-scrollbar-track{background-color:rgba(51,51,51,0.1)}.scrollbar-inverse::-webkit-scrollbar-thumb{background-color:rgba(51,51,51,0.1);box-shadow:inset 0 0 1px rgba(51,51,51,0.2)}.scrollbar-inverse::-webkit-scrollbar-thumb:hover{background-color:rgba(51,51,51,0.2)}.scrollbar-inverse::-webkit-scrollbar-thumb:active{background-color:rgba(51,51,51,0.3)}body{background-color:#333;color:#FEFEFE}:host{position:absolute;left:0;top:0;width:100%;height:100%;overflow:hidden}.card{background-color:#404040;border-radius:0}.card .card-header{background-color:#262626;border-radius:0}.btn{cursor:pointer}app{display:flex;flex-direction:column;height:100%}app .top-bar{flex:1 0 30px;top:0;left:0;width:100%;background-color:#404040}app .top-bar .brand{line-height:30px;padding-left:0.5rem}app .content{flex:1 1 100%;display:flex}app .content .sidebar{flex:1 0 250px;background-color:#404040;border-top:solid 1px #333;transition:flex-basis ease-in-out 0.5s}@media (max-width: 768px){app .content .sidebar{flex-basis:150px}}app .content .sidebar .nav-link{padding-left:1rem;color:#FEFEFE;transition:background-color ease-in-out 0.1s}app .content .sidebar .nav-link:hover{background-color:rgba(255,255,255,0.05)}app .content .sidebar .nav-link:active{background-color:rgba(255,255,255,0.1)}app .content .sidebar .nav-link.active{background-color:rgba(255,255,255,0.05)}app .content .sidebar .nav-link.active:hover{background-color:rgba(255,255,255,0.1)}app .content .sidebar .nav-link.active:active{background-color:rgba(255,255,255,0.02)}app .content .container{flex:1 1 100%;overflow-y:auto}app .form-group:last-child{margin-bottom:0}app .spinner{margin-right:5px;animation:spin 1s linear infinite}app .spinner#searchSpinner{position:absolute;z-index:1;right:1rem;top:0;padding:0.5rem 0.75rem;line-height:1.25rem;color:#999}@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}.chat-hyperlink{cursor:pointer;color:deepskyblue;display:inline-block}.chat-hyperlink:hover{text-decoration:underline}code{border-radius:0;background-color:#333;color:#CCC;border:solid 1px #444}\n"},357:function(t,e,n){(function(t){"use strict";var r=this&&this.__decorate||function(t,e,n,r){var o,i=arguments.length,s=i<3?e:null===r?r=Object.getOwnPropertyDescriptor(e,n):r;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(t,e,n,r);else for(var a=t.length-1;a>=0;a--)(o=t[a])&&(s=(i<3?o(s):i>3?o(e,n,s):o(e,n))||s);return i>3&&s&&Object.defineProperty(e,n,s),s},o=this&&this.__metadata||function(t,e){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(t,e)},i=n(3),s=n(28),a=n(60),c=n(359),l=function(){function e(t,e,n,r){var o=this;this.http=t,this.authProvider=e,this.settingsProvider=n,this.ngZone=r,this.user={},this.settings={},this.saving=!1,this.user=this.authProvider.user,this.settings=this.settingsProvider.settings,this.authProvider.User.subscribe(function(t){return o.user=t}),this.settingsProvider.Settings.subscribe(function(t){o.ngZone.run(function(){return o.settings=t})})}return e.prototype.ngAfterViewInit=function(){t(".dropdown-toggle").dropdown()},e.prototype.saveSettings=function(){var t=this;this.ngZone.run(function(){return t.saving=!0}),this.settingsProvider.save(this.settings).then(function(){return t.ngZone.run(function(){return t.saving=!1})}).catch(function(){return t.ngZone.run(function(){return t.saving=!1})})},e.prototype.setColor=function(t,e,n){var r=this.settings[t].replace("rgba(","").replace(")","").split(","),o=n.target;switch(e){case"r":r[0]=o.value;break;case"g":r[1]=o.value;break;case"b":r[2]=o.value;break;case"a":r[3]=o.value}this.settings[t]="rgba("+r.join(",")+")"},e.prototype.getColor=function(t,e){if(!this.settings.hasOwnProperty(t))return"0";var n=this.settings[t].substr(5,this.settings[t].length-6).split(",");switch(e){case"r":return this.clampNumber(n[0],0,255);case"g":return this.clampNumber(n[1],0,255);case"b":return this.clampNumber(n[2],0,255);case"a":return this.clampNumber(n[3],0,1,!0)}return"0"},e.prototype.clampNumber=function(t,e,n,r){return void 0===r&&(r=!1),"string"==typeof t&&(t=r?parseFloat(t):parseInt(t)),Math.max(e,Math.min(n,t))},e}();l=r([i.Component({selector:"page-settings",template:n(360),styles:[n(361)]}),o("design:paramtypes",[s.Http,a.AuthProvider,c.SettingsProvider,i.NgZone])],l),e.SettingsPage=l}).call(e,n(358))},359:function(t,e,n){"use strict";var r=this&&this.__decorate||function(t,e,n,r){var o,i=arguments.length,s=i<3?e:null===r?r=Object.getOwnPropertyDescriptor(e,n):r;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(t,e,n,r);else for(var a=t.length-1;a>=0;a--)(o=t[a])&&(s=(i<3?o(s):i>3?o(e,n,s):o(e,n))||s);return i>3&&s&&Object.defineProperty(e,n,s),s},o=this&&this.__metadata||function(t,e){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(t,e)},i=n(3),s=n(60),a=n(28),c=n(61),l=function(){function t(t,e){var n=this;this.http=t,this.authProvider=e,this._settings={},this._token=null,this.Settings=new c.Subject,this._token=this.authProvider.token,this.authProvider.isLoggedIn.subscribe(function(t){n._token=n.authProvider.token,n.updateSettings()}),this.updateSettings()}return t.prototype.updateSettings=function(){var t=this;this.http.get(this.authProvider.api+"/settings?token="+this.authProvider.token).map(function(t){return t.json()}).subscribe(function(e){e.success&&(t._settings=e.settings),t.Settings.next(t._settings)},function(t){return console.error(t)})},t.prototype.save=function(t){var e=this;return new Promise(function(n,r){e.http.put(e.authProvider.api+"/settings?token="+e.authProvider.token,t).map(function(t){return t.json()}).subscribe(function(t){t.success&&(e._settings=t.settings),e.Settings.next(e._settings),n(!0)},function(t){console.error(t),r(!1)})})},Object.defineProperty(t.prototype,"settings",{get:function(){return this._settings},enumerable:!0,configurable:!0}),t}();l=r([i.Injectable(),o("design:paramtypes",[a.Http,s.AuthProvider])],l),e.SettingsProvider=l},360:function(t,e){t.exports='<div class="card">\r\n\t<div class="card-header">\r\n\t\t<h4>Services</h4>\r\n\t</div>\r\n\r\n\t<div class="card-block">\r\n\t\t<div class="row">\r\n\t\t\t<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">Beam</div>\r\n\t\t\t<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">\r\n\t\t\t\t<span class="platform-status"\r\n\t\t\t\t\t  [ngClass]="!user.Services ? \'\' : user.Services.Beam.Connected ? \'connected\' : \'\'"></span>\r\n\t\t\t</div>\r\n\r\n\t\t\t<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">LiveEdu</div>\r\n\t\t\t<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">\r\n\t\t\t\t<span class="platform-status"\r\n\t\t\t\t\t  [ngClass]="!user.Services ? \'\' : user.Services.Liveedu.Connected ? \'connected\' : \'\'"></span>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\r\n\t\t<div class="row">\r\n\t\t\t<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">Twitch</div>\r\n\t\t\t<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">\r\n\t\t\t\t<span class="platform-status"\r\n\t\t\t\t\t  [ngClass]="!user.Services ? \'\' : user.Services.Twitch.Connected ? \'connected\' : \'\'"></span>\r\n\t\t\t</div>\r\n\r\n\t\t\t<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">Youtube</div>\r\n\t\t\t<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">\r\n\t\t\t\t<span class="platform-status"\r\n\t\t\t\t\t  [ngClass]="!user.Services ? \'\' : (user.Services.Youtube.Connected ? \'connected\' : \'\')"></span>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n\r\n<div class="card">\r\n\t<div class="card-header">\r\n\t\t<h4 class="float-left">Settings</h4>\r\n\t\t<button type="button" class="btn btn-success btn-sm float-right" (click)="saveSettings()">\r\n\t\t\t<span class="fa fa-spinner spinner" *ngIf="saving"></span>Save - {{ saving }}\r\n\t\t</button>\r\n\t</div>\r\n\r\n\t<div class="card-block row">\r\n\t\t<div class="col-md-12 row form-group color-group">\r\n\t\t\t<h5 class="col-md-12">Chroma Key</h5>\r\n\r\n\t\t\t<div class="col-md-12">\r\n\t\t\t\t<div class="dropdown">\r\n\t\t\t\t\t<a class="btn btn-secondary dropdown-toggle" href="javascript:void(0)" id="chromaDropdown"\r\n\t\t\t\t\t   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">\r\n\t\t\t\t\t\t{{ settings.ChromaKey }}\r\n\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t<div class="dropdown-menu" aria-labelledby="chromaDropdown">\r\n\t\t\t\t\t\t<a class="dropdown-item" href="javascript:void(0)"\r\n\t\t\t\t\t\t   (click)="settings.ChromaKey=\'None\'">None</a>\r\n\t\t\t\t\t\t<a class="dropdown-item" href="javascript:void(0)"\r\n\t\t\t\t\t\t   (click)="settings.ChromaKey=\'Green\'">Green</a>\r\n\t\t\t\t\t\t<a class="dropdown-item" href="javascript:void(0)" (click)="settings.ChromaKey=\'Blue\'">Blue</a>\r\n\t\t\t\t\t\t<a class="dropdown-item" href="javascript:void(0)" (click)="settings.ChromaKey=\'Magenta\'">Magenta</a>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\r\n\t\t<div class="col-md-12 row form-group color-group">\r\n\t\t\t<h5 class="col-md-12">Message Background Color</h5>\r\n\r\n\t\t\t<div class="col-md-12 input-group">\r\n\t\t\t\t<div class="input-placeholder">\r\n\t\t\t\t\t<span class="placeholder">Red</span>\r\n\t\t\t\t\t<input max="255" min="0" type="number" class="form-control" [value]="getColor(\'MessageBack\', \'r\')"\r\n\t\t\t\t\t\t   (input)="setColor(\'MessageBack\', \'r\', $event)">\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class="input-placeholder">\r\n\t\t\t\t\t<span class="placeholder">Green</span>\r\n\t\t\t\t\t<input max="255" min="0" type="number" class="form-control" [value]="getColor(\'MessageBack\', \'g\')"\r\n\t\t\t\t\t\t   (input)="setColor(\'MessageBack\', \'g\', $event)">\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class="input-placeholder">\r\n\t\t\t\t\t<span class="placeholder">Blue</span>\r\n\t\t\t\t\t<input max="255" min="0" type="number" class="form-control" [value]="getColor(\'MessageBack\', \'b\')"\r\n\t\t\t\t\t\t   (input)="setColor(\'MessageBack\', \'b\', $event)">\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class="input-placeholder">\r\n\t\t\t\t\t<span class="placeholder">Alpha</span>\r\n\t\t\t\t\t<input max="1" min="0" step="0.1" type="number" class="form-control"\r\n\t\t\t\t\t\t   [value]="getColor(\'MessageBack\', \'a\')"\r\n\t\t\t\t\t\t   (input)="setColor(\'MessageBack\', \'a\', $event)">\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class="input-placeholder color-preview" [ngStyle]="{ \'background-color\': settings.MessageBack }">\r\n\t\t\t\t\tCOLOR PREVIEW\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\r\n\t\t<div class="col-md-12 row form-group color-group">\r\n\t\t\t<h5 class="col-md-12">Message Mention Background Color</h5>\r\n\r\n\t\t\t<div class="col-md-12 input-group">\r\n\t\t\t\t<div class="input-placeholder">\r\n\t\t\t\t\t<span class="placeholder">Red</span>\r\n\t\t\t\t\t<input max="255" min="0" type="number" class="form-control"\r\n\t\t\t\t\t\t   [value]="getColor(\'MessageMentionBack\', \'r\')"\r\n\t\t\t\t\t\t   (input)="setColor(\'MessageMentionBack\', \'r\', $event)">\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class="input-placeholder">\r\n\t\t\t\t\t<span class="placeholder">Green</span>\r\n\t\t\t\t\t<input max="255" min="0" type="number" class="form-control"\r\n\t\t\t\t\t\t   [value]="getColor(\'MessageMentionBack\', \'g\')"\r\n\t\t\t\t\t\t   (input)="setColor(\'MessageMentionBack\', \'g\', $event)">\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class="input-placeholder">\r\n\t\t\t\t\t<span class="placeholder">Blue</span>\r\n\t\t\t\t\t<input max="255" min="0" type="number" class="form-control"\r\n\t\t\t\t\t\t   [value]="getColor(\'MessageMentionBack\', \'b\')"\r\n\t\t\t\t\t\t   (input)="setColor(\'MessageMentionBack\', \'b\', $event)">\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class="input-placeholder">\r\n\t\t\t\t\t<span class="placeholder">Alpha</span>\r\n\t\t\t\t\t<input max="1" min="0" step="0.1" type="number" class="form-control"\r\n\t\t\t\t\t\t   [value]="getColor(\'MessageMentionBack\', \'a\')"\r\n\t\t\t\t\t\t   (input)="setColor(\'MessageMentionBack\', \'a\', $event)">\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class="input-placeholder color-preview"\r\n\t\t\t\t\t [ngStyle]="{ \'background-color\': settings.MessageMentionBack }">\r\n\t\t\t\t\tCOLOR PREVIEW\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>'},361:function(t,e){t.exports=":host{overflow-y:auto}:host .card{margin:15px 0}:host .card .card-block .platform-status{color:red}:host .card .card-block .platform-status:after{content:'Disconnected'}:host .card .card-block .platform-status.connected{color:limegreen}:host .card .card-block .platform-status.connected:after{content:'Connected'}:host .color-group{margin-left:0;margin-right:0;padding:0}:host .color-group .input-group{display:flex;flex-wrap:wrap;max-width:100%;flex:100%;padding:0 15px}:host .color-group .input-group .input-placeholder{background-color:white;border:1px solid rgba(0,0,0,0.15);padding:.25rem .5rem;border-radius:.25rem;display:inline-block;flex:1 1 25%;margin-right:0.5rem;margin-bottom:0.5rem}:host .color-group .input-group .input-placeholder.color-preview{text-align:center;color:white;font-weight:500;line-height:2.2rem;cursor:default}:host .color-group .input-group .input-placeholder .placeholder{color:#666;margin-right:0.5rem}:host .color-group .input-group .input-placeholder .form-control{margin:0;display:inline-block;border:none;padding-right:0;width:55%;max-width:70px}\n"},362:function(t,e,n){"use strict";var r=this&&this.__decorate||function(t,e,n,r){var o,i=arguments.length,s=i<3?e:null===r?r=Object.getOwnPropertyDescriptor(e,n):r;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(t,e,n,r);else for(var a=t.length-1;a>=0;a--)(o=t[a])&&(s=(i<3?o(s):i>3?o(e,n,s):o(e,n))||s);return i>3&&s&&Object.defineProperty(e,n,s),s},o=this&&this.__metadata||function(t,e){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(t,e)},i=n(3),s=n(24),a=n(60),c=function(){function t(t,e){this.formBuilder=t,this.authProvider=e,this.loginData={email:"",password:""},this.loginError=null,this.showError=!1,this.loginForm=this.formBuilder.group({email:new s.FormControl("",[s.Validators.required]),password:new s.FormControl("",[s.Validators.required])})}return t.prototype.login=function(){var t=this;this.authProvider.login(this.loginData).then(function(e){e||(t.loginError="Invalid Username/Password!",t.showError=!0,setTimeout(function(){return t.showError=!1},3e3))}).catch(function(t){return console.error(t)})},t}();c=r([i.Component({selector:"page-login",template:n(363),styles:[n(364)]}),o("design:paramtypes",[s.FormBuilder,a.AuthProvider])],c),e.LoginPage=c},363:function(t,e){t.exports='<div class="alert alert-danger" role="alert" [ngClass]="{ \'show\': showError }">\r\n\t<strong>Oh snap!</strong> <span [innerHTML]="loginError"></span>\r\n</div>\r\n\r\n<div class="row">\r\n\t<div class="col-md-6 offset-md-3">\r\n\t\t<form (submit)="login()" [formGroup]="loginForm">\r\n\t\t\t<div class="form-group text-center">\r\n\t\t\t\t<h1>Login</h1>\r\n\t\t\t</div>\r\n\r\n\t\t\t<div class="form-group row">\r\n\t\t\t\t<div class="col-md-4 text-right">Email</div>\r\n\t\t\t\t<div class="col-md-8">\r\n\t\t\t\t\t<input type="text" class="form-control" formControlName="email"\r\n\t\t\t\t\t\t   [(ngModel)]="loginData.email">\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\r\n\t\t\t<div class="form-group row">\r\n\t\t\t\t<div class="col-md-4 text-right">Password</div>\r\n\t\t\t\t<div class="col-md-8">\r\n\t\t\t\t\t<input type="password" class="form-control" formControlName="password"\r\n\t\t\t\t\t\t   [(ngModel)]="loginData.password">\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\r\n\t\t\t<div class="form-group text-right">\r\n\t\t\t\t<span class="register-text text-muted">Don\'t have an account? <a routerLink="/register">Register Now</a></span>\r\n\t\t\t\t<button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>\r\n\t\t\t</div>\r\n\t\t</form>\r\n\t</div>\r\n</div>'},364:function(t,e){t.exports=":host{display:flex;align-items:center;height:100%}:host>.row{flex:1 1 100%}:host .register-text{cursor:default;font-size:0.9rem;margin-right:0.5rem}:host>.alert{position:fixed;top:40px;left:50%;width:35%;min-width:350px;text-align:center;margin-left:-175px;opacity:0;transition:opacity ease-in-out 1s;cursor:default}:host>.alert.show{opacity:1}\n"},365:function(t,e,n){"use strict";var r=this&&this.__decorate||function(t,e,n,r){var o,i=arguments.length,s=i<3?e:null===r?r=Object.getOwnPropertyDescriptor(e,n):r;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(t,e,n,r);else for(var a=t.length-1;a>=0;a--)(o=t[a])&&(s=(i<3?o(s):i>3?o(e,n,s):o(e,n))||s);return i>3&&s&&Object.defineProperty(e,n,s),s},o=this&&this.__metadata||function(t,e){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(t,e)},i=n(3),s=n(24),a=n(60),c=function(){function t(t,e){this.authProivder=t,this.formBuilder=e,this.data={name:"",email:"",password:"",confirm_password:""},this.registerForm=this.formBuilder.group({name:new s.FormControl("",[s.Validators.required]),email:new s.FormControl("",[s.Validators.required]),password:new s.FormControl("",[s.Validators.required]),confirm_password:new s.FormControl("",[s.Validators.required])})}return t.prototype.register=function(){this.authProivder.register(this.data).then(function(t){return console.log("Register: "+t)})},t}();c=r([i.Component({selector:"page-register",template:n(366),styles:[n(367)]}),o("design:paramtypes",[a.AuthProvider,s.FormBuilder])],c),e.RegisterPage=c},366:function(t,e){t.exports='<div class="row">\r\n\t<div class="col-md-6 offset-md-3">\r\n\t\t<form (submit)="register()" [formGroup]="registerForm">\r\n\t\t\t<div class="form-group text-center">\r\n\t\t\t\t<h1>Register</h1>\r\n\t\t\t</div>\r\n\r\n\t\t\t<div class="form-group row">\r\n\t\t\t\t<div class="col-md-4 text-right">Name</div>\r\n\t\t\t\t<div class="col-md-8">\r\n\t\t\t\t\t<input type="text" class="form-control" formControlName="name" [(ngModel)]="data.name">\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\r\n\t\t\t<div class="form-group row">\r\n\t\t\t\t<div class="col-md-4 text-right">Email</div>\r\n\t\t\t\t<div class="col-md-8">\r\n\t\t\t\t\t<input type="text" class="form-control" formControlName="email" [(ngModel)]="data.email">\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\r\n\t\t\t<div class="form-group row">\r\n\t\t\t\t<div class="col-md-4 text-right">Password</div>\r\n\t\t\t\t<div class="col-md-8">\r\n\t\t\t\t\t<input type="password" class="form-control" formControlName="password" [(ngModel)]="data.password">\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\r\n\t\t\t<div class="form-group row">\r\n\t\t\t\t<div class="col-md-4 text-right">Confirm Password</div>\r\n\t\t\t\t<div class="col-md-8">\r\n\t\t\t\t\t<input type="password" class="form-control" formControlName="confirm_password"\r\n\t\t\t\t\t\t   [(ngModel)]="data.confirm_password">\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\r\n\t\t\t<div class="form-group text-right">\r\n\t\t\t\t<span class="login-text text-muted">Already have an account? <a\r\n\t\t\t\t\t\trouterLink="/login">Login Here</a></span>\r\n\t\t\t\t<button type="submit" class="btn btn-primary" [disabled]="!registerForm.valid">Register</button>\r\n\t\t\t</div>\r\n\t\t</form>\r\n\t</div>\r\n</div>'},367:function(t,e){t.exports=":host{display:flex;align-items:center;height:100%}:host>.row{flex:1 1 100%}:host .login-text{cursor:default;font-size:0.9rem;margin-right:0.5rem}\n"},368:function(t,e,n){(function(t){"use strict";var r=this&&this.__decorate||function(t,e,n,r){var o,i=arguments.length,s=i<3?e:null===r?r=Object.getOwnPropertyDescriptor(e,n):r;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(t,e,n,r);else for(var a=t.length-1;a>=0;a--)(o=t[a])&&(s=(i<3?o(s):i>3?o(e,n,s):o(e,n))||s);return i>3&&s&&Object.defineProperty(e,n,s),s},o=this&&this.__metadata||function(t,e){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(t,e)},i=n(3),s=n(369),a=n(359),c=function(){function e(t,e){var n=this;this.chatProvider=t,this.settingsProvider=e,this.connected=!1,this.serviceStatus=[],this.messages=[],this.data={message:""},this._settings={},this.scrollLocked=!1,this.messages=this.chatProvider.getMessages,this.connected=this.chatProvider.getConnected,this.serviceStatus=this.chatProvider.getServiceStatus,this._settings=this.settingsProvider.settings,this.chatProvider.Messages.subscribe(function(t){n.messages=t,n.scrollToBottom()}),this.chatProvider.Connected.subscribe(function(t){return n.connected=t}),this.chatProvider.ServiceStatus.subscribe(function(t){return n.serviceStatus=t}),this.settingsProvider.Settings.subscribe(function(t){return n._settings=t})}return e.prototype.ngAfterViewInit=function(){t(this.messageContainer.nativeElement).on("mousewheel",function(e){var n=t(this),r=e.originalEvent.deltaY<0,o=this.scrollHeight-n.height();r&&n.scrollTop()>=o-200?(n.stop(),this.scrollLocked=!0):!r&&n.scrollTop()>=o-200&&(this.scrollLocked=!1)})},e.prototype.toggleConnection=function(){this.connected?this.chatProvider.part():this.chatProvider.join()},e.prototype.sendMessage=function(){this.data.message&&(this.chatProvider.send(this.data.message),this.data.message="")},e.prototype.keyUp=function(t){if(13===t.keyCode){if(this.data.message.trim().length<=0)return;t.preventDefault(),this.sendMessage()}},e.prototype.scrollToBottom=function(){var e=t(this.messageContainer.nativeElement);this.messages.length>0&&!this.scrollLocked&&e.stop(!0,!0).animate({scrollTop:e[0].scrollHeight-(e.height()-100)},500)},e}();r([i.ViewChild("messageContainer"),o("design:type",i.ElementRef)],c.prototype,"messageContainer",void 0),c=r([i.Component({selector:"page-chat",template:n(422),styles:[n(423)]}),o("design:paramtypes",[s.ChatProvider,a.SettingsProvider])],c),e.ChatPage=c}).call(e,n(358))},369:function(t,e,n){"use strict";var r=this&&this.__decorate||function(t,e,n,r){var o,i=arguments.length,s=i<3?e:null===r?r=Object.getOwnPropertyDescriptor(e,n):r;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(t,e,n,r);else for(var a=t.length-1;a>=0;a--)(o=t[a])&&(s=(i<3?o(s):i>3?o(e,n,s):o(e,n))||s);return i>3&&s&&Object.defineProperty(e,n,s),s},o=this&&this.__metadata||function(t,e){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(t,e)},i=n(3),s=n(28),a=n(61),c=n(370),l=n(60),u=n(371),p=function(){function t(t,e){var n=this;this.authProvider=t,this.http=e,this._token=null,this._socket=null,this._messages=[],this._connected=!1,this._connecting=!1,this._serviceStatus=[],this.Messages=new a.Subject,this.Connected=new a.Subject,this.ServiceStatus=new a.Subject,this._token=this.authProvider.token,this.setupSocket(),this.authProvider.isLoggedIn.subscribe(function(t){n._token=n.authProvider.token,n.setupSocket()})}return t.prototype.setupSocket=function(){var t=this;if(this._token){this._socket&&this._socket.disconnect();var e=(i.isDevMode()?"http://localhost:8080":"https://uchatapi-frosenos.rhcloud.com:8443/")+"?token="+this._token;this._socket=u.connect(e,{forceNew:!0,transports:["websocket","polling"]}),this._socket.on("connect",function(){console.log("Socket.io Connected"),t.join()}),this._socket.on("join",function(e){t._connected=e,t.Connected.next(t._connected),t._connecting=!1}),this._socket.on("part",function(e){t._connected=e,t.Connected.next(t._connected),t._connecting=!1}),this._socket.on("message",function(e){t.parseImage(e.Message).then(function(n){e.Message={Raw:e.Message,Formatted:"<img src='"+n+"' class='img-fill' />"},e.Message.Formatted=t.parseLinks(e.Message.Formatted),t.addMessage(e)}).catch(function(n){e.Message={Raw:e.Message,Formatted:t.parseEmotes(e.Message)},e.Message.Formatted=t.parseLinks(e.Message.Formatted),t.addMessage(e)})}),this._socket.on("service",function(e){t._serviceStatus[e.Service]=e.Status,t.ServiceStatus.next(t._serviceStatus)})}},t.prototype.addMessage=function(t){t.Timestamp=this.humanTimestamp(),this._messages.push(t),this._messages.length>100&&this._messages.splice(0,this._messages.length-100),this.Messages.next(this._messages)},t.prototype.humanTimestamp=function(){var t=new Date,e=t.getHours(),n=t.getMinutes(),r=t.getHours()>=12;return e>12&&(e-=12),0===e&&(e=12),(e<10&&e>=0?"0"+e:e)+":"+(n<10?"0"+n:n)+(r?" PM":" AM")},t.prototype.join=function(){return!(!this._socket||this._connecting)&&(this._connecting=!0,this._socket.emit("join"),!0)},t.prototype.part=function(){return!(!this._socket||this._connecting)&&(this._connecting=!0,this._socket.emit("part"),!0)},t.prototype.send=function(t){return!!this._token&&(this._socket.emit("send",{Message:t}),!0)},t.prototype.messageHasMention=function(t){var e=this.getNameForPlatform(t.Service);if(!e)return!1;var n=new RegExp("(?:^|\\W)("+e+"+)(?!\\w)","gi");return!!t.Message.Raw.toLowerCase().match(n)},t.prototype.getNameForPlatform=function(t){var e=this.authProvider.user;if("broadcaster"===t.toLowerCase())return"Broadcaster";if(!e.Services[t]||!e.Services[t].Connected)return null;var n=e.Services[t].UserServiceInfo;return n.UserName},t.prototype.parseEmotes=function(t){var e=c.bttv.getEmotes(),n=e.urlTemplate;for(var r in e.emotes){var o=e.emotes[r];
-if(!(t.indexOf(o.code)<0)){var i=("http:"+n).replace("{{id}}",o.id).replace("{{image}}","1x"),s=new RegExp("\\b"+o.code+"\\b","g");t=t.replace(s,"<img class='twitch-emoji twitch-emoji-small' src='"+i+"' alt='"+o.code+"' />")}}return t=twitchEmoji.parse(t,{emojiSize:"small"}).replace("https://","http://")},t.prototype.parseImage=function(t){return new Promise(function(e,n){var r=t.trim().match(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&\/\/=]*)/gi);if(r.length<=0)return n();var o=r[0];if(t.trim()!=o)return n();o.startsWith("https:")&&(o="http:"+o.substr(6,o.length-6));var i=new Image;i.className="img-fluid",i.onerror=function(){n()},i.onload=function(){e(o)},i.src=o})},t.prototype.parseLinks=function(t){t=t.trim();for(var e=/<a.*?>(.*?)<\/a>/im,n=e.exec(t),r=0;n&&r++<20;){var o=null;o=n[0].indexOf("href=")>=0?/href=["|'](.*)["|']/gi.exec(n[0])[1]:/>(.*?)<\/a>/gi.exec(n[0])[1],t=t.replace(n[0],"<div class=\"chat-hyperlink\" href='javascript:;'>"+o+"</div>"),n=e.exec(t)}for(r>=20&&console.error("[0] Hyperlink detection might have exited before it could finish!"),e=/(?:^|[^'">])(https?|ftps?):\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&\/\/=]*)/gim,n=e.exec(t),r=0;n&&r++<20;)t=t.replace(n[0],"<div class=\"chat-hyperlink\" href='javascript:;'>"+n[0].trim()+"</div>"),n=e.exec(t);return r>=20&&console.error("[1] Hyperlink detection might have exited before it could finish!"),t},Object.defineProperty(t.prototype,"getMessages",{get:function(){return this._messages},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"getConnected",{get:function(){return this._connected},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"getServiceStatus",{get:function(){return this._serviceStatus},enumerable:!0,configurable:!0}),t}();p=r([i.Injectable(),o("design:paramtypes",[l.AuthProvider,s.Http])],p),e.ChatProvider=p},370:function(t,e){"use strict";var n=function(){function t(){}return t.getEmotes=function(){return{status:200,urlTemplate:"//cdn.betterttv.net/emote/{{id}}/{{image}}",emotes:[{id:"54fa925e01e468494b85b54d",code:"OhMyGoodness",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"54fa927801e468494b85b54e",code:"PancakeMix",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"54fa928f01e468494b85b54f",code:"PedoBear",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"54fa92a701e468494b85b550",code:"PokerFace",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"54fa92d701e468494b85b552",code:"RageFace",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"54fa92ee01e468494b85b553",code:"RebeccaBlack",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"54fa8f1401e468494b85b537",code:":tf:",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"54fa8f4201e468494b85b538",code:"aPliS",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"54fa8fce01e468494b85b53c",code:"CiGrip",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"54fa8fb201e468494b85b53b",code:"CHAccepted",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"54fa90d601e468494b85b544",code:"FuckYea",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"54fa903b01e468494b85b53f",code:"DatSauce",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"54fa909b01e468494b85b542",code:"ForeverAlone",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"54fa90ba01e468494b85b543",code:"GabeN",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"54fa90f201e468494b85b545",code:"HailHelix",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"54fa913701e468494b85b546",code:"HerbPerve",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"54fa919901e468494b85b548",code:"iDog",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"54fa930801e468494b85b554",code:"rStrike",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"54fa932201e468494b85b555",code:"ShoopDaWhoop",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"54fa9cc901e468494b85b565",code:"SwedSwag",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"54fab45f633595ca4c713abc",code:"M&Mjc",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"54fab7d2633595ca4c713abf",code:"bttvNice",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"54fa934001e468494b85b556",code:"TopHam",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"54fa935601e468494b85b557",code:"TwaT",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"54fa93d001e468494b85b559",code:"WhatAYolk",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"54fa99b601e468494b85b55d",code:"WatChuSay",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"54faa50d01e468494b85b578",code:"Blackappa",channel:"night",restrictions:{channels:[],games:[],emoticonSet:"night"},imageType:"png"},{id:"54faa52f01e468494b85b579",code:"DogeWitIt",channel:"night",restrictions:{channels:[],games:[],emoticonSet:"night"},imageType:"png"},{id:"54faa4f101e468494b85b577",code:"BadAss",channel:"night",restrictions:{channels:[],games:[],emoticonSet:"night"},imageType:"png"},{id:"54fb603201abde735115ddb5",code:"SavageJerky",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"54fbf11001abde735115de66",code:"Kaged",channel:"night",restrictions:{channels:[],games:[],emoticonSet:"night"},imageType:"png"},{id:"54fbef6601abde735115de57",code:"HHydro",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"54fbefeb01abde735115de5b",code:"TaxiBro",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"54fbf00a01abde735115de5c",code:"BroBalt",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"54fbf02f01abde735115de5d",code:"ButterSauce",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"54fbf05a01abde735115de5e",code:"BaconEffect",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"54fbf07e01abde735115de5f",code:"SuchFraud",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"54fbf09c01abde735115de61",code:"CandianRage",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"54fbefc901abde735115de5a",code:"She'llBeRight",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"54fbefa901abde735115de59",code:"OhhhKee",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"55028cd2135896936880fdd7",code:"D:",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"5502874d135896936880fdd2",code:"SexPanda",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"5502883d135896936880fdd3",code:"(poolparty)",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"55028923135896936880fdd5",code:":'(",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"550288fe135896936880fdd4",code:"(puke)",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"550292c0135896936880fdef",code:"bttvWink",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"550291a3135896936880fde3",code:"bttvAngry",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"550291be135896936880fde4",code:"bttvConfused",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"550291d4135896936880fde5",code:"bttvCool",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"55029200135896936880fde7",code:"bttvHappy",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"5502925d135896936880fdea",code:"bttvSad",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"55029272135896936880fdeb",code:"bttvSleep",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"55029288135896936880fdec",code:"bttvSurprised",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"5502929b135896936880fded",code:"bttvTongue",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"550292ad135896936880fdee",code:"bttvUnsure",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"550291ea135896936880fde6",code:"bttvGrin",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"55029215135896936880fde8",code:"bttvHeart",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"55029247135896936880fde9",code:"bttvTwink",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"550352766f86a5b26c281ba2",code:"VisLaud",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"550b225fff8ecee922d2a3b2",code:"(chompy)",channel:"night",restrictions:{channels:[],games:[],emoticonSet:"night"},imageType:"gif"},{id:"5514afe362e6bd0027aede8a",code:"SoSerious",channel:"night",restrictions:{channels:[],games:[],emoticonSet:"night"},imageType:"png"},{id:"550b6b07ff8ecee922d2a3e7",code:"BatKappa",channel:"night",restrictions:{channels:[],games:[],emoticonSet:"night"},imageType:"png"},{id:"550b344bff8ecee922d2a3c1",code:"KaRappa",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"55189a5062e6bd0027aee082",code:"YetiZ",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"552d2fc2236a1aa17a996c5b",code:"miniJulia",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"55288e390fa35376704a4c7a",code:"motnahP",channel:"night",restrictions:{channels:[],games:[],emoticonSet:"night"},imageType:"png"},{id:"553b48a21f145f087fc15ca6",code:"sosGame",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"55471c2789d53f2d12781713",code:"CruW",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"555015b77676617e17dd2e8e",code:"RarePepe",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"54fbef8701abde735115de58",code:"iamsocal",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"555981336ba1901877765555",code:"haHAA",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"55b6524154eefd53777b2580",code:"FeelsBirthdayMan",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"55f324c47f08be9f0a63cce0",code:"RonSmug",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"560577560874de34757d2dc0",code:"KappaCool",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"5622aaef3286c42e57d8e4ab",code:"Zappa",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"5622ab523286c42e57d8e4b2",code:"SqShy",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"566c9eeb65dbbdab32ec052b",code:"BasedGod",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"566c9f3b65dbbdab32ec052e",code:"bUrself",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"566c9f6365dbbdab32ec0532",code:"ConcernDoge",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"566c9f9265dbbdab32ec0538",code:"FapFapFap",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"566c9fc265dbbdab32ec053b",code:"FeelsBadMan",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"566c9fde65dbbdab32ec053e",code:"FeelsGoodMan",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"566c9ff365dbbdab32ec0541",code:"FireSpeed",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"566ca00f65dbbdab32ec0544",code:"FishMoley",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"566ca02865dbbdab32ec0547",code:"Hhhehehe",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"566ca04265dbbdab32ec054a",code:"KKona",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"566ca06065dbbdab32ec054e",code:"NaM",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"566ca07965dbbdab32ec0552",code:"OhGod",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"566ca09365dbbdab32ec0555",code:"PoleDoge",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"566ca11a65dbbdab32ec0558",code:"tehPoleCat",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"566ca1a365dbbdab32ec055b",code:"AngelThump",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"566ca38765dbbdab32ec0560",code:"SourPls",channel:null,restrictions:{channels:[],games:[]},imageType:"gif"},{id:"567b00c61ddbe1786688a633",code:"LUL",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"56901914991f200c34ffa656",code:"SaltyCorn",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"56d937f7216793c63ec140cb",code:"FCreep",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"56f5be00d48006ba34f530a4",code:"VapeNation",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"56fa09f18eff3b595e93ac26",code:"ariW",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"5709ab688eff3b595e93c595",code:"notsquishY",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"5733ff12e72c3c0814233e20",code:"FeelsAmazingMan",channel:null,restrictions:{channels:[],games:[]},imageType:"png"},{id:"573d38b50ffbf6cc5cc38dc9",code:"DuckerZ",channel:null,restrictions:{channels:[],games:[]},imageType:"png"}]}},t}();e.bttv=n},371:function(t,e,n){function r(t,e){"object"==typeof t&&(e=t,t=void 0),e=e||{};var n,r=i(t),s=r.source,u=r.id,p=r.path,h=l[u]&&p in l[u].nsps,d=e.forceNew||e["force new connection"]||!1===e.multiplex||h;return d?(c("ignoring socket cache for %s",s),n=a(s,e)):(l[u]||(c("new io instance for %s",s),l[u]=a(s,e)),n=l[u]),r.query&&!e.query?e.query=r.query:e&&"object"==typeof e.query&&(e.query=o(e.query)),n.socket(r.path,e)}function o(t){var e=[];for(var n in t)t.hasOwnProperty(n)&&e.push(encodeURIComponent(n)+"="+encodeURIComponent(t[n]));return e.join("&")}var i=n(372),s=n(377),a=n(388),c=n(374)("socket.io-client");t.exports=e=r;var l=e.managers={};e.protocol=s.protocol,e.connect=r,e.Manager=n(388),e.Socket=n(417)},372:function(t,e,n){(function(e){function r(t,n){var r=t;n=n||e.location,null==t&&(t=n.protocol+"//"+n.host),"string"==typeof t&&("/"===t.charAt(0)&&(t="/"===t.charAt(1)?n.protocol+t:n.host+t),/^(https?|wss?):\/\//.test(t)||(i("protocol-less url %s",t),t="undefined"!=typeof n?n.protocol+"//"+t:"https://"+t),i("parse %s",t),r=o(t)),r.port||(/^(http|ws)$/.test(r.protocol)?r.port="80":/^(http|ws)s$/.test(r.protocol)&&(r.port="443")),r.path=r.path||"/";var s=r.host.indexOf(":")!==-1,a=s?"["+r.host+"]":r.host;return r.id=r.protocol+"://"+a+":"+r.port,r.href=r.protocol+"://"+a+(n&&n.port===r.port?"":":"+r.port),r}var o=n(373),i=n(374)("socket.io-client:url");t.exports=r}).call(e,function(){return this}())},373:function(t,e){var n=/^(?:(?![^:@]+:[^:@\/]*@)(http|https|ws|wss):\/\/)?((?:(([^:@]*)(?::([^:@]*))?)?@)?((?:[a-f0-9]{0,4}:){2,7}[a-f0-9]{0,4}|[^:\/?#]*)(?::(\d*))?)(((\/(?:[^?#](?![^?#\/]*\.[^?#\/.]+(?:[?#]|$)))*\/?)?([^?#\/]*))(?:\?([^#]*))?(?:#(.*))?)/,r=["source","protocol","authority","userInfo","user","password","host","port","relative","path","directory","file","query","anchor"];t.exports=function(t){var e=t,o=t.indexOf("["),i=t.indexOf("]");o!=-1&&i!=-1&&(t=t.substring(0,o)+t.substring(o,i).replace(/:/g,";")+t.substring(i,t.length));for(var s=n.exec(t||""),a={},c=14;c--;)a[r[c]]=s[c]||"";return o!=-1&&i!=-1&&(a.source=e,a.host=a.host.substring(1,a.host.length-1).replace(/;/g,":"),a.authority=a.authority.replace("[","").replace("]","").replace(/;/g,":"),a.ipv6uri=!0),a}},374:function(t,e,n){(function(r){function o(){return"undefined"!=typeof document&&"WebkitAppearance"in document.documentElement.style||window.console&&(console.firebug||console.exception&&console.table)||navigator.userAgent.toLowerCase().match(/firefox\/(\d+)/)&&parseInt(RegExp.$1,10)>=31}function i(){var t=arguments,n=this.useColors;if(t[0]=(n?"%c":"")+this.namespace+(n?" %c":" ")+t[0]+(n?"%c ":" ")+"+"+e.humanize(this.diff),!n)return t;var r="color: "+this.color;t=[t[0],r,"color: inherit"].concat(Array.prototype.slice.call(t,1));var o=0,i=0;return t[0].replace(/%[a-z%]/g,function(t){"%%"!==t&&(o++,"%c"===t&&(i=o))}),t.splice(i,0,r),t}function s(){return"object"==typeof console&&console.log&&Function.prototype.apply.call(console.log,console,arguments)}function a(t){try{null==t?e.storage.removeItem("debug"):e.storage.debug=t}catch(t){}}function c(){try{return e.storage.debug}catch(t){}if("undefined"!=typeof r&&"env"in r)return r.env.DEBUG}function l(){try{return window.localStorage}catch(t){}}e=t.exports=n(375),e.log=s,e.formatArgs=i,e.save=a,e.load=c,e.useColors=o,e.storage="undefined"!=typeof chrome&&"undefined"!=typeof chrome.storage?chrome.storage.local:l(),e.colors=["lightseagreen","forestgreen","goldenrod","dodgerblue","darkorchid","crimson"],e.formatters.j=function(t){try{return JSON.stringify(t)}catch(t){return"[UnexpectedJSONParseError]: "+t.message}},e.enable(c())}).call(e,n(297))},375:function(t,e,n){function r(){return e.colors[u++%e.colors.length]}function o(t){function n(){}function o(){var t=o,n=+new Date,i=n-(l||n);t.diff=i,t.prev=l,t.curr=n,l=n,null==t.useColors&&(t.useColors=e.useColors()),null==t.color&&t.useColors&&(t.color=r());for(var s=new Array(arguments.length),a=0;a<s.length;a++)s[a]=arguments[a];s[0]=e.coerce(s[0]),"string"!=typeof s[0]&&(s=["%o"].concat(s));var c=0;s[0]=s[0].replace(/%([a-z%])/g,function(n,r){if("%%"===n)return n;c++;var o=e.formatters[r];if("function"==typeof o){var i=s[c];n=o.call(t,i),s.splice(c,1),c--}return n}),s=e.formatArgs.apply(t,s);var u=o.log||e.log||console.log.bind(console);u.apply(t,s)}n.enabled=!1,o.enabled=!0;var i=e.enabled(t)?o:n;return i.namespace=t,i}function i(t){e.save(t);for(var n=(t||"").split(/[\s,]+/),r=n.length,o=0;o<r;o++)n[o]&&(t=n[o].replace(/[\\^$+?.()|[\]{}]/g,"\\$&").replace(/\*/g,".*?"),"-"===t[0]?e.skips.push(new RegExp("^"+t.substr(1)+"$")):e.names.push(new RegExp("^"+t+"$")))}function s(){e.enable("")}function a(t){var n,r;for(n=0,r=e.skips.length;n<r;n++)if(e.skips[n].test(t))return!1;for(n=0,r=e.names.length;n<r;n++)if(e.names[n].test(t))return!0;return!1}function c(t){return t instanceof Error?t.stack||t.message:t}e=t.exports=o.debug=o,e.coerce=c,e.disable=s,e.enable=i,e.enabled=a,e.humanize=n(376),e.names=[],e.skips=[],e.formatters={};var l,u=0},376:function(t,e){function n(t){if(t=String(t),!(t.length>1e4)){var e=/^((?:\d+)?\.?\d+) *(milliseconds?|msecs?|ms|seconds?|secs?|s|minutes?|mins?|m|hours?|hrs?|h|days?|d|years?|yrs?|y)?$/i.exec(t);if(e){var n=parseFloat(e[1]),r=(e[2]||"ms").toLowerCase();switch(r){case"years":case"year":case"yrs":case"yr":case"y":return n*u;case"days":case"day":case"d":return n*l;case"hours":case"hour":case"hrs":case"hr":case"h":return n*c;case"minutes":case"minute":case"mins":case"min":case"m":return n*a;case"seconds":case"second":case"secs":case"sec":case"s":return n*s;case"milliseconds":case"millisecond":case"msecs":case"msec":case"ms":return n;default:return}}}}function r(t){return t>=l?Math.round(t/l)+"d":t>=c?Math.round(t/c)+"h":t>=a?Math.round(t/a)+"m":t>=s?Math.round(t/s)+"s":t+"ms"}function o(t){return i(t,l,"day")||i(t,c,"hour")||i(t,a,"minute")||i(t,s,"second")||t+" ms"}function i(t,e,n){if(!(t<e))return t<1.5*e?Math.floor(t/e)+" "+n:Math.ceil(t/e)+" "+n+"s"}var s=1e3,a=60*s,c=60*a,l=24*c,u=365.25*l;t.exports=function(t,e){e=e||{};var i=typeof t;if("string"===i&&t.length>0)return n(t);if("number"===i&&isNaN(t)===!1)return e.long?o(t):r(t);throw new Error("val is not a non-empty string or a valid number. val="+JSON.stringify(t))}},377:function(t,e,n){function r(){}function o(t){var n="",r=!1;return n+=t.type,e.BINARY_EVENT!=t.type&&e.BINARY_ACK!=t.type||(n+=t.attachments,n+="-"),t.nsp&&"/"!=t.nsp&&(r=!0,n+=t.nsp),null!=t.id&&(r&&(n+=",",r=!1),n+=t.id),null!=t.data&&(r&&(n+=","),n+=h.stringify(t.data)),p("encoded %j as %s",t,n),n}function i(t,e){function n(t){var n=f.deconstructPacket(t),r=o(n.packet),i=n.buffers;i.unshift(r),e(i)}f.removeBlobs(t,n)}function s(){this.reconstructor=null}function a(t){var n={},r=0;if(n.type=Number(t.charAt(0)),null==e.types[n.type])return u();if(e.BINARY_EVENT==n.type||e.BINARY_ACK==n.type){for(var o="";"-"!=t.charAt(++r)&&(o+=t.charAt(r),r!=t.length););if(o!=Number(o)||"-"!=t.charAt(r))throw new Error("Illegal attachments");n.attachments=Number(o)}if("/"==t.charAt(r+1))for(n.nsp="";++r;){var i=t.charAt(r);if(","==i)break;if(n.nsp+=i,r==t.length)break}else n.nsp="/";var s=t.charAt(r+1);if(""!==s&&Number(s)==s){for(n.id="";++r;){var i=t.charAt(r);if(null==i||Number(i)!=i){--r;break}if(n.id+=t.charAt(r),r==t.length)break}n.id=Number(n.id)}return t.charAt(++r)&&(n=c(n,t.substr(r))),p("decoded %s as %j",t,n),n}function c(t,e){try{t.data=h.parse(e)}catch(t){return u()}return t}function l(t){this.reconPack=t,this.buffers=[]}function u(t){return{type:e.ERROR,data:"parser error"}}var p=n(378)("socket.io-parser"),h=n(381),d=n(384),f=n(385),g=n(387);e.protocol=4,e.types=["CONNECT","DISCONNECT","EVENT","ACK","ERROR","BINARY_EVENT","BINARY_ACK"],e.CONNECT=0,e.DISCONNECT=1,e.EVENT=2,e.ACK=3,e.ERROR=4,e.BINARY_EVENT=5,e.BINARY_ACK=6,e.Encoder=r,e.Decoder=s,r.prototype.encode=function(t,n){if(p("encoding packet %j",t),e.BINARY_EVENT==t.type||e.BINARY_ACK==t.type)i(t,n);else{var r=o(t);n([r])}},d(s.prototype),s.prototype.add=function(t){var n;if("string"==typeof t)n=a(t),e.BINARY_EVENT==n.type||e.BINARY_ACK==n.type?(this.reconstructor=new l(n),0===this.reconstructor.reconPack.attachments&&this.emit("decoded",n)):this.emit("decoded",n);else{if(!g(t)&&!t.base64)throw new Error("Unknown type: "+t);if(!this.reconstructor)throw new Error("got binary data when not reconstructing a packet");n=this.reconstructor.takeBinaryData(t),n&&(this.reconstructor=null,this.emit("decoded",n))}},s.prototype.destroy=function(){this.reconstructor&&this.reconstructor.finishedReconstruction()},l.prototype.takeBinaryData=function(t){if(this.buffers.push(t),this.buffers.length==this.reconPack.attachments){var e=f.reconstructPacket(this.reconPack,this.buffers);return this.finishedReconstruction(),e}return null},l.prototype.finishedReconstruction=function(){this.reconPack=null,this.buffers=[]}},378:function(t,e,n){function r(){return"WebkitAppearance"in document.documentElement.style||window.console&&(console.firebug||console.exception&&console.table)||navigator.userAgent.toLowerCase().match(/firefox\/(\d+)/)&&parseInt(RegExp.$1,10)>=31}function o(){var t=arguments,n=this.useColors;if(t[0]=(n?"%c":"")+this.namespace+(n?" %c":" ")+t[0]+(n?"%c ":" ")+"+"+e.humanize(this.diff),!n)return t;var r="color: "+this.color;t=[t[0],r,"color: inherit"].concat(Array.prototype.slice.call(t,1));var o=0,i=0;return t[0].replace(/%[a-z%]/g,function(t){"%%"!==t&&(o++,"%c"===t&&(i=o))}),t.splice(i,0,r),t}function i(){return"object"==typeof console&&console.log&&Function.prototype.apply.call(console.log,console,arguments)}function s(t){try{null==t?e.storage.removeItem("debug"):e.storage.debug=t}catch(t){}}function a(){var t;try{t=e.storage.debug}catch(t){}return t}function c(){try{return window.localStorage}catch(t){}}e=t.exports=n(379),e.log=i,e.formatArgs=o,e.save=s,e.load=a,e.useColors=r,e.storage="undefined"!=typeof chrome&&"undefined"!=typeof chrome.storage?chrome.storage.local:c(),e.colors=["lightseagreen","forestgreen","goldenrod","dodgerblue","darkorchid","crimson"],e.formatters.j=function(t){return JSON.stringify(t)},e.enable(a())},379:function(t,e,n){function r(){return e.colors[u++%e.colors.length]}function o(t){function n(){}function o(){var t=o,n=+new Date,i=n-(l||n);t.diff=i,t.prev=l,t.curr=n,l=n,null==t.useColors&&(t.useColors=e.useColors()),null==t.color&&t.useColors&&(t.color=r());var s=Array.prototype.slice.call(arguments);s[0]=e.coerce(s[0]),"string"!=typeof s[0]&&(s=["%o"].concat(s));var a=0;s[0]=s[0].replace(/%([a-z%])/g,function(n,r){if("%%"===n)return n;a++;var o=e.formatters[r];if("function"==typeof o){var i=s[a];n=o.call(t,i),s.splice(a,1),a--}return n}),"function"==typeof e.formatArgs&&(s=e.formatArgs.apply(t,s));var c=o.log||e.log||console.log.bind(console);c.apply(t,s)}n.enabled=!1,o.enabled=!0;var i=e.enabled(t)?o:n;return i.namespace=t,i}function i(t){e.save(t);for(var n=(t||"").split(/[\s,]+/),r=n.length,o=0;o<r;o++)n[o]&&(t=n[o].replace(/\*/g,".*?"),"-"===t[0]?e.skips.push(new RegExp("^"+t.substr(1)+"$")):e.names.push(new RegExp("^"+t+"$")))}function s(){e.enable("")}function a(t){var n,r;for(n=0,r=e.skips.length;n<r;n++)if(e.skips[n].test(t))return!1;for(n=0,r=e.names.length;n<r;n++)if(e.names[n].test(t))return!0;return!1}function c(t){return t instanceof Error?t.stack||t.message:t}e=t.exports=o,e.coerce=c,e.disable=s,e.enable=i,e.enabled=a,e.humanize=n(380),e.names=[],e.skips=[],e.formatters={};var l,u=0},380:function(t,e){function n(t){if(t=""+t,!(t.length>1e4)){var e=/^((?:\d+)?\.?\d+) *(milliseconds?|msecs?|ms|seconds?|secs?|s|minutes?|mins?|m|hours?|hrs?|h|days?|d|years?|yrs?|y)?$/i.exec(t);if(e){var n=parseFloat(e[1]),r=(e[2]||"ms").toLowerCase();switch(r){case"years":case"year":case"yrs":case"yr":case"y":return n*u;case"days":case"day":case"d":return n*l;case"hours":case"hour":case"hrs":case"hr":case"h":return n*c;case"minutes":case"minute":case"mins":case"min":case"m":return n*a;case"seconds":case"second":case"secs":case"sec":case"s":return n*s;case"milliseconds":case"millisecond":case"msecs":case"msec":case"ms":return n}}}}function r(t){return t>=l?Math.round(t/l)+"d":t>=c?Math.round(t/c)+"h":t>=a?Math.round(t/a)+"m":t>=s?Math.round(t/s)+"s":t+"ms"}function o(t){return i(t,l,"day")||i(t,c,"hour")||i(t,a,"minute")||i(t,s,"second")||t+" ms"}function i(t,e,n){if(!(t<e))return t<1.5*e?Math.floor(t/e)+" "+n:Math.ceil(t/e)+" "+n+"s"}var s=1e3,a=60*s,c=60*a,l=24*c,u=365.25*l;t.exports=function(t,e){return e=e||{},"string"==typeof t?n(t):e.long?o(t):r(t)}},381:function(t,e,n){var r;(function(t,o){(function(){function i(t,e){function n(t){if(n[t]!==m)return n[t];var i;if("bug-string-char-index"==t)i="a"!="a"[0];else if("json"==t)i=n("json-stringify")&&n("json-parse");else{var s,a='{"a":[1,true,false,null,"\\u0000\\b\\n\\f\\r\\t"]}';if("json-stringify"==t){var l=e.stringify,u="function"==typeof l&&b;if(u){(s=function(){return 1}).toJSON=s;try{u="0"===l(0)&&"0"===l(new r)&&'""'==l(new o)&&l(v)===m&&l(m)===m&&l()===m&&"1"===l(s)&&"[1]"==l([s])&&"[null]"==l([m])&&"null"==l(null)&&"[null,null,null]"==l([m,v,null])&&l({a:[s,!0,!1,null,"\0\b\n\f\r\t"]})==a&&"1"===l(null,s)&&"[\n 1,\n 2\n]"==l([1,2],null,1)&&'"-271821-04-20T00:00:00.000Z"'==l(new c(-864e13))&&'"+275760-09-13T00:00:00.000Z"'==l(new c(864e13))&&'"-000001-01-01T00:00:00.000Z"'==l(new c(-621987552e5))&&'"1969-12-31T23:59:59.999Z"'==l(new c(-1))}catch(t){u=!1}}i=u}if("json-parse"==t){var p=e.parse;if("function"==typeof p)try{if(0===p("0")&&!p(!1)){s=p(a);var h=5==s.a.length&&1===s.a[0];if(h){try{h=!p('"\t"')}catch(t){}if(h)try{h=1!==p("01")}catch(t){}if(h)try{h=1!==p("1.")}catch(t){}}}}catch(t){h=!1}i=h}}return n[t]=!!i}t||(t=l.Object()),e||(e=l.Object());var r=t.Number||l.Number,o=t.String||l.String,s=t.Object||l.Object,c=t.Date||l.Date,u=t.SyntaxError||l.SyntaxError,p=t.TypeError||l.TypeError,h=t.Math||l.Math,d=t.JSON||l.JSON;"object"==typeof d&&d&&(e.stringify=d.stringify,e.parse=d.parse);var f,g,m,y=s.prototype,v=y.toString,b=new c(-0xc782b5b800cec);try{b=b.getUTCFullYear()==-109252&&0===b.getUTCMonth()&&1===b.getUTCDate()&&10==b.getUTCHours()&&37==b.getUTCMinutes()&&6==b.getUTCSeconds()&&708==b.getUTCMilliseconds()}catch(t){}if(!n("json")){var _="[object Function]",w="[object Date]",C="[object Number]",k="[object String]",x="[object Array]",P="[object Boolean]",O=n("bug-string-char-index");if(!b)var S=h.floor,A=[0,31,59,90,120,151,181,212,243,273,304,334],E=function(t,e){return A[e]+365*(t-1970)+S((t-1969+(e=+(e>1)))/4)-S((t-1901+e)/100)+S((t-1601+e)/400)};if((f=y.hasOwnProperty)||(f=function(t){var e,n={};return(n.__proto__=null,n.__proto__={toString:1},n).toString!=v?f=function(t){var e=this.__proto__,n=t in(this.__proto__=null,this);return this.__proto__=e,n}:(e=n.constructor,f=function(t){var n=(this.constructor||e).prototype;return t in this&&!(t in n&&this[t]===n[t])}),n=null,f.call(this,t)}),g=function(t,e){var n,r,o,i=0;(n=function(){this.valueOf=0}).prototype.valueOf=0,r=new n;for(o in r)f.call(r,o)&&i++;return n=r=null,i?g=2==i?function(t,e){var n,r={},o=v.call(t)==_;for(n in t)o&&"prototype"==n||f.call(r,n)||!(r[n]=1)||!f.call(t,n)||e(n)}:function(t,e){var n,r,o=v.call(t)==_;for(n in t)o&&"prototype"==n||!f.call(t,n)||(r="constructor"===n)||e(n);(r||f.call(t,n="constructor"))&&e(n)}:(r=["valueOf","toString","toLocaleString","propertyIsEnumerable","isPrototypeOf","hasOwnProperty","constructor"],g=function(t,e){var n,o,i=v.call(t)==_,s=!i&&"function"!=typeof t.constructor&&a[typeof t.hasOwnProperty]&&t.hasOwnProperty||f;for(n in t)i&&"prototype"==n||!s.call(t,n)||e(n);for(o=r.length;n=r[--o];s.call(t,n)&&e(n));}),g(t,e)},!n("json-stringify")){var T={92:"\\\\",34:'\\"',8:"\\b",12:"\\f",10:"\\n",13:"\\r",9:"\\t"},j="000000",R=function(t,e){return(j+(e||0)).slice(-t)},M="\\u00",V=function(t){for(var e='"',n=0,r=t.length,o=!O||r>10,i=o&&(O?t.split(""):t);n<r;n++){var s=t.charCodeAt(n);switch(s){case 8:case 9:case 10:case 12:case 13:case 34:case 92:e+=T[s];break;default:if(s<32){e+=M+R(2,s.toString(16));break}e+=o?i[n]:t.charAt(n)}}return e+'"'},N=function(t,e,n,r,o,i,s){var a,c,l,u,h,d,y,b,_,O,A,T,j,M,D,B;try{a=e[t]}catch(t){}if("object"==typeof a&&a)if(c=v.call(a),c!=w||f.call(a,"toJSON"))"function"==typeof a.toJSON&&(c!=C&&c!=k&&c!=x||f.call(a,"toJSON"))&&(a=a.toJSON(t));else if(a>-1/0&&a<1/0){if(E){for(h=S(a/864e5),l=S(h/365.2425)+1970-1;E(l+1,0)<=h;l++);for(u=S((h-E(l,0))/30.42);E(l,u+1)<=h;u++);h=1+h-E(l,u),d=(a%864e5+864e5)%864e5,y=S(d/36e5)%24,b=S(d/6e4)%60,_=S(d/1e3)%60,O=d%1e3}else l=a.getUTCFullYear(),u=a.getUTCMonth(),h=a.getUTCDate(),y=a.getUTCHours(),b=a.getUTCMinutes(),_=a.getUTCSeconds(),O=a.getUTCMilliseconds();a=(l<=0||l>=1e4?(l<0?"-":"+")+R(6,l<0?-l:l):R(4,l))+"-"+R(2,u+1)+"-"+R(2,h)+"T"+R(2,y)+":"+R(2,b)+":"+R(2,_)+"."+R(3,O)+"Z"}else a=null;if(n&&(a=n.call(e,t,a)),null===a)return"null";if(c=v.call(a),c==P)return""+a;if(c==C)return a>-1/0&&a<1/0?""+a:"null";if(c==k)return V(""+a);if("object"==typeof a){for(M=s.length;M--;)if(s[M]===a)throw p();if(s.push(a),A=[],D=i,i+=o,c==x){for(j=0,M=a.length;j<M;j++)T=N(j,a,n,r,o,i,s),A.push(T===m?"null":T);B=A.length?o?"[\n"+i+A.join(",\n"+i)+"\n"+D+"]":"["+A.join(",")+"]":"[]"}else g(r||a,function(t){var e=N(t,a,n,r,o,i,s);e!==m&&A.push(V(t)+":"+(o?" ":"")+e)}),B=A.length?o?"{\n"+i+A.join(",\n"+i)+"\n"+D+"}":"{"+A.join(",")+"}":"{}";return s.pop(),B}};e.stringify=function(t,e,n){var r,o,i,s;if(a[typeof e]&&e)if((s=v.call(e))==_)o=e;else if(s==x){i={};for(var c,l=0,u=e.length;l<u;c=e[l++],s=v.call(c),(s==k||s==C)&&(i[c]=1));}if(n)if((s=v.call(n))==C){if((n-=n%1)>0)for(r="",n>10&&(n=10);r.length<n;r+=" ");}else s==k&&(r=n.length<=10?n:n.slice(0,10));return N("",(c={},c[""]=t,c),o,i,r,"",[])}}if(!n("json-parse")){var D,B,I=o.fromCharCode,F={92:"\\",34:'"',47:"/",98:"\b",116:"\t",110:"\n",102:"\f",114:"\r"},L=function(){throw D=B=null,u()},U=function(){for(var t,e,n,r,o,i=B,s=i.length;D<s;)switch(o=i.charCodeAt(D)){case 9:case 10:case 13:case 32:D++;break;case 123:case 125:case 91:case 93:case 58:case 44:return t=O?i.charAt(D):i[D],D++,t;case 34:for(t="@",D++;D<s;)if(o=i.charCodeAt(D),o<32)L();else if(92==o)switch(o=i.charCodeAt(++D)){case 92:case 34:case 47:case 98:case 116:case 110:case 102:case 114:t+=F[o],D++;break;case 117:for(e=++D,n=D+4;D<n;D++)o=i.charCodeAt(D),o>=48&&o<=57||o>=97&&o<=102||o>=65&&o<=70||L();t+=I("0x"+i.slice(e,D));break;default:L()}else{if(34==o)break;for(o=i.charCodeAt(D),e=D;o>=32&&92!=o&&34!=o;)o=i.charCodeAt(++D);
-t+=i.slice(e,D)}if(34==i.charCodeAt(D))return D++,t;L();default:if(e=D,45==o&&(r=!0,o=i.charCodeAt(++D)),o>=48&&o<=57){for(48==o&&(o=i.charCodeAt(D+1),o>=48&&o<=57)&&L(),r=!1;D<s&&(o=i.charCodeAt(D),o>=48&&o<=57);D++);if(46==i.charCodeAt(D)){for(n=++D;n<s&&(o=i.charCodeAt(n),o>=48&&o<=57);n++);n==D&&L(),D=n}if(o=i.charCodeAt(D),101==o||69==o){for(o=i.charCodeAt(++D),43!=o&&45!=o||D++,n=D;n<s&&(o=i.charCodeAt(n),o>=48&&o<=57);n++);n==D&&L(),D=n}return+i.slice(e,D)}if(r&&L(),"true"==i.slice(D,D+4))return D+=4,!0;if("false"==i.slice(D,D+5))return D+=5,!1;if("null"==i.slice(D,D+4))return D+=4,null;L()}return"$"},q=function(t){var e,n;if("$"==t&&L(),"string"==typeof t){if("@"==(O?t.charAt(0):t[0]))return t.slice(1);if("["==t){for(e=[];t=U(),"]"!=t;n||(n=!0))n&&(","==t?(t=U(),"]"==t&&L()):L()),","==t&&L(),e.push(q(t));return e}if("{"==t){for(e={};t=U(),"}"!=t;n||(n=!0))n&&(","==t?(t=U(),"}"==t&&L()):L()),","!=t&&"string"==typeof t&&"@"==(O?t.charAt(0):t[0])&&":"==U()||L(),e[t.slice(1)]=q(U());return e}L()}return t},G=function(t,e,n){var r=H(t,e,n);r===m?delete t[e]:t[e]=r},H=function(t,e,n){var r,o=t[e];if("object"==typeof o&&o)if(v.call(o)==x)for(r=o.length;r--;)G(o,r,n);else g(o,function(t){G(o,t,n)});return n.call(t,e,o)};e.parse=function(t,e){var n,r;return D=0,B=""+t,n=q(U()),"$"!=U()&&L(),D=B=null,e&&v.call(e)==_?H((r={},r[""]=n,r),"",e):n}}}return e.runInContext=i,e}var s=n(383),a={function:!0,object:!0},c=a[typeof e]&&e&&!e.nodeType&&e,l=a[typeof window]&&window||this,u=c&&a[typeof t]&&t&&!t.nodeType&&"object"==typeof o&&o;if(!u||u.global!==u&&u.window!==u&&u.self!==u||(l=u),c&&!s)i(l,c);else{var p=l.JSON,h=l.JSON3,d=!1,f=i(l,l.JSON3={noConflict:function(){return d||(d=!0,l.JSON=p,l.JSON3=h,p=h=null),f}});l.JSON={parse:f.parse,stringify:f.stringify}}s&&(r=function(){return f}.call(e,n,e,t),!(void 0!==r&&(t.exports=r)))}).call(this)}).call(e,n(382)(t),function(){return this}())},382:function(t,e){t.exports=function(t){return t.webpackPolyfill||(t.deprecate=function(){},t.paths=[],t.children=[],t.webpackPolyfill=1),t}},383:function(t,e){(function(e){t.exports=e}).call(e,{})},384:function(t,e){function n(t){if(t)return r(t)}function r(t){for(var e in n.prototype)t[e]=n.prototype[e];return t}t.exports=n,n.prototype.on=n.prototype.addEventListener=function(t,e){return this._callbacks=this._callbacks||{},(this._callbacks[t]=this._callbacks[t]||[]).push(e),this},n.prototype.once=function(t,e){function n(){r.off(t,n),e.apply(this,arguments)}var r=this;return this._callbacks=this._callbacks||{},n.fn=e,this.on(t,n),this},n.prototype.off=n.prototype.removeListener=n.prototype.removeAllListeners=n.prototype.removeEventListener=function(t,e){if(this._callbacks=this._callbacks||{},0==arguments.length)return this._callbacks={},this;var n=this._callbacks[t];if(!n)return this;if(1==arguments.length)return delete this._callbacks[t],this;for(var r,o=0;o<n.length;o++)if(r=n[o],r===e||r.fn===e){n.splice(o,1);break}return this},n.prototype.emit=function(t){this._callbacks=this._callbacks||{};var e=[].slice.call(arguments,1),n=this._callbacks[t];if(n){n=n.slice(0);for(var r=0,o=n.length;r<o;++r)n[r].apply(this,e)}return this},n.prototype.listeners=function(t){return this._callbacks=this._callbacks||{},this._callbacks[t]||[]},n.prototype.hasListeners=function(t){return!!this.listeners(t).length}},385:function(t,e,n){(function(t){var r=n(386),o=n(387);e.deconstructPacket=function(t){function e(t){if(!t)return t;if(o(t)){var i={_placeholder:!0,num:n.length};return n.push(t),i}if(r(t)){for(var s=new Array(t.length),a=0;a<t.length;a++)s[a]=e(t[a]);return s}if("object"==typeof t&&!(t instanceof Date)){var s={};for(var c in t)s[c]=e(t[c]);return s}return t}var n=[],i=t.data,s=t;return s.data=e(i),s.attachments=n.length,{packet:s,buffers:n}},e.reconstructPacket=function(t,e){function n(t){if(t&&t._placeholder){var o=e[t.num];return o}if(r(t)){for(var i=0;i<t.length;i++)t[i]=n(t[i]);return t}if(t&&"object"==typeof t){for(var s in t)t[s]=n(t[s]);return t}return t}return t.data=n(t.data),t.attachments=void 0,t},e.removeBlobs=function(e,n){function i(e,c,l){if(!e)return e;if(t.Blob&&e instanceof Blob||t.File&&e instanceof File){s++;var u=new FileReader;u.onload=function(){l?l[c]=this.result:a=this.result,--s||n(a)},u.readAsArrayBuffer(e)}else if(r(e))for(var p=0;p<e.length;p++)i(e[p],p,e);else if(e&&"object"==typeof e&&!o(e))for(var h in e)i(e[h],h,e)}var s=0,a=e;i(a),s||n(a)}}).call(e,function(){return this}())},386:function(t,e){t.exports=Array.isArray||function(t){return"[object Array]"==Object.prototype.toString.call(t)}},387:function(t,e){(function(e){function n(t){return e.Buffer&&e.Buffer.isBuffer(t)||e.ArrayBuffer&&t instanceof ArrayBuffer}t.exports=n}).call(e,function(){return this}())},388:function(t,e,n){function r(t,e){return this instanceof r?(t&&"object"==typeof t&&(e=t,t=void 0),e=e||{},e.path=e.path||"/socket.io",this.nsps={},this.subs=[],this.opts=e,this.reconnection(e.reconnection!==!1),this.reconnectionAttempts(e.reconnectionAttempts||1/0),this.reconnectionDelay(e.reconnectionDelay||1e3),this.reconnectionDelayMax(e.reconnectionDelayMax||5e3),this.randomizationFactor(e.randomizationFactor||.5),this.backoff=new h({min:this.reconnectionDelay(),max:this.reconnectionDelayMax(),jitter:this.randomizationFactor()}),this.timeout(null==e.timeout?2e4:e.timeout),this.readyState="closed",this.uri=t,this.connecting=[],this.lastPing=null,this.encoding=!1,this.packetBuffer=[],this.encoder=new a.Encoder,this.decoder=new a.Decoder,this.autoConnect=e.autoConnect!==!1,void(this.autoConnect&&this.open())):new r(t,e)}var o=n(389),i=n(417),s=n(406),a=n(377),c=n(419),l=n(420),u=n(374)("socket.io-client:manager"),p=n(415),h=n(421),d=Object.prototype.hasOwnProperty;t.exports=r,r.prototype.emitAll=function(){this.emit.apply(this,arguments);for(var t in this.nsps)d.call(this.nsps,t)&&this.nsps[t].emit.apply(this.nsps[t],arguments)},r.prototype.updateSocketIds=function(){for(var t in this.nsps)d.call(this.nsps,t)&&(this.nsps[t].id=this.engine.id)},s(r.prototype),r.prototype.reconnection=function(t){return arguments.length?(this._reconnection=!!t,this):this._reconnection},r.prototype.reconnectionAttempts=function(t){return arguments.length?(this._reconnectionAttempts=t,this):this._reconnectionAttempts},r.prototype.reconnectionDelay=function(t){return arguments.length?(this._reconnectionDelay=t,this.backoff&&this.backoff.setMin(t),this):this._reconnectionDelay},r.prototype.randomizationFactor=function(t){return arguments.length?(this._randomizationFactor=t,this.backoff&&this.backoff.setJitter(t),this):this._randomizationFactor},r.prototype.reconnectionDelayMax=function(t){return arguments.length?(this._reconnectionDelayMax=t,this.backoff&&this.backoff.setMax(t),this):this._reconnectionDelayMax},r.prototype.timeout=function(t){return arguments.length?(this._timeout=t,this):this._timeout},r.prototype.maybeReconnectOnOpen=function(){!this.reconnecting&&this._reconnection&&0===this.backoff.attempts&&this.reconnect()},r.prototype.open=r.prototype.connect=function(t,e){if(u("readyState %s",this.readyState),~this.readyState.indexOf("open"))return this;u("opening %s",this.uri),this.engine=o(this.uri,this.opts);var n=this.engine,r=this;this.readyState="opening",this.skipReconnect=!1;var i=c(n,"open",function(){r.onopen(),t&&t()}),s=c(n,"error",function(e){if(u("connect_error"),r.cleanup(),r.readyState="closed",r.emitAll("connect_error",e),t){var n=new Error("Connection error");n.data=e,t(n)}else r.maybeReconnectOnOpen()});if(!1!==this._timeout){var a=this._timeout;u("connect attempt will timeout after %d",a);var l=setTimeout(function(){u("connect attempt timed out after %d",a),i.destroy(),n.close(),n.emit("error","timeout"),r.emitAll("connect_timeout",a)},a);this.subs.push({destroy:function(){clearTimeout(l)}})}return this.subs.push(i),this.subs.push(s),this},r.prototype.onopen=function(){u("open"),this.cleanup(),this.readyState="open",this.emit("open");var t=this.engine;this.subs.push(c(t,"data",l(this,"ondata"))),this.subs.push(c(t,"ping",l(this,"onping"))),this.subs.push(c(t,"pong",l(this,"onpong"))),this.subs.push(c(t,"error",l(this,"onerror"))),this.subs.push(c(t,"close",l(this,"onclose"))),this.subs.push(c(this.decoder,"decoded",l(this,"ondecoded")))},r.prototype.onping=function(){this.lastPing=new Date,this.emitAll("ping")},r.prototype.onpong=function(){this.emitAll("pong",new Date-this.lastPing)},r.prototype.ondata=function(t){this.decoder.add(t)},r.prototype.ondecoded=function(t){this.emit("packet",t)},r.prototype.onerror=function(t){u("error",t),this.emitAll("error",t)},r.prototype.socket=function(t,e){function n(){~p(o.connecting,r)||o.connecting.push(r)}var r=this.nsps[t];if(!r){r=new i(this,t,e),this.nsps[t]=r;var o=this;r.on("connecting",n),r.on("connect",function(){r.id=o.engine.id}),this.autoConnect&&n()}return r},r.prototype.destroy=function(t){var e=p(this.connecting,t);~e&&this.connecting.splice(e,1),this.connecting.length||this.close()},r.prototype.packet=function(t){u("writing packet %j",t);var e=this;t.query&&0===t.type&&(t.nsp+="?"+t.query),e.encoding?e.packetBuffer.push(t):(e.encoding=!0,this.encoder.encode(t,function(n){for(var r=0;r<n.length;r++)e.engine.write(n[r],t.options);e.encoding=!1,e.processPacketQueue()}))},r.prototype.processPacketQueue=function(){if(this.packetBuffer.length>0&&!this.encoding){var t=this.packetBuffer.shift();this.packet(t)}},r.prototype.cleanup=function(){u("cleanup");for(var t=this.subs.length,e=0;e<t;e++){var n=this.subs.shift();n.destroy()}this.packetBuffer=[],this.encoding=!1,this.lastPing=null,this.decoder.destroy()},r.prototype.close=r.prototype.disconnect=function(){u("disconnect"),this.skipReconnect=!0,this.reconnecting=!1,"opening"===this.readyState&&this.cleanup(),this.backoff.reset(),this.readyState="closed",this.engine&&this.engine.close()},r.prototype.onclose=function(t){u("onclose"),this.cleanup(),this.backoff.reset(),this.readyState="closed",this.emit("close",t),this._reconnection&&!this.skipReconnect&&this.reconnect()},r.prototype.reconnect=function(){if(this.reconnecting||this.skipReconnect)return this;var t=this;if(this.backoff.attempts>=this._reconnectionAttempts)u("reconnect failed"),this.backoff.reset(),this.emitAll("reconnect_failed"),this.reconnecting=!1;else{var e=this.backoff.duration();u("will wait %dms before reconnect attempt",e),this.reconnecting=!0;var n=setTimeout(function(){t.skipReconnect||(u("attempting reconnect"),t.emitAll("reconnect_attempt",t.backoff.attempts),t.emitAll("reconnecting",t.backoff.attempts),t.skipReconnect||t.open(function(e){e?(u("reconnect attempt error"),t.reconnecting=!1,t.reconnect(),t.emitAll("reconnect_error",e.data)):(u("reconnect success"),t.onreconnect())}))},e);this.subs.push({destroy:function(){clearTimeout(n)}})}},r.prototype.onreconnect=function(){var t=this.backoff.attempts;this.reconnecting=!1,this.backoff.reset(),this.updateSocketIds(),this.emitAll("reconnect",t)}},389:function(t,e,n){t.exports=n(390)},390:function(t,e,n){t.exports=n(391),t.exports.parser=n(398)},391:function(t,e,n){(function(e){function r(t,n){if(!(this instanceof r))return new r(t,n);n=n||{},t&&"object"==typeof t&&(n=t,t=null),t?(t=u(t),n.hostname=t.host,n.secure="https"===t.protocol||"wss"===t.protocol,n.port=t.port,t.query&&(n.query=t.query)):n.host&&(n.hostname=u(n.host).host),this.secure=null!=n.secure?n.secure:e.location&&"https:"===location.protocol,n.hostname&&!n.port&&(n.port=this.secure?"443":"80"),this.agent=n.agent||!1,this.hostname=n.hostname||(e.location?location.hostname:"localhost"),this.port=n.port||(e.location&&location.port?location.port:this.secure?443:80),this.query=n.query||{},"string"==typeof this.query&&(this.query=h.decode(this.query)),this.upgrade=!1!==n.upgrade,this.path=(n.path||"/engine.io").replace(/\/$/,"")+"/",this.forceJSONP=!!n.forceJSONP,this.jsonp=!1!==n.jsonp,this.forceBase64=!!n.forceBase64,this.enablesXDR=!!n.enablesXDR,this.timestampParam=n.timestampParam||"t",this.timestampRequests=n.timestampRequests,this.transports=n.transports||["polling","websocket"],this.readyState="",this.writeBuffer=[],this.prevBufferLen=0,this.policyPort=n.policyPort||843,this.rememberUpgrade=n.rememberUpgrade||!1,this.binaryType=null,this.onlyBinaryUpgrades=n.onlyBinaryUpgrades,this.perMessageDeflate=!1!==n.perMessageDeflate&&(n.perMessageDeflate||{}),!0===this.perMessageDeflate&&(this.perMessageDeflate={}),this.perMessageDeflate&&null==this.perMessageDeflate.threshold&&(this.perMessageDeflate.threshold=1024),this.pfx=n.pfx||null,this.key=n.key||null,this.passphrase=n.passphrase||null,this.cert=n.cert||null,this.ca=n.ca||null,this.ciphers=n.ciphers||null,this.rejectUnauthorized=void 0===n.rejectUnauthorized?null:n.rejectUnauthorized,this.forceNode=!!n.forceNode;var o="object"==typeof e&&e;o.global===o&&(n.extraHeaders&&Object.keys(n.extraHeaders).length>0&&(this.extraHeaders=n.extraHeaders),n.localAddress&&(this.localAddress=n.localAddress)),this.id=null,this.upgrades=null,this.pingInterval=null,this.pingTimeout=null,this.pingIntervalTimer=null,this.pingTimeoutTimer=null,this.open()}function o(t){var e={};for(var n in t)t.hasOwnProperty(n)&&(e[n]=t[n]);return e}var i=n(392),s=n(406),a=n(410)("engine.io-client:socket"),c=n(415),l=n(398),u=n(373),p=n(416),h=n(407);t.exports=r,r.priorWebsocketSuccess=!1,s(r.prototype),r.protocol=l.protocol,r.Socket=r,r.Transport=n(397),r.transports=n(392),r.parser=n(398),r.prototype.createTransport=function(t){a('creating transport "%s"',t);var e=o(this.query);e.EIO=l.protocol,e.transport=t,this.id&&(e.sid=this.id);var n=new i[t]({agent:this.agent,hostname:this.hostname,port:this.port,secure:this.secure,path:this.path,query:e,forceJSONP:this.forceJSONP,jsonp:this.jsonp,forceBase64:this.forceBase64,enablesXDR:this.enablesXDR,timestampRequests:this.timestampRequests,timestampParam:this.timestampParam,policyPort:this.policyPort,socket:this,pfx:this.pfx,key:this.key,passphrase:this.passphrase,cert:this.cert,ca:this.ca,ciphers:this.ciphers,rejectUnauthorized:this.rejectUnauthorized,perMessageDeflate:this.perMessageDeflate,extraHeaders:this.extraHeaders,forceNode:this.forceNode,localAddress:this.localAddress});return n},r.prototype.open=function(){var t;if(this.rememberUpgrade&&r.priorWebsocketSuccess&&this.transports.indexOf("websocket")!==-1)t="websocket";else{if(0===this.transports.length){var e=this;return void setTimeout(function(){e.emit("error","No transports available")},0)}t=this.transports[0]}this.readyState="opening";try{t=this.createTransport(t)}catch(t){return this.transports.shift(),void this.open()}t.open(),this.setTransport(t)},r.prototype.setTransport=function(t){a("setting transport %s",t.name);var e=this;this.transport&&(a("clearing existing transport %s",this.transport.name),this.transport.removeAllListeners()),this.transport=t,t.on("drain",function(){e.onDrain()}).on("packet",function(t){e.onPacket(t)}).on("error",function(t){e.onError(t)}).on("close",function(){e.onClose("transport close")})},r.prototype.probe=function(t){function e(){if(h.onlyBinaryUpgrades){var e=!this.supportsBinary&&h.transport.supportsBinary;p=p||e}p||(a('probe transport "%s" opened',t),u.send([{type:"ping",data:"probe"}]),u.once("packet",function(e){if(!p)if("pong"===e.type&&"probe"===e.data){if(a('probe transport "%s" pong',t),h.upgrading=!0,h.emit("upgrading",u),!u)return;r.priorWebsocketSuccess="websocket"===u.name,a('pausing current transport "%s"',h.transport.name),h.transport.pause(function(){p||"closed"!==h.readyState&&(a("changing transport and sending upgrade packet"),l(),h.setTransport(u),u.send([{type:"upgrade"}]),h.emit("upgrade",u),u=null,h.upgrading=!1,h.flush())})}else{a('probe transport "%s" failed',t);var n=new Error("probe error");n.transport=u.name,h.emit("upgradeError",n)}}))}function n(){p||(p=!0,l(),u.close(),u=null)}function o(e){var r=new Error("probe error: "+e);r.transport=u.name,n(),a('probe transport "%s" failed because of error: %s',t,e),h.emit("upgradeError",r)}function i(){o("transport closed")}function s(){o("socket closed")}function c(t){u&&t.name!==u.name&&(a('"%s" works - aborting "%s"',t.name,u.name),n())}function l(){u.removeListener("open",e),u.removeListener("error",o),u.removeListener("close",i),h.removeListener("close",s),h.removeListener("upgrading",c)}a('probing transport "%s"',t);var u=this.createTransport(t,{probe:1}),p=!1,h=this;r.priorWebsocketSuccess=!1,u.once("open",e),u.once("error",o),u.once("close",i),this.once("close",s),this.once("upgrading",c),u.open()},r.prototype.onOpen=function(){if(a("socket open"),this.readyState="open",r.priorWebsocketSuccess="websocket"===this.transport.name,this.emit("open"),this.flush(),"open"===this.readyState&&this.upgrade&&this.transport.pause){a("starting upgrade probes");for(var t=0,e=this.upgrades.length;t<e;t++)this.probe(this.upgrades[t])}},r.prototype.onPacket=function(t){if("opening"===this.readyState||"open"===this.readyState||"closing"===this.readyState)switch(a('socket receive: type "%s", data "%s"',t.type,t.data),this.emit("packet",t),this.emit("heartbeat"),t.type){case"open":this.onHandshake(p(t.data));break;case"pong":this.setPing(),this.emit("pong");break;case"error":var e=new Error("server error");e.code=t.data,this.onError(e);break;case"message":this.emit("data",t.data),this.emit("message",t.data)}else a('packet received with socket readyState "%s"',this.readyState)},r.prototype.onHandshake=function(t){this.emit("handshake",t),this.id=t.sid,this.transport.query.sid=t.sid,this.upgrades=this.filterUpgrades(t.upgrades),this.pingInterval=t.pingInterval,this.pingTimeout=t.pingTimeout,this.onOpen(),"closed"!==this.readyState&&(this.setPing(),this.removeListener("heartbeat",this.onHeartbeat),this.on("heartbeat",this.onHeartbeat))},r.prototype.onHeartbeat=function(t){clearTimeout(this.pingTimeoutTimer);var e=this;e.pingTimeoutTimer=setTimeout(function(){"closed"!==e.readyState&&e.onClose("ping timeout")},t||e.pingInterval+e.pingTimeout)},r.prototype.setPing=function(){var t=this;clearTimeout(t.pingIntervalTimer),t.pingIntervalTimer=setTimeout(function(){a("writing ping packet - expecting pong within %sms",t.pingTimeout),t.ping(),t.onHeartbeat(t.pingTimeout)},t.pingInterval)},r.prototype.ping=function(){var t=this;this.sendPacket("ping",function(){t.emit("ping")})},r.prototype.onDrain=function(){this.writeBuffer.splice(0,this.prevBufferLen),this.prevBufferLen=0,0===this.writeBuffer.length?this.emit("drain"):this.flush()},r.prototype.flush=function(){"closed"!==this.readyState&&this.transport.writable&&!this.upgrading&&this.writeBuffer.length&&(a("flushing %d packets in socket",this.writeBuffer.length),this.transport.send(this.writeBuffer),this.prevBufferLen=this.writeBuffer.length,this.emit("flush"))},r.prototype.write=r.prototype.send=function(t,e,n){return this.sendPacket("message",t,e,n),this},r.prototype.sendPacket=function(t,e,n,r){if("function"==typeof e&&(r=e,e=void 0),"function"==typeof n&&(r=n,n=null),"closing"!==this.readyState&&"closed"!==this.readyState){n=n||{},n.compress=!1!==n.compress;var o={type:t,data:e,options:n};this.emit("packetCreate",o),this.writeBuffer.push(o),r&&this.once("flush",r),this.flush()}},r.prototype.close=function(){function t(){r.onClose("forced close"),a("socket closing - telling transport to close"),r.transport.close()}function e(){r.removeListener("upgrade",e),r.removeListener("upgradeError",e),t()}function n(){r.once("upgrade",e),r.once("upgradeError",e)}if("opening"===this.readyState||"open"===this.readyState){this.readyState="closing";var r=this;this.writeBuffer.length?this.once("drain",function(){this.upgrading?n():t()}):this.upgrading?n():t()}return this},r.prototype.onError=function(t){a("socket error %j",t),r.priorWebsocketSuccess=!1,this.emit("error",t),this.onClose("transport error",t)},r.prototype.onClose=function(t,e){if("opening"===this.readyState||"open"===this.readyState||"closing"===this.readyState){a('socket close with reason: "%s"',t);var n=this;clearTimeout(this.pingIntervalTimer),clearTimeout(this.pingTimeoutTimer),this.transport.removeAllListeners("close"),this.transport.close(),this.transport.removeAllListeners(),this.readyState="closed",this.id=null,this.emit("close",t,e),n.writeBuffer=[],n.prevBufferLen=0}},r.prototype.filterUpgrades=function(t){for(var e=[],n=0,r=t.length;n<r;n++)~c(this.transports,t[n])&&e.push(t[n]);return e}}).call(e,function(){return this}())},392:function(t,e,n){(function(t){function r(e){var n,r=!1,a=!1,c=!1!==e.jsonp;if(t.location){var l="https:"===location.protocol,u=location.port;u||(u=l?443:80),r=e.hostname!==location.hostname||u!==e.port,a=e.secure!==l}if(e.xdomain=r,e.xscheme=a,n=new o(e),"open"in n&&!e.forceJSONP)return new i(e);if(!c)throw new Error("JSONP disabled");return new s(e)}var o=n(393),i=n(395),s=n(412),a=n(413);e.polling=r,e.websocket=a}).call(e,function(){return this}())},393:function(t,e,n){(function(e){var r=n(394);t.exports=function(t){var n=t.xdomain,o=t.xscheme,i=t.enablesXDR;try{if("undefined"!=typeof XMLHttpRequest&&(!n||r))return new XMLHttpRequest}catch(t){}try{if("undefined"!=typeof XDomainRequest&&!o&&i)return new XDomainRequest}catch(t){}if(!n)try{return new(e[["Active"].concat("Object").join("X")])("Microsoft.XMLHTTP")}catch(t){}}}).call(e,function(){return this}())},394:function(t,e){try{t.exports="undefined"!=typeof XMLHttpRequest&&"withCredentials"in new XMLHttpRequest}catch(e){t.exports=!1}},395:function(t,e,n){(function(e){function r(){}function o(t){if(c.call(this,t),this.requestTimeout=t.requestTimeout,e.location){var n="https:"===location.protocol,r=location.port;r||(r=n?443:80),this.xd=t.hostname!==e.location.hostname||r!==t.port,this.xs=t.secure!==n}else this.extraHeaders=t.extraHeaders}function i(t){this.method=t.method||"GET",this.uri=t.uri,this.xd=!!t.xd,this.xs=!!t.xs,this.async=!1!==t.async,this.data=void 0!==t.data?t.data:null,this.agent=t.agent,this.isBinary=t.isBinary,this.supportsBinary=t.supportsBinary,this.enablesXDR=t.enablesXDR,this.requestTimeout=t.requestTimeout,this.pfx=t.pfx,this.key=t.key,this.passphrase=t.passphrase,this.cert=t.cert,this.ca=t.ca,this.ciphers=t.ciphers,this.rejectUnauthorized=t.rejectUnauthorized,this.extraHeaders=t.extraHeaders,this.create()}function s(){for(var t in i.requests)i.requests.hasOwnProperty(t)&&i.requests[t].abort()}var a=n(393),c=n(396),l=n(406),u=n(408),p=n(410)("engine.io-client:polling-xhr");t.exports=o,t.exports.Request=i,u(o,c),o.prototype.supportsBinary=!0,o.prototype.request=function(t){return t=t||{},t.uri=this.uri(),t.xd=this.xd,t.xs=this.xs,t.agent=this.agent||!1,t.supportsBinary=this.supportsBinary,t.enablesXDR=this.enablesXDR,t.pfx=this.pfx,t.key=this.key,t.passphrase=this.passphrase,t.cert=this.cert,t.ca=this.ca,t.ciphers=this.ciphers,t.rejectUnauthorized=this.rejectUnauthorized,t.requestTimeout=this.requestTimeout,t.extraHeaders=this.extraHeaders,new i(t)},o.prototype.doWrite=function(t,e){var n="string"!=typeof t&&void 0!==t,r=this.request({method:"POST",data:t,isBinary:n}),o=this;r.on("success",e),r.on("error",function(t){o.onError("xhr post error",t)}),this.sendXhr=r},o.prototype.doPoll=function(){p("xhr poll");var t=this.request(),e=this;t.on("data",function(t){e.onData(t)}),t.on("error",function(t){e.onError("xhr poll error",t)}),this.pollXhr=t},l(i.prototype),i.prototype.create=function(){var t={agent:this.agent,xdomain:this.xd,xscheme:this.xs,enablesXDR:this.enablesXDR};t.pfx=this.pfx,t.key=this.key,t.passphrase=this.passphrase,t.cert=this.cert,t.ca=this.ca,t.ciphers=this.ciphers,t.rejectUnauthorized=this.rejectUnauthorized;var n=this.xhr=new a(t),r=this;try{p("xhr open %s: %s",this.method,this.uri),n.open(this.method,this.uri,this.async);try{if(this.extraHeaders){n.setDisableHeaderCheck(!0);for(var o in this.extraHeaders)this.extraHeaders.hasOwnProperty(o)&&n.setRequestHeader(o,this.extraHeaders[o])}}catch(t){}if(this.supportsBinary&&(n.responseType="arraybuffer"),"POST"===this.method)try{this.isBinary?n.setRequestHeader("Content-type","application/octet-stream"):n.setRequestHeader("Content-type","text/plain;charset=UTF-8")}catch(t){}try{n.setRequestHeader("Accept","*/*")}catch(t){}"withCredentials"in n&&(n.withCredentials=!0),this.requestTimeout&&(n.timeout=this.requestTimeout),this.hasXDR()?(n.onload=function(){r.onLoad()},n.onerror=function(){r.onError(n.responseText)}):n.onreadystatechange=function(){4===n.readyState&&(200===n.status||1223===n.status?r.onLoad():setTimeout(function(){r.onError(n.status)},0))},p("xhr data %s",this.data),n.send(this.data)}catch(t){return void setTimeout(function(){r.onError(t)},0)}e.document&&(this.index=i.requestsCount++,i.requests[this.index]=this)},i.prototype.onSuccess=function(){this.emit("success"),this.cleanup()},i.prototype.onData=function(t){this.emit("data",t),this.onSuccess()},i.prototype.onError=function(t){this.emit("error",t),this.cleanup(!0)},i.prototype.cleanup=function(t){if("undefined"!=typeof this.xhr&&null!==this.xhr){if(this.hasXDR()?this.xhr.onload=this.xhr.onerror=r:this.xhr.onreadystatechange=r,t)try{this.xhr.abort()}catch(t){}e.document&&delete i.requests[this.index],this.xhr=null}},i.prototype.onLoad=function(){var t;try{var e;try{e=this.xhr.getResponseHeader("Content-Type").split(";")[0]}catch(t){}if("application/octet-stream"===e)t=this.xhr.response||this.xhr.responseText;else if(this.supportsBinary)try{t=String.fromCharCode.apply(null,new Uint8Array(this.xhr.response))}catch(e){for(var n=new Uint8Array(this.xhr.response),r=[],o=0,i=n.length;o<i;o++)r.push(n[o]);t=String.fromCharCode.apply(null,r)}else t=this.xhr.responseText}catch(t){this.onError(t)}null!=t&&this.onData(t)},i.prototype.hasXDR=function(){return"undefined"!=typeof e.XDomainRequest&&!this.xs&&this.enablesXDR},i.prototype.abort=function(){this.cleanup()},i.requestsCount=0,i.requests={},e.document&&(e.attachEvent?e.attachEvent("onunload",s):e.addEventListener&&e.addEventListener("beforeunload",s,!1))}).call(e,function(){return this}())},396:function(t,e,n){function r(t){var e=t&&t.forceBase64;u&&!e||(this.supportsBinary=!1),o.call(this,t)}var o=n(397),i=n(407),s=n(398),a=n(408),c=n(409),l=n(410)("engine.io-client:polling");t.exports=r;var u=function(){var t=n(393),e=new t({xdomain:!1});return null!=e.responseType}();a(r,o),r.prototype.name="polling",r.prototype.doOpen=function(){this.poll()},r.prototype.pause=function(t){function e(){l("paused"),n.readyState="paused",t()}var n=this;if(this.readyState="pausing",this.polling||!this.writable){var r=0;this.polling&&(l("we are currently polling - waiting to pause"),r++,this.once("pollComplete",function(){l("pre-pause polling complete"),--r||e()})),this.writable||(l("we are currently writing - waiting to pause"),r++,this.once("drain",function(){l("pre-pause writing complete"),--r||e()}))}else e()},r.prototype.poll=function(){l("polling"),this.polling=!0,this.doPoll(),this.emit("poll")},r.prototype.onData=function(t){var e=this;l("polling got data %s",t);var n=function(t,n,r){return"opening"===e.readyState&&e.onOpen(),"close"===t.type?(e.onClose(),!1):void e.onPacket(t)};s.decodePayload(t,this.socket.binaryType,n),"closed"!==this.readyState&&(this.polling=!1,this.emit("pollComplete"),"open"===this.readyState?this.poll():l('ignoring poll - transport state "%s"',this.readyState))},r.prototype.doClose=function(){function t(){l("writing close packet"),e.write([{type:"close"}])}var e=this;"open"===this.readyState?(l("transport open - closing"),t()):(l("transport not open - deferring close"),this.once("open",t))},r.prototype.write=function(t){var e=this;this.writable=!1;var n=function(){e.writable=!0,e.emit("drain")};s.encodePayload(t,this.supportsBinary,function(t){e.doWrite(t,n)})},r.prototype.uri=function(){var t=this.query||{},e=this.secure?"https":"http",n="";!1!==this.timestampRequests&&(t[this.timestampParam]=c()),this.supportsBinary||t.sid||(t.b64=1),t=i.encode(t),this.port&&("https"===e&&443!==Number(this.port)||"http"===e&&80!==Number(this.port))&&(n=":"+this.port),t.length&&(t="?"+t);var r=this.hostname.indexOf(":")!==-1;return e+"://"+(r?"["+this.hostname+"]":this.hostname)+n+this.path+t}},397:function(t,e,n){function r(t){this.path=t.path,this.hostname=t.hostname,this.port=t.port,this.secure=t.secure,this.query=t.query,this.timestampParam=t.timestampParam,this.timestampRequests=t.timestampRequests,this.readyState="",this.agent=t.agent||!1,this.socket=t.socket,this.enablesXDR=t.enablesXDR,this.pfx=t.pfx,this.key=t.key,this.passphrase=t.passphrase,this.cert=t.cert,this.ca=t.ca,this.ciphers=t.ciphers,this.rejectUnauthorized=t.rejectUnauthorized,this.forceNode=t.forceNode,this.extraHeaders=t.extraHeaders,this.localAddress=t.localAddress}var o=n(398),i=n(406);t.exports=r,i(r.prototype),r.prototype.onError=function(t,e){var n=new Error(t);return n.type="TransportError",n.description=e,this.emit("error",n),this},r.prototype.open=function(){return"closed"!==this.readyState&&""!==this.readyState||(this.readyState="opening",this.doOpen()),this},r.prototype.close=function(){return"opening"!==this.readyState&&"open"!==this.readyState||(this.doClose(),this.onClose()),this},r.prototype.send=function(t){if("open"!==this.readyState)throw new Error("Transport not open");this.write(t)},r.prototype.onOpen=function(){this.readyState="open",this.writable=!0,this.emit("open")},r.prototype.onData=function(t){var e=o.decodePacket(t,this.socket.binaryType);this.onPacket(e)},r.prototype.onPacket=function(t){this.emit("packet",t)},r.prototype.onClose=function(){this.readyState="closed",this.emit("close")}},398:function(t,e,n){(function(t){function r(t,n){var r="b"+e.packets[t.type]+t.data.data;return n(r)}function o(t,n,r){if(!n)return e.encodeBase64Packet(t,r);var o=t.data,i=new Uint8Array(o),s=new Uint8Array(1+o.byteLength);s[0]=v[t.type];for(var a=0;a<i.length;a++)s[a+1]=i[a];return r(s.buffer)}function i(t,n,r){if(!n)return e.encodeBase64Packet(t,r);var o=new FileReader;return o.onload=function(){t.data=o.result,e.encodePacket(t,n,!0,r)},o.readAsArrayBuffer(t.data)}function s(t,n,r){if(!n)return e.encodeBase64Packet(t,r);if(y)return i(t,n,r);var o=new Uint8Array(1);o[0]=v[t.type];var s=new w([o.buffer,t.data]);return r(s)}function a(t){try{t=f.decode(t)}catch(t){return!1}return t}function c(t,e,n){for(var r=new Array(t.length),o=d(t.length,n),i=function(t,n,o){e(n,function(e,n){r[t]=n,o(e,r)})},s=0;s<t.length;s++)i(s,t[s],o)}var l,u=n(399),p=n(400),h=n(401),d=n(402),f=n(403);t&&t.ArrayBuffer&&(l=n(404));var g="undefined"!=typeof navigator&&/Android/i.test(navigator.userAgent),m="undefined"!=typeof navigator&&/PhantomJS/i.test(navigator.userAgent),y=g||m;e.protocol=3;var v=e.packets={open:0,close:1,ping:2,pong:3,message:4,upgrade:5,noop:6},b=u(v),_={type:"error",data:"parser error"},w=n(405);e.encodePacket=function(e,n,i,a){"function"==typeof n&&(a=n,n=!1),"function"==typeof i&&(a=i,i=null);var c=void 0===e.data?void 0:e.data.buffer||e.data;if(t.ArrayBuffer&&c instanceof ArrayBuffer)return o(e,n,a);if(w&&c instanceof t.Blob)return s(e,n,a);if(c&&c.base64)return r(e,a);var l=v[e.type];return void 0!==e.data&&(l+=i?f.encode(String(e.data)):String(e.data)),a(""+l)},e.encodeBase64Packet=function(n,r){var o="b"+e.packets[n.type];if(w&&n.data instanceof t.Blob){var i=new FileReader;return i.onload=function(){var t=i.result.split(",")[1];r(o+t)},i.readAsDataURL(n.data)}var s;try{s=String.fromCharCode.apply(null,new Uint8Array(n.data))}catch(t){for(var a=new Uint8Array(n.data),c=new Array(a.length),l=0;l<a.length;l++)c[l]=a[l];s=String.fromCharCode.apply(null,c)}return o+=t.btoa(s),r(o)},e.decodePacket=function(t,n,r){if(void 0===t)return _;if("string"==typeof t){if("b"==t.charAt(0))return e.decodeBase64Packet(t.substr(1),n);if(r&&(t=a(t),t===!1))return _;var o=t.charAt(0);return Number(o)==o&&b[o]?t.length>1?{type:b[o],data:t.substring(1)}:{type:b[o]}:_}var i=new Uint8Array(t),o=i[0],s=h(t,1);return w&&"blob"===n&&(s=new w([s])),{type:b[o],data:s}},e.decodeBase64Packet=function(t,e){var n=b[t.charAt(0)];if(!l)return{type:n,data:{base64:!0,data:t.substr(1)}};var r=l.decode(t.substr(1));
-return"blob"===e&&w&&(r=new w([r])),{type:n,data:r}},e.encodePayload=function(t,n,r){function o(t){return t.length+":"+t}function i(t,r){e.encodePacket(t,!!s&&n,!0,function(t){r(null,o(t))})}"function"==typeof n&&(r=n,n=null);var s=p(t);return n&&s?w&&!y?e.encodePayloadAsBlob(t,r):e.encodePayloadAsArrayBuffer(t,r):t.length?void c(t,i,function(t,e){return r(e.join(""))}):r("0:")},e.decodePayload=function(t,n,r){if("string"!=typeof t)return e.decodePayloadAsBinary(t,n,r);"function"==typeof n&&(r=n,n=null);var o;if(""==t)return r(_,0,1);for(var i,s,a="",c=0,l=t.length;c<l;c++){var u=t.charAt(c);if(":"!=u)a+=u;else{if(""==a||a!=(i=Number(a)))return r(_,0,1);if(s=t.substr(c+1,i),a!=s.length)return r(_,0,1);if(s.length){if(o=e.decodePacket(s,n,!0),_.type==o.type&&_.data==o.data)return r(_,0,1);var p=r(o,c+i,l);if(!1===p)return}c+=i,a=""}}return""!=a?r(_,0,1):void 0},e.encodePayloadAsArrayBuffer=function(t,n){function r(t,n){e.encodePacket(t,!0,!0,function(t){return n(null,t)})}return t.length?void c(t,r,function(t,e){var r=e.reduce(function(t,e){var n;return n="string"==typeof e?e.length:e.byteLength,t+n.toString().length+n+2},0),o=new Uint8Array(r),i=0;return e.forEach(function(t){var e="string"==typeof t,n=t;if(e){for(var r=new Uint8Array(t.length),s=0;s<t.length;s++)r[s]=t.charCodeAt(s);n=r.buffer}e?o[i++]=0:o[i++]=1;for(var a=n.byteLength.toString(),s=0;s<a.length;s++)o[i++]=parseInt(a[s]);o[i++]=255;for(var r=new Uint8Array(n),s=0;s<r.length;s++)o[i++]=r[s]}),n(o.buffer)}):n(new ArrayBuffer(0))},e.encodePayloadAsBlob=function(t,n){function r(t,n){e.encodePacket(t,!0,!0,function(t){var e=new Uint8Array(1);if(e[0]=1,"string"==typeof t){for(var r=new Uint8Array(t.length),o=0;o<t.length;o++)r[o]=t.charCodeAt(o);t=r.buffer,e[0]=0}for(var i=t instanceof ArrayBuffer?t.byteLength:t.size,s=i.toString(),a=new Uint8Array(s.length+1),o=0;o<s.length;o++)a[o]=parseInt(s[o]);if(a[s.length]=255,w){var c=new w([e.buffer,a.buffer,t]);n(null,c)}})}c(t,r,function(t,e){return n(new w(e))})},e.decodePayloadAsBinary=function(t,n,r){"function"==typeof n&&(r=n,n=null);for(var o=t,i=[],s=!1;o.byteLength>0;){for(var a=new Uint8Array(o),c=0===a[0],l="",u=1;255!=a[u];u++){if(l.length>310){s=!0;break}l+=a[u]}if(s)return r(_,0,1);o=h(o,2+l.length),l=parseInt(l);var p=h(o,0,l);if(c)try{p=String.fromCharCode.apply(null,new Uint8Array(p))}catch(t){var d=new Uint8Array(p);p="";for(var u=0;u<d.length;u++)p+=String.fromCharCode(d[u])}i.push(p),o=h(o,l)}var f=i.length;i.forEach(function(t,o){r(e.decodePacket(t,n,!0),o,f)})}}).call(e,function(){return this}())},399:function(t,e){t.exports=Object.keys||function(t){var e=[],n=Object.prototype.hasOwnProperty;for(var r in t)n.call(t,r)&&e.push(r);return e}},400:function(t,e,n){(function(e){function r(t){function n(t){if(!t)return!1;if(e.Buffer&&e.Buffer.isBuffer&&e.Buffer.isBuffer(t)||e.ArrayBuffer&&t instanceof ArrayBuffer||e.Blob&&t instanceof Blob||e.File&&t instanceof File)return!0;if(o(t)){for(var r=0;r<t.length;r++)if(n(t[r]))return!0}else if(t&&"object"==typeof t){t.toJSON&&"function"==typeof t.toJSON&&(t=t.toJSON());for(var i in t)if(Object.prototype.hasOwnProperty.call(t,i)&&n(t[i]))return!0}return!1}return n(t)}var o=n(386);t.exports=r}).call(e,function(){return this}())},401:function(t,e){t.exports=function(t,e,n){var r=t.byteLength;if(e=e||0,n=n||r,t.slice)return t.slice(e,n);if(e<0&&(e+=r),n<0&&(n+=r),n>r&&(n=r),e>=r||e>=n||0===r)return new ArrayBuffer(0);for(var o=new Uint8Array(t),i=new Uint8Array(n-e),s=e,a=0;s<n;s++,a++)i[a]=o[s];return i.buffer}},402:function(t,e){function n(t,e,n){function o(t,r){if(o.count<=0)throw new Error("after called too many times");--o.count,t?(i=!0,e(t),e=n):0!==o.count||i||e(null,r)}var i=!1;return n=n||r,o.count=t,0===t?e():o}function r(){}t.exports=n},403:function(t,e,n){var r;(function(t,o){!function(i){function s(t){for(var e,n,r=[],o=0,i=t.length;o<i;)e=t.charCodeAt(o++),e>=55296&&e<=56319&&o<i?(n=t.charCodeAt(o++),56320==(64512&n)?r.push(((1023&e)<<10)+(1023&n)+65536):(r.push(e),o--)):r.push(e);return r}function a(t){for(var e,n=t.length,r=-1,o="";++r<n;)e=t[r],e>65535&&(e-=65536,o+=b(e>>>10&1023|55296),e=56320|1023&e),o+=b(e);return o}function c(t,e){return b(t>>e&63|128)}function l(t){if(0==(4294967168&t))return b(t);var e="";return 0==(4294965248&t)?e=b(t>>6&31|192):0==(4294901760&t)?(e=b(t>>12&15|224),e+=c(t,6)):0==(4292870144&t)&&(e=b(t>>18&7|240),e+=c(t,12),e+=c(t,6)),e+=b(63&t|128)}function u(t){for(var e,n=s(t),r=n.length,o=-1,i="";++o<r;)e=n[o],i+=l(e);return i}function p(){if(v>=y)throw Error("Invalid byte index");var t=255&m[v];if(v++,128==(192&t))return 63&t;throw Error("Invalid continuation byte")}function h(){var t,e,n,r,o;if(v>y)throw Error("Invalid byte index");if(v==y)return!1;if(t=255&m[v],v++,0==(128&t))return t;if(192==(224&t)){var e=p();if(o=(31&t)<<6|e,o>=128)return o;throw Error("Invalid continuation byte")}if(224==(240&t)){if(e=p(),n=p(),o=(15&t)<<12|e<<6|n,o>=2048)return o;throw Error("Invalid continuation byte")}if(240==(248&t)&&(e=p(),n=p(),r=p(),o=(15&t)<<18|e<<12|n<<6|r,o>=65536&&o<=1114111))return o;throw Error("Invalid WTF-8 detected")}function d(t){m=s(t),y=m.length,v=0;for(var e,n=[];(e=h())!==!1;)n.push(e);return a(n)}var f="object"==typeof e&&e,g=("object"==typeof t&&t&&t.exports==f&&t,"object"==typeof o&&o);g.global!==g&&g.window!==g||(i=g);var m,y,v,b=String.fromCharCode,_={version:"1.0.0",encode:u,decode:d};r=function(){return _}.call(e,n,e,t),!(void 0!==r&&(t.exports=r))}(this)}).call(e,n(382)(t),function(){return this}())},404:function(t,e){!function(){"use strict";for(var t="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/",n=new Uint8Array(256),r=0;r<t.length;r++)n[t.charCodeAt(r)]=r;e.encode=function(e){var n,r=new Uint8Array(e),o=r.length,i="";for(n=0;n<o;n+=3)i+=t[r[n]>>2],i+=t[(3&r[n])<<4|r[n+1]>>4],i+=t[(15&r[n+1])<<2|r[n+2]>>6],i+=t[63&r[n+2]];return o%3===2?i=i.substring(0,i.length-1)+"=":o%3===1&&(i=i.substring(0,i.length-2)+"=="),i},e.decode=function(t){var e,r,o,i,s,a=.75*t.length,c=t.length,l=0;"="===t[t.length-1]&&(a--,"="===t[t.length-2]&&a--);var u=new ArrayBuffer(a),p=new Uint8Array(u);for(e=0;e<c;e+=4)r=n[t.charCodeAt(e)],o=n[t.charCodeAt(e+1)],i=n[t.charCodeAt(e+2)],s=n[t.charCodeAt(e+3)],p[l++]=r<<2|o>>4,p[l++]=(15&o)<<4|i>>2,p[l++]=(3&i)<<6|63&s;return u}}()},405:function(t,e){(function(e){function n(t){for(var e=0;e<t.length;e++){var n=t[e];if(n.buffer instanceof ArrayBuffer){var r=n.buffer;if(n.byteLength!==r.byteLength){var o=new Uint8Array(n.byteLength);o.set(new Uint8Array(r,n.byteOffset,n.byteLength)),r=o.buffer}t[e]=r}}}function r(t,e){e=e||{};var r=new i;n(t);for(var o=0;o<t.length;o++)r.append(t[o]);return e.type?r.getBlob(e.type):r.getBlob()}function o(t,e){return n(t),new Blob(t,e||{})}var i=e.BlobBuilder||e.WebKitBlobBuilder||e.MSBlobBuilder||e.MozBlobBuilder,s=function(){try{var t=new Blob(["hi"]);return 2===t.size}catch(t){return!1}}(),a=s&&function(){try{var t=new Blob([new Uint8Array([1,2])]);return 2===t.size}catch(t){return!1}}(),c=i&&i.prototype.append&&i.prototype.getBlob;t.exports=function(){return s?a?e.Blob:o:c?r:void 0}()}).call(e,function(){return this}())},406:function(t,e,n){function r(t){if(t)return o(t)}function o(t){for(var e in r.prototype)t[e]=r.prototype[e];return t}t.exports=r,r.prototype.on=r.prototype.addEventListener=function(t,e){return this._callbacks=this._callbacks||{},(this._callbacks["$"+t]=this._callbacks["$"+t]||[]).push(e),this},r.prototype.once=function(t,e){function n(){this.off(t,n),e.apply(this,arguments)}return n.fn=e,this.on(t,n),this},r.prototype.off=r.prototype.removeListener=r.prototype.removeAllListeners=r.prototype.removeEventListener=function(t,e){if(this._callbacks=this._callbacks||{},0==arguments.length)return this._callbacks={},this;var n=this._callbacks["$"+t];if(!n)return this;if(1==arguments.length)return delete this._callbacks["$"+t],this;for(var r,o=0;o<n.length;o++)if(r=n[o],r===e||r.fn===e){n.splice(o,1);break}return this},r.prototype.emit=function(t){this._callbacks=this._callbacks||{};var e=[].slice.call(arguments,1),n=this._callbacks["$"+t];if(n){n=n.slice(0);for(var r=0,o=n.length;r<o;++r)n[r].apply(this,e)}return this},r.prototype.listeners=function(t){return this._callbacks=this._callbacks||{},this._callbacks["$"+t]||[]},r.prototype.hasListeners=function(t){return!!this.listeners(t).length}},407:function(t,e){e.encode=function(t){var e="";for(var n in t)t.hasOwnProperty(n)&&(e.length&&(e+="&"),e+=encodeURIComponent(n)+"="+encodeURIComponent(t[n]));return e},e.decode=function(t){for(var e={},n=t.split("&"),r=0,o=n.length;r<o;r++){var i=n[r].split("=");e[decodeURIComponent(i[0])]=decodeURIComponent(i[1])}return e}},408:function(t,e){t.exports=function(t,e){var n=function(){};n.prototype=e.prototype,t.prototype=new n,t.prototype.constructor=t}},409:function(t,e){"use strict";function n(t){var e="";do e=s[t%a]+e,t=Math.floor(t/a);while(t>0);return e}function r(t){var e=0;for(u=0;u<t.length;u++)e=e*a+c[t.charAt(u)];return e}function o(){var t=n(+new Date);return t!==i?(l=0,i=t):t+"."+n(l++)}for(var i,s="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_".split(""),a=64,c={},l=0,u=0;u<a;u++)c[s[u]]=u;o.encode=n,o.decode=r,t.exports=o},410:function(t,e,n){(function(r){function o(){return"undefined"!=typeof document&&"WebkitAppearance"in document.documentElement.style||window.console&&(console.firebug||console.exception&&console.table)||navigator.userAgent.toLowerCase().match(/firefox\/(\d+)/)&&parseInt(RegExp.$1,10)>=31}function i(){var t=arguments,n=this.useColors;if(t[0]=(n?"%c":"")+this.namespace+(n?" %c":" ")+t[0]+(n?"%c ":" ")+"+"+e.humanize(this.diff),!n)return t;var r="color: "+this.color;t=[t[0],r,"color: inherit"].concat(Array.prototype.slice.call(t,1));var o=0,i=0;return t[0].replace(/%[a-z%]/g,function(t){"%%"!==t&&(o++,"%c"===t&&(i=o))}),t.splice(i,0,r),t}function s(){return"object"==typeof console&&console.log&&Function.prototype.apply.call(console.log,console,arguments)}function a(t){try{null==t?e.storage.removeItem("debug"):e.storage.debug=t}catch(t){}}function c(){try{return e.storage.debug}catch(t){}if("undefined"!=typeof r&&"env"in r)return r.env.DEBUG}function l(){try{return window.localStorage}catch(t){}}e=t.exports=n(411),e.log=s,e.formatArgs=i,e.save=a,e.load=c,e.useColors=o,e.storage="undefined"!=typeof chrome&&"undefined"!=typeof chrome.storage?chrome.storage.local:l(),e.colors=["lightseagreen","forestgreen","goldenrod","dodgerblue","darkorchid","crimson"],e.formatters.j=function(t){try{return JSON.stringify(t)}catch(t){return"[UnexpectedJSONParseError]: "+t.message}},e.enable(c())}).call(e,n(297))},411:function(t,e,n){function r(){return e.colors[u++%e.colors.length]}function o(t){function n(){}function o(){var t=o,n=+new Date,i=n-(l||n);t.diff=i,t.prev=l,t.curr=n,l=n,null==t.useColors&&(t.useColors=e.useColors()),null==t.color&&t.useColors&&(t.color=r());for(var s=new Array(arguments.length),a=0;a<s.length;a++)s[a]=arguments[a];s[0]=e.coerce(s[0]),"string"!=typeof s[0]&&(s=["%o"].concat(s));var c=0;s[0]=s[0].replace(/%([a-z%])/g,function(n,r){if("%%"===n)return n;c++;var o=e.formatters[r];if("function"==typeof o){var i=s[c];n=o.call(t,i),s.splice(c,1),c--}return n}),s=e.formatArgs.apply(t,s);var u=o.log||e.log||console.log.bind(console);u.apply(t,s)}n.enabled=!1,o.enabled=!0;var i=e.enabled(t)?o:n;return i.namespace=t,i}function i(t){e.save(t);for(var n=(t||"").split(/[\s,]+/),r=n.length,o=0;o<r;o++)n[o]&&(t=n[o].replace(/[\\^$+?.()|[\]{}]/g,"\\$&").replace(/\*/g,".*?"),"-"===t[0]?e.skips.push(new RegExp("^"+t.substr(1)+"$")):e.names.push(new RegExp("^"+t+"$")))}function s(){e.enable("")}function a(t){var n,r;for(n=0,r=e.skips.length;n<r;n++)if(e.skips[n].test(t))return!1;for(n=0,r=e.names.length;n<r;n++)if(e.names[n].test(t))return!0;return!1}function c(t){return t instanceof Error?t.stack||t.message:t}e=t.exports=o.debug=o,e.coerce=c,e.disable=s,e.enable=i,e.enabled=a,e.humanize=n(376),e.names=[],e.skips=[],e.formatters={};var l,u=0},412:function(t,e,n){(function(e){function r(){}function o(t){i.call(this,t),this.query=this.query||{},a||(e.___eio||(e.___eio=[]),a=e.___eio),this.index=a.length;var n=this;a.push(function(t){n.onData(t)}),this.query.j=this.index,e.document&&e.addEventListener&&e.addEventListener("beforeunload",function(){n.script&&(n.script.onerror=r)},!1)}var i=n(396),s=n(408);t.exports=o;var a,c=/\n/g,l=/\\n/g;s(o,i),o.prototype.supportsBinary=!1,o.prototype.doClose=function(){this.script&&(this.script.parentNode.removeChild(this.script),this.script=null),this.form&&(this.form.parentNode.removeChild(this.form),this.form=null,this.iframe=null),i.prototype.doClose.call(this)},o.prototype.doPoll=function(){var t=this,e=document.createElement("script");this.script&&(this.script.parentNode.removeChild(this.script),this.script=null),e.async=!0,e.src=this.uri(),e.onerror=function(e){t.onError("jsonp poll error",e)};var n=document.getElementsByTagName("script")[0];n?n.parentNode.insertBefore(e,n):(document.head||document.body).appendChild(e),this.script=e;var r="undefined"!=typeof navigator&&/gecko/i.test(navigator.userAgent);r&&setTimeout(function(){var t=document.createElement("iframe");document.body.appendChild(t),document.body.removeChild(t)},100)},o.prototype.doWrite=function(t,e){function n(){r(),e()}function r(){if(o.iframe)try{o.form.removeChild(o.iframe)}catch(t){o.onError("jsonp polling iframe removal error",t)}try{var t='<iframe src="javascript:0" name="'+o.iframeId+'">';i=document.createElement(t)}catch(t){i=document.createElement("iframe"),i.name=o.iframeId,i.src="javascript:0"}i.id=o.iframeId,o.form.appendChild(i),o.iframe=i}var o=this;if(!this.form){var i,s=document.createElement("form"),a=document.createElement("textarea"),u=this.iframeId="eio_iframe_"+this.index;s.className="socketio",s.style.position="absolute",s.style.top="-1000px",s.style.left="-1000px",s.target=u,s.method="POST",s.setAttribute("accept-charset","utf-8"),a.name="d",s.appendChild(a),document.body.appendChild(s),this.form=s,this.area=a}this.form.action=this.uri(),r(),t=t.replace(l,"\\\n"),this.area.value=t.replace(c,"\\n");try{this.form.submit()}catch(t){}this.iframe.attachEvent?this.iframe.onreadystatechange=function(){"complete"===o.iframe.readyState&&n()}:this.iframe.onload=n}}).call(e,function(){return this}())},413:function(t,e,n){(function(e){function r(t){var e=t&&t.forceBase64;e&&(this.supportsBinary=!1),this.perMessageDeflate=t.perMessageDeflate,this.usingBrowserWebSocket=p&&!t.forceNode,this.usingBrowserWebSocket||(h=o),i.call(this,t)}var o,i=n(397),s=n(398),a=n(407),c=n(408),l=n(409),u=n(410)("engine.io-client:websocket"),p=e.WebSocket||e.MozWebSocket;if("undefined"==typeof window)try{o=n(414)}catch(t){}var h=p;h||"undefined"!=typeof window||(h=o),t.exports=r,c(r,i),r.prototype.name="websocket",r.prototype.supportsBinary=!0,r.prototype.doOpen=function(){if(this.check()){var t=this.uri(),e=void 0,n={agent:this.agent,perMessageDeflate:this.perMessageDeflate};n.pfx=this.pfx,n.key=this.key,n.passphrase=this.passphrase,n.cert=this.cert,n.ca=this.ca,n.ciphers=this.ciphers,n.rejectUnauthorized=this.rejectUnauthorized,this.extraHeaders&&(n.headers=this.extraHeaders),this.localAddress&&(n.localAddress=this.localAddress);try{this.ws=this.usingBrowserWebSocket?new h(t):new h(t,e,n)}catch(t){return this.emit("error",t)}void 0===this.ws.binaryType&&(this.supportsBinary=!1),this.ws.supports&&this.ws.supports.binary?(this.supportsBinary=!0,this.ws.binaryType="nodebuffer"):this.ws.binaryType="arraybuffer",this.addEventListeners()}},r.prototype.addEventListeners=function(){var t=this;this.ws.onopen=function(){t.onOpen()},this.ws.onclose=function(){t.onClose()},this.ws.onmessage=function(e){t.onData(e.data)},this.ws.onerror=function(e){t.onError("websocket error",e)}},r.prototype.write=function(t){function n(){r.emit("flush"),setTimeout(function(){r.writable=!0,r.emit("drain")},0)}var r=this;this.writable=!1;for(var o=t.length,i=0,a=o;i<a;i++)!function(t){s.encodePacket(t,r.supportsBinary,function(i){if(!r.usingBrowserWebSocket){var s={};if(t.options&&(s.compress=t.options.compress),r.perMessageDeflate){var a="string"==typeof i?e.Buffer.byteLength(i):i.length;a<r.perMessageDeflate.threshold&&(s.compress=!1)}}try{r.usingBrowserWebSocket?r.ws.send(i):r.ws.send(i,s)}catch(t){u("websocket closed before onclose event")}--o||n()})}(t[i])},r.prototype.onClose=function(){i.prototype.onClose.call(this)},r.prototype.doClose=function(){"undefined"!=typeof this.ws&&this.ws.close()},r.prototype.uri=function(){var t=this.query||{},e=this.secure?"wss":"ws",n="";this.port&&("wss"===e&&443!==Number(this.port)||"ws"===e&&80!==Number(this.port))&&(n=":"+this.port),this.timestampRequests&&(t[this.timestampParam]=l()),this.supportsBinary||(t.b64=1),t=a.encode(t),t.length&&(t="?"+t);var r=this.hostname.indexOf(":")!==-1;return e+"://"+(r?"["+this.hostname+"]":this.hostname)+n+this.path+t},r.prototype.check=function(){return!(!h||"__initialize"in h&&this.name===r.prototype.name)}}).call(e,function(){return this}())},414:function(t,e){},415:function(t,e){var n=[].indexOf;t.exports=function(t,e){if(n)return t.indexOf(e);for(var r=0;r<t.length;++r)if(t[r]===e)return r;return-1}},416:function(t,e){(function(e){var n=/^[\],:{}\s]*$/,r=/\\(?:["\\\/bfnrt]|u[0-9a-fA-F]{4})/g,o=/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g,i=/(?:^|:|,)(?:\s*\[)+/g,s=/^\s+/,a=/\s+$/;t.exports=function(t){return"string"==typeof t&&t?(t=t.replace(s,"").replace(a,""),e.JSON&&JSON.parse?JSON.parse(t):n.test(t.replace(r,"@").replace(o,"]").replace(i,""))?new Function("return "+t)():void 0):null}}).call(e,function(){return this}())},417:function(t,e,n){function r(t,e,n){this.io=t,this.nsp=e,this.json=this,this.ids=0,this.acks={},this.receiveBuffer=[],this.sendBuffer=[],this.connected=!1,this.disconnected=!0,n&&n.query&&(this.query=n.query),this.io.autoConnect&&this.open()}var o=n(377),i=n(406),s=n(418),a=n(419),c=n(420),l=n(374)("socket.io-client:socket"),u=n(400);t.exports=e=r;var p={connect:1,connect_error:1,connect_timeout:1,connecting:1,disconnect:1,error:1,reconnect:1,reconnect_attempt:1,reconnect_failed:1,reconnect_error:1,reconnecting:1,ping:1,pong:1},h=i.prototype.emit;i(r.prototype),r.prototype.subEvents=function(){if(!this.subs){var t=this.io;this.subs=[a(t,"open",c(this,"onopen")),a(t,"packet",c(this,"onpacket")),a(t,"close",c(this,"onclose"))]}},r.prototype.open=r.prototype.connect=function(){return this.connected?this:(this.subEvents(),this.io.open(),"open"===this.io.readyState&&this.onopen(),this.emit("connecting"),this)},r.prototype.send=function(){var t=s(arguments);return t.unshift("message"),this.emit.apply(this,t),this},r.prototype.emit=function(t){if(p.hasOwnProperty(t))return h.apply(this,arguments),this;var e=s(arguments),n=o.EVENT;u(e)&&(n=o.BINARY_EVENT);var r={type:n,data:e};return r.options={},r.options.compress=!this.flags||!1!==this.flags.compress,"function"==typeof e[e.length-1]&&(l("emitting packet with ack id %d",this.ids),this.acks[this.ids]=e.pop(),r.id=this.ids++),this.connected?this.packet(r):this.sendBuffer.push(r),delete this.flags,this},r.prototype.packet=function(t){t.nsp=this.nsp,this.io.packet(t)},r.prototype.onopen=function(){l("transport is open - connecting"),"/"!==this.nsp&&(this.query?this.packet({type:o.CONNECT,query:this.query}):this.packet({type:o.CONNECT}))},r.prototype.onclose=function(t){l("close (%s)",t),this.connected=!1,this.disconnected=!0,delete this.id,this.emit("disconnect",t)},r.prototype.onpacket=function(t){if(t.nsp===this.nsp)switch(t.type){case o.CONNECT:this.onconnect();break;case o.EVENT:this.onevent(t);break;case o.BINARY_EVENT:this.onevent(t);break;case o.ACK:this.onack(t);break;case o.BINARY_ACK:this.onack(t);break;case o.DISCONNECT:this.ondisconnect();break;case o.ERROR:this.emit("error",t.data)}},r.prototype.onevent=function(t){var e=t.data||[];l("emitting event %j",e),null!=t.id&&(l("attaching ack callback to event"),e.push(this.ack(t.id))),this.connected?h.apply(this,e):this.receiveBuffer.push(e)},r.prototype.ack=function(t){var e=this,n=!1;return function(){if(!n){n=!0;var r=s(arguments);l("sending ack %j",r);var i=u(r)?o.BINARY_ACK:o.ACK;e.packet({type:i,id:t,data:r})}}},r.prototype.onack=function(t){var e=this.acks[t.id];"function"==typeof e?(l("calling ack %s with %j",t.id,t.data),e.apply(this,t.data),delete this.acks[t.id]):l("bad ack %s",t.id)},r.prototype.onconnect=function(){this.connected=!0,this.disconnected=!1,this.emit("connect"),this.emitBuffered()},r.prototype.emitBuffered=function(){var t;for(t=0;t<this.receiveBuffer.length;t++)h.apply(this,this.receiveBuffer[t]);for(this.receiveBuffer=[],t=0;t<this.sendBuffer.length;t++)this.packet(this.sendBuffer[t]);this.sendBuffer=[]},r.prototype.ondisconnect=function(){l("server disconnect (%s)",this.nsp),this.destroy(),this.onclose("io server disconnect")},r.prototype.destroy=function(){if(this.subs){for(var t=0;t<this.subs.length;t++)this.subs[t].destroy();this.subs=null}this.io.destroy(this)},r.prototype.close=r.prototype.disconnect=function(){return this.connected&&(l("performing disconnect (%s)",this.nsp),this.packet({type:o.DISCONNECT})),this.destroy(),this.connected&&this.onclose("io client disconnect"),this},r.prototype.compress=function(t){return this.flags=this.flags||{},this.flags.compress=t,this}},418:function(t,e){function n(t,e){var n=[];e=e||0;for(var r=e||0;r<t.length;r++)n[r-e]=t[r];return n}t.exports=n},419:function(t,e){function n(t,e,n){return t.on(e,n),{destroy:function(){t.removeListener(e,n)}}}t.exports=n},420:function(t,e){var n=[].slice;t.exports=function(t,e){if("string"==typeof e&&(e=t[e]),"function"!=typeof e)throw new Error("bind() requires a function");var r=n.call(arguments,2);return function(){return e.apply(t,r.concat(n.call(arguments)))}}},421:function(t,e){function n(t){t=t||{},this.ms=t.min||100,this.max=t.max||1e4,this.factor=t.factor||2,this.jitter=t.jitter>0&&t.jitter<=1?t.jitter:0,this.attempts=0}t.exports=n,n.prototype.duration=function(){var t=this.ms*Math.pow(this.factor,this.attempts++);if(this.jitter){var e=Math.random(),n=Math.floor(e*this.jitter*t);t=0==(1&Math.floor(10*e))?t-n:t+n}return 0|Math.min(t,this.max)},n.prototype.reset=function(){this.attempts=0},n.prototype.setMin=function(t){this.ms=t},n.prototype.setMax=function(t){this.max=t},n.prototype.setJitter=function(t){this.jitter=t}},422:function(t,e){t.exports='<!--[ngStyle]="{ \'background-color\': (_settings.ChromaKey.toLowerCase() === \'none\' ? \'transparent\' : _settings.ChromaKey) }"-->\r\n<div class="container">\r\n\t<div class="row header">\r\n\t\t<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">\r\n\t\t\t<h1>Chat</h1>\r\n\t\t</div>\r\n\r\n\t\t<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 row service-status">\r\n\t\t\t<div class="col-md-3">Beam:</div>\r\n\t\t\t<div class="col-md-3"\r\n\t\t\t\t [ngClass]="serviceStatus.Beam === \'Connected\' ? \'connected\' : (serviceStatus.Beam === \'Connecting\' ? \'pending\' : \'disconnected\')">\r\n\t\t\t\t{{ serviceStatus.Beam || \'UNKNOWN\' }}\r\n\t\t\t</div>\r\n\t\t\t<div class="col-md-3">LiveEdu:</div>\r\n\t\t\t<div class="col-md-3"\r\n\t\t\t\t [ngClass]="serviceStatus.Liveedu === \'Connected\' ? \'connected\' : (serviceStatus.Liveedu === \'Connecting\' ? \'pending\' : \'disconnected\')">\r\n\t\t\t\t{{ serviceStatus.Liveedu || \'UNKNOWN\' }}\r\n\t\t\t</div>\r\n\t\t\t<div class="col-md-3">Twitch:</div>\r\n\t\t\t<div class="col-md-3"\r\n\t\t\t\t [ngClass]="serviceStatus.Twitch === \'Connected\' ? \'connected\' : (serviceStatus.Twitch === \'Connecting\' ? \'pending\' : \'disconnected\')">\r\n\t\t\t\t{{ serviceStatus.Twitch || \'UNKNOWN\' }}\r\n\t\t\t</div>\r\n\t\t\t<div class="col-md-3">Youtube:</div>\r\n\t\t\t<div class="col-md-3"\r\n\t\t\t\t [ngClass]="serviceStatus.Youtube === \'Connected\' ? \'connected\' : (serviceStatus.Youtube === \'Connecting\' ? \'pending\' : \'disconnected\')">\r\n\t\t\t\t{{ serviceStatus.Youtube || \'UNKNOWN\' }}\r\n\t\t\t</div>\r\n\t\t</div>\r\n\r\n\t\t<div class="col-xs-3 col-sm-3 col-md-2 col-lg-2 text-right">\r\n\t\t\t<button type="button" class="btn btn-sm" (click)="toggleConnection()"\r\n\t\t\t\t\t[ngClass]="{ \'btn-success\': !connected, \'btn-danger\': connected }">\r\n\t\t\t\t{{ connected ? \'Disconnect\' : \'Connect\' }}\r\n\t\t\t</button>\r\n\t\t</div>\r\n\t</div>\r\n\r\n\t<div class="row message-container" #messageContainer>\r\n\t\t<ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">\r\n\t\t\t<li *ngFor="let message of messages" class="message"\r\n\t\t\t\t[ngStyle]="{ \'background-color\': chatProvider.messageHasMention(message) ? _settings.MessageMentionBack : _settings.MessageBack }">\r\n\t\t\t\t<div class="sender">\r\n\t\t\t\t\t<span class="icon {{ message.UserInfo.isBroadcaster ? \'broadcaster\' : message.Service.toLowerCase() }}"></span>\r\n\t\t\t\t\t{{ message.UserInfo.isBroadcaster ? \'Broadcaster\' : message.UserInfo.Username }}\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class="timestamp">{{ message.Timestamp }}</div>\r\n\t\t\t\t<div class="message" [innerHTML]="message.Message.Formatted | unsafeHTML"></div>\r\n\t\t\t</li>\r\n\t\t</ul>\r\n\t</div>\r\n\r\n\t<form (submit)="sendMessage()" class="row send-message">\r\n\t\t<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">\r\n\t\t\t\t<textarea placeholder="Type here to send a message..." [(ngModel)]="data.message"\r\n\t\t\t\t\t\t  name="message" (keyup)="keyUp($event)"></textarea>\r\n\t\t</div>\r\n\r\n\t\t<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">\r\n\t\t\t<button type="submit" class="btn btn-primary btn-block"\r\n\t\t\t\t\t[disabled]="!data.message || data.message.trim().length <= 0">\r\n\t\t\t\tSend\r\n\t\t\t</button>\r\n\t\t</div>\r\n\t</form>\r\n</div>'},423:function(t,e){t.exports='@media (max-width: 768px){.service-status{display:none}}:host{position:absolute;left:0;top:0;width:100%;height:100%;overflow:hidden}:host>div{display:flex;flex-direction:column;height:100%;padding:0.5rem}:host>div .header{margin:0;flex:1 0 52px}:host>div .header .service-status{font-size:0.8rem}:host>div .header .service-status>div.connected{color:limegreen;padding-left:0.25rem}:host>div .header .service-status>div.pending{color:orange;padding-left:0.25rem}:host>div .header .service-status>div.disconnected{color:red;padding-left:0.25rem}:host>div .message-container{margin:0;flex:1 1 100%;overflow-x:hidden;overflow-y:auto}:host>div .send-message{margin:0;flex:1 0 75px}:host>div .send-message .col-md-10 textarea{width:100%;height:100%;resize:none;border:solid 1px #4d4d4d;background-color:#404040;color:#FEFEFE}:host>div .send-message .col-md-2{padding:0;position:relative}:host>div .send-message .col-md-2 .btn{position:absolute;top:50%;margin-top:-19px}:host ul{list-style:none;padding:0}:host ul>.message{position:relative;margin-bottom:0.5rem;padding:0.5rem;animation:MessageSlide ease-in-out forwards 0.5s;background-color:rgba(0,50,175,0.3)}:host ul>.message.mention-self{background-color:rgba(255,75,75,0.4)}:host ul>.message .sender{font-size:1.1rem;margin-left:0.5rem;font-weight:600;letter-spacing:1px}:host ul>.message .sender .icon{position:relative;top:3px;display:inline-block;width:20px;height:20px;background-size:contain;background-repeat:no-repeat;background-position:50%}:host ul>.message .sender .icon.beam{background-image:url("imgs/chat-icons/beam-icon.png")}:host ul>.message .sender .icon.liveedu{background-image:url("imgs/chat-icons/liveedu-icon.png")}:host ul>.message .sender .icon.twitch{background-image:url("imgs/chat-icons/twitch-icon.png")}:host ul>.message .sender .icon.youtube{background-image:url("imgs/chat-icons/youtube-icon.png")}:host ul>.message .sender .icon.broadcaster{background-image:url("imgs/chat-icons/broadcaster-icon.png")}:host ul>.message .timestamp{position:absolute;right:1rem;top:0.5rem;font-size:0.9rem;opacity:0.5}:host ul>.message .message{margin-left:1rem;word-wrap:break-word}@keyframes MessageSlide{0%{transform:translateX(50%);opacity:0}100%{transform:translateX(0);opacity:1}}\n'},424:function(t,e,n){(function(t){"use strict";var r=this&&this.__decorate||function(t,e,n,r){var o,i=arguments.length,s=i<3?e:null===r?r=Object.getOwnPropertyDescriptor(e,n):r;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(t,e,n,r);else for(var a=t.length-1;a>=0;a--)(o=t[a])&&(s=(i<3?o(s):i>3?o(e,n,s):o(e,n))||s);return i>3&&s&&Object.defineProperty(e,n,s),s},o=this&&this.__metadata||function(t,e){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(t,e)},i=n(3),s=n(425),a=n(28),c=function(){function e(t,e,n){var r=this;this.ngZone=t,this.infoProvider=e,this.http=n,this.info={},this.searchTimeout=null,this.searchResults=[],this.searching=!1,this.saving=!1,this.infoProvider.Info.subscribe(function(t){r.ngZone.run(function(){return r.info=t})})}return e.prototype.ngAfterViewInit=function(){t(this.historyDropdown.nativeElement).dropdown()},e.prototype.save=function(){var t=this;this.ngZone.run(function(){return t.saving=!0}),this.infoProvider.setInfo(this.info).then(function(){t.ngZone.run(function(){return t.saving=!1})})},e.prototype.search=function(){var t=this;this.searchTimeout&&(clearTimeout(this.searchTimeout),this.searchTimeout=null),this.searchTimeout=setTimeout(function(){t.ngZone.run(function(){return t.searching=!0}),t.infoProvider.search(t.info.Category).then(function(e){t.ngZone.run(function(){t.searchResults=e,t.searching=!1})}).catch(function(e){t.ngZone.run(function(){t.searchResults=[],t.searching=!1})})},500)},e.prototype.selectCategory=function(t){this.info.Category=this.searchResults[t],this.searchResults=[]},e.prototype.selectHistory=function(t){var e=this.info.History[t];this.info.Title=e.Title,this.info.Category=e.Category},e.prototype.limitLength=function(t,e){return t?t.length<=e?t:t.substr(0,e):""},e.prototype.optInStats=function(){alert("We're working on it... ^^")},e}();r([i.ViewChild("historyDropdown"),o("design:type",i.ElementRef)],c.prototype,"historyDropdown",void 0),c=r([i.Component({selector:"page-dashboard",template:n(426),styles:[n(427)]}),o("design:paramtypes",[i.NgZone,s.InfoProvider,a.Http])],c),e.DashboardPage=c}).call(e,n(358))},425:function(t,e,n){"use strict";var r=this&&this.__decorate||function(t,e,n,r){var o,i=arguments.length,s=i<3?e:null===r?r=Object.getOwnPropertyDescriptor(e,n):r;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(t,e,n,r);else for(var a=t.length-1;a>=0;a--)(o=t[a])&&(s=(i<3?o(s):i>3?o(e,n,s):o(e,n))||s);return i>3&&s&&Object.defineProperty(e,n,s),s},o=this&&this.__metadata||function(t,e){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(t,e)},i=n(3),s=n(28),a=n(61),c=n(60),l=function(){function t(t,e){var n=this;this.authProvider=t,this.http=e,this._info={},this.Info=new a.Subject,this.getInfo(),this.authProvider.User.subscribe(function(t){return n.getInfo()})}return t.prototype.getInfo=function(){var t=this;this.authProvider.token&&this.http.get(this.authProvider.api+"/dashboard?token="+this.authProvider.token).map(function(t){return t.json()}).subscribe(function(e){t._info=e.success?e.info:{},t.Info.next(t._info)},function(t){return console.error(t)})},t.prototype.setInfo=function(t){var e=this;return new Promise(function(n,r){e.http.post(e.authProvider.api+"/dashboard?token="+e.authProvider.token,t).map(function(t){return t.json()}).subscribe(function(t){e._info=t.info,e.Info.next(e._info),n(null)},function(t){console.error(t),n(t)})})},t.prototype.search=function(t){var e=this;return new Promise(function(n,r){e.http.get(e.authProvider.api+"/dashboard/search?token="+e.authProvider.token+"&q="+t).map(function(t){return t.json()}).subscribe(function(t){return t.success?n(t.results):r(null)},function(t){return r(null)})})},Object.defineProperty(t.prototype,"api",{get:function(){return this.authProvider.api},enumerable:!0,configurable:!0}),t}();l=r([i.Injectable(),o("design:paramtypes",[c.AuthProvider,s.Http])],l),e.InfoProvider=l;
-},426:function(t,e){t.exports='<div class="card">\r\n\t<div class="card-header">\r\n\t\t<h4 class="float-left">Stream Info</h4>\r\n\t\t<button type="button" class="btn btn-success btn-sm float-right" (click)="save()">\r\n\t\t\t<span class="fa fa-spinner spinner" *ngIf="saving"></span>Save\r\n\t\t</button>\r\n\t</div>\r\n\r\n\t<div class="card-block">\r\n\t\t<div class="form-group row">\r\n\t\t\t<div class="col-md-4">Title</div>\r\n\r\n\t\t\t<div class="col-md-8">\r\n\t\t\t\t<textarea placeholder="Stream Title" class="form-control" [(ngModel)]="info.Title"></textarea>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\r\n\t\t<div class="form-group row">\r\n\t\t\t<div class="col-md-4">Category</div>\r\n\r\n\t\t\t<div class="col-md-8">\r\n\t\t\t\t<input type="text" class="form-control" placeholder="Game Name" [(ngModel)]="info.Category"\r\n\t\t\t\t\t   (keypress)="search()" [ngClass]="{ \'results-open\': searchResults.length > 0 }">\r\n\t\t\t\t<span class="fa fa-spinner spinner float-right" id="searchSpinner" *ngIf="searching"></span>\r\n\r\n\t\t\t\t<div class="form-control search-results scrollbar-inverse" *ngIf="searchResults.length > 0">\r\n\t\t\t\t\t<a class="dropdown-item" href="javascript:;"\r\n\t\t\t\t\t   *ngFor="let result of searchResults; let i = index" (click)="selectCategory(i)">\r\n\t\t\t\t\t\t{{ result }}\r\n\t\t\t\t\t</a>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\r\n\t\t<div class="form-group row">\r\n\t\t\t<div class="col-md-4">Delay</div>\r\n\r\n\t\t\t<div class="col-md-8">\r\n\t\t\t\t<input type="number" class="form-control" min="0" [(ngModel)]="info.Delay">\r\n\t\t\t</div>\r\n\t\t</div>\r\n\r\n\t\t<div class="form-group row">\r\n\t\t\t<div class="col-md-4 exclude-height">Channel Feed</div>\r\n\r\n\t\t\t<div class="col-md-8">\r\n\t\t\t\t<input type="checkbox" [(ngModel)]="info.ChannelFeed">\r\n\t\t\t</div>\r\n\t\t</div>\r\n\r\n\t\t<div class="form-group row">\r\n\t\t\t<div class="col-md-4">History</div>\r\n\r\n\t\t\t<div class="col-md-8">\r\n\t\t\t\t<div class="dropdown">\r\n\t\t\t\t\t<a class="btn btn-secondary dropdown-toggle" href="javascript:;" id="historyMenu"\r\n\t\t\t\t\t   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" #historyDropdown>\r\n\t\t\t\t\t\t{{ info.Category }} - {{ limitLength(info.Title, 25) }}\r\n\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t<div class="dropdown-menu" aria-labelledby="historyMenu">\r\n\t\t\t\t\t\t<a class="dropdown-item" href="javascript:;" *ngFor="let history of info.History; let i = index"\r\n\t\t\t\t\t\t   (click)="selectHistory(i)">\r\n\t\t\t\t\t\t\t{{ history.Category }} - {{ limitLength(history.Title, 25) }}\r\n\t\t\t\t\t\t</a>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n\r\n<div class="card">\r\n\t<div class="card-header">\r\n\t\t<h4 class="float-left">Statistics</h4>\r\n\t\t<small>(Provided by StreamerStats.com)</small>\r\n\t</div>\r\n\r\n\t<div class="card-block">\r\n\t\t<div class="form-group row">\r\n\t\t\t<div class="col-md-12">\r\n\t\t\t\t<button type="button" class="btn btn-primary" (click)="optInStats()">Opt In</button>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>'},427:function(t,e){t.exports=":host .card{margin:15px 0}:host .form-control.results-open{border-bottom-left-radius:0;border-bottom-right-radius:0;border-color:transparent}:host .search-results{position:absolute;z-index:1;width:calc(100% - 30px);border-top-left-radius:0;border-top-right-radius:0;margin-top:-2px;padding:0;max-height:200px;overflow-y:auto}:host .search-results>.dropdown-item{padding:0.5rem 1rem}:host .col-md-4:not(.exclude-height){padding:0.5rem 0.75rem;line-height:1.25rem}\n"},428:function(t,e,n){"use strict";var r=this&&this.__decorate||function(t,e,n,r){var o,i=arguments.length,s=i<3?e:null===r?r=Object.getOwnPropertyDescriptor(e,n):r;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(t,e,n,r);else for(var a=t.length-1;a>=0;a--)(o=t[a])&&(s=(i<3?o(s):i>3?o(e,n,s):o(e,n))||s);return i>3&&s&&Object.defineProperty(e,n,s),s},o=this&&this.__metadata||function(t,e){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(t,e)},i=n(3),s=n(429),a=function(){function t(t){var e=this;this.commandsProvider=t,this.commands=[],this.newCommand={},this.saving=!1,this.editing=!1,this.error="",this.displayError=!1,this.commands=this.commandsProvider.commands,this.commandsProvider.Commands.subscribe(function(t){return e.commands=t})}return t.prototype.save=function(){var t=this;this.saving=!0,this.editing?this.commandsProvider.updateCommand(this.newCommand).then(function(e){e.success&&t.clearCommand(),t.editing=!e.success,t.saving=!1,t.showError(e.errorMsg)}).catch(function(){t.saving=!1}):this.commandsProvider.saveCommand(this.newCommand).then(function(e){e.success&&t.clearCommand(),t.saving=!1,t.showError(e.errorMsg)}).catch(function(){t.saving=!1})},t.prototype.clearCommand=function(){this.newCommand={Input:"",Output:""}},t.prototype.deleteCommand=function(t){this.commandsProvider.deleteCommand(this.commands[t]._id)},t.prototype.editCommand=function(t,e){return void 0===e&&(e=!1),e?(this.clearCommand(),this.editing=!1,this.displayError=!1,void(this.error="")):(this.newCommand={_id:this.commands[t]._id,Input:this.commands[t].Input,Output:this.commands[t].Output},void(this.editing=!0))},t.prototype.showError=function(t){var e=this;t&&(this.error=t,this.displayError=!0,setTimeout(function(){e.displayError=!1,setTimeout(function(){return e.error=""},500)},5e3))},t}();a=r([i.Component({selector:"page-commands",template:n(430),styles:[n(431)]}),o("design:paramtypes",[s.CommandsProvider])],a),e.CommandsPage=a},429:function(t,e,n){"use strict";var r=this&&this.__decorate||function(t,e,n,r){var o,i=arguments.length,s=i<3?e:null===r?r=Object.getOwnPropertyDescriptor(e,n):r;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(t,e,n,r);else for(var a=t.length-1;a>=0;a--)(o=t[a])&&(s=(i<3?o(s):i>3?o(e,n,s):o(e,n))||s);return i>3&&s&&Object.defineProperty(e,n,s),s},o=this&&this.__metadata||function(t,e){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(t,e)},i=n(3),s=n(61),a=n(28),c=n(60),l=function(){function t(t,e){this.http=t,this.authProvider=e,this._commands=[],this.Commands=new s.Subject,this.getCommands()}return Object.defineProperty(t.prototype,"commands",{get:function(){return this._commands},enumerable:!0,configurable:!0}),t.prototype.getCommands=function(){var t=this;this.http.get(this.authProvider.api+"/commands?token="+this.authProvider.token).map(function(t){return t.json()}).subscribe(function(e){t._commands=e.success?e.commands:{},t.Commands.next(t._commands)},function(t){return console.error(t)})},t.prototype.saveCommand=function(t){var e=this;return new Promise(function(n,r){e.http.post(e.authProvider.api+"/commands?token="+e.authProvider.token,t).map(function(t){return t.json()}).subscribe(function(t){t.success&&(e._commands.push(t.command),e.Commands.next(e._commands)),n(t)},function(t){console.error(t),r(!1)})})},t.prototype.updateCommand=function(t){var e=this;return new Promise(function(n,r){e.http.put(e.authProvider.api+"/commands?token="+e.authProvider.token,t).map(function(t){return t.json()}).subscribe(function(t){if(t.success){for(var r=0;r<e._commands.length;r++)if(e._commands[r]._id===t.command._id){e._commands[r]=t.command;break}e.Commands.next(e._commands)}n(t)},function(t){console.log(t),r(t)})})},t.prototype.deleteCommand=function(t){var e=this;return new Promise(function(n,r){e.http.delete(e.authProvider.api+"/commands?token="+e.authProvider.token+"&id="+t).map(function(t){return t.json()}).subscribe(function(r){if(r.success)for(var o=0;o<e._commands.length;o++)if(e._commands[o]._id===t){e._commands.splice(o,1);break}n(r.success)},function(t){console.error(t),r(!1)})})},t}();l=r([i.Injectable(),o("design:paramtypes",[a.Http,c.AuthProvider])],l),e.CommandsProvider=l},430:function(t,e){t.exports='<div class="card">\r\n\t<div class="card-header row no-margin">\r\n\t\t<div class="col-md-4">\r\n\t\t\t<h4 class="float-left">New Command</h4>\r\n\t\t</div>\r\n\r\n\t\t<div class="col-md-5 error-message" [ngClass]="{ \'show\': displayError }">\r\n\t\t\t{{ error }}\r\n\t\t</div>\r\n\r\n\t\t<div class="col-md-3">\r\n\t\t\t<button type="button" class="btn btn-success btn-sm float-right" (click)="save()">\r\n\t\t\t\t<span class="fa fa-spinner spinner" *ngIf="saving"></span>Save\r\n\t\t\t</button>\r\n\t\t\t<button type="button" class="btn btn-danger btn-sm float-right" style="margin-right: 0.5rem;"\r\n\t\t\t\t\t(click)="editCommand(-1, true)"\r\n\t\t\t\t\t*ngIf="editing">\r\n\t\t\t\tCancel\r\n\t\t\t</button>\r\n\t\t</div>\r\n\t</div>\r\n\r\n\t<div class="card-block">\r\n\t\t<div class="form-group row">\r\n\t\t\t<div class="col-md-4">\r\n\t\t\t\tCommand\r\n\t\t\t</div>\r\n\r\n\t\t\t<div class="col-md-8">\r\n\t\t\t\t<input type="text" class="form-control" [(ngModel)]="newCommand.Input">\r\n\t\t\t</div>\r\n\t\t</div>\r\n\r\n\t\t<div class="form-group row">\r\n\t\t\t<div class="col-md-4">\r\n\t\t\t\tOutput\r\n\t\t\t</div>\r\n\r\n\t\t\t<div class="col-md-8">\r\n\t\t\t\t<textarea type="text" class="form-control" [(ngModel)]="newCommand.Output"></textarea>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n\r\n<div class="card">\r\n\t<div class="card-header">\r\n\t\t<h4>Commands</h4>\r\n\t</div>\r\n\r\n\t<div class="card-block">\r\n\t\t<div class="row" *ngFor="let command of commands; let i = index">\r\n\t\t\t<div class="col-md-4">{{ command.Input }}</div>\r\n\t\t\t<div class="col-md-6">{{ command.Output }}</div>\r\n\r\n\t\t\t<div class="col-md-2 text-right">\r\n\t\t\t\t<button type="button" class="btn btn-warning btn-sm" (click)="editCommand(i)">\r\n\t\t\t\t\t<span class="fa fa-pencil"></span>\r\n\t\t\t\t</button>\r\n\t\t\t\t<button type="button" class="btn btn-danger btn-sm" (click)="deleteCommand(i)">\r\n\t\t\t\t\t<span class="fa fa-times"></span>\r\n\t\t\t\t</button>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\r\n\t\t<div class="col-md-12" *ngIf="!commands || commands.length <= 0">\r\n\t\t\tYou don\'t have any commands yet\r\n\t\t</div>\r\n\t</div>\r\n</div>'},431:function(t,e){t.exports=":host .card{margin:15px 0}:host .row.no-margin{margin:0}:host .row .btn.btn-sm{margin-right:0.5rem;margin-bottom:0.25rem}:host .no-margin{margin:0}:host .error-message{opacity:0;text-align:center;color:red;line-height:2rem;transition:opacity ease-in-out 0.5s}:host .error-message.show{opacity:1}\n"},432:function(t,e,n){"use strict";var r=this&&this.__decorate||function(t,e,n,r){var o,i=arguments.length,s=i<3?e:null===r?r=Object.getOwnPropertyDescriptor(e,n):r;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(t,e,n,r);else for(var a=t.length-1;a>=0;a--)(o=t[a])&&(s=(i<3?o(s):i>3?o(e,n,s):o(e,n))||s);return i>3&&s&&Object.defineProperty(e,n,s),s},o=this&&this.__metadata||function(t,e){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(t,e)},i=n(3),s=n(21),a=function(){function t(t){this.domSanitizer=t}return t.prototype.transform=function(t){return this.domSanitizer.bypassSecurityTrustHtml(t)},t}();a=r([i.Pipe({name:"unsafeHTML"}),o("design:paramtypes",[s.DomSanitizer])],a),e.UnsafeHTMLPipe=a}});
+	    var __extends$1 = (this && this.__extends) || function (d, b) {
+	        for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	    /**
+	     *  A directive that contains multiple {@link NgControl}s.
+	      * *
+	      * Only used by the forms module.
+	      * *
+	     */
+	    var ControlContainer = (function (_super) {
+	        __extends$1(ControlContainer, _super);
+	        function ControlContainer() {
+	            _super.apply(this, arguments);
+	        }
+	        Object.defineProperty(ControlContainer.prototype, "formDirective", {
+	            /**
+	             *  Get the form to which this container belongs.
+	             * @return {?}
+	             */
+	            get: function () { return null; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(ControlContainer.prototype, "path", {
+	            /**
+	             *  Get the path to this container.
+	             * @return {?}
+	             */
+	            get: function () { return null; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        return ControlContainer;
+	    }(AbstractControlDirective));
+
+	    /**
+	     * @param {?} obj
+	     * @return {?}
+	     */
+	    function isPresent(obj) {
+	        return obj != null;
+	    }
+	    /**
+	     * @param {?} obj
+	     * @return {?}
+	     */
+	    function isBlank(obj) {
+	        return obj == null;
+	    }
+	    /**
+	     * @param {?} a
+	     * @param {?} b
+	     * @return {?}
+	     */
+	    function looseIdentical(a, b) {
+	        return a === b || typeof a === 'number' && typeof b === 'number' && isNaN(a) && isNaN(b);
+	    }
+	    /**
+	     * @param {?} o
+	     * @return {?}
+	     */
+	    function isJsObject(o) {
+	        return o !== null && (typeof o === 'function' || typeof o === 'object');
+	    }
+	    /**
+	     * @param {?} obj
+	     * @return {?}
+	     */
+	    function isPrimitive(obj) {
+	        return !isJsObject(obj);
+	    }
+
+	    /**
+	     *  Wraps Javascript Objects
+	     */
+	    var StringMapWrapper = (function () {
+	        function StringMapWrapper() {
+	        }
+	        /**
+	         * @param {?} m1
+	         * @param {?} m2
+	         * @return {?}
+	         */
+	        StringMapWrapper.merge = function (m1, m2) {
+	            var /** @type {?} */ m = {};
+	            for (var _i = 0, _a = Object.keys(m1); _i < _a.length; _i++) {
+	                var k = _a[_i];
+	                m[k] = m1[k];
+	            }
+	            for (var _b = 0, _c = Object.keys(m2); _b < _c.length; _b++) {
+	                var k = _c[_b];
+	                m[k] = m2[k];
+	            }
+	            return m;
+	        };
+	        /**
+	         * @param {?} m1
+	         * @param {?} m2
+	         * @return {?}
+	         */
+	        StringMapWrapper.equals = function (m1, m2) {
+	            var /** @type {?} */ k1 = Object.keys(m1);
+	            var /** @type {?} */ k2 = Object.keys(m2);
+	            if (k1.length != k2.length) {
+	                return false;
+	            }
+	            for (var /** @type {?} */ i = 0; i < k1.length; i++) {
+	                var /** @type {?} */ key = k1[i];
+	                if (m1[key] !== m2[key]) {
+	                    return false;
+	                }
+	            }
+	            return true;
+	        };
+	        return StringMapWrapper;
+	    }());
+	    var ListWrapper = (function () {
+	        function ListWrapper() {
+	        }
+	        /**
+	         * @param {?} arr
+	         * @param {?} condition
+	         * @return {?}
+	         */
+	        ListWrapper.findLast = function (arr, condition) {
+	            for (var /** @type {?} */ i = arr.length - 1; i >= 0; i--) {
+	                if (condition(arr[i])) {
+	                    return arr[i];
+	                }
+	            }
+	            return null;
+	        };
+	        /**
+	         * @param {?} list
+	         * @param {?} items
+	         * @return {?}
+	         */
+	        ListWrapper.removeAll = function (list, items) {
+	            for (var /** @type {?} */ i = 0; i < items.length; ++i) {
+	                var /** @type {?} */ index = list.indexOf(items[i]);
+	                if (index > -1) {
+	                    list.splice(index, 1);
+	                }
+	            }
+	        };
+	        /**
+	         * @param {?} list
+	         * @param {?} el
+	         * @return {?}
+	         */
+	        ListWrapper.remove = function (list, el) {
+	            var /** @type {?} */ index = list.indexOf(el);
+	            if (index > -1) {
+	                list.splice(index, 1);
+	                return true;
+	            }
+	            return false;
+	        };
+	        /**
+	         * @param {?} a
+	         * @param {?} b
+	         * @return {?}
+	         */
+	        ListWrapper.equals = function (a, b) {
+	            if (a.length != b.length)
+	                return false;
+	            for (var /** @type {?} */ i = 0; i < a.length; ++i) {
+	                if (a[i] !== b[i])
+	                    return false;
+	            }
+	            return true;
+	        };
+	        /**
+	         * @param {?} list
+	         * @return {?}
+	         */
+	        ListWrapper.flatten = function (list) {
+	            return list.reduce(function (flat, item) {
+	                var /** @type {?} */ flatItem = Array.isArray(item) ? ListWrapper.flatten(item) : item;
+	                return ((flat)).concat(flatItem);
+	            }, []);
+	        };
+	        return ListWrapper;
+	    }());
+
+	    var /** @type {?} */ isPromise = _angular_core.__core_private__.isPromise;
+
+	    /**
+	     * @param {?} value
+	     * @return {?}
+	     */
+	    function isEmptyInputValue(value) {
+	        // we don't check for string here so it also works with arrays
+	        return value == null || value.length === 0;
+	    }
+	    /**
+	     * Providers for validators to be used for {@link FormControl}s in a form.
+	     *
+	     * Provide this using `multi: true` to add validators.
+	     *
+	     * ### Example
+	     *
+	     * {@example core/forms/ts/ng_validators/ng_validators.ts region='ng_validators'}
+	     * @stable
+	     */
+	    var /** @type {?} */ NG_VALIDATORS = new _angular_core.OpaqueToken('NgValidators');
+	    /**
+	     * Providers for asynchronous validators to be used for {@link FormControl}s
+	     * in a form.
+	     *
+	     * Provide this using `multi: true` to add validators.
+	     *
+	     * See {@link NG_VALIDATORS} for more details.
+	     *
+	     * @stable
+	     */
+	    var /** @type {?} */ NG_ASYNC_VALIDATORS = new _angular_core.OpaqueToken('NgAsyncValidators');
+	    /**
+	     *  Provides a set of validators used by form controls.
+	      * *
+	      * A validator is a function that processes a {@link FormControl} or collection of
+	      * controls and returns a map of errors. A null map means that validation has passed.
+	      * *
+	      * ### Example
+	      * *
+	      * ```typescript
+	      * var loginControl = new FormControl("", Validators.required)
+	      * ```
+	      * *
+	     */
+	    var Validators = (function () {
+	        function Validators() {
+	        }
+	        /**
+	         *  Validator that requires controls to have a non-empty value.
+	         * @param {?} control
+	         * @return {?}
+	         */
+	        Validators.required = function (control) {
+	            return isEmptyInputValue(control.value) ? { 'required': true } : null;
+	        };
+	        /**
+	         *  Validator that requires control value to be true.
+	         * @param {?} control
+	         * @return {?}
+	         */
+	        Validators.requiredTrue = function (control) {
+	            return control.value === true ? null : { 'required': true };
+	        };
+	        /**
+	         *  Validator that requires controls to have a value of a minimum length.
+	         * @param {?} minLength
+	         * @return {?}
+	         */
+	        Validators.minLength = function (minLength) {
+	            return function (control) {
+	                if (isEmptyInputValue(control.value)) {
+	                    return null; // don't validate empty values to allow optional controls
+	                }
+	                var /** @type {?} */ length = control.value ? control.value.length : 0;
+	                return length < minLength ?
+	                    { 'minlength': { 'requiredLength': minLength, 'actualLength': length } } :
+	                    null;
+	            };
+	        };
+	        /**
+	         *  Validator that requires controls to have a value of a maximum length.
+	         * @param {?} maxLength
+	         * @return {?}
+	         */
+	        Validators.maxLength = function (maxLength) {
+	            return function (control) {
+	                var /** @type {?} */ length = control.value ? control.value.length : 0;
+	                return length > maxLength ?
+	                    { 'maxlength': { 'requiredLength': maxLength, 'actualLength': length } } :
+	                    null;
+	            };
+	        };
+	        /**
+	         *  Validator that requires a control to match a regex to its value.
+	         * @param {?} pattern
+	         * @return {?}
+	         */
+	        Validators.pattern = function (pattern) {
+	            if (!pattern)
+	                return Validators.nullValidator;
+	            var /** @type {?} */ regex;
+	            var /** @type {?} */ regexStr;
+	            if (typeof pattern === 'string') {
+	                regexStr = "^" + pattern + "$";
+	                regex = new RegExp(regexStr);
+	            }
+	            else {
+	                regexStr = pattern.toString();
+	                regex = pattern;
+	            }
+	            return function (control) {
+	                if (isEmptyInputValue(control.value)) {
+	                    return null; // don't validate empty values to allow optional controls
+	                }
+	                var /** @type {?} */ value = control.value;
+	                return regex.test(value) ? null :
+	                    { 'pattern': { 'requiredPattern': regexStr, 'actualValue': value } };
+	            };
+	        };
+	        /**
+	         *  No-op validator.
+	         * @param {?} c
+	         * @return {?}
+	         */
+	        Validators.nullValidator = function (c) { return null; };
+	        /**
+	         *  Compose multiple validators into a single function that returns the union
+	          * of the individual error maps.
+	         * @param {?} validators
+	         * @return {?}
+	         */
+	        Validators.compose = function (validators) {
+	            if (!validators)
+	                return null;
+	            var /** @type {?} */ presentValidators = validators.filter(isPresent);
+	            if (presentValidators.length == 0)
+	                return null;
+	            return function (control) {
+	                return _mergeErrors(_executeValidators(control, presentValidators));
+	            };
+	        };
+	        /**
+	         * @param {?} validators
+	         * @return {?}
+	         */
+	        Validators.composeAsync = function (validators) {
+	            if (!validators)
+	                return null;
+	            var /** @type {?} */ presentValidators = validators.filter(isPresent);
+	            if (presentValidators.length == 0)
+	                return null;
+	            return function (control) {
+	                var /** @type {?} */ promises = _executeAsyncValidators(control, presentValidators).map(_convertToPromise);
+	                return Promise.all(promises).then(_mergeErrors);
+	            };
+	        };
+	        return Validators;
+	    }());
+	    /**
+	     * @param {?} obj
+	     * @return {?}
+	     */
+	    function _convertToPromise(obj) {
+	        return isPromise(obj) ? obj : rxjs_operator_toPromise.toPromise.call(obj);
+	    }
+	    /**
+	     * @param {?} control
+	     * @param {?} validators
+	     * @return {?}
+	     */
+	    function _executeValidators(control, validators) {
+	        return validators.map(function (v) { return v(control); });
+	    }
+	    /**
+	     * @param {?} control
+	     * @param {?} validators
+	     * @return {?}
+	     */
+	    function _executeAsyncValidators(control, validators) {
+	        return validators.map(function (v) { return v(control); });
+	    }
+	    /**
+	     * @param {?} arrayOfErrors
+	     * @return {?}
+	     */
+	    function _mergeErrors(arrayOfErrors) {
+	        var /** @type {?} */ res = arrayOfErrors.reduce(function (res, errors) {
+	            return isPresent(errors) ? StringMapWrapper.merge(res, errors) : res;
+	        }, {});
+	        return Object.keys(res).length === 0 ? null : res;
+	    }
+
+	    /**
+	     * Used to provide a {@link ControlValueAccessor} for form controls.
+	     *
+	     * See {@link DefaultValueAccessor} for how to implement one.
+	     * @stable
+	     */
+	    var /** @type {?} */ NG_VALUE_ACCESSOR = new _angular_core.OpaqueToken('NgValueAccessor');
+
+	    var /** @type {?} */ CHECKBOX_VALUE_ACCESSOR = {
+	        provide: NG_VALUE_ACCESSOR,
+	        useExisting: _angular_core.forwardRef(function () { return CheckboxControlValueAccessor; }),
+	        multi: true,
+	    };
+	    /**
+	     *  The accessor for writing a value and listening to changes on a checkbox input element.
+	      * *
+	      * ### Example
+	      * ```
+	      * <input type="checkbox" name="rememberLogin" ngModel>
+	      * ```
+	      * *
+	      * @stable
+	     */
+	    var CheckboxControlValueAccessor = (function () {
+	        /**
+	         * @param {?} _renderer
+	         * @param {?} _elementRef
+	         */
+	        function CheckboxControlValueAccessor(_renderer, _elementRef) {
+	            this._renderer = _renderer;
+	            this._elementRef = _elementRef;
+	            this.onChange = function (_) { };
+	            this.onTouched = function () { };
+	        }
+	        /**
+	         * @param {?} value
+	         * @return {?}
+	         */
+	        CheckboxControlValueAccessor.prototype.writeValue = function (value) {
+	            this._renderer.setElementProperty(this._elementRef.nativeElement, 'checked', value);
+	        };
+	        /**
+	         * @param {?} fn
+	         * @return {?}
+	         */
+	        CheckboxControlValueAccessor.prototype.registerOnChange = function (fn) { this.onChange = fn; };
+	        /**
+	         * @param {?} fn
+	         * @return {?}
+	         */
+	        CheckboxControlValueAccessor.prototype.registerOnTouched = function (fn) { this.onTouched = fn; };
+	        /**
+	         * @param {?} isDisabled
+	         * @return {?}
+	         */
+	        CheckboxControlValueAccessor.prototype.setDisabledState = function (isDisabled) {
+	            this._renderer.setElementProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+	        };
+	        CheckboxControlValueAccessor.decorators = [
+	            { type: _angular_core.Directive, args: [{
+	                        selector: 'input[type=checkbox][formControlName],input[type=checkbox][formControl],input[type=checkbox][ngModel]',
+	                        host: { '(change)': 'onChange($event.target.checked)', '(blur)': 'onTouched()' },
+	                        providers: [CHECKBOX_VALUE_ACCESSOR]
+	                    },] },
+	        ];
+	        /** @nocollapse */
+	        CheckboxControlValueAccessor.ctorParameters = function () { return [
+	            { type: _angular_core.Renderer, },
+	            { type: _angular_core.ElementRef, },
+	        ]; };
+	        return CheckboxControlValueAccessor;
+	    }());
+
+	    var /** @type {?} */ DEFAULT_VALUE_ACCESSOR = {
+	        provide: NG_VALUE_ACCESSOR,
+	        useExisting: _angular_core.forwardRef(function () { return DefaultValueAccessor; }),
+	        multi: true
+	    };
+	    /**
+	     *  The default accessor for writing a value and listening to changes that is used by the
+	      * {@link NgModel}, {@link FormControlDirective}, and {@link FormControlName} directives.
+	      * *
+	      * ### Example
+	      * ```
+	      * <input type="text" name="searchQuery" ngModel>
+	      * ```
+	      * *
+	      * @stable
+	     */
+	    var DefaultValueAccessor = (function () {
+	        /**
+	         * @param {?} _renderer
+	         * @param {?} _elementRef
+	         */
+	        function DefaultValueAccessor(_renderer, _elementRef) {
+	            this._renderer = _renderer;
+	            this._elementRef = _elementRef;
+	            this.onChange = function (_) { };
+	            this.onTouched = function () { };
+	        }
+	        /**
+	         * @param {?} value
+	         * @return {?}
+	         */
+	        DefaultValueAccessor.prototype.writeValue = function (value) {
+	            var /** @type {?} */ normalizedValue = value == null ? '' : value;
+	            this._renderer.setElementProperty(this._elementRef.nativeElement, 'value', normalizedValue);
+	        };
+	        /**
+	         * @param {?} fn
+	         * @return {?}
+	         */
+	        DefaultValueAccessor.prototype.registerOnChange = function (fn) { this.onChange = fn; };
+	        /**
+	         * @param {?} fn
+	         * @return {?}
+	         */
+	        DefaultValueAccessor.prototype.registerOnTouched = function (fn) { this.onTouched = fn; };
+	        /**
+	         * @param {?} isDisabled
+	         * @return {?}
+	         */
+	        DefaultValueAccessor.prototype.setDisabledState = function (isDisabled) {
+	            this._renderer.setElementProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+	        };
+	        DefaultValueAccessor.decorators = [
+	            { type: _angular_core.Directive, args: [{
+	                        selector: 'input:not([type=checkbox])[formControlName],textarea[formControlName],input:not([type=checkbox])[formControl],textarea[formControl],input:not([type=checkbox])[ngModel],textarea[ngModel],[ngDefaultControl]',
+	                        // TODO: vsavkin replace the above selector with the one below it once
+	                        // https://github.com/angular/angular/issues/3011 is implemented
+	                        // selector: '[ngControl],[ngModel],[ngFormControl]',
+	                        host: { '(input)': 'onChange($event.target.value)', '(blur)': 'onTouched()' },
+	                        providers: [DEFAULT_VALUE_ACCESSOR]
+	                    },] },
+	        ];
+	        /** @nocollapse */
+	        DefaultValueAccessor.ctorParameters = function () { return [
+	            { type: _angular_core.Renderer, },
+	            { type: _angular_core.ElementRef, },
+	        ]; };
+	        return DefaultValueAccessor;
+	    }());
+
+	    /**
+	     * @license
+	     * Copyright Google Inc. All Rights Reserved.
+	     *
+	     * Use of this source code is governed by an MIT-style license that can be
+	     * found in the LICENSE file at https://angular.io/license
+	     */
+	    /**
+	     * @param {?} validator
+	     * @return {?}
+	     */
+	    function normalizeValidator(validator) {
+	        if (((validator)).validate) {
+	            return function (c) { return ((validator)).validate(c); };
+	        }
+	        else {
+	            return (validator);
+	        }
+	    }
+	    /**
+	     * @param {?} validator
+	     * @return {?}
+	     */
+	    function normalizeAsyncValidator(validator) {
+	        if (((validator)).validate) {
+	            return function (c) { return ((validator)).validate(c); };
+	        }
+	        else {
+	            return (validator);
+	        }
+	    }
+
+	    var /** @type {?} */ NUMBER_VALUE_ACCESSOR = {
+	        provide: NG_VALUE_ACCESSOR,
+	        useExisting: _angular_core.forwardRef(function () { return NumberValueAccessor; }),
+	        multi: true
+	    };
+	    /**
+	     *  The accessor for writing a number value and listening to changes that is used by the
+	      * {@link NgModel}, {@link FormControlDirective}, and {@link FormControlName} directives.
+	      * *
+	      * ### Example
+	      * ```
+	      * <input type="number" [(ngModel)]="age">
+	      * ```
+	     */
+	    var NumberValueAccessor = (function () {
+	        /**
+	         * @param {?} _renderer
+	         * @param {?} _elementRef
+	         */
+	        function NumberValueAccessor(_renderer, _elementRef) {
+	            this._renderer = _renderer;
+	            this._elementRef = _elementRef;
+	            this.onChange = function (_) { };
+	            this.onTouched = function () { };
+	        }
+	        /**
+	         * @param {?} value
+	         * @return {?}
+	         */
+	        NumberValueAccessor.prototype.writeValue = function (value) {
+	            // The value needs to be normalized for IE9, otherwise it is set to 'null' when null
+	            var /** @type {?} */ normalizedValue = value == null ? '' : value;
+	            this._renderer.setElementProperty(this._elementRef.nativeElement, 'value', normalizedValue);
+	        };
+	        /**
+	         * @param {?} fn
+	         * @return {?}
+	         */
+	        NumberValueAccessor.prototype.registerOnChange = function (fn) {
+	            this.onChange = function (value) { fn(value == '' ? null : parseFloat(value)); };
+	        };
+	        /**
+	         * @param {?} fn
+	         * @return {?}
+	         */
+	        NumberValueAccessor.prototype.registerOnTouched = function (fn) { this.onTouched = fn; };
+	        /**
+	         * @param {?} isDisabled
+	         * @return {?}
+	         */
+	        NumberValueAccessor.prototype.setDisabledState = function (isDisabled) {
+	            this._renderer.setElementProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+	        };
+	        NumberValueAccessor.decorators = [
+	            { type: _angular_core.Directive, args: [{
+	                        selector: 'input[type=number][formControlName],input[type=number][formControl],input[type=number][ngModel]',
+	                        host: {
+	                            '(change)': 'onChange($event.target.value)',
+	                            '(input)': 'onChange($event.target.value)',
+	                            '(blur)': 'onTouched()'
+	                        },
+	                        providers: [NUMBER_VALUE_ACCESSOR]
+	                    },] },
+	        ];
+	        /** @nocollapse */
+	        NumberValueAccessor.ctorParameters = function () { return [
+	            { type: _angular_core.Renderer, },
+	            { type: _angular_core.ElementRef, },
+	        ]; };
+	        return NumberValueAccessor;
+	    }());
+
+	    /**
+	     * @license
+	     * Copyright Google Inc. All Rights Reserved.
+	     *
+	     * Use of this source code is governed by an MIT-style license that can be
+	     * found in the LICENSE file at https://angular.io/license
+	     */
+	    var __extends$2 = (this && this.__extends) || function (d, b) {
+	        for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	    /**
+	     * @return {?}
+	     */
+	    function unimplemented() {
+	        throw new Error('unimplemented');
+	    }
+	    /**
+	     *  A base class that all control directive extend.
+	      * It binds a {@link FormControl} object to a DOM element.
+	      * *
+	      * Used internally by Angular forms.
+	      * *
+	     * @abstract
+	     */
+	    var NgControl = (function (_super) {
+	        __extends$2(NgControl, _super);
+	        function NgControl() {
+	            _super.apply(this, arguments);
+	            /** @internal */
+	            this._parent = null;
+	            this.name = null;
+	            this.valueAccessor = null;
+	            /** @internal */
+	            this._rawValidators = [];
+	            /** @internal */
+	            this._rawAsyncValidators = [];
+	        }
+	        Object.defineProperty(NgControl.prototype, "validator", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return (unimplemented()); },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(NgControl.prototype, "asyncValidator", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return (unimplemented()); },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        /**
+	         * @abstract
+	         * @param {?} newValue
+	         * @return {?}
+	         */
+	        NgControl.prototype.viewToModelUpdate = function (newValue) { };
+	        return NgControl;
+	    }(AbstractControlDirective));
+
+	    var /** @type {?} */ RADIO_VALUE_ACCESSOR = {
+	        provide: NG_VALUE_ACCESSOR,
+	        useExisting: _angular_core.forwardRef(function () { return RadioControlValueAccessor; }),
+	        multi: true
+	    };
+	    /**
+	     *  Internal class used by Angular to uncheck radio buttons with the matching name.
+	     */
+	    var RadioControlRegistry = (function () {
+	        function RadioControlRegistry() {
+	            this._accessors = [];
+	        }
+	        /**
+	         * @param {?} control
+	         * @param {?} accessor
+	         * @return {?}
+	         */
+	        RadioControlRegistry.prototype.add = function (control, accessor) {
+	            this._accessors.push([control, accessor]);
+	        };
+	        /**
+	         * @param {?} accessor
+	         * @return {?}
+	         */
+	        RadioControlRegistry.prototype.remove = function (accessor) {
+	            for (var /** @type {?} */ i = this._accessors.length - 1; i >= 0; --i) {
+	                if (this._accessors[i][1] === accessor) {
+	                    this._accessors.splice(i, 1);
+	                    return;
+	                }
+	            }
+	        };
+	        /**
+	         * @param {?} accessor
+	         * @return {?}
+	         */
+	        RadioControlRegistry.prototype.select = function (accessor) {
+	            var _this = this;
+	            this._accessors.forEach(function (c) {
+	                if (_this._isSameGroup(c, accessor) && c[1] !== accessor) {
+	                    c[1].fireUncheck(accessor.value);
+	                }
+	            });
+	        };
+	        /**
+	         * @param {?} controlPair
+	         * @param {?} accessor
+	         * @return {?}
+	         */
+	        RadioControlRegistry.prototype._isSameGroup = function (controlPair, accessor) {
+	            if (!controlPair[0].control)
+	                return false;
+	            return controlPair[0]._parent === accessor._control._parent &&
+	                controlPair[1].name === accessor.name;
+	        };
+	        RadioControlRegistry.decorators = [
+	            { type: _angular_core.Injectable },
+	        ];
+	        /** @nocollapse */
+	        RadioControlRegistry.ctorParameters = function () { return []; };
+	        return RadioControlRegistry;
+	    }());
+	    /**
+	     *  *
+	      * Used by {@link NgModel}, {@link FormControlDirective}, and {@link FormControlName}
+	      * to keep the view synced with the {@link FormControl} model.
+	      * *
+	      * *
+	      * If you have imported the {@link FormsModule} or the {@link ReactiveFormsModule}, this
+	      * value accessor will be active on any radio control that has a form directive. You do
+	      * **not** need to add a special selector to activate it.
+	      * *
+	      * ### How to use radio buttons with form directives
+	      * *
+	      * To use radio buttons in a template-driven form, you'll want to ensure that radio buttons
+	      * in the same group have the same `name` attribute.  Radio buttons with different `name`
+	      * attributes do not affect each other.
+	      * *
+	      * {@example forms/ts/radioButtons/radio_button_example.ts region='TemplateDriven'}
+	      * *
+	      * When using radio buttons in a reactive form, radio buttons in the same group should have the
+	      * same `formControlName`. You can also add a `name` attribute, but it's optional.
+	      * *
+	      * {@example forms/ts/reactiveRadioButtons/reactive_radio_button_example.ts region='Reactive'}
+	      * *
+	      * * **npm package**: `@angular/forms`
+	      * *
+	      * @stable
+	     */
+	    var RadioControlValueAccessor = (function () {
+	        /**
+	         * @param {?} _renderer
+	         * @param {?} _elementRef
+	         * @param {?} _registry
+	         * @param {?} _injector
+	         */
+	        function RadioControlValueAccessor(_renderer, _elementRef, _registry, _injector) {
+	            this._renderer = _renderer;
+	            this._elementRef = _elementRef;
+	            this._registry = _registry;
+	            this._injector = _injector;
+	            this.onChange = function () { };
+	            this.onTouched = function () { };
+	        }
+	        /**
+	         * @return {?}
+	         */
+	        RadioControlValueAccessor.prototype.ngOnInit = function () {
+	            this._control = this._injector.get(NgControl);
+	            this._checkName();
+	            this._registry.add(this._control, this);
+	        };
+	        /**
+	         * @return {?}
+	         */
+	        RadioControlValueAccessor.prototype.ngOnDestroy = function () { this._registry.remove(this); };
+	        /**
+	         * @param {?} value
+	         * @return {?}
+	         */
+	        RadioControlValueAccessor.prototype.writeValue = function (value) {
+	            this._state = value === this.value;
+	            this._renderer.setElementProperty(this._elementRef.nativeElement, 'checked', this._state);
+	        };
+	        /**
+	         * @param {?} fn
+	         * @return {?}
+	         */
+	        RadioControlValueAccessor.prototype.registerOnChange = function (fn) {
+	            var _this = this;
+	            this._fn = fn;
+	            this.onChange = function () {
+	                fn(_this.value);
+	                _this._registry.select(_this);
+	            };
+	        };
+	        /**
+	         * @param {?} value
+	         * @return {?}
+	         */
+	        RadioControlValueAccessor.prototype.fireUncheck = function (value) { this.writeValue(value); };
+	        /**
+	         * @param {?} fn
+	         * @return {?}
+	         */
+	        RadioControlValueAccessor.prototype.registerOnTouched = function (fn) { this.onTouched = fn; };
+	        /**
+	         * @param {?} isDisabled
+	         * @return {?}
+	         */
+	        RadioControlValueAccessor.prototype.setDisabledState = function (isDisabled) {
+	            this._renderer.setElementProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+	        };
+	        /**
+	         * @return {?}
+	         */
+	        RadioControlValueAccessor.prototype._checkName = function () {
+	            if (this.name && this.formControlName && this.name !== this.formControlName) {
+	                this._throwNameError();
+	            }
+	            if (!this.name && this.formControlName)
+	                this.name = this.formControlName;
+	        };
+	        /**
+	         * @return {?}
+	         */
+	        RadioControlValueAccessor.prototype._throwNameError = function () {
+	            throw new Error("\n      If you define both a name and a formControlName attribute on your radio button, their values\n      must match. Ex: <input type=\"radio\" formControlName=\"food\" name=\"food\">\n    ");
+	        };
+	        RadioControlValueAccessor.decorators = [
+	            { type: _angular_core.Directive, args: [{
+	                        selector: 'input[type=radio][formControlName],input[type=radio][formControl],input[type=radio][ngModel]',
+	                        host: { '(change)': 'onChange()', '(blur)': 'onTouched()' },
+	                        providers: [RADIO_VALUE_ACCESSOR]
+	                    },] },
+	        ];
+	        /** @nocollapse */
+	        RadioControlValueAccessor.ctorParameters = function () { return [
+	            { type: _angular_core.Renderer, },
+	            { type: _angular_core.ElementRef, },
+	            { type: RadioControlRegistry, },
+	            { type: _angular_core.Injector, },
+	        ]; };
+	        RadioControlValueAccessor.propDecorators = {
+	            'name': [{ type: _angular_core.Input },],
+	            'formControlName': [{ type: _angular_core.Input },],
+	            'value': [{ type: _angular_core.Input },],
+	        };
+	        return RadioControlValueAccessor;
+	    }());
+
+	    var /** @type {?} */ RANGE_VALUE_ACCESSOR = {
+	        provide: NG_VALUE_ACCESSOR,
+	        useExisting: _angular_core.forwardRef(function () { return RangeValueAccessor; }),
+	        multi: true
+	    };
+	    /**
+	     *  The accessor for writing a range value and listening to changes that is used by the
+	      * {@link NgModel}, {@link FormControlDirective}, and {@link FormControlName} directives.
+	      * *
+	      * ### Example
+	      * ```
+	      * <input type="range" [(ngModel)]="age" >
+	      * ```
+	     */
+	    var RangeValueAccessor = (function () {
+	        /**
+	         * @param {?} _renderer
+	         * @param {?} _elementRef
+	         */
+	        function RangeValueAccessor(_renderer, _elementRef) {
+	            this._renderer = _renderer;
+	            this._elementRef = _elementRef;
+	            this.onChange = function (_) { };
+	            this.onTouched = function () { };
+	        }
+	        /**
+	         * @param {?} value
+	         * @return {?}
+	         */
+	        RangeValueAccessor.prototype.writeValue = function (value) {
+	            this._renderer.setElementProperty(this._elementRef.nativeElement, 'value', parseFloat(value));
+	        };
+	        /**
+	         * @param {?} fn
+	         * @return {?}
+	         */
+	        RangeValueAccessor.prototype.registerOnChange = function (fn) {
+	            this.onChange = function (value) { fn(value == '' ? null : parseFloat(value)); };
+	        };
+	        /**
+	         * @param {?} fn
+	         * @return {?}
+	         */
+	        RangeValueAccessor.prototype.registerOnTouched = function (fn) { this.onTouched = fn; };
+	        /**
+	         * @param {?} isDisabled
+	         * @return {?}
+	         */
+	        RangeValueAccessor.prototype.setDisabledState = function (isDisabled) {
+	            this._renderer.setElementProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+	        };
+	        RangeValueAccessor.decorators = [
+	            { type: _angular_core.Directive, args: [{
+	                        selector: 'input[type=range][formControlName],input[type=range][formControl],input[type=range][ngModel]',
+	                        host: {
+	                            '(change)': 'onChange($event.target.value)',
+	                            '(input)': 'onChange($event.target.value)',
+	                            '(blur)': 'onTouched()'
+	                        },
+	                        providers: [RANGE_VALUE_ACCESSOR]
+	                    },] },
+	        ];
+	        /** @nocollapse */
+	        RangeValueAccessor.ctorParameters = function () { return [
+	            { type: _angular_core.Renderer, },
+	            { type: _angular_core.ElementRef, },
+	        ]; };
+	        return RangeValueAccessor;
+	    }());
+
+	    var /** @type {?} */ SELECT_VALUE_ACCESSOR = {
+	        provide: NG_VALUE_ACCESSOR,
+	        useExisting: _angular_core.forwardRef(function () { return SelectControlValueAccessor; }),
+	        multi: true
+	    };
+	    /**
+	     * @param {?} id
+	     * @param {?} value
+	     * @return {?}
+	     */
+	    function _buildValueString(id, value) {
+	        if (id == null)
+	            return "" + value;
+	        if (!isPrimitive(value))
+	            value = 'Object';
+	        return (id + ": " + value).slice(0, 50);
+	    }
+	    /**
+	     * @param {?} valueString
+	     * @return {?}
+	     */
+	    function _extractId(valueString) {
+	        return valueString.split(':')[0];
+	    }
+	    /**
+	     *  *
+	      * Used by {@link NgModel}, {@link FormControlDirective}, and {@link FormControlName}
+	      * to keep the view synced with the {@link FormControl} model.
+	      * *
+	      * *
+	      * If you have imported the {@link FormsModule} or the {@link ReactiveFormsModule}, this
+	      * value accessor will be active on any select control that has a form directive. You do
+	      * **not** need to add a special selector to activate it.
+	      * *
+	      * ### How to use select controls with form directives
+	      * *
+	      * To use a select in a template-driven form, simply add an `ngModel` and a `name`
+	      * attribute to the main `<select>` tag.
+	      * *
+	      * If your option values are simple strings, you can bind to the normal `value` property
+	      * on the option.  If your option values happen to be objects (and you'd like to save the
+	      * selection in your form as an object), use `ngValue` instead:
+	      * *
+	      * {@example forms/ts/selectControl/select_control_example.ts region='Component'}
+	      * *
+	      * In reactive forms, you'll also want to add your form directive (`formControlName` or
+	      * `formControl`) on the main `<select>` tag. Like in the former example, you have the
+	      * choice of binding to the  `value` or `ngValue` property on the select's options.
+	      * *
+	      * {@example forms/ts/reactiveSelectControl/reactive_select_control_example.ts region='Component'}
+	      * *
+	      * Note: We listen to the 'change' event because 'input' events aren't fired
+	      * for selects in Firefox and IE:
+	      * https://bugzilla.mozilla.org/show_bug.cgi?id=1024350
+	      * https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/4660045/
+	      * *
+	      * * **npm package**: `@angular/forms`
+	      * *
+	     */
+	    var SelectControlValueAccessor = (function () {
+	        /**
+	         * @param {?} _renderer
+	         * @param {?} _elementRef
+	         */
+	        function SelectControlValueAccessor(_renderer, _elementRef) {
+	            this._renderer = _renderer;
+	            this._elementRef = _elementRef;
+	            /** @internal */
+	            this._optionMap = new Map();
+	            /** @internal */
+	            this._idCounter = 0;
+	            this.onChange = function (_) { };
+	            this.onTouched = function () { };
+	        }
+	        /**
+	         * @param {?} value
+	         * @return {?}
+	         */
+	        SelectControlValueAccessor.prototype.writeValue = function (value) {
+	            this.value = value;
+	            var /** @type {?} */ valueString = _buildValueString(this._getOptionId(value), value);
+	            this._renderer.setElementProperty(this._elementRef.nativeElement, 'value', valueString);
+	        };
+	        /**
+	         * @param {?} fn
+	         * @return {?}
+	         */
+	        SelectControlValueAccessor.prototype.registerOnChange = function (fn) {
+	            var _this = this;
+	            this.onChange = function (valueString) {
+	                _this.value = valueString;
+	                fn(_this._getOptionValue(valueString));
+	            };
+	        };
+	        /**
+	         * @param {?} fn
+	         * @return {?}
+	         */
+	        SelectControlValueAccessor.prototype.registerOnTouched = function (fn) { this.onTouched = fn; };
+	        /**
+	         * @param {?} isDisabled
+	         * @return {?}
+	         */
+	        SelectControlValueAccessor.prototype.setDisabledState = function (isDisabled) {
+	            this._renderer.setElementProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+	        };
+	        /**
+	         * @return {?}
+	         */
+	        SelectControlValueAccessor.prototype._registerOption = function () { return (this._idCounter++).toString(); };
+	        /**
+	         * @param {?} value
+	         * @return {?}
+	         */
+	        SelectControlValueAccessor.prototype._getOptionId = function (value) {
+	            for (var _i = 0, _a = Array.from(this._optionMap.keys()); _i < _a.length; _i++) {
+	                var id = _a[_i];
+	                if (looseIdentical(this._optionMap.get(id), value))
+	                    return id;
+	            }
+	            return null;
+	        };
+	        /**
+	         * @param {?} valueString
+	         * @return {?}
+	         */
+	        SelectControlValueAccessor.prototype._getOptionValue = function (valueString) {
+	            var /** @type {?} */ id = _extractId(valueString);
+	            return this._optionMap.has(id) ? this._optionMap.get(id) : valueString;
+	        };
+	        SelectControlValueAccessor.decorators = [
+	            { type: _angular_core.Directive, args: [{
+	                        selector: 'select:not([multiple])[formControlName],select:not([multiple])[formControl],select:not([multiple])[ngModel]',
+	                        host: { '(change)': 'onChange($event.target.value)', '(blur)': 'onTouched()' },
+	                        providers: [SELECT_VALUE_ACCESSOR]
+	                    },] },
+	        ];
+	        /** @nocollapse */
+	        SelectControlValueAccessor.ctorParameters = function () { return [
+	            { type: _angular_core.Renderer, },
+	            { type: _angular_core.ElementRef, },
+	        ]; };
+	        return SelectControlValueAccessor;
+	    }());
+	    /**
+	     *  *
+	      * *
+	      * See docs for {@link SelectControlValueAccessor} for usage examples.
+	      * *
+	     */
+	    var NgSelectOption = (function () {
+	        /**
+	         * @param {?} _element
+	         * @param {?} _renderer
+	         * @param {?} _select
+	         */
+	        function NgSelectOption(_element, _renderer, _select) {
+	            this._element = _element;
+	            this._renderer = _renderer;
+	            this._select = _select;
+	            if (this._select)
+	                this.id = this._select._registerOption();
+	        }
+	        Object.defineProperty(NgSelectOption.prototype, "ngValue", {
+	            /**
+	             * @param {?} value
+	             * @return {?}
+	             */
+	            set: function (value) {
+	                if (this._select == null)
+	                    return;
+	                this._select._optionMap.set(this.id, value);
+	                this._setElementValue(_buildValueString(this.id, value));
+	                this._select.writeValue(this._select.value);
+	            },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(NgSelectOption.prototype, "value", {
+	            /**
+	             * @param {?} value
+	             * @return {?}
+	             */
+	            set: function (value) {
+	                this._setElementValue(value);
+	                if (this._select)
+	                    this._select.writeValue(this._select.value);
+	            },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        /**
+	         * @param {?} value
+	         * @return {?}
+	         */
+	        NgSelectOption.prototype._setElementValue = function (value) {
+	            this._renderer.setElementProperty(this._element.nativeElement, 'value', value);
+	        };
+	        /**
+	         * @return {?}
+	         */
+	        NgSelectOption.prototype.ngOnDestroy = function () {
+	            if (this._select) {
+	                this._select._optionMap.delete(this.id);
+	                this._select.writeValue(this._select.value);
+	            }
+	        };
+	        NgSelectOption.decorators = [
+	            { type: _angular_core.Directive, args: [{ selector: 'option' },] },
+	        ];
+	        /** @nocollapse */
+	        NgSelectOption.ctorParameters = function () { return [
+	            { type: _angular_core.ElementRef, },
+	            { type: _angular_core.Renderer, },
+	            { type: SelectControlValueAccessor, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Host },] },
+	        ]; };
+	        NgSelectOption.propDecorators = {
+	            'ngValue': [{ type: _angular_core.Input, args: ['ngValue',] },],
+	            'value': [{ type: _angular_core.Input, args: ['value',] },],
+	        };
+	        return NgSelectOption;
+	    }());
+
+	    var /** @type {?} */ SELECT_MULTIPLE_VALUE_ACCESSOR = {
+	        provide: NG_VALUE_ACCESSOR,
+	        useExisting: _angular_core.forwardRef(function () { return SelectMultipleControlValueAccessor; }),
+	        multi: true
+	    };
+	    /**
+	     * @param {?} id
+	     * @param {?} value
+	     * @return {?}
+	     */
+	    function _buildValueString$1(id, value) {
+	        if (id == null)
+	            return "" + value;
+	        if (typeof value === 'string')
+	            value = "'" + value + "'";
+	        if (!isPrimitive(value))
+	            value = 'Object';
+	        return (id + ": " + value).slice(0, 50);
+	    }
+	    /**
+	     * @param {?} valueString
+	     * @return {?}
+	     */
+	    function _extractId$1(valueString) {
+	        return valueString.split(':')[0];
+	    }
+	    /**
+	     *  The accessor for writing a value and listening to changes on a select element.
+	      * *
+	     */
+	    var SelectMultipleControlValueAccessor = (function () {
+	        /**
+	         * @param {?} _renderer
+	         * @param {?} _elementRef
+	         */
+	        function SelectMultipleControlValueAccessor(_renderer, _elementRef) {
+	            this._renderer = _renderer;
+	            this._elementRef = _elementRef;
+	            /** @internal */
+	            this._optionMap = new Map();
+	            /** @internal */
+	            this._idCounter = 0;
+	            this.onChange = function (_) { };
+	            this.onTouched = function () { };
+	        }
+	        /**
+	         * @param {?} value
+	         * @return {?}
+	         */
+	        SelectMultipleControlValueAccessor.prototype.writeValue = function (value) {
+	            var _this = this;
+	            this.value = value;
+	            var /** @type {?} */ optionSelectedStateSetter;
+	            if (Array.isArray(value)) {
+	                // convert values to ids
+	                var /** @type {?} */ ids_1 = value.map(function (v) { return _this._getOptionId(v); });
+	                optionSelectedStateSetter = function (opt, o) { opt._setSelected(ids_1.indexOf(o.toString()) > -1); };
+	            }
+	            else {
+	                optionSelectedStateSetter = function (opt, o) { opt._setSelected(false); };
+	            }
+	            this._optionMap.forEach(optionSelectedStateSetter);
+	        };
+	        /**
+	         * @param {?} fn
+	         * @return {?}
+	         */
+	        SelectMultipleControlValueAccessor.prototype.registerOnChange = function (fn) {
+	            var _this = this;
+	            this.onChange = function (_) {
+	                var /** @type {?} */ selected = [];
+	                if (_.hasOwnProperty('selectedOptions')) {
+	                    var /** @type {?} */ options = _.selectedOptions;
+	                    for (var /** @type {?} */ i = 0; i < options.length; i++) {
+	                        var /** @type {?} */ opt = options.item(i);
+	                        var /** @type {?} */ val = _this._getOptionValue(opt.value);
+	                        selected.push(val);
+	                    }
+	                }
+	                else {
+	                    var /** @type {?} */ options = (_.options);
+	                    for (var /** @type {?} */ i = 0; i < options.length; i++) {
+	                        var /** @type {?} */ opt = options.item(i);
+	                        if (opt.selected) {
+	                            var /** @type {?} */ val = _this._getOptionValue(opt.value);
+	                            selected.push(val);
+	                        }
+	                    }
+	                }
+	                _this.value = selected;
+	                fn(selected);
+	            };
+	        };
+	        /**
+	         * @param {?} fn
+	         * @return {?}
+	         */
+	        SelectMultipleControlValueAccessor.prototype.registerOnTouched = function (fn) { this.onTouched = fn; };
+	        /**
+	         * @param {?} isDisabled
+	         * @return {?}
+	         */
+	        SelectMultipleControlValueAccessor.prototype.setDisabledState = function (isDisabled) {
+	            this._renderer.setElementProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+	        };
+	        /**
+	         * @param {?} value
+	         * @return {?}
+	         */
+	        SelectMultipleControlValueAccessor.prototype._registerOption = function (value) {
+	            var /** @type {?} */ id = (this._idCounter++).toString();
+	            this._optionMap.set(id, value);
+	            return id;
+	        };
+	        /**
+	         * @param {?} value
+	         * @return {?}
+	         */
+	        SelectMultipleControlValueAccessor.prototype._getOptionId = function (value) {
+	            for (var _i = 0, _a = Array.from(this._optionMap.keys()); _i < _a.length; _i++) {
+	                var id = _a[_i];
+	                if (looseIdentical(this._optionMap.get(id)._value, value))
+	                    return id;
+	            }
+	            return null;
+	        };
+	        /**
+	         * @param {?} valueString
+	         * @return {?}
+	         */
+	        SelectMultipleControlValueAccessor.prototype._getOptionValue = function (valueString) {
+	            var /** @type {?} */ id = _extractId$1(valueString);
+	            return this._optionMap.has(id) ? this._optionMap.get(id)._value : valueString;
+	        };
+	        SelectMultipleControlValueAccessor.decorators = [
+	            { type: _angular_core.Directive, args: [{
+	                        selector: 'select[multiple][formControlName],select[multiple][formControl],select[multiple][ngModel]',
+	                        host: { '(change)': 'onChange($event.target)', '(blur)': 'onTouched()' },
+	                        providers: [SELECT_MULTIPLE_VALUE_ACCESSOR]
+	                    },] },
+	        ];
+	        /** @nocollapse */
+	        SelectMultipleControlValueAccessor.ctorParameters = function () { return [
+	            { type: _angular_core.Renderer, },
+	            { type: _angular_core.ElementRef, },
+	        ]; };
+	        return SelectMultipleControlValueAccessor;
+	    }());
+	    /**
+	     *  Marks `<option>` as dynamic, so Angular can be notified when options change.
+	      * *
+	      * ### Example
+	      * *
+	      * ```
+	      * <select multiple name="city" ngModel>
+	      * <option *ngFor="let c of cities" [value]="c"></option>
+	      * </select>
+	      * ```
+	     */
+	    var NgSelectMultipleOption = (function () {
+	        /**
+	         * @param {?} _element
+	         * @param {?} _renderer
+	         * @param {?} _select
+	         */
+	        function NgSelectMultipleOption(_element, _renderer, _select) {
+	            this._element = _element;
+	            this._renderer = _renderer;
+	            this._select = _select;
+	            if (this._select) {
+	                this.id = this._select._registerOption(this);
+	            }
+	        }
+	        Object.defineProperty(NgSelectMultipleOption.prototype, "ngValue", {
+	            /**
+	             * @param {?} value
+	             * @return {?}
+	             */
+	            set: function (value) {
+	                if (this._select == null)
+	                    return;
+	                this._value = value;
+	                this._setElementValue(_buildValueString$1(this.id, value));
+	                this._select.writeValue(this._select.value);
+	            },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(NgSelectMultipleOption.prototype, "value", {
+	            /**
+	             * @param {?} value
+	             * @return {?}
+	             */
+	            set: function (value) {
+	                if (this._select) {
+	                    this._value = value;
+	                    this._setElementValue(_buildValueString$1(this.id, value));
+	                    this._select.writeValue(this._select.value);
+	                }
+	                else {
+	                    this._setElementValue(value);
+	                }
+	            },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        /**
+	         * @param {?} value
+	         * @return {?}
+	         */
+	        NgSelectMultipleOption.prototype._setElementValue = function (value) {
+	            this._renderer.setElementProperty(this._element.nativeElement, 'value', value);
+	        };
+	        /**
+	         * @param {?} selected
+	         * @return {?}
+	         */
+	        NgSelectMultipleOption.prototype._setSelected = function (selected) {
+	            this._renderer.setElementProperty(this._element.nativeElement, 'selected', selected);
+	        };
+	        /**
+	         * @return {?}
+	         */
+	        NgSelectMultipleOption.prototype.ngOnDestroy = function () {
+	            if (this._select) {
+	                this._select._optionMap.delete(this.id);
+	                this._select.writeValue(this._select.value);
+	            }
+	        };
+	        NgSelectMultipleOption.decorators = [
+	            { type: _angular_core.Directive, args: [{ selector: 'option' },] },
+	        ];
+	        /** @nocollapse */
+	        NgSelectMultipleOption.ctorParameters = function () { return [
+	            { type: _angular_core.ElementRef, },
+	            { type: _angular_core.Renderer, },
+	            { type: SelectMultipleControlValueAccessor, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Host },] },
+	        ]; };
+	        NgSelectMultipleOption.propDecorators = {
+	            'ngValue': [{ type: _angular_core.Input, args: ['ngValue',] },],
+	            'value': [{ type: _angular_core.Input, args: ['value',] },],
+	        };
+	        return NgSelectMultipleOption;
+	    }());
+
+	    /**
+	     * @param {?} name
+	     * @param {?} parent
+	     * @return {?}
+	     */
+	    function controlPath(name, parent) {
+	        return parent.path.concat([name]);
+	    }
+	    /**
+	     * @param {?} control
+	     * @param {?} dir
+	     * @return {?}
+	     */
+	    function setUpControl(control, dir) {
+	        if (!control)
+	            _throwError(dir, 'Cannot find control with');
+	        if (!dir.valueAccessor)
+	            _throwError(dir, 'No value accessor for form control with');
+	        control.validator = Validators.compose([control.validator, dir.validator]);
+	        control.asyncValidator = Validators.composeAsync([control.asyncValidator, dir.asyncValidator]);
+	        dir.valueAccessor.writeValue(control.value);
+	        // view -> model
+	        dir.valueAccessor.registerOnChange(function (newValue) {
+	            dir.viewToModelUpdate(newValue);
+	            control.markAsDirty();
+	            control.setValue(newValue, { emitModelToViewChange: false });
+	        });
+	        // touched
+	        dir.valueAccessor.registerOnTouched(function () { return control.markAsTouched(); });
+	        control.registerOnChange(function (newValue, emitModelEvent) {
+	            // control -> view
+	            dir.valueAccessor.writeValue(newValue);
+	            // control -> ngModel
+	            if (emitModelEvent)
+	                dir.viewToModelUpdate(newValue);
+	        });
+	        if (dir.valueAccessor.setDisabledState) {
+	            control.registerOnDisabledChange(function (isDisabled) { dir.valueAccessor.setDisabledState(isDisabled); });
+	        }
+	        // re-run validation when validator binding changes, e.g. minlength=3 -> minlength=4
+	        dir._rawValidators.forEach(function (validator) {
+	            if (((validator)).registerOnValidatorChange)
+	                ((validator)).registerOnValidatorChange(function () { return control.updateValueAndValidity(); });
+	        });
+	        dir._rawAsyncValidators.forEach(function (validator) {
+	            if (((validator)).registerOnValidatorChange)
+	                ((validator)).registerOnValidatorChange(function () { return control.updateValueAndValidity(); });
+	        });
+	    }
+	    /**
+	     * @param {?} control
+	     * @param {?} dir
+	     * @return {?}
+	     */
+	    function cleanUpControl(control, dir) {
+	        dir.valueAccessor.registerOnChange(function () { return _noControlError(dir); });
+	        dir.valueAccessor.registerOnTouched(function () { return _noControlError(dir); });
+	        dir._rawValidators.forEach(function (validator) {
+	            if (validator.registerOnValidatorChange) {
+	                validator.registerOnValidatorChange(null);
+	            }
+	        });
+	        dir._rawAsyncValidators.forEach(function (validator) {
+	            if (validator.registerOnValidatorChange) {
+	                validator.registerOnValidatorChange(null);
+	            }
+	        });
+	        if (control)
+	            control._clearChangeFns();
+	    }
+	    /**
+	     * @param {?} control
+	     * @param {?} dir
+	     * @return {?}
+	     */
+	    function setUpFormContainer(control, dir) {
+	        if (isBlank(control))
+	            _throwError(dir, 'Cannot find control with');
+	        control.validator = Validators.compose([control.validator, dir.validator]);
+	        control.asyncValidator = Validators.composeAsync([control.asyncValidator, dir.asyncValidator]);
+	    }
+	    /**
+	     * @param {?} dir
+	     * @return {?}
+	     */
+	    function _noControlError(dir) {
+	        return _throwError(dir, 'There is no FormControl instance attached to form control element with');
+	    }
+	    /**
+	     * @param {?} dir
+	     * @param {?} message
+	     * @return {?}
+	     */
+	    function _throwError(dir, message) {
+	        var /** @type {?} */ messageEnd;
+	        if (dir.path.length > 1) {
+	            messageEnd = "path: '" + dir.path.join(' -> ') + "'";
+	        }
+	        else if (dir.path[0]) {
+	            messageEnd = "name: '" + dir.path + "'";
+	        }
+	        else {
+	            messageEnd = 'unspecified name attribute';
+	        }
+	        throw new Error(message + " " + messageEnd);
+	    }
+	    /**
+	     * @param {?} validators
+	     * @return {?}
+	     */
+	    function composeValidators(validators) {
+	        return isPresent(validators) ? Validators.compose(validators.map(normalizeValidator)) : null;
+	    }
+	    /**
+	     * @param {?} validators
+	     * @return {?}
+	     */
+	    function composeAsyncValidators(validators) {
+	        return isPresent(validators) ? Validators.composeAsync(validators.map(normalizeAsyncValidator)) :
+	            null;
+	    }
+	    /**
+	     * @param {?} changes
+	     * @param {?} viewModel
+	     * @return {?}
+	     */
+	    function isPropertyUpdated(changes, viewModel) {
+	        if (!changes.hasOwnProperty('model'))
+	            return false;
+	        var /** @type {?} */ change = changes['model'];
+	        if (change.isFirstChange())
+	            return true;
+	        return !looseIdentical(viewModel, change.currentValue);
+	    }
+	    var /** @type {?} */ BUILTIN_ACCESSORS = [
+	        CheckboxControlValueAccessor,
+	        RangeValueAccessor,
+	        NumberValueAccessor,
+	        SelectControlValueAccessor,
+	        SelectMultipleControlValueAccessor,
+	        RadioControlValueAccessor,
+	    ];
+	    /**
+	     * @param {?} valueAccessor
+	     * @return {?}
+	     */
+	    function isBuiltInAccessor(valueAccessor) {
+	        return BUILTIN_ACCESSORS.some(function (a) { return valueAccessor.constructor === a; });
+	    }
+	    /**
+	     * @param {?} dir
+	     * @param {?} valueAccessors
+	     * @return {?}
+	     */
+	    function selectValueAccessor(dir, valueAccessors) {
+	        if (!valueAccessors)
+	            return null;
+	        var /** @type {?} */ defaultAccessor;
+	        var /** @type {?} */ builtinAccessor;
+	        var /** @type {?} */ customAccessor;
+	        valueAccessors.forEach(function (v) {
+	            if (v.constructor === DefaultValueAccessor) {
+	                defaultAccessor = v;
+	            }
+	            else if (isBuiltInAccessor(v)) {
+	                if (builtinAccessor)
+	                    _throwError(dir, 'More than one built-in value accessor matches form control with');
+	                builtinAccessor = v;
+	            }
+	            else {
+	                if (customAccessor)
+	                    _throwError(dir, 'More than one custom value accessor matches form control with');
+	                customAccessor = v;
+	            }
+	        });
+	        if (customAccessor)
+	            return customAccessor;
+	        if (builtinAccessor)
+	            return builtinAccessor;
+	        if (defaultAccessor)
+	            return defaultAccessor;
+	        _throwError(dir, 'No valid value accessor for form control with');
+	        return null;
+	    }
+
+	    /**
+	     * @license
+	     * Copyright Google Inc. All Rights Reserved.
+	     *
+	     * Use of this source code is governed by an MIT-style license that can be
+	     * found in the LICENSE file at https://angular.io/license
+	     */
+	    var __extends = (this && this.__extends) || function (d, b) {
+	        for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	    /**
+	     *  This is a base class for code shared between {@link NgModelGroup} and {@link FormGroupName}.
+	      * *
+	     */
+	    var AbstractFormGroupDirective = (function (_super) {
+	        __extends(AbstractFormGroupDirective, _super);
+	        function AbstractFormGroupDirective() {
+	            _super.apply(this, arguments);
+	        }
+	        /**
+	         * @return {?}
+	         */
+	        AbstractFormGroupDirective.prototype.ngOnInit = function () {
+	            this._checkParentType();
+	            this.formDirective.addFormGroup(this);
+	        };
+	        /**
+	         * @return {?}
+	         */
+	        AbstractFormGroupDirective.prototype.ngOnDestroy = function () {
+	            if (this.formDirective) {
+	                this.formDirective.removeFormGroup(this);
+	            }
+	        };
+	        Object.defineProperty(AbstractFormGroupDirective.prototype, "control", {
+	            /**
+	             *  Get the {@link FormGroup} backing this binding.
+	             * @return {?}
+	             */
+	            get: function () { return this.formDirective.getFormGroup(this); },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractFormGroupDirective.prototype, "path", {
+	            /**
+	             *  Get the path to this control group.
+	             * @return {?}
+	             */
+	            get: function () { return controlPath(this.name, this._parent); },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractFormGroupDirective.prototype, "formDirective", {
+	            /**
+	             *  Get the {@link Form} to which this group belongs.
+	             * @return {?}
+	             */
+	            get: function () { return this._parent ? this._parent.formDirective : null; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractFormGroupDirective.prototype, "validator", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return composeValidators(this._validators); },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractFormGroupDirective.prototype, "asyncValidator", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return composeAsyncValidators(this._asyncValidators); },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        /**
+	         * @return {?}
+	         */
+	        AbstractFormGroupDirective.prototype._checkParentType = function () { };
+	        return AbstractFormGroupDirective;
+	    }(ControlContainer));
+
+	    /**
+	     * @license
+	     * Copyright Google Inc. All Rights Reserved.
+	     *
+	     * Use of this source code is governed by an MIT-style license that can be
+	     * found in the LICENSE file at https://angular.io/license
+	     */
+	    var __extends$3 = (this && this.__extends) || function (d, b) {
+	        for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	    var AbstractControlStatus = (function () {
+	        /**
+	         * @param {?} cd
+	         */
+	        function AbstractControlStatus(cd) {
+	            this._cd = cd;
+	        }
+	        Object.defineProperty(AbstractControlStatus.prototype, "ngClassUntouched", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return this._cd.control ? this._cd.control.untouched : false; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControlStatus.prototype, "ngClassTouched", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return this._cd.control ? this._cd.control.touched : false; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControlStatus.prototype, "ngClassPristine", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return this._cd.control ? this._cd.control.pristine : false; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControlStatus.prototype, "ngClassDirty", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return this._cd.control ? this._cd.control.dirty : false; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControlStatus.prototype, "ngClassValid", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return this._cd.control ? this._cd.control.valid : false; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControlStatus.prototype, "ngClassInvalid", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return this._cd.control ? this._cd.control.invalid : false; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControlStatus.prototype, "ngClassPending", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return this._cd.control ? this._cd.control.pending : false; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        return AbstractControlStatus;
+	    }());
+	    var /** @type {?} */ ngControlStatusHost = {
+	        '[class.ng-untouched]': 'ngClassUntouched',
+	        '[class.ng-touched]': 'ngClassTouched',
+	        '[class.ng-pristine]': 'ngClassPristine',
+	        '[class.ng-dirty]': 'ngClassDirty',
+	        '[class.ng-valid]': 'ngClassValid',
+	        '[class.ng-invalid]': 'ngClassInvalid',
+	        '[class.ng-pending]': 'ngClassPending',
+	    };
+	    /**
+	     *  Directive automatically applied to Angular form controls that sets CSS classes
+	      * based on control status (valid/invalid/dirty/etc).
+	      * *
+	     */
+	    var NgControlStatus = (function (_super) {
+	        __extends$3(NgControlStatus, _super);
+	        /**
+	         * @param {?} cd
+	         */
+	        function NgControlStatus(cd) {
+	            _super.call(this, cd);
+	        }
+	        NgControlStatus.decorators = [
+	            { type: _angular_core.Directive, args: [{ selector: '[formControlName],[ngModel],[formControl]', host: ngControlStatusHost },] },
+	        ];
+	        /** @nocollapse */
+	        NgControlStatus.ctorParameters = function () { return [
+	            { type: NgControl, decorators: [{ type: _angular_core.Self },] },
+	        ]; };
+	        return NgControlStatus;
+	    }(AbstractControlStatus));
+	    /**
+	     *  Directive automatically applied to Angular form groups that sets CSS classes
+	      * based on control status (valid/invalid/dirty/etc).
+	      * *
+	     */
+	    var NgControlStatusGroup = (function (_super) {
+	        __extends$3(NgControlStatusGroup, _super);
+	        /**
+	         * @param {?} cd
+	         */
+	        function NgControlStatusGroup(cd) {
+	            _super.call(this, cd);
+	        }
+	        NgControlStatusGroup.decorators = [
+	            { type: _angular_core.Directive, args: [{
+	                        selector: '[formGroupName],[formArrayName],[ngModelGroup],[formGroup],form:not([ngNoForm]),[ngForm]',
+	                        host: ngControlStatusHost
+	                    },] },
+	        ];
+	        /** @nocollapse */
+	        NgControlStatusGroup.ctorParameters = function () { return [
+	            { type: ControlContainer, decorators: [{ type: _angular_core.Self },] },
+	        ]; };
+	        return NgControlStatusGroup;
+	    }(AbstractControlStatus));
+
+	    /**
+	     * @license
+	     * Copyright Google Inc. All Rights Reserved.
+	     *
+	     * Use of this source code is governed by an MIT-style license that can be
+	     * found in the LICENSE file at https://angular.io/license
+	     */
+	    var __extends$5 = (this && this.__extends) || function (d, b) {
+	        for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	    /**
+	     *  Use by directives and components to emit custom Events.
+	      * *
+	      * ### Examples
+	      * *
+	      * In the following example, `Zippy` alternatively emits `open` and `close` events when its
+	      * title gets clicked:
+	      * *
+	      * ```
+	      * selector: 'zippy',
+	      * template: `
+	      * <div class="zippy">
+	      * <div (click)="toggle()">Toggle</div>
+	      * <div [hidden]="!visible">
+	      * <ng-content></ng-content>
+	      * </div>
+	      * </div>`})
+	      * export class Zippy {
+	      * visible: boolean = true;
+	      * @Output() open: EventEmitter<any> = new EventEmitter();
+	      * @Output() close: EventEmitter<any> = new EventEmitter();
+	      * *
+	      * toggle() {
+	      * this.visible = !this.visible;
+	      * if (this.visible) {
+	      * this.open.emit(null);
+	      * } else {
+	      * this.close.emit(null);
+	      * }
+	      * }
+	      * }
+	      * ```
+	      * *
+	      * The events payload can be accessed by the parameter `$event` on the components output event
+	      * handler:
+	      * *
+	      * ```
+	      * <zippy (open)="onOpen($event)" (close)="onClose($event)"></zippy>
+	      * ```
+	      * *
+	      * Uses Rx.Observable but provides an adapter to make it work as specified here:
+	      * https://github.com/jhusain/observable-spec
+	      * *
+	      * Once a reference implementation of the spec is available, switch to it.
+	     */
+	    var EventEmitter = (function (_super) {
+	        __extends$5(EventEmitter, _super);
+	        /**
+	         *  Creates an instance of [EventEmitter], which depending on [isAsync],
+	          * delivers events synchronously or asynchronously.
+	         * @param {?=} isAsync
+	         */
+	        function EventEmitter(isAsync) {
+	            if (isAsync === void 0) { isAsync = false; }
+	            _super.call(this);
+	            this.__isAsync = isAsync;
+	        }
+	        /**
+	         * @param {?=} value
+	         * @return {?}
+	         */
+	        EventEmitter.prototype.emit = function (value) { _super.prototype.next.call(this, value); };
+	        /**
+	         * @param {?=} generatorOrNext
+	         * @param {?=} error
+	         * @param {?=} complete
+	         * @return {?}
+	         */
+	        EventEmitter.prototype.subscribe = function (generatorOrNext, error, complete) {
+	            var /** @type {?} */ schedulerFn;
+	            var /** @type {?} */ errorFn = function (err) { return null; };
+	            var /** @type {?} */ completeFn = function () { return null; };
+	            if (generatorOrNext && typeof generatorOrNext === 'object') {
+	                schedulerFn = this.__isAsync ? function (value) {
+	                    setTimeout(function () { return generatorOrNext.next(value); });
+	                } : function (value) { generatorOrNext.next(value); };
+	                if (generatorOrNext.error) {
+	                    errorFn = this.__isAsync ? function (err) { setTimeout(function () { return generatorOrNext.error(err); }); } :
+	                        function (err) { generatorOrNext.error(err); };
+	                }
+	                if (generatorOrNext.complete) {
+	                    completeFn = this.__isAsync ? function () { setTimeout(function () { return generatorOrNext.complete(); }); } :
+	                        function () { generatorOrNext.complete(); };
+	                }
+	            }
+	            else {
+	                schedulerFn = this.__isAsync ? function (value) { setTimeout(function () { return generatorOrNext(value); }); } :
+	                    function (value) { generatorOrNext(value); };
+	                if (error) {
+	                    errorFn =
+	                        this.__isAsync ? function (err) { setTimeout(function () { return error(err); }); } : function (err) { error(err); };
+	                }
+	                if (complete) {
+	                    completeFn =
+	                        this.__isAsync ? function () { setTimeout(function () { return complete(); }); } : function () { complete(); };
+	                }
+	            }
+	            return _super.prototype.subscribe.call(this, schedulerFn, errorFn, completeFn);
+	        };
+	        return EventEmitter;
+	    }(rxjs_Subject.Subject));
+
+	    /**
+	     * @license
+	     * Copyright Google Inc. All Rights Reserved.
+	     *
+	     * Use of this source code is governed by an MIT-style license that can be
+	     * found in the LICENSE file at https://angular.io/license
+	     */
+	    var __extends$6 = (this && this.__extends) || function (d, b) {
+	        for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	    /**
+	     * Indicates that a FormControl is valid, i.e. that no errors exist in the input value.
+	     */
+	    var /** @type {?} */ VALID = 'VALID';
+	    /**
+	     * Indicates that a FormControl is invalid, i.e. that an error exists in the input value.
+	     */
+	    var /** @type {?} */ INVALID = 'INVALID';
+	    /**
+	     * Indicates that a FormControl is pending, i.e. that async validation is occurring and
+	     * errors are not yet available for the input value.
+	     */
+	    var /** @type {?} */ PENDING = 'PENDING';
+	    /**
+	     * Indicates that a FormControl is disabled, i.e. that the control is exempt from ancestor
+	     * calculations of validity or value.
+	     */
+	    var /** @type {?} */ DISABLED = 'DISABLED';
+	    /**
+	     * @param {?} control
+	     * @param {?} path
+	     * @param {?} delimiter
+	     * @return {?}
+	     */
+	    function _find(control, path, delimiter) {
+	        if (path == null)
+	            return null;
+	        if (!(path instanceof Array)) {
+	            path = ((path)).split(delimiter);
+	        }
+	        if (path instanceof Array && (path.length === 0))
+	            return null;
+	        return ((path)).reduce(function (v, name) {
+	            if (v instanceof FormGroup) {
+	                return v.controls[name] || null;
+	            }
+	            if (v instanceof FormArray) {
+	                return v.at(/** @type {?} */ (name)) || null;
+	            }
+	            return null;
+	        }, control);
+	    }
+	    /**
+	     * @param {?} r
+	     * @return {?}
+	     */
+	    function toObservable(r) {
+	        return isPromise(r) ? rxjs_observable_fromPromise.fromPromise(r) : r;
+	    }
+	    /**
+	     * @param {?} validator
+	     * @return {?}
+	     */
+	    function coerceToValidator(validator) {
+	        return Array.isArray(validator) ? composeValidators(validator) : validator;
+	    }
+	    /**
+	     * @param {?} asyncValidator
+	     * @return {?}
+	     */
+	    function coerceToAsyncValidator(asyncValidator) {
+	        return Array.isArray(asyncValidator) ? composeAsyncValidators(asyncValidator) : asyncValidator;
+	    }
+	    /**
+	     *  {@link FormArray}.
+	      * *
+	      * It provides some of the shared behavior that all controls and groups of controls have, like
+	      * running validators, calculating status, and resetting state. It also defines the properties
+	      * that are shared between all sub-classes, like `value`, `valid`, and `dirty`. It shouldn't be
+	      * instantiated directly.
+	      * *
+	     * @abstract
+	     */
+	    var AbstractControl = (function () {
+	        /**
+	         * @param {?} validator
+	         * @param {?} asyncValidator
+	         */
+	        function AbstractControl(validator, asyncValidator) {
+	            this.validator = validator;
+	            this.asyncValidator = asyncValidator;
+	            /** @internal */
+	            this._onCollectionChange = function () { };
+	            this._pristine = true;
+	            this._touched = false;
+	            /** @internal */
+	            this._onDisabledChange = [];
+	        }
+	        Object.defineProperty(AbstractControl.prototype, "value", {
+	            /**
+	             *  The value of the control.
+	             * @return {?}
+	             */
+	            get: function () { return this._value; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControl.prototype, "parent", {
+	            /**
+	             *  The parent control.
+	             * @return {?}
+	             */
+	            get: function () { return this._parent; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControl.prototype, "status", {
+	            /**
+	             *  The validation status of the control. There are four possible
+	              * validation statuses:
+	              * *
+	              * * **VALID**:  control has passed all validation checks
+	              * * **INVALID**: control has failed at least one validation check
+	              * * **PENDING**: control is in the midst of conducting a validation check
+	              * * **DISABLED**: control is exempt from validation checks
+	              * *
+	              * These statuses are mutually exclusive, so a control cannot be
+	              * both valid AND invalid or invalid AND disabled.
+	             * @return {?}
+	             */
+	            get: function () { return this._status; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControl.prototype, "valid", {
+	            /**
+	             *  A control is `valid` when its `status === VALID`.
+	              * *
+	              * In order to have this status, the control must have passed all its
+	              * validation checks.
+	             * @return {?}
+	             */
+	            get: function () { return this._status === VALID; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControl.prototype, "invalid", {
+	            /**
+	             *  A control is `invalid` when its `status === INVALID`.
+	              * *
+	              * In order to have this status, the control must have failed
+	              * at least one of its validation checks.
+	             * @return {?}
+	             */
+	            get: function () { return this._status === INVALID; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControl.prototype, "pending", {
+	            /**
+	             *  A control is `pending` when its `status === PENDING`.
+	              * *
+	              * In order to have this status, the control must be in the
+	              * middle of conducting a validation check.
+	             * @return {?}
+	             */
+	            get: function () { return this._status == PENDING; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControl.prototype, "disabled", {
+	            /**
+	             *  A control is `disabled` when its `status === DISABLED`.
+	              * *
+	              * Disabled controls are exempt from validation checks and
+	              * are not included in the aggregate value of their ancestor
+	              * controls.
+	             * @return {?}
+	             */
+	            get: function () { return this._status === DISABLED; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControl.prototype, "enabled", {
+	            /**
+	             *  A control is `enabled` as long as its `status !== DISABLED`.
+	              * *
+	              * In other words, it has a status of `VALID`, `INVALID`, or
+	              * `PENDING`.
+	             * @return {?}
+	             */
+	            get: function () { return this._status !== DISABLED; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControl.prototype, "errors", {
+	            /**
+	             *  Returns any errors generated by failing validation. If there
+	              * are no errors, it will return null.
+	             * @return {?}
+	             */
+	            get: function () { return this._errors; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControl.prototype, "pristine", {
+	            /**
+	             *  A control is `pristine` if the user has not yet changed
+	              * the value in the UI.
+	              * *
+	              * Note that programmatic changes to a control's value will
+	              * *not* mark it dirty.
+	             * @return {?}
+	             */
+	            get: function () { return this._pristine; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControl.prototype, "dirty", {
+	            /**
+	             *  A control is `dirty` if the user has changed the value
+	              * in the UI.
+	              * *
+	              * Note that programmatic changes to a control's value will
+	              * *not* mark it dirty.
+	             * @return {?}
+	             */
+	            get: function () { return !this.pristine; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControl.prototype, "touched", {
+	            /**
+	             *  A control is marked `touched` once the user has triggered
+	              * a `blur` event on it.
+	             * @return {?}
+	             */
+	            get: function () { return this._touched; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControl.prototype, "untouched", {
+	            /**
+	             *  A control is `untouched` if the user has not yet triggered
+	              * a `blur` event on it.
+	             * @return {?}
+	             */
+	            get: function () { return !this._touched; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControl.prototype, "valueChanges", {
+	            /**
+	             *  Emits an event every time the value of the control changes, in
+	              * the UI or programmatically.
+	             * @return {?}
+	             */
+	            get: function () { return this._valueChanges; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(AbstractControl.prototype, "statusChanges", {
+	            /**
+	             *  Emits an event every time the validation status of the control
+	              * is re-calculated.
+	             * @return {?}
+	             */
+	            get: function () { return this._statusChanges; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        /**
+	         *  Sets the synchronous validators that are active on this control.  Calling
+	          * this will overwrite any existing sync validators.
+	         * @param {?} newValidator
+	         * @return {?}
+	         */
+	        AbstractControl.prototype.setValidators = function (newValidator) {
+	            this.validator = coerceToValidator(newValidator);
+	        };
+	        /**
+	         *  Sets the async validators that are active on this control. Calling this
+	          * will overwrite any existing async validators.
+	         * @param {?} newValidator
+	         * @return {?}
+	         */
+	        AbstractControl.prototype.setAsyncValidators = function (newValidator) {
+	            this.asyncValidator = coerceToAsyncValidator(newValidator);
+	        };
+	        /**
+	         *  Empties out the sync validator list.
+	         * @return {?}
+	         */
+	        AbstractControl.prototype.clearValidators = function () { this.validator = null; };
+	        /**
+	         *  Empties out the async validator list.
+	         * @return {?}
+	         */
+	        AbstractControl.prototype.clearAsyncValidators = function () { this.asyncValidator = null; };
+	        /**
+	         *  Marks the control as `touched`.
+	          * *
+	          * This will also mark all direct ancestors as `touched` to maintain
+	          * the model.
+	         * @param {?=} __0
+	         * @return {?}
+	         */
+	        AbstractControl.prototype.markAsTouched = function (_a) {
+	            var onlySelf = (_a === void 0 ? {} : _a).onlySelf;
+	            this._touched = true;
+	            if (this._parent && !onlySelf) {
+	                this._parent.markAsTouched({ onlySelf: onlySelf });
+	            }
+	        };
+	        /**
+	         *  Marks the control as `untouched`.
+	          * *
+	          * If the control has any children, it will also mark all children as `untouched`
+	          * to maintain the model, and re-calculate the `touched` status of all parent
+	          * controls.
+	         * @param {?=} __0
+	         * @return {?}
+	         */
+	        AbstractControl.prototype.markAsUntouched = function (_a) {
+	            var onlySelf = (_a === void 0 ? {} : _a).onlySelf;
+	            this._touched = false;
+	            this._forEachChild(function (control) { control.markAsUntouched({ onlySelf: true }); });
+	            if (this._parent && !onlySelf) {
+	                this._parent._updateTouched({ onlySelf: onlySelf });
+	            }
+	        };
+	        /**
+	         *  Marks the control as `dirty`.
+	          * *
+	          * This will also mark all direct ancestors as `dirty` to maintain
+	          * the model.
+	         * @param {?=} __0
+	         * @return {?}
+	         */
+	        AbstractControl.prototype.markAsDirty = function (_a) {
+	            var onlySelf = (_a === void 0 ? {} : _a).onlySelf;
+	            this._pristine = false;
+	            if (this._parent && !onlySelf) {
+	                this._parent.markAsDirty({ onlySelf: onlySelf });
+	            }
+	        };
+	        /**
+	         *  Marks the control as `pristine`.
+	          * *
+	          * If the control has any children, it will also mark all children as `pristine`
+	          * to maintain the model, and re-calculate the `pristine` status of all parent
+	          * controls.
+	         * @param {?=} __0
+	         * @return {?}
+	         */
+	        AbstractControl.prototype.markAsPristine = function (_a) {
+	            var onlySelf = (_a === void 0 ? {} : _a).onlySelf;
+	            this._pristine = true;
+	            this._forEachChild(function (control) { control.markAsPristine({ onlySelf: true }); });
+	            if (this._parent && !onlySelf) {
+	                this._parent._updatePristine({ onlySelf: onlySelf });
+	            }
+	        };
+	        /**
+	         *  Marks the control as `pending`.
+	         * @param {?=} __0
+	         * @return {?}
+	         */
+	        AbstractControl.prototype.markAsPending = function (_a) {
+	            var onlySelf = (_a === void 0 ? {} : _a).onlySelf;
+	            this._status = PENDING;
+	            if (this._parent && !onlySelf) {
+	                this._parent.markAsPending({ onlySelf: onlySelf });
+	            }
+	        };
+	        /**
+	         *  Disables the control. This means the control will be exempt from validation checks and
+	          * excluded from the aggregate value of any parent. Its status is `DISABLED`.
+	          * *
+	          * If the control has children, all children will be disabled to maintain the model.
+	         * @param {?=} __0
+	         * @return {?}
+	         */
+	        AbstractControl.prototype.disable = function (_a) {
+	            var _b = _a === void 0 ? {} : _a, onlySelf = _b.onlySelf, emitEvent = _b.emitEvent;
+	            this._status = DISABLED;
+	            this._errors = null;
+	            this._forEachChild(function (control) { control.disable({ onlySelf: true }); });
+	            this._updateValue();
+	            if (emitEvent !== false) {
+	                this._valueChanges.emit(this._value);
+	                this._statusChanges.emit(this._status);
+	            }
+	            this._updateAncestors(onlySelf);
+	            this._onDisabledChange.forEach(function (changeFn) { return changeFn(true); });
+	        };
+	        /**
+	         *  Enables the control. This means the control will be included in validation checks and
+	          * the aggregate value of its parent. Its status is re-calculated based on its value and
+	          * its validators.
+	          * *
+	          * If the control has children, all children will be enabled.
+	         * @param {?=} __0
+	         * @return {?}
+	         */
+	        AbstractControl.prototype.enable = function (_a) {
+	            var _b = _a === void 0 ? {} : _a, onlySelf = _b.onlySelf, emitEvent = _b.emitEvent;
+	            this._status = VALID;
+	            this._forEachChild(function (control) { control.enable({ onlySelf: true }); });
+	            this.updateValueAndValidity({ onlySelf: true, emitEvent: emitEvent });
+	            this._updateAncestors(onlySelf);
+	            this._onDisabledChange.forEach(function (changeFn) { return changeFn(false); });
+	        };
+	        /**
+	         * @param {?} onlySelf
+	         * @return {?}
+	         */
+	        AbstractControl.prototype._updateAncestors = function (onlySelf) {
+	            if (this._parent && !onlySelf) {
+	                this._parent.updateValueAndValidity();
+	                this._parent._updatePristine();
+	                this._parent._updateTouched();
+	            }
+	        };
+	        /**
+	         * @param {?} parent
+	         * @return {?}
+	         */
+	        AbstractControl.prototype.setParent = function (parent) { this._parent = parent; };
+	        /**
+	         *  Sets the value of the control. Abstract method (implemented in sub-classes).
+	         * @abstract
+	         * @param {?} value
+	         * @param {?=} options
+	         * @return {?}
+	         */
+	        AbstractControl.prototype.setValue = function (value, options) { };
+	        /**
+	         *  Patches the value of the control. Abstract method (implemented in sub-classes).
+	         * @abstract
+	         * @param {?} value
+	         * @param {?=} options
+	         * @return {?}
+	         */
+	        AbstractControl.prototype.patchValue = function (value, options) { };
+	        /**
+	         *  Resets the control. Abstract method (implemented in sub-classes).
+	         * @abstract
+	         * @param {?=} value
+	         * @param {?=} options
+	         * @return {?}
+	         */
+	        AbstractControl.prototype.reset = function (value, options) { };
+	        /**
+	         *  Re-calculates the value and validation status of the control.
+	          * *
+	          * By default, it will also update the value and validity of its ancestors.
+	         * @param {?=} __0
+	         * @return {?}
+	         */
+	        AbstractControl.prototype.updateValueAndValidity = function (_a) {
+	            var _b = _a === void 0 ? {} : _a, onlySelf = _b.onlySelf, emitEvent = _b.emitEvent;
+	            this._setInitialStatus();
+	            this._updateValue();
+	            if (this.enabled) {
+	                this._errors = this._runValidator();
+	                this._status = this._calculateStatus();
+	                if (this._status === VALID || this._status === PENDING) {
+	                    this._runAsyncValidator(emitEvent);
+	                }
+	            }
+	            if (emitEvent !== false) {
+	                this._valueChanges.emit(this._value);
+	                this._statusChanges.emit(this._status);
+	            }
+	            if (this._parent && !onlySelf) {
+	                this._parent.updateValueAndValidity({ onlySelf: onlySelf, emitEvent: emitEvent });
+	            }
+	        };
+	        /**
+	         * @param {?=} __0
+	         * @return {?}
+	         */
+	        AbstractControl.prototype._updateTreeValidity = function (_a) {
+	            var emitEvent = (_a === void 0 ? { emitEvent: true } : _a).emitEvent;
+	            this._forEachChild(function (ctrl) { return ctrl._updateTreeValidity({ emitEvent: emitEvent }); });
+	            this.updateValueAndValidity({ onlySelf: true, emitEvent: emitEvent });
+	        };
+	        /**
+	         * @return {?}
+	         */
+	        AbstractControl.prototype._setInitialStatus = function () { this._status = this._allControlsDisabled() ? DISABLED : VALID; };
+	        /**
+	         * @return {?}
+	         */
+	        AbstractControl.prototype._runValidator = function () {
+	            return this.validator ? this.validator(this) : null;
+	        };
+	        /**
+	         * @param {?} emitEvent
+	         * @return {?}
+	         */
+	        AbstractControl.prototype._runAsyncValidator = function (emitEvent) {
+	            var _this = this;
+	            if (this.asyncValidator) {
+	                this._status = PENDING;
+	                this._cancelExistingSubscription();
+	                var /** @type {?} */ obs = toObservable(this.asyncValidator(this));
+	                this._asyncValidationSubscription =
+	                    obs.subscribe({ next: function (res) { return _this.setErrors(res, { emitEvent: emitEvent }); } });
+	            }
+	        };
+	        /**
+	         * @return {?}
+	         */
+	        AbstractControl.prototype._cancelExistingSubscription = function () {
+	            if (this._asyncValidationSubscription) {
+	                this._asyncValidationSubscription.unsubscribe();
+	            }
+	        };
+	        /**
+	         *  Sets errors on a form control.
+	          * *
+	          * This is used when validations are run manually by the user, rather than automatically.
+	          * *
+	          * Calling `setErrors` will also update the validity of the parent control.
+	          * *
+	          * ### Example
+	          * *
+	          * ```
+	          * const login = new FormControl("someLogin");
+	          * login.setErrors({
+	          * "notUnique": true
+	          * });
+	          * *
+	          * expect(login.valid).toEqual(false);
+	          * expect(login.errors).toEqual({"notUnique": true});
+	          * *
+	          * login.setValue("someOtherLogin");
+	          * *
+	          * expect(login.valid).toEqual(true);
+	          * ```
+	         * @param {?} errors
+	         * @param {?=} __1
+	         * @return {?}
+	         */
+	        AbstractControl.prototype.setErrors = function (errors, _a) {
+	            var emitEvent = (_a === void 0 ? {} : _a).emitEvent;
+	            this._errors = errors;
+	            this._updateControlsErrors(emitEvent !== false);
+	        };
+	        /**
+	         *  Retrieves a child control given the control's name or path.
+	          * *
+	          * Paths can be passed in as an array or a string delimited by a dot.
+	          * *
+	          * To get a control nested within a `person` sub-group:
+	          * *
+	          * * `this.form.get('person.name');`
+	          * *
+	          * -OR-
+	          * *
+	          * * `this.form.get(['person', 'name']);`
+	         * @param {?} path
+	         * @return {?}
+	         */
+	        AbstractControl.prototype.get = function (path) { return _find(this, path, '.'); };
+	        /**
+	         *  Returns true if the control with the given path has the error specified. Otherwise
+	          * returns null or undefined.
+	          * *
+	          * If no path is given, it checks for the error on the present control.
+	         * @param {?} errorCode
+	         * @param {?=} path
+	         * @return {?}
+	         */
+	        AbstractControl.prototype.getError = function (errorCode, path) {
+	            if (path === void 0) { path = null; }
+	            var /** @type {?} */ control = path ? this.get(path) : this;
+	            return control && control._errors ? control._errors[errorCode] : null;
+	        };
+	        /**
+	         *  Returns true if the control with the given path has the error specified. Otherwise
+	          * returns false.
+	          * *
+	          * If no path is given, it checks for the error on the present control.
+	         * @param {?} errorCode
+	         * @param {?=} path
+	         * @return {?}
+	         */
+	        AbstractControl.prototype.hasError = function (errorCode, path) {
+	            if (path === void 0) { path = null; }
+	            return !!this.getError(errorCode, path);
+	        };
+	        Object.defineProperty(AbstractControl.prototype, "root", {
+	            /**
+	             *  Retrieves the top-level ancestor of this control.
+	             * @return {?}
+	             */
+	            get: function () {
+	                var /** @type {?} */ x = this;
+	                while (x._parent) {
+	                    x = x._parent;
+	                }
+	                return x;
+	            },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        /**
+	         * @param {?} emitEvent
+	         * @return {?}
+	         */
+	        AbstractControl.prototype._updateControlsErrors = function (emitEvent) {
+	            this._status = this._calculateStatus();
+	            if (emitEvent) {
+	                this._statusChanges.emit(this._status);
+	            }
+	            if (this._parent) {
+	                this._parent._updateControlsErrors(emitEvent);
+	            }
+	        };
+	        /**
+	         * @return {?}
+	         */
+	        AbstractControl.prototype._initObservables = function () {
+	            this._valueChanges = new EventEmitter();
+	            this._statusChanges = new EventEmitter();
+	        };
+	        /**
+	         * @return {?}
+	         */
+	        AbstractControl.prototype._calculateStatus = function () {
+	            if (this._allControlsDisabled())
+	                return DISABLED;
+	            if (this._errors)
+	                return INVALID;
+	            if (this._anyControlsHaveStatus(PENDING))
+	                return PENDING;
+	            if (this._anyControlsHaveStatus(INVALID))
+	                return INVALID;
+	            return VALID;
+	        };
+	        /**
+	         * @abstract
+	         * @return {?}
+	         */
+	        AbstractControl.prototype._updateValue = function () { };
+	        /**
+	         * @abstract
+	         * @param {?} cb
+	         * @return {?}
+	         */
+	        AbstractControl.prototype._forEachChild = function (cb) { };
+	        /**
+	         * @abstract
+	         * @param {?} condition
+	         * @return {?}
+	         */
+	        AbstractControl.prototype._anyControls = function (condition) { };
+	        /**
+	         * @abstract
+	         * @return {?}
+	         */
+	        AbstractControl.prototype._allControlsDisabled = function () { };
+	        /**
+	         * @param {?} status
+	         * @return {?}
+	         */
+	        AbstractControl.prototype._anyControlsHaveStatus = function (status) {
+	            return this._anyControls(function (control) { return control.status === status; });
+	        };
+	        /**
+	         * @return {?}
+	         */
+	        AbstractControl.prototype._anyControlsDirty = function () {
+	            return this._anyControls(function (control) { return control.dirty; });
+	        };
+	        /**
+	         * @return {?}
+	         */
+	        AbstractControl.prototype._anyControlsTouched = function () {
+	            return this._anyControls(function (control) { return control.touched; });
+	        };
+	        /**
+	         * @param {?=} __0
+	         * @return {?}
+	         */
+	        AbstractControl.prototype._updatePristine = function (_a) {
+	            var onlySelf = (_a === void 0 ? {} : _a).onlySelf;
+	            this._pristine = !this._anyControlsDirty();
+	            if (this._parent && !onlySelf) {
+	                this._parent._updatePristine({ onlySelf: onlySelf });
+	            }
+	        };
+	        /**
+	         * @param {?=} __0
+	         * @return {?}
+	         */
+	        AbstractControl.prototype._updateTouched = function (_a) {
+	            var onlySelf = (_a === void 0 ? {} : _a).onlySelf;
+	            this._touched = this._anyControlsTouched();
+	            if (this._parent && !onlySelf) {
+	                this._parent._updateTouched({ onlySelf: onlySelf });
+	            }
+	        };
+	        /**
+	         * @param {?} formState
+	         * @return {?}
+	         */
+	        AbstractControl.prototype._isBoxedValue = function (formState) {
+	            return typeof formState === 'object' && formState !== null &&
+	                Object.keys(formState).length === 2 && 'value' in formState && 'disabled' in formState;
+	        };
+	        /**
+	         * @param {?} fn
+	         * @return {?}
+	         */
+	        AbstractControl.prototype._registerOnCollectionChange = function (fn) { this._onCollectionChange = fn; };
+	        return AbstractControl;
+	    }());
+	    /**
+	     *  *
+	      * It is one of the three fundamental building blocks of Angular forms, along with
+	      * {@link FormGroup} and {@link FormArray}.
+	      * *
+	      * *
+	      * When instantiating a {@link FormControl}, you can pass in an initial value as the
+	      * first argument. Example:
+	      * *
+	      * ```ts
+	      * const ctrl = new FormControl('some value');
+	      * console.log(ctrl.value);     // 'some value'
+	      * *```
+	      * *
+	      * You can also initialize the control with a form state object on instantiation,
+	      * which includes both the value and whether or not the control is disabled.
+	      * You can't use the value key without the disabled key; both are required
+	      * to use this way of initialization.
+	      * *
+	      * ```ts
+	      * const ctrl = new FormControl({value: 'n/a', disabled: true});
+	      * console.log(ctrl.value);     // 'n/a'
+	      * console.log(ctrl.status);   // 'DISABLED'
+	      * ```
+	      * *
+	      * To include a sync validator (or an array of sync validators) with the control,
+	      * pass it in as the second argument. Async validators are also supported, but
+	      * have to be passed in separately as the third arg.
+	      * *
+	      * ```ts
+	      * const ctrl = new FormControl('', Validators.required);
+	      * console.log(ctrl.value);     // ''
+	      * console.log(ctrl.status);   // 'INVALID'
+	      * ```
+	      * *
+	      * See its superclass, {@link AbstractControl}, for more properties and methods.
+	      * *
+	      * * **npm package**: `@angular/forms`
+	      * *
+	     */
+	    var FormControl = (function (_super) {
+	        __extends$6(FormControl, _super);
+	        /**
+	         * @param {?=} formState
+	         * @param {?=} validator
+	         * @param {?=} asyncValidator
+	         */
+	        function FormControl(formState, validator, asyncValidator) {
+	            if (formState === void 0) { formState = null; }
+	            if (validator === void 0) { validator = null; }
+	            if (asyncValidator === void 0) { asyncValidator = null; }
+	            _super.call(this, coerceToValidator(validator), coerceToAsyncValidator(asyncValidator));
+	            /** @internal */
+	            this._onChange = [];
+	            this._applyFormState(formState);
+	            this.updateValueAndValidity({ onlySelf: true, emitEvent: false });
+	            this._initObservables();
+	        }
+	        /**
+	         *  Set the value of the form control to `value`.
+	          * *
+	          * If `onlySelf` is `true`, this change will only affect the validation of this `FormControl`
+	          * and not its parent component. This defaults to false.
+	          * *
+	          * If `emitEvent` is `true`, this
+	          * change will cause a `valueChanges` event on the `FormControl` to be emitted. This defaults
+	          * to true (as it falls through to `updateValueAndValidity`).
+	          * *
+	          * If `emitModelToViewChange` is `true`, the view will be notified about the new value
+	          * via an `onChange` event. This is the default behavior if `emitModelToViewChange` is not
+	          * specified.
+	          * *
+	          * If `emitViewToModelChange` is `true`, an ngModelChange event will be fired to update the
+	          * model.  This is the default behavior if `emitViewToModelChange` is not specified.
+	         * @param {?} value
+	         * @param {?=} __1
+	         * @return {?}
+	         */
+	        FormControl.prototype.setValue = function (value, _a) {
+	            var _this = this;
+	            var _b = _a === void 0 ? {} : _a, onlySelf = _b.onlySelf, emitEvent = _b.emitEvent, emitModelToViewChange = _b.emitModelToViewChange, emitViewToModelChange = _b.emitViewToModelChange;
+	            this._value = value;
+	            if (this._onChange.length && emitModelToViewChange !== false) {
+	                this._onChange.forEach(function (changeFn) { return changeFn(_this._value, emitViewToModelChange !== false); });
+	            }
+	            this.updateValueAndValidity({ onlySelf: onlySelf, emitEvent: emitEvent });
+	        };
+	        /**
+	         *  Patches the value of a control.
+	          * *
+	          * This function is functionally the same as {@link FormControl.setValue} at this level.
+	          * It exists for symmetry with {@link FormGroup.patchValue} on `FormGroups` and `FormArrays`,
+	          * where it does behave differently.
+	         * @param {?} value
+	         * @param {?=} options
+	         * @return {?}
+	         */
+	        FormControl.prototype.patchValue = function (value, options) {
+	            if (options === void 0) { options = {}; }
+	            this.setValue(value, options);
+	        };
+	        /**
+	         *  Resets the form control. This means by default:
+	          * *
+	          * * it is marked as `pristine`
+	          * * it is marked as `untouched`
+	          * * value is set to null
+	          * *
+	          * You can also reset to a specific form state by passing through a standalone
+	          * value or a form state object that contains both a value and a disabled state
+	          * (these are the only two properties that cannot be calculated).
+	          * *
+	          * Ex:
+	          * *
+	          * ```ts
+	          * this.control.reset('Nancy');
+	          * *
+	          * console.log(this.control.value);  // 'Nancy'
+	          * ```
+	          * *
+	          * OR
+	          * *
+	          * ```
+	          * this.control.reset({value: 'Nancy', disabled: true});
+	          * *
+	          * console.log(this.control.value);  // 'Nancy'
+	          * console.log(this.control.status);  // 'DISABLED'
+	          * ```
+	         * @param {?=} formState
+	         * @param {?=} __1
+	         * @return {?}
+	         */
+	        FormControl.prototype.reset = function (formState, _a) {
+	            if (formState === void 0) { formState = null; }
+	            var _b = _a === void 0 ? {} : _a, onlySelf = _b.onlySelf, emitEvent = _b.emitEvent;
+	            this._applyFormState(formState);
+	            this.markAsPristine({ onlySelf: onlySelf });
+	            this.markAsUntouched({ onlySelf: onlySelf });
+	            this.setValue(this._value, { onlySelf: onlySelf, emitEvent: emitEvent });
+	        };
+	        /**
+	         * @return {?}
+	         */
+	        FormControl.prototype._updateValue = function () { };
+	        /**
+	         * @param {?} condition
+	         * @return {?}
+	         */
+	        FormControl.prototype._anyControls = function (condition) { return false; };
+	        /**
+	         * @return {?}
+	         */
+	        FormControl.prototype._allControlsDisabled = function () { return this.disabled; };
+	        /**
+	         *  Register a listener for change events.
+	         * @param {?} fn
+	         * @return {?}
+	         */
+	        FormControl.prototype.registerOnChange = function (fn) { this._onChange.push(fn); };
+	        /**
+	         * @return {?}
+	         */
+	        FormControl.prototype._clearChangeFns = function () {
+	            this._onChange = [];
+	            this._onDisabledChange = [];
+	            this._onCollectionChange = function () { };
+	        };
+	        /**
+	         *  Register a listener for disabled events.
+	         * @param {?} fn
+	         * @return {?}
+	         */
+	        FormControl.prototype.registerOnDisabledChange = function (fn) {
+	            this._onDisabledChange.push(fn);
+	        };
+	        /**
+	         * @param {?} cb
+	         * @return {?}
+	         */
+	        FormControl.prototype._forEachChild = function (cb) { };
+	        /**
+	         * @param {?} formState
+	         * @return {?}
+	         */
+	        FormControl.prototype._applyFormState = function (formState) {
+	            if (this._isBoxedValue(formState)) {
+	                this._value = formState.value;
+	                formState.disabled ? this.disable({ onlySelf: true, emitEvent: false }) :
+	                    this.enable({ onlySelf: true, emitEvent: false });
+	            }
+	            else {
+	                this._value = formState;
+	            }
+	        };
+	        return FormControl;
+	    }(AbstractControl));
+	    /**
+	     *  instances.
+	      * *
+	      * A `FormGroup` aggregates the values of each child {@link FormControl} into one object,
+	      * with each control name as the key.  It calculates its status by reducing the statuses
+	      * of its children. For example, if one of the controls in a group is invalid, the entire
+	      * group becomes invalid.
+	      * *
+	      * `FormGroup` is one of the three fundamental building blocks used to define forms in Angular,
+	      * along with {@link FormControl} and {@link FormArray}.
+	      * *
+	      * *
+	      * When instantiating a {@link FormGroup}, pass in a collection of child controls as the first
+	      * argument. The key for each child will be the name under which it is registered.
+	      * *
+	      * ### Example
+	      * *
+	      * ```
+	      * const form = new FormGroup({
+	      * first: new FormControl('Nancy', Validators.minLength(2)),
+	      * last: new FormControl('Drew'),
+	      * });
+	      * *
+	      * console.log(form.value);   // {first: 'Nancy', last; 'Drew'}
+	      * console.log(form.status);  // 'VALID'
+	      * ```
+	      * *
+	      * You can also include group-level validators as the second arg, or group-level async
+	      * validators as the third arg. These come in handy when you want to perform validation
+	      * that considers the value of more than one child control.
+	      * *
+	      * ### Example
+	      * *
+	      * ```
+	      * const form = new FormGroup({
+	      * password: new FormControl('', Validators.minLength(2)),
+	      * passwordConfirm: new FormControl('', Validators.minLength(2)),
+	      * }, passwordMatchValidator);
+	      * *
+	      * *
+	      * function passwordMatchValidator(g: FormGroup) {
+	      * return g.get('password').value === g.get('passwordConfirm').value
+	      * ? null : {'mismatch': true};
+	      * }
+	      * ```
+	      * *
+	      * * **npm package**: `@angular/forms`
+	      * *
+	     */
+	    var FormGroup = (function (_super) {
+	        __extends$6(FormGroup, _super);
+	        /**
+	         * @param {?} controls
+	         * @param {?=} validator
+	         * @param {?=} asyncValidator
+	         */
+	        function FormGroup(controls, validator, asyncValidator) {
+	            if (validator === void 0) { validator = null; }
+	            if (asyncValidator === void 0) { asyncValidator = null; }
+	            _super.call(this, validator, asyncValidator);
+	            this.controls = controls;
+	            this._initObservables();
+	            this._setUpControls();
+	            this.updateValueAndValidity({ onlySelf: true, emitEvent: false });
+	        }
+	        /**
+	         *  Registers a control with the group's list of controls.
+	          * *
+	          * This method does not update value or validity of the control, so for
+	          * most cases you'll want to use {@link FormGroup.addControl} instead.
+	         * @param {?} name
+	         * @param {?} control
+	         * @return {?}
+	         */
+	        FormGroup.prototype.registerControl = function (name, control) {
+	            if (this.controls[name])
+	                return this.controls[name];
+	            this.controls[name] = control;
+	            control.setParent(this);
+	            control._registerOnCollectionChange(this._onCollectionChange);
+	            return control;
+	        };
+	        /**
+	         *  Add a control to this group.
+	         * @param {?} name
+	         * @param {?} control
+	         * @return {?}
+	         */
+	        FormGroup.prototype.addControl = function (name, control) {
+	            this.registerControl(name, control);
+	            this.updateValueAndValidity();
+	            this._onCollectionChange();
+	        };
+	        /**
+	         *  Remove a control from this group.
+	         * @param {?} name
+	         * @return {?}
+	         */
+	        FormGroup.prototype.removeControl = function (name) {
+	            if (this.controls[name])
+	                this.controls[name]._registerOnCollectionChange(function () { });
+	            delete (this.controls[name]);
+	            this.updateValueAndValidity();
+	            this._onCollectionChange();
+	        };
+	        /**
+	         *  Replace an existing control.
+	         * @param {?} name
+	         * @param {?} control
+	         * @return {?}
+	         */
+	        FormGroup.prototype.setControl = function (name, control) {
+	            if (this.controls[name])
+	                this.controls[name]._registerOnCollectionChange(function () { });
+	            delete (this.controls[name]);
+	            if (control)
+	                this.registerControl(name, control);
+	            this.updateValueAndValidity();
+	            this._onCollectionChange();
+	        };
+	        /**
+	         *  Check whether there is an enabled control with the given name in the group.
+	          * *
+	          * It will return false for disabled controls. If you'd like to check for
+	          * existence in the group only, use {@link AbstractControl.get} instead.
+	         * @param {?} controlName
+	         * @return {?}
+	         */
+	        FormGroup.prototype.contains = function (controlName) {
+	            return this.controls.hasOwnProperty(controlName) && this.controls[controlName].enabled;
+	        };
+	        /**
+	         *  Sets the value of the {@link FormGroup}. It accepts an object that matches
+	          * the structure of the group, with control names as keys.
+	          * *
+	          * This method performs strict checks, so it will throw an error if you try
+	          * to set the value of a control that doesn't exist or if you exclude the
+	          * value of a control.
+	          * *
+	          * ### Example
+	          * *
+	          * ```
+	          * const form = new FormGroup({
+	          * first: new FormControl(),
+	          * last: new FormControl()
+	          * });
+	          * console.log(form.value);   // {first: null, last: null}
+	          * *
+	          * form.setValue({first: 'Nancy', last: 'Drew'});
+	          * console.log(form.value);   // {first: 'Nancy', last: 'Drew'}
+	          * *
+	          * ```
+	         * @param {?} value
+	         * @param {?=} __1
+	         * @return {?}
+	         */
+	        FormGroup.prototype.setValue = function (value, _a) {
+	            var _this = this;
+	            var _b = _a === void 0 ? {} : _a, onlySelf = _b.onlySelf, emitEvent = _b.emitEvent;
+	            this._checkAllValuesPresent(value);
+	            Object.keys(value).forEach(function (name) {
+	                _this._throwIfControlMissing(name);
+	                _this.controls[name].setValue(value[name], { onlySelf: true, emitEvent: emitEvent });
+	            });
+	            this.updateValueAndValidity({ onlySelf: onlySelf, emitEvent: emitEvent });
+	        };
+	        /**
+	         *  Patches the value of the {@link FormGroup}. It accepts an object with control
+	          * names as keys, and will do its best to match the values to the correct controls
+	          * in the group.
+	          * *
+	          * It accepts both super-sets and sub-sets of the group without throwing an error.
+	          * *
+	          * ### Example
+	          * *
+	          * ```
+	          * const form = new FormGroup({
+	          * first: new FormControl(),
+	          * last: new FormControl()
+	          * });
+	          * console.log(form.value);   // {first: null, last: null}
+	          * *
+	          * form.patchValue({first: 'Nancy'});
+	          * console.log(form.value);   // {first: 'Nancy', last: null}
+	          * *
+	          * ```
+	         * @param {?} value
+	         * @param {?=} __1
+	         * @return {?}
+	         */
+	        FormGroup.prototype.patchValue = function (value, _a) {
+	            var _this = this;
+	            var _b = _a === void 0 ? {} : _a, onlySelf = _b.onlySelf, emitEvent = _b.emitEvent;
+	            Object.keys(value).forEach(function (name) {
+	                if (_this.controls[name]) {
+	                    _this.controls[name].patchValue(value[name], { onlySelf: true, emitEvent: emitEvent });
+	                }
+	            });
+	            this.updateValueAndValidity({ onlySelf: onlySelf, emitEvent: emitEvent });
+	        };
+	        /**
+	         *  Resets the {@link FormGroup}. This means by default:
+	          * *
+	          * * The group and all descendants are marked `pristine`
+	          * * The group and all descendants are marked `untouched`
+	          * * The value of all descendants will be null or null maps
+	          * *
+	          * You can also reset to a specific form state by passing in a map of states
+	          * that matches the structure of your form, with control names as keys. The state
+	          * can be a standalone value or a form state object with both a value and a disabled
+	          * status.
+	          * *
+	          * ### Example
+	          * *
+	          * ```ts
+	          * this.form.reset({first: 'name', last: 'last name'});
+	          * *
+	          * console.log(this.form.value);  // {first: 'name', last: 'last name'}
+	          * ```
+	          * *
+	          * - OR -
+	          * *
+	          * ```
+	          * this.form.reset({
+	          * first: {value: 'name', disabled: true},
+	          * last: 'last'
+	          * });
+	          * *
+	          * console.log(this.form.value);  // {first: 'name', last: 'last name'}
+	          * console.log(this.form.get('first').status);  // 'DISABLED'
+	          * ```
+	         * @param {?=} value
+	         * @param {?=} __1
+	         * @return {?}
+	         */
+	        FormGroup.prototype.reset = function (value, _a) {
+	            if (value === void 0) { value = {}; }
+	            var _b = _a === void 0 ? {} : _a, onlySelf = _b.onlySelf, emitEvent = _b.emitEvent;
+	            this._forEachChild(function (control, name) {
+	                control.reset(value[name], { onlySelf: true, emitEvent: emitEvent });
+	            });
+	            this.updateValueAndValidity({ onlySelf: onlySelf, emitEvent: emitEvent });
+	            this._updatePristine({ onlySelf: onlySelf });
+	            this._updateTouched({ onlySelf: onlySelf });
+	        };
+	        /**
+	         *  The aggregate value of the {@link FormGroup}, including any disabled controls.
+	          * *
+	          * If you'd like to include all values regardless of disabled status, use this method.
+	          * Otherwise, the `value` property is the best way to get the value of the group.
+	         * @return {?}
+	         */
+	        FormGroup.prototype.getRawValue = function () {
+	            return this._reduceChildren({}, function (acc, control, name) {
+	                acc[name] = control.value;
+	                return acc;
+	            });
+	        };
+	        /**
+	         * @param {?} name
+	         * @return {?}
+	         */
+	        FormGroup.prototype._throwIfControlMissing = function (name) {
+	            if (!Object.keys(this.controls).length) {
+	                throw new Error("\n        There are no form controls registered with this group yet.  If you're using ngModel,\n        you may want to check next tick (e.g. use setTimeout).\n      ");
+	            }
+	            if (!this.controls[name]) {
+	                throw new Error("Cannot find form control with name: " + name + ".");
+	            }
+	        };
+	        /**
+	         * @param {?} cb
+	         * @return {?}
+	         */
+	        FormGroup.prototype._forEachChild = function (cb) {
+	            var _this = this;
+	            Object.keys(this.controls).forEach(function (k) { return cb(_this.controls[k], k); });
+	        };
+	        /**
+	         * @return {?}
+	         */
+	        FormGroup.prototype._setUpControls = function () {
+	            var _this = this;
+	            this._forEachChild(function (control) {
+	                control.setParent(_this);
+	                control._registerOnCollectionChange(_this._onCollectionChange);
+	            });
+	        };
+	        /**
+	         * @return {?}
+	         */
+	        FormGroup.prototype._updateValue = function () { this._value = this._reduceValue(); };
+	        /**
+	         * @param {?} condition
+	         * @return {?}
+	         */
+	        FormGroup.prototype._anyControls = function (condition) {
+	            var _this = this;
+	            var /** @type {?} */ res = false;
+	            this._forEachChild(function (control, name) {
+	                res = res || (_this.contains(name) && condition(control));
+	            });
+	            return res;
+	        };
+	        /**
+	         * @return {?}
+	         */
+	        FormGroup.prototype._reduceValue = function () {
+	            var _this = this;
+	            return this._reduceChildren({}, function (acc, control, name) {
+	                if (control.enabled || _this.disabled) {
+	                    acc[name] = control.value;
+	                }
+	                return acc;
+	            });
+	        };
+	        /**
+	         * @param {?} initValue
+	         * @param {?} fn
+	         * @return {?}
+	         */
+	        FormGroup.prototype._reduceChildren = function (initValue, fn) {
+	            var /** @type {?} */ res = initValue;
+	            this._forEachChild(function (control, name) { res = fn(res, control, name); });
+	            return res;
+	        };
+	        /**
+	         * @return {?}
+	         */
+	        FormGroup.prototype._allControlsDisabled = function () {
+	            for (var _i = 0, _a = Object.keys(this.controls); _i < _a.length; _i++) {
+	                var controlName = _a[_i];
+	                if (this.controls[controlName].enabled) {
+	                    return false;
+	                }
+	            }
+	            return Object.keys(this.controls).length > 0 || this.disabled;
+	        };
+	        /**
+	         * @param {?} value
+	         * @return {?}
+	         */
+	        FormGroup.prototype._checkAllValuesPresent = function (value) {
+	            this._forEachChild(function (control, name) {
+	                if (value[name] === undefined) {
+	                    throw new Error("Must supply a value for form control with name: '" + name + "'.");
+	                }
+	            });
+	        };
+	        return FormGroup;
+	    }(AbstractControl));
+	    /**
+	     *  instances.
+	      * *
+	      * A `FormArray` aggregates the values of each child {@link FormControl} into an array.
+	      * It calculates its status by reducing the statuses of its children. For example, if one of
+	      * the controls in a `FormArray` is invalid, the entire array becomes invalid.
+	      * *
+	      * `FormArray` is one of the three fundamental building blocks used to define forms in Angular,
+	      * along with {@link FormControl} and {@link FormGroup}.
+	      * *
+	      * *
+	      * When instantiating a {@link FormArray}, pass in an array of child controls as the first
+	      * argument.
+	      * *
+	      * ### Example
+	      * *
+	      * ```
+	      * const arr = new FormArray([
+	      * new FormControl('Nancy', Validators.minLength(2)),
+	      * new FormControl('Drew'),
+	      * ]);
+	      * *
+	      * console.log(arr.value);   // ['Nancy', 'Drew']
+	      * console.log(arr.status);  // 'VALID'
+	      * ```
+	      * *
+	      * You can also include array-level validators as the second arg, or array-level async
+	      * validators as the third arg. These come in handy when you want to perform validation
+	      * that considers the value of more than one child control.
+	      * *
+	      * ### Adding or removing controls
+	      * *
+	      * To change the controls in the array, use the `push`, `insert`, or `removeAt` methods
+	      * in `FormArray` itself. These methods ensure the controls are properly tracked in the
+	      * form's hierarchy. Do not modify the array of `AbstractControl`s used to instantiate
+	      * the `FormArray` directly, as that will result in strange and unexpected behavior such
+	      * as broken change detection.
+	      * *
+	      * * **npm package**: `@angular/forms`
+	      * *
+	     */
+	    var FormArray = (function (_super) {
+	        __extends$6(FormArray, _super);
+	        /**
+	         * @param {?} controls
+	         * @param {?=} validator
+	         * @param {?=} asyncValidator
+	         */
+	        function FormArray(controls, validator, asyncValidator) {
+	            if (validator === void 0) { validator = null; }
+	            if (asyncValidator === void 0) { asyncValidator = null; }
+	            _super.call(this, validator, asyncValidator);
+	            this.controls = controls;
+	            this._initObservables();
+	            this._setUpControls();
+	            this.updateValueAndValidity({ onlySelf: true, emitEvent: false });
+	        }
+	        /**
+	         *  Get the {@link AbstractControl} at the given `index` in the array.
+	         * @param {?} index
+	         * @return {?}
+	         */
+	        FormArray.prototype.at = function (index) { return this.controls[index]; };
+	        /**
+	         *  Insert a new {@link AbstractControl} at the end of the array.
+	         * @param {?} control
+	         * @return {?}
+	         */
+	        FormArray.prototype.push = function (control) {
+	            this.controls.push(control);
+	            this._registerControl(control);
+	            this.updateValueAndValidity();
+	            this._onCollectionChange();
+	        };
+	        /**
+	         *  Insert a new {@link AbstractControl} at the given `index` in the array.
+	         * @param {?} index
+	         * @param {?} control
+	         * @return {?}
+	         */
+	        FormArray.prototype.insert = function (index, control) {
+	            this.controls.splice(index, 0, control);
+	            this._registerControl(control);
+	            this.updateValueAndValidity();
+	            this._onCollectionChange();
+	        };
+	        /**
+	         *  Remove the control at the given `index` in the array.
+	         * @param {?} index
+	         * @return {?}
+	         */
+	        FormArray.prototype.removeAt = function (index) {
+	            if (this.controls[index])
+	                this.controls[index]._registerOnCollectionChange(function () { });
+	            this.controls.splice(index, 1);
+	            this.updateValueAndValidity();
+	            this._onCollectionChange();
+	        };
+	        /**
+	         *  Replace an existing control.
+	         * @param {?} index
+	         * @param {?} control
+	         * @return {?}
+	         */
+	        FormArray.prototype.setControl = function (index, control) {
+	            if (this.controls[index])
+	                this.controls[index]._registerOnCollectionChange(function () { });
+	            this.controls.splice(index, 1);
+	            if (control) {
+	                this.controls.splice(index, 0, control);
+	                this._registerControl(control);
+	            }
+	            this.updateValueAndValidity();
+	            this._onCollectionChange();
+	        };
+	        Object.defineProperty(FormArray.prototype, "length", {
+	            /**
+	             *  Length of the control array.
+	             * @return {?}
+	             */
+	            get: function () { return this.controls.length; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        /**
+	         *  Sets the value of the {@link FormArray}. It accepts an array that matches
+	          * the structure of the control.
+	          * *
+	          * This method performs strict checks, so it will throw an error if you try
+	          * to set the value of a control that doesn't exist or if you exclude the
+	          * value of a control.
+	          * *
+	          * ### Example
+	          * *
+	          * ```
+	          * const arr = new FormArray([
+	          * new FormControl(),
+	          * new FormControl()
+	          * ]);
+	          * console.log(arr.value);   // [null, null]
+	          * *
+	          * arr.setValue(['Nancy', 'Drew']);
+	          * console.log(arr.value);   // ['Nancy', 'Drew']
+	          * ```
+	         * @param {?} value
+	         * @param {?=} __1
+	         * @return {?}
+	         */
+	        FormArray.prototype.setValue = function (value, _a) {
+	            var _this = this;
+	            var _b = _a === void 0 ? {} : _a, onlySelf = _b.onlySelf, emitEvent = _b.emitEvent;
+	            this._checkAllValuesPresent(value);
+	            value.forEach(function (newValue, index) {
+	                _this._throwIfControlMissing(index);
+	                _this.at(index).setValue(newValue, { onlySelf: true, emitEvent: emitEvent });
+	            });
+	            this.updateValueAndValidity({ onlySelf: onlySelf, emitEvent: emitEvent });
+	        };
+	        /**
+	         *  Patches the value of the {@link FormArray}. It accepts an array that matches the
+	          * structure of the control, and will do its best to match the values to the correct
+	          * controls in the group.
+	          * *
+	          * It accepts both super-sets and sub-sets of the array without throwing an error.
+	          * *
+	          * ### Example
+	          * *
+	          * ```
+	          * const arr = new FormArray([
+	          * new FormControl(),
+	          * new FormControl()
+	          * ]);
+	          * console.log(arr.value);   // [null, null]
+	          * *
+	          * arr.patchValue(['Nancy']);
+	          * console.log(arr.value);   // ['Nancy', null]
+	          * ```
+	         * @param {?} value
+	         * @param {?=} __1
+	         * @return {?}
+	         */
+	        FormArray.prototype.patchValue = function (value, _a) {
+	            var _this = this;
+	            var _b = _a === void 0 ? {} : _a, onlySelf = _b.onlySelf, emitEvent = _b.emitEvent;
+	            value.forEach(function (newValue, index) {
+	                if (_this.at(index)) {
+	                    _this.at(index).patchValue(newValue, { onlySelf: true, emitEvent: emitEvent });
+	                }
+	            });
+	            this.updateValueAndValidity({ onlySelf: onlySelf, emitEvent: emitEvent });
+	        };
+	        /**
+	         *  Resets the {@link FormArray}. This means by default:
+	          * *
+	          * * The array and all descendants are marked `pristine`
+	          * * The array and all descendants are marked `untouched`
+	          * * The value of all descendants will be null or null maps
+	          * *
+	          * You can also reset to a specific form state by passing in an array of states
+	          * that matches the structure of the control. The state can be a standalone value
+	          * or a form state object with both a value and a disabled status.
+	          * *
+	          * ### Example
+	          * *
+	          * ```ts
+	          * this.arr.reset(['name', 'last name']);
+	          * *
+	          * console.log(this.arr.value);  // ['name', 'last name']
+	          * ```
+	          * *
+	          * - OR -
+	          * *
+	          * ```
+	          * this.arr.reset([
+	          * {value: 'name', disabled: true},
+	          * 'last'
+	          * ]);
+	          * *
+	          * console.log(this.arr.value);  // ['name', 'last name']
+	          * console.log(this.arr.get(0).status);  // 'DISABLED'
+	          * ```
+	         * @param {?=} value
+	         * @param {?=} __1
+	         * @return {?}
+	         */
+	        FormArray.prototype.reset = function (value, _a) {
+	            if (value === void 0) { value = []; }
+	            var _b = _a === void 0 ? {} : _a, onlySelf = _b.onlySelf, emitEvent = _b.emitEvent;
+	            this._forEachChild(function (control, index) {
+	                control.reset(value[index], { onlySelf: true, emitEvent: emitEvent });
+	            });
+	            this.updateValueAndValidity({ onlySelf: onlySelf, emitEvent: emitEvent });
+	            this._updatePristine({ onlySelf: onlySelf });
+	            this._updateTouched({ onlySelf: onlySelf });
+	        };
+	        /**
+	         *  The aggregate value of the array, including any disabled controls.
+	          * *
+	          * If you'd like to include all values regardless of disabled status, use this method.
+	          * Otherwise, the `value` property is the best way to get the value of the array.
+	         * @return {?}
+	         */
+	        FormArray.prototype.getRawValue = function () { return this.controls.map(function (control) { return control.value; }); };
+	        /**
+	         * @param {?} index
+	         * @return {?}
+	         */
+	        FormArray.prototype._throwIfControlMissing = function (index) {
+	            if (!this.controls.length) {
+	                throw new Error("\n        There are no form controls registered with this array yet.  If you're using ngModel,\n        you may want to check next tick (e.g. use setTimeout).\n      ");
+	            }
+	            if (!this.at(index)) {
+	                throw new Error("Cannot find form control at index " + index);
+	            }
+	        };
+	        /**
+	         * @param {?} cb
+	         * @return {?}
+	         */
+	        FormArray.prototype._forEachChild = function (cb) {
+	            this.controls.forEach(function (control, index) { cb(control, index); });
+	        };
+	        /**
+	         * @return {?}
+	         */
+	        FormArray.prototype._updateValue = function () {
+	            var _this = this;
+	            this._value = this.controls.filter(function (control) { return control.enabled || _this.disabled; })
+	                .map(function (control) { return control.value; });
+	        };
+	        /**
+	         * @param {?} condition
+	         * @return {?}
+	         */
+	        FormArray.prototype._anyControls = function (condition) {
+	            return this.controls.some(function (control) { return control.enabled && condition(control); });
+	        };
+	        /**
+	         * @return {?}
+	         */
+	        FormArray.prototype._setUpControls = function () {
+	            var _this = this;
+	            this._forEachChild(function (control) { return _this._registerControl(control); });
+	        };
+	        /**
+	         * @param {?} value
+	         * @return {?}
+	         */
+	        FormArray.prototype._checkAllValuesPresent = function (value) {
+	            this._forEachChild(function (control, i) {
+	                if (value[i] === undefined) {
+	                    throw new Error("Must supply a value for form control at index: " + i + ".");
+	                }
+	            });
+	        };
+	        /**
+	         * @return {?}
+	         */
+	        FormArray.prototype._allControlsDisabled = function () {
+	            for (var _i = 0, _a = this.controls; _i < _a.length; _i++) {
+	                var control = _a[_i];
+	                if (control.enabled)
+	                    return false;
+	            }
+	            return this.controls.length > 0 || this.disabled;
+	        };
+	        /**
+	         * @param {?} control
+	         * @return {?}
+	         */
+	        FormArray.prototype._registerControl = function (control) {
+	            control.setParent(this);
+	            control._registerOnCollectionChange(this._onCollectionChange);
+	        };
+	        return FormArray;
+	    }(AbstractControl));
+
+	    /**
+	     * @license
+	     * Copyright Google Inc. All Rights Reserved.
+	     *
+	     * Use of this source code is governed by an MIT-style license that can be
+	     * found in the LICENSE file at https://angular.io/license
+	     */
+	    var __extends$4 = (this && this.__extends) || function (d, b) {
+	        for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	    var /** @type {?} */ formDirectiveProvider = {
+	        provide: ControlContainer,
+	        useExisting: _angular_core.forwardRef(function () { return NgForm; })
+	    };
+	    var /** @type {?} */ resolvedPromise = Promise.resolve(null);
+	    /**
+	     *  to track aggregate form value and validation status.
+	      * *
+	      * *
+	      * As soon as you import the `FormsModule`, this directive becomes active by default on
+	      * all `<form>` tags.  You don't need to add a special selector.
+	      * *
+	      * You can export the directive into a local template variable using `ngForm` as the key
+	      * (ex: `#myForm="ngForm"`). This is optional, but useful.  Many properties from the underlying
+	      * {@link FormGroup} instance are duplicated on the directive itself, so a reference to it
+	      * will give you access to the aggregate value and validity status of the form, as well as
+	      * user interaction properties like `dirty` and `touched`.
+	      * *
+	      * To register child controls with the form, you'll want to use {@link NgModel} with a
+	      * `name` attribute.  You can also use {@link NgModelGroup} if you'd like to create
+	      * sub-groups within the form.
+	      * *
+	      * You can listen to the directive's `ngSubmit` event to be notified when the user has
+	      * triggered a form submission. The `ngSubmit` event will be emitted with the original form
+	      * submission event.
+	      * *
+	      * {@example forms/ts/simpleForm/simple_form_example.ts region='Component'}
+	      * *
+	      * * **npm package**: `@angular/forms`
+	      * *
+	      * * **NgModule**: `FormsModule`
+	      * *
+	      * @stable
+	     */
+	    var NgForm = (function (_super) {
+	        __extends$4(NgForm, _super);
+	        /**
+	         * @param {?} validators
+	         * @param {?} asyncValidators
+	         */
+	        function NgForm(validators, asyncValidators) {
+	            _super.call(this);
+	            this._submitted = false;
+	            this.ngSubmit = new EventEmitter();
+	            this.form =
+	                new FormGroup({}, composeValidators(validators), composeAsyncValidators(asyncValidators));
+	        }
+	        Object.defineProperty(NgForm.prototype, "submitted", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return this._submitted; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(NgForm.prototype, "formDirective", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return this; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(NgForm.prototype, "control", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return this.form; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(NgForm.prototype, "path", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return []; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(NgForm.prototype, "controls", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return this.form.controls; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        /**
+	         * @param {?} dir
+	         * @return {?}
+	         */
+	        NgForm.prototype.addControl = function (dir) {
+	            var _this = this;
+	            resolvedPromise.then(function () {
+	                var /** @type {?} */ container = _this._findContainer(dir.path);
+	                dir._control = (container.registerControl(dir.name, dir.control));
+	                setUpControl(dir.control, dir);
+	                dir.control.updateValueAndValidity({ emitEvent: false });
+	            });
+	        };
+	        /**
+	         * @param {?} dir
+	         * @return {?}
+	         */
+	        NgForm.prototype.getControl = function (dir) { return (this.form.get(dir.path)); };
+	        /**
+	         * @param {?} dir
+	         * @return {?}
+	         */
+	        NgForm.prototype.removeControl = function (dir) {
+	            var _this = this;
+	            resolvedPromise.then(function () {
+	                var /** @type {?} */ container = _this._findContainer(dir.path);
+	                if (container) {
+	                    container.removeControl(dir.name);
+	                }
+	            });
+	        };
+	        /**
+	         * @param {?} dir
+	         * @return {?}
+	         */
+	        NgForm.prototype.addFormGroup = function (dir) {
+	            var _this = this;
+	            resolvedPromise.then(function () {
+	                var /** @type {?} */ container = _this._findContainer(dir.path);
+	                var /** @type {?} */ group = new FormGroup({});
+	                setUpFormContainer(group, dir);
+	                container.registerControl(dir.name, group);
+	                group.updateValueAndValidity({ emitEvent: false });
+	            });
+	        };
+	        /**
+	         * @param {?} dir
+	         * @return {?}
+	         */
+	        NgForm.prototype.removeFormGroup = function (dir) {
+	            var _this = this;
+	            resolvedPromise.then(function () {
+	                var /** @type {?} */ container = _this._findContainer(dir.path);
+	                if (container) {
+	                    container.removeControl(dir.name);
+	                }
+	            });
+	        };
+	        /**
+	         * @param {?} dir
+	         * @return {?}
+	         */
+	        NgForm.prototype.getFormGroup = function (dir) { return (this.form.get(dir.path)); };
+	        /**
+	         * @param {?} dir
+	         * @param {?} value
+	         * @return {?}
+	         */
+	        NgForm.prototype.updateModel = function (dir, value) {
+	            var _this = this;
+	            resolvedPromise.then(function () {
+	                var /** @type {?} */ ctrl = (_this.form.get(dir.path));
+	                ctrl.setValue(value);
+	            });
+	        };
+	        /**
+	         * @param {?} value
+	         * @return {?}
+	         */
+	        NgForm.prototype.setValue = function (value) { this.control.setValue(value); };
+	        /**
+	         * @param {?} $event
+	         * @return {?}
+	         */
+	        NgForm.prototype.onSubmit = function ($event) {
+	            this._submitted = true;
+	            this.ngSubmit.emit($event);
+	            return false;
+	        };
+	        /**
+	         * @return {?}
+	         */
+	        NgForm.prototype.onReset = function () { this.resetForm(); };
+	        /**
+	         * @param {?=} value
+	         * @return {?}
+	         */
+	        NgForm.prototype.resetForm = function (value) {
+	            if (value === void 0) { value = undefined; }
+	            this.form.reset(value);
+	            this._submitted = false;
+	        };
+	        /**
+	         * @param {?} path
+	         * @return {?}
+	         */
+	        NgForm.prototype._findContainer = function (path) {
+	            path.pop();
+	            return path.length ? (this.form.get(path)) : this.form;
+	        };
+	        NgForm.decorators = [
+	            { type: _angular_core.Directive, args: [{
+	                        selector: 'form:not([ngNoForm]):not([formGroup]),ngForm,[ngForm]',
+	                        providers: [formDirectiveProvider],
+	                        host: { '(submit)': 'onSubmit($event)', '(reset)': 'onReset()' },
+	                        outputs: ['ngSubmit'],
+	                        exportAs: 'ngForm'
+	                    },] },
+	        ];
+	        /** @nocollapse */
+	        NgForm.ctorParameters = function () { return [
+	            { type: Array, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Self }, { type: _angular_core.Inject, args: [NG_VALIDATORS,] },] },
+	            { type: Array, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Self }, { type: _angular_core.Inject, args: [NG_ASYNC_VALIDATORS,] },] },
+	        ]; };
+	        return NgForm;
+	    }(ControlContainer));
+
+	    /**
+	     * @license
+	     * Copyright Google Inc. All Rights Reserved.
+	     *
+	     * Use of this source code is governed by an MIT-style license that can be
+	     * found in the LICENSE file at https://angular.io/license
+	     */
+	    var /** @type {?} */ Examples = {
+	        formControlName: "\n    <div [formGroup]=\"myGroup\">\n      <input formControlName=\"firstName\">\n    </div>\n\n    In your class:\n\n    this.myGroup = new FormGroup({\n       firstName: new FormControl()\n    });",
+	        formGroupName: "\n    <div [formGroup]=\"myGroup\">\n       <div formGroupName=\"person\">\n          <input formControlName=\"firstName\">\n       </div>\n    </div>\n\n    In your class:\n\n    this.myGroup = new FormGroup({\n       person: new FormGroup({ firstName: new FormControl() })\n    });",
+	        formArrayName: "\n    <div [formGroup]=\"myGroup\">\n      <div formArrayName=\"cities\">\n        <div *ngFor=\"let city of cityArray.controls; let i=index\">\n          <input [formControlName]=\"i\">\n        </div>\n      </div>\n    </div>\n\n    In your class:\n\n    this.cityArray = new FormArray([new FormControl('SF')]);\n    this.myGroup = new FormGroup({\n      cities: this.cityArray\n    });",
+	        ngModelGroup: "\n    <form>\n       <div ngModelGroup=\"person\">\n          <input [(ngModel)]=\"person.name\" name=\"firstName\">\n       </div>\n    </form>",
+	        ngModelWithFormGroup: "\n    <div [formGroup]=\"myGroup\">\n       <input formControlName=\"firstName\">\n       <input [(ngModel)]=\"showMoreControls\" [ngModelOptions]=\"{standalone: true}\">\n    </div>\n  "
+	    };
+
+	    var TemplateDrivenErrors = (function () {
+	        function TemplateDrivenErrors() {
+	        }
+	        /**
+	         * @return {?}
+	         */
+	        TemplateDrivenErrors.modelParentException = function () {
+	            throw new Error("\n      ngModel cannot be used to register form controls with a parent formGroup directive.  Try using\n      formGroup's partner directive \"formControlName\" instead.  Example:\n\n      " + Examples.formControlName + "\n\n      Or, if you'd like to avoid registering this form control, indicate that it's standalone in ngModelOptions:\n\n      Example:\n\n      " + Examples.ngModelWithFormGroup);
+	        };
+	        /**
+	         * @return {?}
+	         */
+	        TemplateDrivenErrors.formGroupNameException = function () {
+	            throw new Error("\n      ngModel cannot be used to register form controls with a parent formGroupName or formArrayName directive.\n\n      Option 1: Use formControlName instead of ngModel (reactive strategy):\n\n      " + Examples.formGroupName + "\n\n      Option 2:  Update ngModel's parent be ngModelGroup (template-driven strategy):\n\n      " + Examples.ngModelGroup);
+	        };
+	        /**
+	         * @return {?}
+	         */
+	        TemplateDrivenErrors.missingNameException = function () {
+	            throw new Error("If ngModel is used within a form tag, either the name attribute must be set or the form\n      control must be defined as 'standalone' in ngModelOptions.\n\n      Example 1: <input [(ngModel)]=\"person.firstName\" name=\"first\">\n      Example 2: <input [(ngModel)]=\"person.firstName\" [ngModelOptions]=\"{standalone: true}\">");
+	        };
+	        /**
+	         * @return {?}
+	         */
+	        TemplateDrivenErrors.modelGroupParentException = function () {
+	            throw new Error("\n      ngModelGroup cannot be used with a parent formGroup directive.\n\n      Option 1: Use formGroupName instead of ngModelGroup (reactive strategy):\n\n      " + Examples.formGroupName + "\n\n      Option 2:  Use a regular form tag instead of the formGroup directive (template-driven strategy):\n\n      " + Examples.ngModelGroup);
+	        };
+	        return TemplateDrivenErrors;
+	    }());
+
+	    /**
+	     * @license
+	     * Copyright Google Inc. All Rights Reserved.
+	     *
+	     * Use of this source code is governed by an MIT-style license that can be
+	     * found in the LICENSE file at https://angular.io/license
+	     */
+	    var __extends$8 = (this && this.__extends) || function (d, b) {
+	        for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	    var /** @type {?} */ modelGroupProvider = {
+	        provide: ControlContainer,
+	        useExisting: _angular_core.forwardRef(function () { return NgModelGroup; })
+	    };
+	    /**
+	     *  *
+	      * *
+	      * This directive can only be used as a child of {@link NgForm} (or in other words,
+	      * within `<form>` tags).
+	      * *
+	      * Use this directive if you'd like to create a sub-group within a form. This can
+	      * come in handy if you want to validate a sub-group of your form separately from
+	      * the rest of your form, or if some values in your domain model make more sense to
+	      * consume together in a nested object.
+	      * *
+	      * Pass in the name you'd like this sub-group to have and it will become the key
+	      * for the sub-group in the form's full value. You can also export the directive into
+	      * a local template variable using `ngModelGroup` (ex: `#myGroup="ngModelGroup"`).
+	      * *
+	      * {@example forms/ts/ngModelGroup/ng_model_group_example.ts region='Component'}
+	      * *
+	      * * **npm package**: `@angular/forms`
+	      * *
+	      * * **NgModule**: `FormsModule`
+	      * *
+	     */
+	    var NgModelGroup = (function (_super) {
+	        __extends$8(NgModelGroup, _super);
+	        /**
+	         * @param {?} parent
+	         * @param {?} validators
+	         * @param {?} asyncValidators
+	         */
+	        function NgModelGroup(parent, validators, asyncValidators) {
+	            _super.call(this);
+	            this._parent = parent;
+	            this._validators = validators;
+	            this._asyncValidators = asyncValidators;
+	        }
+	        /**
+	         * @return {?}
+	         */
+	        NgModelGroup.prototype._checkParentType = function () {
+	            if (!(this._parent instanceof NgModelGroup) && !(this._parent instanceof NgForm)) {
+	                TemplateDrivenErrors.modelGroupParentException();
+	            }
+	        };
+	        NgModelGroup.decorators = [
+	            { type: _angular_core.Directive, args: [{ selector: '[ngModelGroup]', providers: [modelGroupProvider], exportAs: 'ngModelGroup' },] },
+	        ];
+	        /** @nocollapse */
+	        NgModelGroup.ctorParameters = function () { return [
+	            { type: ControlContainer, decorators: [{ type: _angular_core.Host }, { type: _angular_core.SkipSelf },] },
+	            { type: Array, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Self }, { type: _angular_core.Inject, args: [NG_VALIDATORS,] },] },
+	            { type: Array, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Self }, { type: _angular_core.Inject, args: [NG_ASYNC_VALIDATORS,] },] },
+	        ]; };
+	        NgModelGroup.propDecorators = {
+	            'name': [{ type: _angular_core.Input, args: ['ngModelGroup',] },],
+	        };
+	        return NgModelGroup;
+	    }(AbstractFormGroupDirective));
+
+	    /**
+	     * @license
+	     * Copyright Google Inc. All Rights Reserved.
+	     *
+	     * Use of this source code is governed by an MIT-style license that can be
+	     * found in the LICENSE file at https://angular.io/license
+	     */
+	    var __extends$7 = (this && this.__extends) || function (d, b) {
+	        for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	    var /** @type {?} */ formControlBinding = {
+	        provide: NgControl,
+	        useExisting: _angular_core.forwardRef(function () { return NgModel; })
+	    };
+	    /**
+	     * `ngModel` forces an additional change detection run when its inputs change:
+	     * E.g.:
+	     * ```
+	     * <div>{{myModel.valid}}</div>
+	     * <input [(ngModel)]="myValue" #myModel="ngModel">
+	     * ```
+	     * I.e. `ngModel` can export itself on the element and then be used in the template.
+	     * Normally, this would result in expressions before the `input` that use the exported directive
+	     * to have and old value as they have been
+	     * dirty checked before. As this is a very common case for `ngModel`, we added this second change
+	     * detection run.
+	     *
+	     * Notes:
+	     * - this is just one extra run no matter how many `ngModel` have been changed.
+	     * - this is a general problem when using `exportAs` for directives!
+	     */
+	    var /** @type {?} */ resolvedPromise$1 = Promise.resolve(null);
+	    /**
+	     *  to a form control element.
+	      * *
+	      * The {@link FormControl} instance will track the value, user interaction, and
+	      * validation status of the control and keep the view synced with the model. If used
+	      * within a parent form, the directive will also register itself with the form as a child
+	      * control.
+	      * *
+	      * *
+	      * This directive can be used by itself or as part of a larger form. All you need is the
+	      * `ngModel` selector to activate it.
+	      * *
+	      * It accepts a domain model as an optional {@link @Input}. If you have a one-way binding
+	      * to `ngModel` with `[]` syntax, changing the value of the domain model in the component
+	      * class will set the value in the view. If you have a two-way binding with `[()]` syntax
+	      * (also known as 'banana-box syntax'), the value in the UI will always be synced back to
+	      * the domain model in your class as well.
+	      * *
+	      * If you wish to inspect the properties of the associated {@link FormControl} (like
+	      * validity state), you can also export the directive into a local template variable using
+	      * `ngModel` as the key (ex: `#myVar="ngModel"`). You can then access the control using the
+	      * directive's `control` property, but most properties you'll need (like `valid` and `dirty`)
+	      * will fall through to the control anyway, so you can access them directly. You can see a
+	      * full list of properties directly available in {@link AbstractControlDirective}.
+	      * *
+	      * The following is an example of a simple standalone control using `ngModel`:
+	      * *
+	      * {@example forms/ts/simpleNgModel/simple_ng_model_example.ts region='Component'}
+	      * *
+	      * When using the `ngModel` within `<form>` tags, you'll also need to supply a `name` attribute
+	      * so that the control can be registered with the parent form under that name.
+	      * *
+	      * It's worth noting that in the context of a parent form, you often can skip one-way or
+	      * two-way binding because the parent form will sync the value for you. You can access
+	      * its properties by exporting it into a local template variable using `ngForm` (ex:
+	      * `#f="ngForm"`). Then you can pass it where it needs to go on submit.
+	      * *
+	      * If you do need to populate initial values into your form, using a one-way binding for
+	      * `ngModel` tends to be sufficient as long as you use the exported form's value rather
+	      * than the domain model's value on submit.
+	      * *
+	      * Take a look at an example of using `ngModel` within a form:
+	      * *
+	      * {@example forms/ts/simpleForm/simple_form_example.ts region='Component'}
+	      * *
+	      * To see `ngModel` examples with different form control types, see:
+	      * *
+	      * * Radio buttons: {@link RadioControlValueAccessor}
+	      * * Selects: {@link SelectControlValueAccessor}
+	      * *
+	      * **npm package**: `@angular/forms`
+	      * *
+	      * **NgModule**: `FormsModule`
+	      * *
+	      * @stable
+	     */
+	    var NgModel = (function (_super) {
+	        __extends$7(NgModel, _super);
+	        /**
+	         * @param {?} parent
+	         * @param {?} validators
+	         * @param {?} asyncValidators
+	         * @param {?} valueAccessors
+	         */
+	        function NgModel(parent, validators, asyncValidators, valueAccessors) {
+	            _super.call(this);
+	            /** @internal */
+	            this._control = new FormControl();
+	            /** @internal */
+	            this._registered = false;
+	            this.update = new EventEmitter();
+	            this._parent = parent;
+	            this._rawValidators = validators || [];
+	            this._rawAsyncValidators = asyncValidators || [];
+	            this.valueAccessor = selectValueAccessor(this, valueAccessors);
+	        }
+	        /**
+	         * @param {?} changes
+	         * @return {?}
+	         */
+	        NgModel.prototype.ngOnChanges = function (changes) {
+	            this._checkForErrors();
+	            if (!this._registered)
+	                this._setUpControl();
+	            if ('isDisabled' in changes) {
+	                this._updateDisabled(changes);
+	            }
+	            if (isPropertyUpdated(changes, this.viewModel)) {
+	                this._updateValue(this.model);
+	                this.viewModel = this.model;
+	            }
+	        };
+	        /**
+	         * @return {?}
+	         */
+	        NgModel.prototype.ngOnDestroy = function () { this.formDirective && this.formDirective.removeControl(this); };
+	        Object.defineProperty(NgModel.prototype, "control", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return this._control; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(NgModel.prototype, "path", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () {
+	                return this._parent ? controlPath(this.name, this._parent) : [this.name];
+	            },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(NgModel.prototype, "formDirective", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return this._parent ? this._parent.formDirective : null; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(NgModel.prototype, "validator", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return composeValidators(this._rawValidators); },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(NgModel.prototype, "asyncValidator", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () {
+	                return composeAsyncValidators(this._rawAsyncValidators);
+	            },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        /**
+	         * @param {?} newValue
+	         * @return {?}
+	         */
+	        NgModel.prototype.viewToModelUpdate = function (newValue) {
+	            this.viewModel = newValue;
+	            this.update.emit(newValue);
+	        };
+	        /**
+	         * @return {?}
+	         */
+	        NgModel.prototype._setUpControl = function () {
+	            this._isStandalone() ? this._setUpStandalone() :
+	                this.formDirective.addControl(this);
+	            this._registered = true;
+	        };
+	        /**
+	         * @return {?}
+	         */
+	        NgModel.prototype._isStandalone = function () {
+	            return !this._parent || (this.options && this.options.standalone);
+	        };
+	        /**
+	         * @return {?}
+	         */
+	        NgModel.prototype._setUpStandalone = function () {
+	            setUpControl(this._control, this);
+	            this._control.updateValueAndValidity({ emitEvent: false });
+	        };
+	        /**
+	         * @return {?}
+	         */
+	        NgModel.prototype._checkForErrors = function () {
+	            if (!this._isStandalone()) {
+	                this._checkParentType();
+	            }
+	            this._checkName();
+	        };
+	        /**
+	         * @return {?}
+	         */
+	        NgModel.prototype._checkParentType = function () {
+	            if (!(this._parent instanceof NgModelGroup) &&
+	                this._parent instanceof AbstractFormGroupDirective) {
+	                TemplateDrivenErrors.formGroupNameException();
+	            }
+	            else if (!(this._parent instanceof NgModelGroup) && !(this._parent instanceof NgForm)) {
+	                TemplateDrivenErrors.modelParentException();
+	            }
+	        };
+	        /**
+	         * @return {?}
+	         */
+	        NgModel.prototype._checkName = function () {
+	            if (this.options && this.options.name)
+	                this.name = this.options.name;
+	            if (!this._isStandalone() && !this.name) {
+	                TemplateDrivenErrors.missingNameException();
+	            }
+	        };
+	        /**
+	         * @param {?} value
+	         * @return {?}
+	         */
+	        NgModel.prototype._updateValue = function (value) {
+	            var _this = this;
+	            resolvedPromise$1.then(function () { _this.control.setValue(value, { emitViewToModelChange: false }); });
+	        };
+	        /**
+	         * @param {?} changes
+	         * @return {?}
+	         */
+	        NgModel.prototype._updateDisabled = function (changes) {
+	            var _this = this;
+	            var /** @type {?} */ disabledValue = changes['isDisabled'].currentValue;
+	            var /** @type {?} */ isDisabled = disabledValue === '' || (disabledValue && disabledValue !== 'false');
+	            resolvedPromise$1.then(function () {
+	                if (isDisabled && !_this.control.disabled) {
+	                    _this.control.disable();
+	                }
+	                else if (!isDisabled && _this.control.disabled) {
+	                    _this.control.enable();
+	                }
+	            });
+	        };
+	        NgModel.decorators = [
+	            { type: _angular_core.Directive, args: [{
+	                        selector: '[ngModel]:not([formControlName]):not([formControl])',
+	                        providers: [formControlBinding],
+	                        exportAs: 'ngModel'
+	                    },] },
+	        ];
+	        /** @nocollapse */
+	        NgModel.ctorParameters = function () { return [
+	            { type: ControlContainer, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Host },] },
+	            { type: Array, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Self }, { type: _angular_core.Inject, args: [NG_VALIDATORS,] },] },
+	            { type: Array, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Self }, { type: _angular_core.Inject, args: [NG_ASYNC_VALIDATORS,] },] },
+	            { type: Array, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Self }, { type: _angular_core.Inject, args: [NG_VALUE_ACCESSOR,] },] },
+	        ]; };
+	        NgModel.propDecorators = {
+	            'name': [{ type: _angular_core.Input },],
+	            'isDisabled': [{ type: _angular_core.Input, args: ['disabled',] },],
+	            'model': [{ type: _angular_core.Input, args: ['ngModel',] },],
+	            'options': [{ type: _angular_core.Input, args: ['ngModelOptions',] },],
+	            'update': [{ type: _angular_core.Output, args: ['ngModelChange',] },],
+	        };
+	        return NgModel;
+	    }(NgControl));
+
+	    var ReactiveErrors = (function () {
+	        function ReactiveErrors() {
+	        }
+	        /**
+	         * @return {?}
+	         */
+	        ReactiveErrors.controlParentException = function () {
+	            throw new Error("formControlName must be used with a parent formGroup directive.  You'll want to add a formGroup\n       directive and pass it an existing FormGroup instance (you can create one in your class).\n\n      Example:\n\n      " + Examples.formControlName);
+	        };
+	        /**
+	         * @return {?}
+	         */
+	        ReactiveErrors.ngModelGroupException = function () {
+	            throw new Error("formControlName cannot be used with an ngModelGroup parent. It is only compatible with parents\n       that also have a \"form\" prefix: formGroupName, formArrayName, or formGroup.\n\n       Option 1:  Update the parent to be formGroupName (reactive form strategy)\n\n        " + Examples.formGroupName + "\n\n        Option 2: Use ngModel instead of formControlName (template-driven strategy)\n\n        " + Examples.ngModelGroup);
+	        };
+	        /**
+	         * @return {?}
+	         */
+	        ReactiveErrors.missingFormException = function () {
+	            throw new Error("formGroup expects a FormGroup instance. Please pass one in.\n\n       Example:\n\n       " + Examples.formControlName);
+	        };
+	        /**
+	         * @return {?}
+	         */
+	        ReactiveErrors.groupParentException = function () {
+	            throw new Error("formGroupName must be used with a parent formGroup directive.  You'll want to add a formGroup\n      directive and pass it an existing FormGroup instance (you can create one in your class).\n\n      Example:\n\n      " + Examples.formGroupName);
+	        };
+	        /**
+	         * @return {?}
+	         */
+	        ReactiveErrors.arrayParentException = function () {
+	            throw new Error("formArrayName must be used with a parent formGroup directive.  You'll want to add a formGroup\n       directive and pass it an existing FormGroup instance (you can create one in your class).\n\n        Example:\n\n        " + Examples.formArrayName);
+	        };
+	        /**
+	         * @return {?}
+	         */
+	        ReactiveErrors.disabledAttrWarning = function () {
+	            console.warn("\n      It looks like you're using the disabled attribute with a reactive form directive. If you set disabled to true\n      when you set up this control in your component class, the disabled attribute will actually be set in the DOM for\n      you. We recommend using this approach to avoid 'changed after checked' errors.\n       \n      Example: \n      form = new FormGroup({\n        first: new FormControl({value: 'Nancy', disabled: true}, Validators.required),\n        last: new FormControl('Drew', Validators.required)\n      });\n    ");
+	        };
+	        return ReactiveErrors;
+	    }());
+
+	    /**
+	     * @license
+	     * Copyright Google Inc. All Rights Reserved.
+	     *
+	     * Use of this source code is governed by an MIT-style license that can be
+	     * found in the LICENSE file at https://angular.io/license
+	     */
+	    var __extends$9 = (this && this.__extends) || function (d, b) {
+	        for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	    var /** @type {?} */ formControlBinding$1 = {
+	        provide: NgControl,
+	        useExisting: _angular_core.forwardRef(function () { return FormControlDirective; })
+	    };
+	    /**
+	     *  *
+	      * In other words, this directive ensures that any values written to the {@link FormControl}
+	      * instance programmatically will be written to the DOM element (model -> view). Conversely,
+	      * any values written to the DOM element through user input will be reflected in the
+	      * {@link FormControl} instance (view -> model).
+	      * *
+	      * *
+	      * Use this directive if you'd like to create and manage a {@link FormControl} instance directly.
+	      * Simply create a {@link FormControl}, save it to your component class, and pass it into the
+	      * {@link FormControlDirective}.
+	      * *
+	      * This directive is designed to be used as a standalone control.  Unlike {@link FormControlName},
+	      * it does not require that your {@link FormControl} instance be part of any parent
+	      * {@link FormGroup}, and it won't be registered to any {@link FormGroupDirective} that
+	      * exists above it.
+	      * *
+	      * **Get the value**: the `value` property is always synced and available on the
+	      * {@link FormControl} instance. See a full list of available properties in
+	      * {@link AbstractControl}.
+	      * *
+	      * **Set the value**: You can pass in an initial value when instantiating the {@link FormControl},
+	      * or you can set it programmatically later using {@link AbstractControl.setValue} or
+	      * {@link AbstractControl.patchValue}.
+	      * *
+	      * **Listen to value**: If you want to listen to changes in the value of the control, you can
+	      * subscribe to the {@link AbstractControl.valueChanges} event.  You can also listen to
+	      * {@link AbstractControl.statusChanges} to be notified when the validation status is
+	      * re-calculated.
+	      * *
+	      * ### Example
+	      * *
+	      * {@example forms/ts/simpleFormControl/simple_form_control_example.ts region='Component'}
+	      * *
+	      * * **npm package**: `@angular/forms`
+	      * *
+	      * * **NgModule**: `ReactiveFormsModule`
+	      * *
+	      * @stable
+	     */
+	    var FormControlDirective = (function (_super) {
+	        __extends$9(FormControlDirective, _super);
+	        /**
+	         * @param {?} validators
+	         * @param {?} asyncValidators
+	         * @param {?} valueAccessors
+	         */
+	        function FormControlDirective(validators, asyncValidators, valueAccessors) {
+	            _super.call(this);
+	            this.update = new EventEmitter();
+	            this._rawValidators = validators || [];
+	            this._rawAsyncValidators = asyncValidators || [];
+	            this.valueAccessor = selectValueAccessor(this, valueAccessors);
+	        }
+	        Object.defineProperty(FormControlDirective.prototype, "isDisabled", {
+	            /**
+	             * @param {?} isDisabled
+	             * @return {?}
+	             */
+	            set: function (isDisabled) { ReactiveErrors.disabledAttrWarning(); },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        /**
+	         * @param {?} changes
+	         * @return {?}
+	         */
+	        FormControlDirective.prototype.ngOnChanges = function (changes) {
+	            if (this._isControlChanged(changes)) {
+	                setUpControl(this.form, this);
+	                if (this.control.disabled && this.valueAccessor.setDisabledState) {
+	                    this.valueAccessor.setDisabledState(true);
+	                }
+	                this.form.updateValueAndValidity({ emitEvent: false });
+	            }
+	            if (isPropertyUpdated(changes, this.viewModel)) {
+	                this.form.setValue(this.model);
+	                this.viewModel = this.model;
+	            }
+	        };
+	        Object.defineProperty(FormControlDirective.prototype, "path", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return []; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(FormControlDirective.prototype, "validator", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return composeValidators(this._rawValidators); },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(FormControlDirective.prototype, "asyncValidator", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () {
+	                return composeAsyncValidators(this._rawAsyncValidators);
+	            },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(FormControlDirective.prototype, "control", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return this.form; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        /**
+	         * @param {?} newValue
+	         * @return {?}
+	         */
+	        FormControlDirective.prototype.viewToModelUpdate = function (newValue) {
+	            this.viewModel = newValue;
+	            this.update.emit(newValue);
+	        };
+	        /**
+	         * @param {?} changes
+	         * @return {?}
+	         */
+	        FormControlDirective.prototype._isControlChanged = function (changes) {
+	            return changes.hasOwnProperty('form');
+	        };
+	        FormControlDirective.decorators = [
+	            { type: _angular_core.Directive, args: [{ selector: '[formControl]', providers: [formControlBinding$1], exportAs: 'ngForm' },] },
+	        ];
+	        /** @nocollapse */
+	        FormControlDirective.ctorParameters = function () { return [
+	            { type: Array, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Self }, { type: _angular_core.Inject, args: [NG_VALIDATORS,] },] },
+	            { type: Array, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Self }, { type: _angular_core.Inject, args: [NG_ASYNC_VALIDATORS,] },] },
+	            { type: Array, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Self }, { type: _angular_core.Inject, args: [NG_VALUE_ACCESSOR,] },] },
+	        ]; };
+	        FormControlDirective.propDecorators = {
+	            'form': [{ type: _angular_core.Input, args: ['formControl',] },],
+	            'model': [{ type: _angular_core.Input, args: ['ngModel',] },],
+	            'update': [{ type: _angular_core.Output, args: ['ngModelChange',] },],
+	            'isDisabled': [{ type: _angular_core.Input, args: ['disabled',] },],
+	        };
+	        return FormControlDirective;
+	    }(NgControl));
+
+	    /**
+	     * @license
+	     * Copyright Google Inc. All Rights Reserved.
+	     *
+	     * Use of this source code is governed by an MIT-style license that can be
+	     * found in the LICENSE file at https://angular.io/license
+	     */
+	    var __extends$11 = (this && this.__extends) || function (d, b) {
+	        for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	    var /** @type {?} */ formDirectiveProvider$1 = {
+	        provide: ControlContainer,
+	        useExisting: _angular_core.forwardRef(function () { return FormGroupDirective; })
+	    };
+	    /**
+	     *  *
+	      * *
+	      * This directive accepts an existing {@link FormGroup} instance. It will then use this
+	      * {@link FormGroup} instance to match any child {@link FormControl}, {@link FormGroup},
+	      * and {@link FormArray} instances to child {@link FormControlName}, {@link FormGroupName},
+	      * and {@link FormArrayName} directives.
+	      * *
+	      * **Set value**: You can set the form's initial value when instantiating the
+	      * {@link FormGroup}, or you can set it programmatically later using the {@link FormGroup}'s
+	      * {@link AbstractControl.setValue} or {@link AbstractControl.patchValue} methods.
+	      * *
+	      * **Listen to value**: If you want to listen to changes in the value of the form, you can subscribe
+	      * to the {@link FormGroup}'s {@link AbstractControl.valueChanges} event.  You can also listen to
+	      * its {@link AbstractControl.statusChanges} event to be notified when the validation status is
+	      * re-calculated.
+	      * *
+	      * Furthermore, you can listen to the directive's `ngSubmit` event to be notified when the user has
+	      * triggered a form submission. The `ngSubmit` event will be emitted with the original form
+	      * submission event.
+	      * *
+	      * ### Example
+	      * *
+	      * In this example, we create form controls for first name and last name.
+	      * *
+	      * {@example forms/ts/simpleFormGroup/simple_form_group_example.ts region='Component'}
+	      * *
+	      * **npm package**: `@angular/forms`
+	      * *
+	      * **NgModule**: {@link ReactiveFormsModule}
+	      * *
+	      * @stable
+	     */
+	    var FormGroupDirective = (function (_super) {
+	        __extends$11(FormGroupDirective, _super);
+	        /**
+	         * @param {?} _validators
+	         * @param {?} _asyncValidators
+	         */
+	        function FormGroupDirective(_validators, _asyncValidators) {
+	            _super.call(this);
+	            this._validators = _validators;
+	            this._asyncValidators = _asyncValidators;
+	            this._submitted = false;
+	            this.directives = [];
+	            this.form = null;
+	            this.ngSubmit = new EventEmitter();
+	        }
+	        /**
+	         * @param {?} changes
+	         * @return {?}
+	         */
+	        FormGroupDirective.prototype.ngOnChanges = function (changes) {
+	            this._checkFormPresent();
+	            if (changes.hasOwnProperty('form')) {
+	                this._updateValidators();
+	                this._updateDomValue();
+	                this._updateRegistrations();
+	            }
+	        };
+	        Object.defineProperty(FormGroupDirective.prototype, "submitted", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return this._submitted; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(FormGroupDirective.prototype, "formDirective", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return this; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(FormGroupDirective.prototype, "control", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return this.form; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(FormGroupDirective.prototype, "path", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return []; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        /**
+	         * @param {?} dir
+	         * @return {?}
+	         */
+	        FormGroupDirective.prototype.addControl = function (dir) {
+	            var /** @type {?} */ ctrl = this.form.get(dir.path);
+	            setUpControl(ctrl, dir);
+	            ctrl.updateValueAndValidity({ emitEvent: false });
+	            this.directives.push(dir);
+	            return ctrl;
+	        };
+	        /**
+	         * @param {?} dir
+	         * @return {?}
+	         */
+	        FormGroupDirective.prototype.getControl = function (dir) { return (this.form.get(dir.path)); };
+	        /**
+	         * @param {?} dir
+	         * @return {?}
+	         */
+	        FormGroupDirective.prototype.removeControl = function (dir) { ListWrapper.remove(this.directives, dir); };
+	        /**
+	         * @param {?} dir
+	         * @return {?}
+	         */
+	        FormGroupDirective.prototype.addFormGroup = function (dir) {
+	            var /** @type {?} */ ctrl = this.form.get(dir.path);
+	            setUpFormContainer(ctrl, dir);
+	            ctrl.updateValueAndValidity({ emitEvent: false });
+	        };
+	        /**
+	         * @param {?} dir
+	         * @return {?}
+	         */
+	        FormGroupDirective.prototype.removeFormGroup = function (dir) { };
+	        /**
+	         * @param {?} dir
+	         * @return {?}
+	         */
+	        FormGroupDirective.prototype.getFormGroup = function (dir) { return (this.form.get(dir.path)); };
+	        /**
+	         * @param {?} dir
+	         * @return {?}
+	         */
+	        FormGroupDirective.prototype.addFormArray = function (dir) {
+	            var /** @type {?} */ ctrl = this.form.get(dir.path);
+	            setUpFormContainer(ctrl, dir);
+	            ctrl.updateValueAndValidity({ emitEvent: false });
+	        };
+	        /**
+	         * @param {?} dir
+	         * @return {?}
+	         */
+	        FormGroupDirective.prototype.removeFormArray = function (dir) { };
+	        /**
+	         * @param {?} dir
+	         * @return {?}
+	         */
+	        FormGroupDirective.prototype.getFormArray = function (dir) { return (this.form.get(dir.path)); };
+	        /**
+	         * @param {?} dir
+	         * @param {?} value
+	         * @return {?}
+	         */
+	        FormGroupDirective.prototype.updateModel = function (dir, value) {
+	            var /** @type {?} */ ctrl = (this.form.get(dir.path));
+	            ctrl.setValue(value);
+	        };
+	        /**
+	         * @param {?} $event
+	         * @return {?}
+	         */
+	        FormGroupDirective.prototype.onSubmit = function ($event) {
+	            this._submitted = true;
+	            this.ngSubmit.emit($event);
+	            return false;
+	        };
+	        /**
+	         * @return {?}
+	         */
+	        FormGroupDirective.prototype.onReset = function () { this.resetForm(); };
+	        /**
+	         * @param {?=} value
+	         * @return {?}
+	         */
+	        FormGroupDirective.prototype.resetForm = function (value) {
+	            if (value === void 0) { value = undefined; }
+	            this.form.reset(value);
+	            this._submitted = false;
+	        };
+	        /**
+	         * @return {?}
+	         */
+	        FormGroupDirective.prototype._updateDomValue = function () {
+	            var _this = this;
+	            this.directives.forEach(function (dir) {
+	                var /** @type {?} */ newCtrl = _this.form.get(dir.path);
+	                if (dir._control !== newCtrl) {
+	                    cleanUpControl(dir._control, dir);
+	                    if (newCtrl)
+	                        setUpControl(newCtrl, dir);
+	                    dir._control = newCtrl;
+	                }
+	            });
+	            this.form._updateTreeValidity({ emitEvent: false });
+	        };
+	        /**
+	         * @return {?}
+	         */
+	        FormGroupDirective.prototype._updateRegistrations = function () {
+	            var _this = this;
+	            this.form._registerOnCollectionChange(function () { return _this._updateDomValue(); });
+	            if (this._oldForm)
+	                this._oldForm._registerOnCollectionChange(function () { });
+	            this._oldForm = this.form;
+	        };
+	        /**
+	         * @return {?}
+	         */
+	        FormGroupDirective.prototype._updateValidators = function () {
+	            var /** @type {?} */ sync = composeValidators(this._validators);
+	            this.form.validator = Validators.compose([this.form.validator, sync]);
+	            var /** @type {?} */ async = composeAsyncValidators(this._asyncValidators);
+	            this.form.asyncValidator = Validators.composeAsync([this.form.asyncValidator, async]);
+	        };
+	        /**
+	         * @return {?}
+	         */
+	        FormGroupDirective.prototype._checkFormPresent = function () {
+	            if (!this.form) {
+	                ReactiveErrors.missingFormException();
+	            }
+	        };
+	        FormGroupDirective.decorators = [
+	            { type: _angular_core.Directive, args: [{
+	                        selector: '[formGroup]',
+	                        providers: [formDirectiveProvider$1],
+	                        host: { '(submit)': 'onSubmit($event)', '(reset)': 'onReset()' },
+	                        exportAs: 'ngForm'
+	                    },] },
+	        ];
+	        /** @nocollapse */
+	        FormGroupDirective.ctorParameters = function () { return [
+	            { type: Array, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Self }, { type: _angular_core.Inject, args: [NG_VALIDATORS,] },] },
+	            { type: Array, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Self }, { type: _angular_core.Inject, args: [NG_ASYNC_VALIDATORS,] },] },
+	        ]; };
+	        FormGroupDirective.propDecorators = {
+	            'form': [{ type: _angular_core.Input, args: ['formGroup',] },],
+	            'ngSubmit': [{ type: _angular_core.Output },],
+	        };
+	        return FormGroupDirective;
+	    }(ControlContainer));
+
+	    /**
+	     * @license
+	     * Copyright Google Inc. All Rights Reserved.
+	     *
+	     * Use of this source code is governed by an MIT-style license that can be
+	     * found in the LICENSE file at https://angular.io/license
+	     */
+	    var __extends$12 = (this && this.__extends) || function (d, b) {
+	        for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	    var /** @type {?} */ formGroupNameProvider = {
+	        provide: ControlContainer,
+	        useExisting: _angular_core.forwardRef(function () { return FormGroupName; })
+	    };
+	    /**
+	     *  *
+	      * *
+	      * This directive can only be used with a parent {@link FormGroupDirective} (selector:
+	      * `[formGroup]`).
+	      * *
+	      * It accepts the string name of the nested {@link FormGroup} you want to link, and
+	      * will look for a {@link FormGroup} registered with that name in the parent
+	      * {@link FormGroup} instance you passed into {@link FormGroupDirective}.
+	      * *
+	      * Nested form groups can come in handy when you want to validate a sub-group of a
+	      * form separately from the rest or when you'd like to group the values of certain
+	      * controls into their own nested object.
+	      * *
+	      * **Access the group**: You can access the associated {@link FormGroup} using the
+	      * {@link AbstractControl.get} method. Ex: `this.form.get('name')`.
+	      * *
+	      * You can also access individual controls within the group using dot syntax.
+	      * Ex: `this.form.get('name.first')`
+	      * *
+	      * **Get the value**: the `value` property is always synced and available on the
+	      * {@link FormGroup}. See a full list of available properties in {@link AbstractControl}.
+	      * *
+	      * **Set the value**: You can set an initial value for each child control when instantiating
+	      * the {@link FormGroup}, or you can set it programmatically later using
+	      * {@link AbstractControl.setValue} or {@link AbstractControl.patchValue}.
+	      * *
+	      * **Listen to value**: If you want to listen to changes in the value of the group, you can
+	      * subscribe to the {@link AbstractControl.valueChanges} event.  You can also listen to
+	      * {@link AbstractControl.statusChanges} to be notified when the validation status is
+	      * re-calculated.
+	      * *
+	      * ### Example
+	      * *
+	      * {@example forms/ts/nestedFormGroup/nested_form_group_example.ts region='Component'}
+	      * *
+	      * * **npm package**: `@angular/forms`
+	      * *
+	      * * **NgModule**: `ReactiveFormsModule`
+	      * *
+	     */
+	    var FormGroupName = (function (_super) {
+	        __extends$12(FormGroupName, _super);
+	        /**
+	         * @param {?} parent
+	         * @param {?} validators
+	         * @param {?} asyncValidators
+	         */
+	        function FormGroupName(parent, validators, asyncValidators) {
+	            _super.call(this);
+	            this._parent = parent;
+	            this._validators = validators;
+	            this._asyncValidators = asyncValidators;
+	        }
+	        /**
+	         * @return {?}
+	         */
+	        FormGroupName.prototype._checkParentType = function () {
+	            if (_hasInvalidParent(this._parent)) {
+	                ReactiveErrors.groupParentException();
+	            }
+	        };
+	        FormGroupName.decorators = [
+	            { type: _angular_core.Directive, args: [{ selector: '[formGroupName]', providers: [formGroupNameProvider] },] },
+	        ];
+	        /** @nocollapse */
+	        FormGroupName.ctorParameters = function () { return [
+	            { type: ControlContainer, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Host }, { type: _angular_core.SkipSelf },] },
+	            { type: Array, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Self }, { type: _angular_core.Inject, args: [NG_VALIDATORS,] },] },
+	            { type: Array, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Self }, { type: _angular_core.Inject, args: [NG_ASYNC_VALIDATORS,] },] },
+	        ]; };
+	        FormGroupName.propDecorators = {
+	            'name': [{ type: _angular_core.Input, args: ['formGroupName',] },],
+	        };
+	        return FormGroupName;
+	    }(AbstractFormGroupDirective));
+	    var /** @type {?} */ formArrayNameProvider = {
+	        provide: ControlContainer,
+	        useExisting: _angular_core.forwardRef(function () { return FormArrayName; })
+	    };
+	    /**
+	     *  *
+	      * *
+	      * This directive is designed to be used with a parent {@link FormGroupDirective} (selector:
+	      * `[formGroup]`).
+	      * *
+	      * It accepts the string name of the nested {@link FormArray} you want to link, and
+	      * will look for a {@link FormArray} registered with that name in the parent
+	      * {@link FormGroup} instance you passed into {@link FormGroupDirective}.
+	      * *
+	      * Nested form arrays can come in handy when you have a group of form controls but
+	      * you're not sure how many there will be. Form arrays allow you to create new
+	      * form controls dynamically.
+	      * *
+	      * **Access the array**: You can access the associated {@link FormArray} using the
+	      * {@link AbstractControl.get} method on the parent {@link FormGroup}.
+	      * Ex: `this.form.get('cities')`.
+	      * *
+	      * **Get the value**: the `value` property is always synced and available on the
+	      * {@link FormArray}. See a full list of available properties in {@link AbstractControl}.
+	      * *
+	      * **Set the value**: You can set an initial value for each child control when instantiating
+	      * the {@link FormArray}, or you can set the value programmatically later using the
+	      * {@link FormArray}'s {@link AbstractControl.setValue} or {@link AbstractControl.patchValue}
+	      * methods.
+	      * *
+	      * **Listen to value**: If you want to listen to changes in the value of the array, you can
+	      * subscribe to the {@link FormArray}'s {@link AbstractControl.valueChanges} event.  You can also
+	      * listen to its {@link AbstractControl.statusChanges} event to be notified when the validation
+	      * status is re-calculated.
+	      * *
+	      * **Add new controls**: You can add new controls to the {@link FormArray} dynamically by
+	      * calling its {@link FormArray.push} method.
+	      * Ex: `this.form.get('cities').push(new FormControl());`
+	      * *
+	      * ### Example
+	      * *
+	      * {@example forms/ts/nestedFormArray/nested_form_array_example.ts region='Component'}
+	      * *
+	      * * **npm package**: `@angular/forms`
+	      * *
+	      * * **NgModule**: `ReactiveFormsModule`
+	      * *
+	     */
+	    var FormArrayName = (function (_super) {
+	        __extends$12(FormArrayName, _super);
+	        /**
+	         * @param {?} parent
+	         * @param {?} validators
+	         * @param {?} asyncValidators
+	         */
+	        function FormArrayName(parent, validators, asyncValidators) {
+	            _super.call(this);
+	            this._parent = parent;
+	            this._validators = validators;
+	            this._asyncValidators = asyncValidators;
+	        }
+	        /**
+	         * @return {?}
+	         */
+	        FormArrayName.prototype.ngOnInit = function () {
+	            this._checkParentType();
+	            this.formDirective.addFormArray(this);
+	        };
+	        /**
+	         * @return {?}
+	         */
+	        FormArrayName.prototype.ngOnDestroy = function () {
+	            if (this.formDirective) {
+	                this.formDirective.removeFormArray(this);
+	            }
+	        };
+	        Object.defineProperty(FormArrayName.prototype, "control", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return this.formDirective.getFormArray(this); },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(FormArrayName.prototype, "formDirective", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () {
+	                return this._parent ? (this._parent.formDirective) : null;
+	            },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(FormArrayName.prototype, "path", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return controlPath(this.name, this._parent); },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(FormArrayName.prototype, "validator", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return composeValidators(this._validators); },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(FormArrayName.prototype, "asyncValidator", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return composeAsyncValidators(this._asyncValidators); },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        /**
+	         * @return {?}
+	         */
+	        FormArrayName.prototype._checkParentType = function () {
+	            if (_hasInvalidParent(this._parent)) {
+	                ReactiveErrors.arrayParentException();
+	            }
+	        };
+	        FormArrayName.decorators = [
+	            { type: _angular_core.Directive, args: [{ selector: '[formArrayName]', providers: [formArrayNameProvider] },] },
+	        ];
+	        /** @nocollapse */
+	        FormArrayName.ctorParameters = function () { return [
+	            { type: ControlContainer, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Host }, { type: _angular_core.SkipSelf },] },
+	            { type: Array, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Self }, { type: _angular_core.Inject, args: [NG_VALIDATORS,] },] },
+	            { type: Array, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Self }, { type: _angular_core.Inject, args: [NG_ASYNC_VALIDATORS,] },] },
+	        ]; };
+	        FormArrayName.propDecorators = {
+	            'name': [{ type: _angular_core.Input, args: ['formArrayName',] },],
+	        };
+	        return FormArrayName;
+	    }(ControlContainer));
+	    /**
+	     * @param {?} parent
+	     * @return {?}
+	     */
+	    function _hasInvalidParent(parent) {
+	        return !(parent instanceof FormGroupName) && !(parent instanceof FormGroupDirective) &&
+	            !(parent instanceof FormArrayName);
+	    }
+
+	    /**
+	     * @license
+	     * Copyright Google Inc. All Rights Reserved.
+	     *
+	     * Use of this source code is governed by an MIT-style license that can be
+	     * found in the LICENSE file at https://angular.io/license
+	     */
+	    var __extends$10 = (this && this.__extends) || function (d, b) {
+	        for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	    var /** @type {?} */ controlNameBinding = {
+	        provide: NgControl,
+	        useExisting: _angular_core.forwardRef(function () { return FormControlName; })
+	    };
+	    /**
+	     *  element by name.
+	      * *
+	      * In other words, this directive ensures that any values written to the {@link FormControl}
+	      * instance programmatically will be written to the DOM element (model -> view). Conversely,
+	      * any values written to the DOM element through user input will be reflected in the
+	      * {@link FormControl} instance (view -> model).
+	      * *
+	      * *
+	      * This directive is designed to be used with a parent {@link FormGroupDirective} (selector:
+	      * `[formGroup]`).
+	      * *
+	      * It accepts the string name of the {@link FormControl} instance you want to
+	      * link, and will look for a {@link FormControl} registered with that name in the
+	      * closest {@link FormGroup} or {@link FormArray} above it.
+	      * *
+	      * **Access the control**: You can access the {@link FormControl} associated with
+	      * this directive by using the {@link AbstractControl.get} method.
+	      * Ex: `this.form.get('first');`
+	      * *
+	      * **Get value**: the `value` property is always synced and available on the {@link FormControl}.
+	      * See a full list of available properties in {@link AbstractControl}.
+	      * *
+	      * **Set value**: You can set an initial value for the control when instantiating the
+	      * {@link FormControl}, or you can set it programmatically later using
+	      * {@link AbstractControl.setValue} or {@link AbstractControl.patchValue}.
+	      * *
+	      * **Listen to value**: If you want to listen to changes in the value of the control, you can
+	      * subscribe to the {@link AbstractControl.valueChanges} event.  You can also listen to
+	      * {@link AbstractControl.statusChanges} to be notified when the validation status is
+	      * re-calculated.
+	      * *
+	      * ### Example
+	      * *
+	      * In this example, we create form controls for first name and last name.
+	      * *
+	      * {@example forms/ts/simpleFormGroup/simple_form_group_example.ts region='Component'}
+	      * *
+	      * To see `formControlName` examples with different form control types, see:
+	      * *
+	      * * Radio buttons: {@link RadioControlValueAccessor}
+	      * * Selects: {@link SelectControlValueAccessor}
+	      * *
+	      * **npm package**: `@angular/forms`
+	      * *
+	      * **NgModule**: {@link ReactiveFormsModule}
+	      * *
+	      * @stable
+	     */
+	    var FormControlName = (function (_super) {
+	        __extends$10(FormControlName, _super);
+	        /**
+	         * @param {?} parent
+	         * @param {?} validators
+	         * @param {?} asyncValidators
+	         * @param {?} valueAccessors
+	         */
+	        function FormControlName(parent, validators, asyncValidators, valueAccessors) {
+	            _super.call(this);
+	            this._added = false;
+	            this.update = new EventEmitter();
+	            this._parent = parent;
+	            this._rawValidators = validators || [];
+	            this._rawAsyncValidators = asyncValidators || [];
+	            this.valueAccessor = selectValueAccessor(this, valueAccessors);
+	        }
+	        Object.defineProperty(FormControlName.prototype, "isDisabled", {
+	            /**
+	             * @param {?} isDisabled
+	             * @return {?}
+	             */
+	            set: function (isDisabled) { ReactiveErrors.disabledAttrWarning(); },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        /**
+	         * @param {?} changes
+	         * @return {?}
+	         */
+	        FormControlName.prototype.ngOnChanges = function (changes) {
+	            if (!this._added)
+	                this._setUpControl();
+	            if (isPropertyUpdated(changes, this.viewModel)) {
+	                this.viewModel = this.model;
+	                this.formDirective.updateModel(this, this.model);
+	            }
+	        };
+	        /**
+	         * @return {?}
+	         */
+	        FormControlName.prototype.ngOnDestroy = function () {
+	            if (this.formDirective) {
+	                this.formDirective.removeControl(this);
+	            }
+	        };
+	        /**
+	         * @param {?} newValue
+	         * @return {?}
+	         */
+	        FormControlName.prototype.viewToModelUpdate = function (newValue) {
+	            this.viewModel = newValue;
+	            this.update.emit(newValue);
+	        };
+	        Object.defineProperty(FormControlName.prototype, "path", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return controlPath(this.name, this._parent); },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(FormControlName.prototype, "formDirective", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return this._parent ? this._parent.formDirective : null; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(FormControlName.prototype, "validator", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return composeValidators(this._rawValidators); },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(FormControlName.prototype, "asyncValidator", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () {
+	                return composeAsyncValidators(this._rawAsyncValidators);
+	            },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        Object.defineProperty(FormControlName.prototype, "control", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return this._control; },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        /**
+	         * @return {?}
+	         */
+	        FormControlName.prototype._checkParentType = function () {
+	            if (!(this._parent instanceof FormGroupName) &&
+	                this._parent instanceof AbstractFormGroupDirective) {
+	                ReactiveErrors.ngModelGroupException();
+	            }
+	            else if (!(this._parent instanceof FormGroupName) && !(this._parent instanceof FormGroupDirective) &&
+	                !(this._parent instanceof FormArrayName)) {
+	                ReactiveErrors.controlParentException();
+	            }
+	        };
+	        /**
+	         * @return {?}
+	         */
+	        FormControlName.prototype._setUpControl = function () {
+	            this._checkParentType();
+	            this._control = this.formDirective.addControl(this);
+	            if (this.control.disabled && this.valueAccessor.setDisabledState) {
+	                this.valueAccessor.setDisabledState(true);
+	            }
+	            this._added = true;
+	        };
+	        FormControlName.decorators = [
+	            { type: _angular_core.Directive, args: [{ selector: '[formControlName]', providers: [controlNameBinding] },] },
+	        ];
+	        /** @nocollapse */
+	        FormControlName.ctorParameters = function () { return [
+	            { type: ControlContainer, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Host }, { type: _angular_core.SkipSelf },] },
+	            { type: Array, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Self }, { type: _angular_core.Inject, args: [NG_VALIDATORS,] },] },
+	            { type: Array, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Self }, { type: _angular_core.Inject, args: [NG_ASYNC_VALIDATORS,] },] },
+	            { type: Array, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Self }, { type: _angular_core.Inject, args: [NG_VALUE_ACCESSOR,] },] },
+	        ]; };
+	        FormControlName.propDecorators = {
+	            'name': [{ type: _angular_core.Input, args: ['formControlName',] },],
+	            'model': [{ type: _angular_core.Input, args: ['ngModel',] },],
+	            'update': [{ type: _angular_core.Output, args: ['ngModelChange',] },],
+	            'isDisabled': [{ type: _angular_core.Input, args: ['disabled',] },],
+	        };
+	        return FormControlName;
+	    }(NgControl));
+
+	    var __extends$13 = (this && this.__extends) || function (d, b) {
+	        for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	        function __() { this.constructor = d; }
+	        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	    };
+	    var /** @type {?} */ REQUIRED_VALIDATOR = {
+	        provide: NG_VALIDATORS,
+	        useExisting: _angular_core.forwardRef(function () { return RequiredValidator; }),
+	        multi: true
+	    };
+	    var /** @type {?} */ CHECKBOX_REQUIRED_VALIDATOR = {
+	        provide: NG_VALIDATORS,
+	        useExisting: _angular_core.forwardRef(function () { return CheckboxRequiredValidator; }),
+	        multi: true
+	    };
+	    /**
+	     *  A Directive that adds the `required` validator to any controls marked with the
+	      * `required` attribute, via the {@link NG_VALIDATORS} binding.
+	      * *
+	      * ### Example
+	      * *
+	      * ```
+	      * <input name="fullName" ngModel required>
+	      * ```
+	      * *
+	     */
+	    var RequiredValidator = (function () {
+	        function RequiredValidator() {
+	        }
+	        Object.defineProperty(RequiredValidator.prototype, "required", {
+	            /**
+	             * @return {?}
+	             */
+	            get: function () { return this._required; },
+	            /**
+	             * @param {?} value
+	             * @return {?}
+	             */
+	            set: function (value) {
+	                this._required = value != null && value !== false && "" + value !== 'false';
+	                if (this._onChange)
+	                    this._onChange();
+	            },
+	            enumerable: true,
+	            configurable: true
+	        });
+	        /**
+	         * @param {?} c
+	         * @return {?}
+	         */
+	        RequiredValidator.prototype.validate = function (c) {
+	            return this.required ? Validators.required(c) : null;
+	        };
+	        /**
+	         * @param {?} fn
+	         * @return {?}
+	         */
+	        RequiredValidator.prototype.registerOnValidatorChange = function (fn) { this._onChange = fn; };
+	        RequiredValidator.decorators = [
+	            { type: _angular_core.Directive, args: [{
+	                        selector: ':not([type=checkbox])[required][formControlName],:not([type=checkbox])[required][formControl],:not([type=checkbox])[required][ngModel]',
+	                        providers: [REQUIRED_VALIDATOR],
+	                        host: { '[attr.required]': 'required ? "" : null' }
+	                    },] },
+	        ];
+	        /** @nocollapse */
+	        RequiredValidator.ctorParameters = function () { return []; };
+	        RequiredValidator.propDecorators = {
+	            'required': [{ type: _angular_core.Input },],
+	        };
+	        return RequiredValidator;
+	    }());
+	    /**
+	     *  A Directive that adds the `required` validator to checkbox controls marked with the
+	      * `required` attribute, via the {@link NG_VALIDATORS} binding.
+	      * *
+	      * ### Example
+	      * *
+	      * ```
+	      * <input type="checkbox" name="active" ngModel required>
+	      * ```
+	      * *
+	     */
+	    var CheckboxRequiredValidator = (function (_super) {
+	        __extends$13(CheckboxRequiredValidator, _super);
+	        function CheckboxRequiredValidator() {
+	            _super.apply(this, arguments);
+	        }
+	        /**
+	         * @param {?} c
+	         * @return {?}
+	         */
+	        CheckboxRequiredValidator.prototype.validate = function (c) {
+	            return this.required ? Validators.requiredTrue(c) : null;
+	        };
+	        CheckboxRequiredValidator.decorators = [
+	            { type: _angular_core.Directive, args: [{
+	                        selector: 'input[type=checkbox][required][formControlName],input[type=checkbox][required][formControl],input[type=checkbox][required][ngModel]',
+	                        providers: [CHECKBOX_REQUIRED_VALIDATOR],
+	                        host: { '[attr.required]': 'required ? "" : null' }
+	                    },] },
+	        ];
+	        /** @nocollapse */
+	        CheckboxRequiredValidator.ctorParameters = function () { return []; };
+	        return CheckboxRequiredValidator;
+	    }(RequiredValidator));
+	    /**
+	     * Provider which adds {@link MinLengthValidator} to {@link NG_VALIDATORS}.
+	     *
+	     * ## Example:
+	     *
+	     * {@example common/forms/ts/validators/validators.ts region='min'}
+	     */
+	    var /** @type {?} */ MIN_LENGTH_VALIDATOR = {
+	        provide: NG_VALIDATORS,
+	        useExisting: _angular_core.forwardRef(function () { return MinLengthValidator; }),
+	        multi: true
+	    };
+	    /**
+	     *  A directive which installs the {@link MinLengthValidator} for any `formControlName`,
+	      * `formControl`, or control with `ngModel` that also has a `minlength` attribute.
+	      * *
+	     */
+	    var MinLengthValidator = (function () {
+	        function MinLengthValidator() {
+	        }
+	        /**
+	         * @param {?} changes
+	         * @return {?}
+	         */
+	        MinLengthValidator.prototype.ngOnChanges = function (changes) {
+	            if ('minlength' in changes) {
+	                this._createValidator();
+	                if (this._onChange)
+	                    this._onChange();
+	            }
+	        };
+	        /**
+	         * @param {?} c
+	         * @return {?}
+	         */
+	        MinLengthValidator.prototype.validate = function (c) {
+	            return this.minlength == null ? null : this._validator(c);
+	        };
+	        /**
+	         * @param {?} fn
+	         * @return {?}
+	         */
+	        MinLengthValidator.prototype.registerOnValidatorChange = function (fn) { this._onChange = fn; };
+	        /**
+	         * @return {?}
+	         */
+	        MinLengthValidator.prototype._createValidator = function () {
+	            this._validator = Validators.minLength(parseInt(this.minlength, 10));
+	        };
+	        MinLengthValidator.decorators = [
+	            { type: _angular_core.Directive, args: [{
+	                        selector: '[minlength][formControlName],[minlength][formControl],[minlength][ngModel]',
+	                        providers: [MIN_LENGTH_VALIDATOR],
+	                        host: { '[attr.minlength]': 'minlength ? minlength : null' }
+	                    },] },
+	        ];
+	        /** @nocollapse */
+	        MinLengthValidator.ctorParameters = function () { return []; };
+	        MinLengthValidator.propDecorators = {
+	            'minlength': [{ type: _angular_core.Input },],
+	        };
+	        return MinLengthValidator;
+	    }());
+	    /**
+	     * Provider which adds {@link MaxLengthValidator} to {@link NG_VALIDATORS}.
+	     *
+	     * ## Example:
+	     *
+	     * {@example common/forms/ts/validators/validators.ts region='max'}
+	     */
+	    var /** @type {?} */ MAX_LENGTH_VALIDATOR = {
+	        provide: NG_VALIDATORS,
+	        useExisting: _angular_core.forwardRef(function () { return MaxLengthValidator; }),
+	        multi: true
+	    };
+	    /**
+	     *  A directive which installs the {@link MaxLengthValidator} for any `formControlName,
+	      * `formControl`,
+	      * or control with `ngModel` that also has a `maxlength` attribute.
+	      * *
+	     */
+	    var MaxLengthValidator = (function () {
+	        function MaxLengthValidator() {
+	        }
+	        /**
+	         * @param {?} changes
+	         * @return {?}
+	         */
+	        MaxLengthValidator.prototype.ngOnChanges = function (changes) {
+	            if ('maxlength' in changes) {
+	                this._createValidator();
+	                if (this._onChange)
+	                    this._onChange();
+	            }
+	        };
+	        /**
+	         * @param {?} c
+	         * @return {?}
+	         */
+	        MaxLengthValidator.prototype.validate = function (c) {
+	            return this.maxlength != null ? this._validator(c) : null;
+	        };
+	        /**
+	         * @param {?} fn
+	         * @return {?}
+	         */
+	        MaxLengthValidator.prototype.registerOnValidatorChange = function (fn) { this._onChange = fn; };
+	        /**
+	         * @return {?}
+	         */
+	        MaxLengthValidator.prototype._createValidator = function () {
+	            this._validator = Validators.maxLength(parseInt(this.maxlength, 10));
+	        };
+	        MaxLengthValidator.decorators = [
+	            { type: _angular_core.Directive, args: [{
+	                        selector: '[maxlength][formControlName],[maxlength][formControl],[maxlength][ngModel]',
+	                        providers: [MAX_LENGTH_VALIDATOR],
+	                        host: { '[attr.maxlength]': 'maxlength ? maxlength : null' }
+	                    },] },
+	        ];
+	        /** @nocollapse */
+	        MaxLengthValidator.ctorParameters = function () { return []; };
+	        MaxLengthValidator.propDecorators = {
+	            'maxlength': [{ type: _angular_core.Input },],
+	        };
+	        return MaxLengthValidator;
+	    }());
+	    var /** @type {?} */ PATTERN_VALIDATOR = {
+	        provide: NG_VALIDATORS,
+	        useExisting: _angular_core.forwardRef(function () { return PatternValidator; }),
+	        multi: true
+	    };
+	    /**
+	     *  A Directive that adds the `pattern` validator to any controls marked with the
+	      * `pattern` attribute, via the {@link NG_VALIDATORS} binding. Uses attribute value
+	      * as the regex to validate Control value against.  Follows pattern attribute
+	      * semantics; i.e. regex must match entire Control value.
+	      * *
+	      * ### Example
+	      * *
+	      * ```
+	      * <input [name]="fullName" pattern="[a-zA-Z ]*" ngModel>
+	      * ```
+	     */
+	    var PatternValidator = (function () {
+	        function PatternValidator() {
+	        }
+	        /**
+	         * @param {?} changes
+	         * @return {?}
+	         */
+	        PatternValidator.prototype.ngOnChanges = function (changes) {
+	            if ('pattern' in changes) {
+	                this._createValidator();
+	                if (this._onChange)
+	                    this._onChange();
+	            }
+	        };
+	        /**
+	         * @param {?} c
+	         * @return {?}
+	         */
+	        PatternValidator.prototype.validate = function (c) { return this._validator(c); };
+	        /**
+	         * @param {?} fn
+	         * @return {?}
+	         */
+	        PatternValidator.prototype.registerOnValidatorChange = function (fn) { this._onChange = fn; };
+	        /**
+	         * @return {?}
+	         */
+	        PatternValidator.prototype._createValidator = function () { this._validator = Validators.pattern(this.pattern); };
+	        PatternValidator.decorators = [
+	            { type: _angular_core.Directive, args: [{
+	                        selector: '[pattern][formControlName],[pattern][formControl],[pattern][ngModel]',
+	                        providers: [PATTERN_VALIDATOR],
+	                        host: { '[attr.pattern]': 'pattern ? pattern : null' }
+	                    },] },
+	        ];
+	        /** @nocollapse */
+	        PatternValidator.ctorParameters = function () { return []; };
+	        PatternValidator.propDecorators = {
+	            'pattern': [{ type: _angular_core.Input },],
+	        };
+	        return PatternValidator;
+	    }());
+
+	    /**
+	     *  *
+	      * It is essentially syntactic sugar that shortens the `new FormGroup()`,
+	      * `new FormControl()`, and `new FormArray()` boilerplate that can build up in larger
+	      * forms.
+	      * *
+	      * *
+	      * To use, inject `FormBuilder` into your component class. You can then call its methods
+	      * directly.
+	      * *
+	      * {@example forms/ts/formBuilder/form_builder_example.ts region='Component'}
+	      * *
+	      * * **npm package**: `@angular/forms`
+	      * *
+	      * * **NgModule**: {@link ReactiveFormsModule}
+	      * *
+	     */
+	    var FormBuilder = (function () {
+	        function FormBuilder() {
+	        }
+	        /**
+	         *  Construct a new {@link FormGroup} with the given map of configuration.
+	          * Valid keys for the `extra` parameter map are `validator` and `asyncValidator`.
+	          * *
+	          * See the {@link FormGroup} constructor for more details.
+	         * @param {?} controlsConfig
+	         * @param {?=} extra
+	         * @return {?}
+	         */
+	        FormBuilder.prototype.group = function (controlsConfig, extra) {
+	            if (extra === void 0) { extra = null; }
+	            var /** @type {?} */ controls = this._reduceControls(controlsConfig);
+	            var /** @type {?} */ validator = isPresent(extra) ? extra['validator'] : null;
+	            var /** @type {?} */ asyncValidator = isPresent(extra) ? extra['asyncValidator'] : null;
+	            return new FormGroup(controls, validator, asyncValidator);
+	        };
+	        /**
+	         *  Construct a new {@link FormControl} with the given `formState`,`validator`, and
+	          * `asyncValidator`.
+	          * *
+	          * `formState` can either be a standalone value for the form control or an object
+	          * that contains both a value and a disabled status.
+	          * *
+	         * @param {?} formState
+	         * @param {?=} validator
+	         * @param {?=} asyncValidator
+	         * @return {?}
+	         */
+	        FormBuilder.prototype.control = function (formState, validator, asyncValidator) {
+	            if (validator === void 0) { validator = null; }
+	            if (asyncValidator === void 0) { asyncValidator = null; }
+	            return new FormControl(formState, validator, asyncValidator);
+	        };
+	        /**
+	         *  Construct a {@link FormArray} from the given `controlsConfig` array of
+	          * configuration, with the given optional `validator` and `asyncValidator`.
+	         * @param {?} controlsConfig
+	         * @param {?=} validator
+	         * @param {?=} asyncValidator
+	         * @return {?}
+	         */
+	        FormBuilder.prototype.array = function (controlsConfig, validator, asyncValidator) {
+	            var _this = this;
+	            if (validator === void 0) { validator = null; }
+	            if (asyncValidator === void 0) { asyncValidator = null; }
+	            var /** @type {?} */ controls = controlsConfig.map(function (c) { return _this._createControl(c); });
+	            return new FormArray(controls, validator, asyncValidator);
+	        };
+	        /**
+	         * @param {?} controlsConfig
+	         * @return {?}
+	         */
+	        FormBuilder.prototype._reduceControls = function (controlsConfig) {
+	            var _this = this;
+	            var /** @type {?} */ controls = {};
+	            Object.keys(controlsConfig).forEach(function (controlName) {
+	                controls[controlName] = _this._createControl(controlsConfig[controlName]);
+	            });
+	            return controls;
+	        };
+	        /**
+	         * @param {?} controlConfig
+	         * @return {?}
+	         */
+	        FormBuilder.prototype._createControl = function (controlConfig) {
+	            if (controlConfig instanceof FormControl || controlConfig instanceof FormGroup ||
+	                controlConfig instanceof FormArray) {
+	                return controlConfig;
+	            }
+	            else if (Array.isArray(controlConfig)) {
+	                var /** @type {?} */ value = controlConfig[0];
+	                var /** @type {?} */ validator = controlConfig.length > 1 ? controlConfig[1] : null;
+	                var /** @type {?} */ asyncValidator = controlConfig.length > 2 ? controlConfig[2] : null;
+	                return this.control(value, validator, asyncValidator);
+	            }
+	            else {
+	                return this.control(controlConfig);
+	            }
+	        };
+	        FormBuilder.decorators = [
+	            { type: _angular_core.Injectable },
+	        ];
+	        /** @nocollapse */
+	        FormBuilder.ctorParameters = function () { return []; };
+	        return FormBuilder;
+	    }());
+
+	    /**
+	     * @stable
+	     */
+	    var /** @type {?} */ VERSION = new _angular_core.Version('2.4.2');
+
+	    var /** @type {?} */ SHARED_FORM_DIRECTIVES = [
+	        NgSelectOption,
+	        NgSelectMultipleOption,
+	        DefaultValueAccessor,
+	        NumberValueAccessor,
+	        RangeValueAccessor,
+	        CheckboxControlValueAccessor,
+	        SelectControlValueAccessor,
+	        SelectMultipleControlValueAccessor,
+	        RadioControlValueAccessor,
+	        NgControlStatus,
+	        NgControlStatusGroup,
+	        RequiredValidator,
+	        MinLengthValidator,
+	        MaxLengthValidator,
+	        PatternValidator,
+	        CheckboxRequiredValidator,
+	    ];
+	    var /** @type {?} */ TEMPLATE_DRIVEN_DIRECTIVES = [NgModel, NgModelGroup, NgForm];
+	    var /** @type {?} */ REACTIVE_DRIVEN_DIRECTIVES = [FormControlDirective, FormGroupDirective, FormControlName, FormGroupName, FormArrayName];
+	    /**
+	     *  Internal module used for sharing directives between FormsModule and ReactiveFormsModule
+	     */
+	    var InternalFormsSharedModule = (function () {
+	        function InternalFormsSharedModule() {
+	        }
+	        InternalFormsSharedModule.decorators = [
+	            { type: _angular_core.NgModule, args: [{
+	                        declarations: SHARED_FORM_DIRECTIVES,
+	                        exports: SHARED_FORM_DIRECTIVES,
+	                    },] },
+	        ];
+	        /** @nocollapse */
+	        InternalFormsSharedModule.ctorParameters = function () { return []; };
+	        return InternalFormsSharedModule;
+	    }());
+
+	    /**
+	     *  The ng module for forms.
+	     */
+	    var FormsModule = (function () {
+	        function FormsModule() {
+	        }
+	        FormsModule.decorators = [
+	            { type: _angular_core.NgModule, args: [{
+	                        declarations: TEMPLATE_DRIVEN_DIRECTIVES,
+	                        providers: [RadioControlRegistry],
+	                        exports: [InternalFormsSharedModule, TEMPLATE_DRIVEN_DIRECTIVES]
+	                    },] },
+	        ];
+	        /** @nocollapse */
+	        FormsModule.ctorParameters = function () { return []; };
+	        return FormsModule;
+	    }());
+	    /**
+	     *  The ng module for reactive forms.
+	     */
+	    var ReactiveFormsModule = (function () {
+	        function ReactiveFormsModule() {
+	        }
+	        ReactiveFormsModule.decorators = [
+	            { type: _angular_core.NgModule, args: [{
+	                        declarations: [REACTIVE_DRIVEN_DIRECTIVES],
+	                        providers: [FormBuilder, RadioControlRegistry],
+	                        exports: [InternalFormsSharedModule, REACTIVE_DRIVEN_DIRECTIVES]
+	                    },] },
+	        ];
+	        /** @nocollapse */
+	        ReactiveFormsModule.ctorParameters = function () { return []; };
+	        return ReactiveFormsModule;
+	    }());
+
+	    exports.AbstractControlDirective = AbstractControlDirective;
+	    exports.AbstractFormGroupDirective = AbstractFormGroupDirective;
+	    exports.CheckboxControlValueAccessor = CheckboxControlValueAccessor;
+	    exports.ControlContainer = ControlContainer;
+	    exports.NG_VALUE_ACCESSOR = NG_VALUE_ACCESSOR;
+	    exports.DefaultValueAccessor = DefaultValueAccessor;
+	    exports.NgControl = NgControl;
+	    exports.NgControlStatus = NgControlStatus;
+	    exports.NgControlStatusGroup = NgControlStatusGroup;
+	    exports.NgForm = NgForm;
+	    exports.NgModel = NgModel;
+	    exports.NgModelGroup = NgModelGroup;
+	    exports.RadioControlValueAccessor = RadioControlValueAccessor;
+	    exports.FormControlDirective = FormControlDirective;
+	    exports.FormControlName = FormControlName;
+	    exports.FormGroupDirective = FormGroupDirective;
+	    exports.FormArrayName = FormArrayName;
+	    exports.FormGroupName = FormGroupName;
+	    exports.NgSelectOption = NgSelectOption;
+	    exports.SelectControlValueAccessor = SelectControlValueAccessor;
+	    exports.SelectMultipleControlValueAccessor = SelectMultipleControlValueAccessor;
+	    exports.CheckboxRequiredValidator = CheckboxRequiredValidator;
+	    exports.MaxLengthValidator = MaxLengthValidator;
+	    exports.MinLengthValidator = MinLengthValidator;
+	    exports.PatternValidator = PatternValidator;
+	    exports.RequiredValidator = RequiredValidator;
+	    exports.FormBuilder = FormBuilder;
+	    exports.AbstractControl = AbstractControl;
+	    exports.FormArray = FormArray;
+	    exports.FormControl = FormControl;
+	    exports.FormGroup = FormGroup;
+	    exports.NG_ASYNC_VALIDATORS = NG_ASYNC_VALIDATORS;
+	    exports.NG_VALIDATORS = NG_VALIDATORS;
+	    exports.Validators = Validators;
+	    exports.VERSION = VERSION;
+	    exports.FormsModule = FormsModule;
+	    exports.ReactiveFormsModule = ReactiveFormsModule;
+
+	}));
+
+/***/ },
+
+/***/ 59:
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Created by texpe on 12/01/2017.
+	 */
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(3);
+	var router_1 = __webpack_require__(29);
+	var authProvider_1 = __webpack_require__(60);
+	var AppComponent = (function () {
+	    function AppComponent(router, authProvider, zone) {
+	        var _this = this;
+	        this.router = router;
+	        this.authProvider = authProvider;
+	        this.zone = zone;
+	        this.isLoggedIn = false;
+	        this.authProvider.isLoggedIn.subscribe(function (value) {
+	            _this.router.navigate([value ? '/dashboard' : '/login']);
+	            _this.zone.run(function () { return _this.isLoggedIn = value; });
+	        });
+	        this.router.events.forEach(function (e) {
+	            if (e instanceof router_1.NavigationStart) {
+	                if (!_this.authProvider.isLoggedIn && e.url !== '/login' && e.url !== '/register')
+	                    _this.router.navigate(['/login']);
+	            }
+	        });
+	    }
+	    return AppComponent;
+	}());
+	AppComponent = __decorate([
+	    core_1.Component({
+	        selector: 'app',
+	        template: __webpack_require__(355),
+	        styles: [__webpack_require__(356)],
+	        encapsulation: core_1.ViewEncapsulation.None
+	    }),
+	    __metadata("design:paramtypes", [router_1.Router, authProvider_1.AuthProvider, core_1.NgZone])
+	], AppComponent);
+	exports.AppComponent = AppComponent;
+
+
+/***/ },
+
+/***/ 60:
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Created by texpe on 13/01/2017.
+	 */
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(3);
+	var rxjs_1 = __webpack_require__(61);
+	var http_1 = __webpack_require__(28);
+	var ipc = electron.ipcRenderer;
+	var AuthProvider = (function () {
+	    function AuthProvider(http) {
+	        this.http = http;
+	        this._api = (core_1.isDevMode() ? 'http://localhost:8080/api' : 'https://uchatapi-frosenos.rhcloud.com/api');
+	        this._token = null;
+	        this._user = {};
+	        this.isLoggedIn = new rxjs_1.Subject();
+	        this.User = new rxjs_1.Subject();
+	        this._initialLogin = false;
+	        this.getToken();
+	    }
+	    AuthProvider.prototype.login = function (data) {
+	        var _this = this;
+	        data.type = 'login';
+	        return new Promise(function (resolve, reject) {
+	            _this.http.post(_this._api + '/login', data).map(function (res) { return res.json(); }).subscribe(function (data) {
+	                if (data.success) {
+	                    _this.setToken(data.user.Token, true);
+	                    _this.setUser(data.user);
+	                }
+	                resolve(data.success || false);
+	            }, function (err) {
+	                console.error(err);
+	                reject(false);
+	            });
+	        });
+	    };
+	    AuthProvider.prototype.register = function (data) {
+	        var _this = this;
+	        data.type = 'register';
+	        return new Promise(function (resolve, reject) {
+	            _this.http.post(_this._api + '/login', data).map(function (res) { return res.json(); }).subscribe(function (data) {
+	                if (data.success)
+	                    _this.setToken(data.user.Token, true);
+	                resolve(data.success || false);
+	            }, function (err) {
+	                console.error(err);
+	                reject(false);
+	            });
+	        });
+	    };
+	    AuthProvider.prototype.getToken = function () {
+	        var _this = this;
+	        ipc.once('get-token', function (e, data) {
+	            if (data)
+	                _this.validateToken(data);
+	            else
+	                _this.setToken(null);
+	        });
+	        ipc.send('get-token');
+	    };
+	    /**
+	     * Makes sure the stored token is valid
+	     * If it is, the response will contain the user object, otherwise null
+	     * This will also register the user as "online" for the bot manager on the server
+	     * @param e
+	     */
+	    AuthProvider.prototype.validateToken = function (e) {
+	        var _this = this;
+	        this.http.post(this._api + '/token', { Token: e }).map(function (res) { return res.json(); })
+	            .subscribe(function (data) {
+	            if (data.success)
+	                _this.setUser(data.user);
+	        }, function (err) { return console.error(err); });
+	    };
+	    AuthProvider.prototype.setUser = function (user) {
+	        this._user = user;
+	        this.User.next(this._user);
+	        this.setToken(this._user.Token, true);
+	    };
+	    AuthProvider.prototype.setToken = function (e, ipcEmit) {
+	        var _this = this;
+	        if (ipcEmit === void 0) { ipcEmit = false; }
+	        if (ipcEmit) {
+	            ipc.once('set-token', function (e, data) { return _this.setToken(data.token || data); });
+	            ipc.send('set-token', { token: e });
+	            return;
+	        }
+	        this._token = e;
+	        this.isLoggedIn.next(this._token ? true : false);
+	    };
+	    Object.defineProperty(AuthProvider.prototype, "user", {
+	        get: function () {
+	            return this._user;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(AuthProvider.prototype, "token", {
+	        get: function () {
+	            return this._token;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(AuthProvider.prototype, "api", {
+	        get: function () {
+	            return this._api;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    return AuthProvider;
+	}());
+	AuthProvider = __decorate([
+	    core_1.Injectable(),
+	    __metadata("design:paramtypes", [http_1.Http])
+	], AuthProvider);
+	exports.AuthProvider = AuthProvider;
+
+
+/***/ },
+
+/***/ 355:
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"top-bar\" style=\"-webkit-app-region: drag\">\r\n\t<div class=\"brand\">\r\n\t\tUChat\r\n\t</div>\r\n</div>\r\n\r\n<div class=\"content\">\r\n\t<nav class=\"sidebar\" *ngIf=\"isLoggedIn\">\r\n\t\t<a class=\"nav-link\" routerLink=\"/dashboard\" routerLinkActive=\"active\">Dashboard</a>\r\n\t\t<a class=\"nav-link\" routerLink=\"/commands\" routerLinkActive=\"active\">Commands</a>\r\n\t\t<a class=\"nav-link\" routerLink=\"/chat\" routerLinkActive=\"active\">Chat</a>\r\n\t\t<a class=\"nav-link\" routerLink=\"/settings\" routerLinkActive=\"active\">Settings</a>\r\n\t</nav>\r\n\r\n\t<div class=\"container\">\r\n\t\t<router-outlet></router-outlet>\r\n\t</div>\r\n</div>"
+
+/***/ },
+
+/***/ 356:
+/***/ function(module, exports) {
+
+	module.exports = "::-webkit-scrollbar {\n  width: 10px;\n  height: 10px; }\n\n::-webkit-scrollbar-track {\n  background-color: rgba(204, 204, 204, 0.1); }\n\n::-webkit-scrollbar-thumb {\n  background-color: rgba(204, 204, 204, 0.1);\n  box-shadow: inset 0 0 1px rgba(204, 204, 204, 0.2); }\n\n::-webkit-scrollbar-thumb:hover {\n  background-color: rgba(204, 204, 204, 0.2); }\n\n::-webkit-scrollbar-thumb:active {\n  background-color: rgba(204, 204, 204, 0.3); }\n\n.scrollbar-inverse::-webkit-scrollbar-track {\n  background-color: rgba(51, 51, 51, 0.1); }\n\n.scrollbar-inverse::-webkit-scrollbar-thumb {\n  background-color: rgba(51, 51, 51, 0.1);\n  box-shadow: inset 0 0 1px rgba(51, 51, 51, 0.2); }\n\n.scrollbar-inverse::-webkit-scrollbar-thumb:hover {\n  background-color: rgba(51, 51, 51, 0.2); }\n\n.scrollbar-inverse::-webkit-scrollbar-thumb:active {\n  background-color: rgba(51, 51, 51, 0.3); }\n\nbody {\n  background-color: #333;\n  color: #FEFEFE; }\n\n:host {\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  overflow: hidden; }\n\n.card {\n  background-color: #404040;\n  border-radius: 0; }\n  .card .card-header {\n    background-color: #262626;\n    border-radius: 0; }\n\n.btn {\n  cursor: pointer; }\n\napp {\n  display: flex;\n  flex-direction: column;\n  height: 100%; }\n  app .top-bar {\n    flex: 1 0 30px;\n    top: 0;\n    left: 0;\n    width: 100%;\n    background-color: #404040; }\n    app .top-bar .brand {\n      line-height: 30px;\n      padding-left: 0.5rem; }\n  app .content {\n    flex: 1 1 100%;\n    display: flex; }\n    app .content .sidebar {\n      flex: 1 0 250px;\n      background-color: #404040;\n      border-top: solid 1px #333;\n      transition: flex-basis ease-in-out 0.5s; }\n      @media (max-width: 768px) {\n        app .content .sidebar {\n          flex-basis: 150px; } }\n      app .content .sidebar .nav-link {\n        padding-left: 1rem;\n        color: #FEFEFE;\n        transition: background-color ease-in-out 0.1s; }\n        app .content .sidebar .nav-link:hover {\n          background-color: rgba(255, 255, 255, 0.05); }\n        app .content .sidebar .nav-link:active {\n          background-color: rgba(255, 255, 255, 0.1); }\n        app .content .sidebar .nav-link.active {\n          background-color: rgba(255, 255, 255, 0.05); }\n          app .content .sidebar .nav-link.active:hover {\n            background-color: rgba(255, 255, 255, 0.1); }\n          app .content .sidebar .nav-link.active:active {\n            background-color: rgba(255, 255, 255, 0.02); }\n    app .content .container {\n      flex: 1 1 100%;\n      overflow-y: auto; }\n  app .form-group:last-child {\n    margin-bottom: 0; }\n  app .spinner {\n    margin-right: 5px;\n    animation: spin 1s linear infinite; }\n    app .spinner#searchSpinner {\n      position: absolute;\n      z-index: 1;\n      right: 1rem;\n      top: 0;\n      padding: 0.5rem 0.75rem;\n      line-height: 1.25rem;\n      color: #999; }\n\n@keyframes spin {\n  0% {\n    transform: rotate(0deg); }\n  100% {\n    transform: rotate(360deg); } }\n\n.chat-hyperlink {\n  cursor: pointer;\n  color: deepskyblue;\n  display: inline-block; }\n  .chat-hyperlink:hover {\n    text-decoration: underline; }\n\ncode {\n  border-radius: 0;\n  background-color: #333;\n  color: #CCC;\n  border: solid 1px #444; }\n"
+
+/***/ },
+
+/***/ 357:
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function($) {/**
+	 * Created by texpe on 12/01/2017.
+	 */
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(3);
+	var http_1 = __webpack_require__(28);
+	var authProvider_1 = __webpack_require__(60);
+	var settingsProvider_1 = __webpack_require__(359);
+	var SettingsPage = (function () {
+	    function SettingsPage(http, authProvider, settingsProvider, ngZone) {
+	        var _this = this;
+	        this.http = http;
+	        this.authProvider = authProvider;
+	        this.settingsProvider = settingsProvider;
+	        this.ngZone = ngZone;
+	        this.user = {};
+	        this.settings = {};
+	        this.saving = false;
+	        this.user = this.authProvider.user;
+	        this.settings = this.settingsProvider.settings;
+	        this.authProvider.User.subscribe(function (value) { return _this.user = value; });
+	        this.settingsProvider.Settings.subscribe(function (value) {
+	            _this.ngZone.run(function () { return _this.settings = value; });
+	        });
+	    }
+	    SettingsPage.prototype.ngAfterViewInit = function () {
+	        $('.dropdown-toggle').dropdown();
+	    };
+	    SettingsPage.prototype.saveSettings = function () {
+	        var _this = this;
+	        this.ngZone.run(function () { return _this.saving = true; });
+	        this.settingsProvider.save(this.settings)
+	            .then(function () { return _this.ngZone.run(function () { return _this.saving = false; }); })
+	            .catch(function () { return _this.ngZone.run(function () { return _this.saving = false; }); });
+	    };
+	    SettingsPage.prototype.setColor = function (objName, property, e) {
+	        var color = this.settings[objName].replace('rgba(', '').replace(')', '').split(',');
+	        var elem = e.target;
+	        switch (property) {
+	            case 'r':
+	                color[0] = elem.value;
+	                break;
+	            case 'g':
+	                color[1] = elem.value;
+	                break;
+	            case 'b':
+	                color[2] = elem.value;
+	                break;
+	            case 'a':
+	                color[3] = elem.value;
+	                break;
+	        }
+	        this.settings[objName] = 'rgba(' + color.join(',') + ')';
+	    };
+	    SettingsPage.prototype.getColor = function (objName, property) {
+	        if (!this.settings.hasOwnProperty(objName))
+	            return '0';
+	        var color = this.settings[objName].substr(5, this.settings[objName].length - 6).split(',');
+	        switch (property) {
+	            case 'r':
+	                return this.clampNumber(color[0], 0, 255);
+	            case 'g':
+	                return this.clampNumber(color[1], 0, 255);
+	            case 'b':
+	                return this.clampNumber(color[2], 0, 255);
+	            case 'a':
+	                return this.clampNumber(color[3], 0, 1, true);
+	        }
+	        return '0';
+	    };
+	    SettingsPage.prototype.clampNumber = function (e, min, max, isFloat) {
+	        if (isFloat === void 0) { isFloat = false; }
+	        if (typeof e === 'string')
+	            e = isFloat ? parseFloat(e) : parseInt(e);
+	        return Math.max(min, Math.min(max, e));
+	    };
+	    return SettingsPage;
+	}());
+	SettingsPage = __decorate([
+	    core_1.Component({
+	        selector: 'page-settings',
+	        template: __webpack_require__(360),
+	        styles: [__webpack_require__(361)]
+	    }),
+	    __metadata("design:paramtypes", [http_1.Http, authProvider_1.AuthProvider, settingsProvider_1.SettingsProvider, core_1.NgZone])
+	], SettingsPage);
+	exports.SettingsPage = SettingsPage;
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(358)))
+
+/***/ },
+
+/***/ 359:
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Created by texpe on 16/01/2017.
+	 */
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(3);
+	var authProvider_1 = __webpack_require__(60);
+	var http_1 = __webpack_require__(28);
+	var rxjs_1 = __webpack_require__(61);
+	var SettingsProvider = (function () {
+	    function SettingsProvider(http, authProvider) {
+	        var _this = this;
+	        this.http = http;
+	        this.authProvider = authProvider;
+	        this._settings = {};
+	        this._token = null;
+	        this.Settings = new rxjs_1.Subject();
+	        this._token = this.authProvider.token;
+	        this.authProvider.isLoggedIn.subscribe(function (value) {
+	            _this._token = _this.authProvider.token;
+	            _this.updateSettings();
+	        });
+	        this.updateSettings();
+	    }
+	    SettingsProvider.prototype.updateSettings = function () {
+	        var _this = this;
+	        this.http.get(this.authProvider.api + '/settings?token=' + this.authProvider.token)
+	            .map(function (res) { return res.json(); })
+	            .subscribe(function (data) {
+	            if (data.success)
+	                _this._settings = data.settings;
+	            _this.Settings.next(_this._settings);
+	        }, function (err) { return console.error(err); });
+	    };
+	    SettingsProvider.prototype.save = function (data) {
+	        var _this = this;
+	        return new Promise(function (resolve, reject) {
+	            _this.http.put(_this.authProvider.api + '/settings?token=' + _this.authProvider.token, data)
+	                .map(function (res) { return res.json(); })
+	                .subscribe(function (data) {
+	                if (data.success)
+	                    _this._settings = data.settings;
+	                _this.Settings.next(_this._settings);
+	                resolve(true);
+	            }, function (err) {
+	                console.error(err);
+	                reject(false);
+	            });
+	        });
+	    };
+	    Object.defineProperty(SettingsProvider.prototype, "settings", {
+	        get: function () {
+	            return this._settings;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    return SettingsProvider;
+	}());
+	SettingsProvider = __decorate([
+	    core_1.Injectable(),
+	    __metadata("design:paramtypes", [http_1.Http, authProvider_1.AuthProvider])
+	], SettingsProvider);
+	exports.SettingsProvider = SettingsProvider;
+
+
+/***/ },
+
+/***/ 360:
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"card\">\r\n\t<div class=\"card-header\">\r\n\t\t<h4>Services</h4>\r\n\t</div>\r\n\r\n\t<div class=\"card-block\">\r\n\t\t<div class=\"row\">\r\n\t\t\t<div class=\"col-xs-6 col-sm-6 col-md-3 col-lg-3\">Beam</div>\r\n\t\t\t<div class=\"col-xs-6 col-sm-6 col-md-3 col-lg-3\">\r\n\t\t\t\t<span class=\"platform-status\"\r\n\t\t\t\t\t  [ngClass]=\"!user.Services ? '' : user.Services.Beam.Connected ? 'connected' : ''\"></span>\r\n\t\t\t</div>\r\n\r\n\t\t\t<div class=\"col-xs-6 col-sm-6 col-md-3 col-lg-3\">LiveEdu</div>\r\n\t\t\t<div class=\"col-xs-6 col-sm-6 col-md-3 col-lg-3\">\r\n\t\t\t\t<span class=\"platform-status\"\r\n\t\t\t\t\t  [ngClass]=\"!user.Services ? '' : user.Services.Liveedu.Connected ? 'connected' : ''\"></span>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\r\n\t\t<div class=\"row\">\r\n\t\t\t<div class=\"col-xs-6 col-sm-6 col-md-3 col-lg-3\">Twitch</div>\r\n\t\t\t<div class=\"col-xs-6 col-sm-6 col-md-3 col-lg-3\">\r\n\t\t\t\t<span class=\"platform-status\"\r\n\t\t\t\t\t  [ngClass]=\"!user.Services ? '' : user.Services.Twitch.Connected ? 'connected' : ''\"></span>\r\n\t\t\t</div>\r\n\r\n\t\t\t<div class=\"col-xs-6 col-sm-6 col-md-3 col-lg-3\">Youtube</div>\r\n\t\t\t<div class=\"col-xs-6 col-sm-6 col-md-3 col-lg-3\">\r\n\t\t\t\t<span class=\"platform-status\"\r\n\t\t\t\t\t  [ngClass]=\"!user.Services ? '' : (user.Services.Youtube.Connected ? 'connected' : '')\"></span>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n\r\n<div class=\"card\">\r\n\t<div class=\"card-header\">\r\n\t\t<h4 class=\"float-left\">Settings</h4>\r\n\t\t<button type=\"button\" class=\"btn btn-success btn-sm float-right\" (click)=\"saveSettings()\">\r\n\t\t\t<span class=\"fa fa-spinner spinner\" *ngIf=\"saving\"></span>Save - {{ saving }}\r\n\t\t</button>\r\n\t</div>\r\n\r\n\t<div class=\"card-block row\">\r\n\t\t<div class=\"col-md-12 row form-group color-group\">\r\n\t\t\t<h5 class=\"col-md-12\">Chroma Key</h5>\r\n\r\n\t\t\t<div class=\"col-md-12\">\r\n\t\t\t\t<div class=\"dropdown\">\r\n\t\t\t\t\t<a class=\"btn btn-secondary dropdown-toggle\" href=\"javascript:void(0)\" id=\"chromaDropdown\"\r\n\t\t\t\t\t   data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n\t\t\t\t\t\t{{ settings.ChromaKey }}\r\n\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t<div class=\"dropdown-menu\" aria-labelledby=\"chromaDropdown\">\r\n\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"javascript:void(0)\"\r\n\t\t\t\t\t\t   (click)=\"settings.ChromaKey='None'\">None</a>\r\n\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"javascript:void(0)\"\r\n\t\t\t\t\t\t   (click)=\"settings.ChromaKey='Green'\">Green</a>\r\n\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"javascript:void(0)\" (click)=\"settings.ChromaKey='Blue'\">Blue</a>\r\n\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"javascript:void(0)\" (click)=\"settings.ChromaKey='Magenta'\">Magenta</a>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\r\n\t\t<div class=\"col-md-12 row form-group color-group\">\r\n\t\t\t<h5 class=\"col-md-12\">Message Background Color</h5>\r\n\r\n\t\t\t<div class=\"col-md-12 input-group\">\r\n\t\t\t\t<div class=\"input-placeholder\">\r\n\t\t\t\t\t<span class=\"placeholder\">Red</span>\r\n\t\t\t\t\t<input max=\"255\" min=\"0\" type=\"number\" class=\"form-control\" [value]=\"getColor('MessageBack', 'r')\"\r\n\t\t\t\t\t\t   (input)=\"setColor('MessageBack', 'r', $event)\">\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"input-placeholder\">\r\n\t\t\t\t\t<span class=\"placeholder\">Green</span>\r\n\t\t\t\t\t<input max=\"255\" min=\"0\" type=\"number\" class=\"form-control\" [value]=\"getColor('MessageBack', 'g')\"\r\n\t\t\t\t\t\t   (input)=\"setColor('MessageBack', 'g', $event)\">\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"input-placeholder\">\r\n\t\t\t\t\t<span class=\"placeholder\">Blue</span>\r\n\t\t\t\t\t<input max=\"255\" min=\"0\" type=\"number\" class=\"form-control\" [value]=\"getColor('MessageBack', 'b')\"\r\n\t\t\t\t\t\t   (input)=\"setColor('MessageBack', 'b', $event)\">\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"input-placeholder\">\r\n\t\t\t\t\t<span class=\"placeholder\">Alpha</span>\r\n\t\t\t\t\t<input max=\"1\" min=\"0\" step=\"0.1\" type=\"number\" class=\"form-control\"\r\n\t\t\t\t\t\t   [value]=\"getColor('MessageBack', 'a')\"\r\n\t\t\t\t\t\t   (input)=\"setColor('MessageBack', 'a', $event)\">\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"input-placeholder color-preview\" [ngStyle]=\"{ 'background-color': settings.MessageBack }\">\r\n\t\t\t\t\tCOLOR PREVIEW\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\r\n\t\t<div class=\"col-md-12 row form-group color-group\">\r\n\t\t\t<h5 class=\"col-md-12\">Message Mention Background Color</h5>\r\n\r\n\t\t\t<div class=\"col-md-12 input-group\">\r\n\t\t\t\t<div class=\"input-placeholder\">\r\n\t\t\t\t\t<span class=\"placeholder\">Red</span>\r\n\t\t\t\t\t<input max=\"255\" min=\"0\" type=\"number\" class=\"form-control\"\r\n\t\t\t\t\t\t   [value]=\"getColor('MessageMentionBack', 'r')\"\r\n\t\t\t\t\t\t   (input)=\"setColor('MessageMentionBack', 'r', $event)\">\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"input-placeholder\">\r\n\t\t\t\t\t<span class=\"placeholder\">Green</span>\r\n\t\t\t\t\t<input max=\"255\" min=\"0\" type=\"number\" class=\"form-control\"\r\n\t\t\t\t\t\t   [value]=\"getColor('MessageMentionBack', 'g')\"\r\n\t\t\t\t\t\t   (input)=\"setColor('MessageMentionBack', 'g', $event)\">\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"input-placeholder\">\r\n\t\t\t\t\t<span class=\"placeholder\">Blue</span>\r\n\t\t\t\t\t<input max=\"255\" min=\"0\" type=\"number\" class=\"form-control\"\r\n\t\t\t\t\t\t   [value]=\"getColor('MessageMentionBack', 'b')\"\r\n\t\t\t\t\t\t   (input)=\"setColor('MessageMentionBack', 'b', $event)\">\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"input-placeholder\">\r\n\t\t\t\t\t<span class=\"placeholder\">Alpha</span>\r\n\t\t\t\t\t<input max=\"1\" min=\"0\" step=\"0.1\" type=\"number\" class=\"form-control\"\r\n\t\t\t\t\t\t   [value]=\"getColor('MessageMentionBack', 'a')\"\r\n\t\t\t\t\t\t   (input)=\"setColor('MessageMentionBack', 'a', $event)\">\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"input-placeholder color-preview\"\r\n\t\t\t\t\t [ngStyle]=\"{ 'background-color': settings.MessageMentionBack }\">\r\n\t\t\t\t\tCOLOR PREVIEW\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>"
+
+/***/ },
+
+/***/ 361:
+/***/ function(module, exports) {
+
+	module.exports = ":host {\n  overflow-y: auto; }\n  :host .card {\n    margin: 15px 0; }\n    :host .card .card-block .platform-status {\n      color: red; }\n      :host .card .card-block .platform-status:after {\n        content: 'Disconnected'; }\n      :host .card .card-block .platform-status.connected {\n        color: limegreen; }\n        :host .card .card-block .platform-status.connected:after {\n          content: 'Connected'; }\n  :host .color-group {\n    margin-left: 0;\n    margin-right: 0;\n    padding: 0; }\n    :host .color-group .input-group {\n      display: flex;\n      flex-wrap: wrap;\n      max-width: 100%;\n      flex: 100%;\n      padding: 0 15px; }\n      :host .color-group .input-group .input-placeholder {\n        background-color: white;\n        border: 1px solid rgba(0, 0, 0, 0.15);\n        padding: .25rem .5rem;\n        border-radius: .25rem;\n        display: inline-block;\n        flex: 1 1 25%;\n        margin-right: 0.5rem;\n        margin-bottom: 0.5rem; }\n        :host .color-group .input-group .input-placeholder.color-preview {\n          text-align: center;\n          color: white;\n          font-weight: 500;\n          line-height: 2.2rem;\n          cursor: default; }\n        :host .color-group .input-group .input-placeholder .placeholder {\n          color: #666;\n          margin-right: 0.5rem; }\n        :host .color-group .input-group .input-placeholder .form-control {\n          margin: 0;\n          display: inline-block;\n          border: none;\n          padding-right: 0;\n          width: 55%;\n          max-width: 70px; }\n"
+
+/***/ },
+
+/***/ 362:
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Created by texpe on 13/01/2017.
+	 */
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(3);
+	var forms_1 = __webpack_require__(24);
+	var authProvider_1 = __webpack_require__(60);
+	var LoginPage = (function () {
+	    function LoginPage(formBuilder, authProvider) {
+	        this.formBuilder = formBuilder;
+	        this.authProvider = authProvider;
+	        this.loginData = {
+	            email: '',
+	            password: ''
+	        };
+	        this.loginError = null;
+	        this.showError = false;
+	        this.loginForm = this.formBuilder.group({
+	            email: new forms_1.FormControl('', [forms_1.Validators.required]),
+	            password: new forms_1.FormControl('', [forms_1.Validators.required])
+	        });
+	    }
+	    LoginPage.prototype.login = function () {
+	        var _this = this;
+	        this.authProvider.login(this.loginData).then(function (success) {
+	            if (!success) {
+	                _this.loginError = "Invalid Username/Password!";
+	                _this.showError = true;
+	                setTimeout(function () { return _this.showError = false; }, 3000);
+	            }
+	        }).catch(function (err) { return console.error(err); });
+	    };
+	    return LoginPage;
+	}());
+	LoginPage = __decorate([
+	    core_1.Component({
+	        selector: 'page-login',
+	        template: __webpack_require__(363),
+	        styles: [__webpack_require__(364)]
+	    }),
+	    __metadata("design:paramtypes", [forms_1.FormBuilder, authProvider_1.AuthProvider])
+	], LoginPage);
+	exports.LoginPage = LoginPage;
+
+
+/***/ },
+
+/***/ 363:
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"alert alert-danger\" role=\"alert\" [ngClass]=\"{ 'show': showError }\">\r\n\t<strong>Oh snap!</strong> <span [innerHTML]=\"loginError\"></span>\r\n</div>\r\n\r\n<div class=\"row\">\r\n\t<div class=\"col-md-6 offset-md-3\">\r\n\t\t<form (submit)=\"login()\" [formGroup]=\"loginForm\">\r\n\t\t\t<div class=\"form-group text-center\">\r\n\t\t\t\t<h1>Login</h1>\r\n\t\t\t</div>\r\n\r\n\t\t\t<div class=\"form-group row\">\r\n\t\t\t\t<div class=\"col-md-4 text-right\">Email</div>\r\n\t\t\t\t<div class=\"col-md-8\">\r\n\t\t\t\t\t<input type=\"text\" class=\"form-control\" formControlName=\"email\"\r\n\t\t\t\t\t\t   [(ngModel)]=\"loginData.email\">\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\r\n\t\t\t<div class=\"form-group row\">\r\n\t\t\t\t<div class=\"col-md-4 text-right\">Password</div>\r\n\t\t\t\t<div class=\"col-md-8\">\r\n\t\t\t\t\t<input type=\"password\" class=\"form-control\" formControlName=\"password\"\r\n\t\t\t\t\t\t   [(ngModel)]=\"loginData.password\">\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\r\n\t\t\t<div class=\"form-group text-right\">\r\n\t\t\t\t<span class=\"register-text text-muted\">Don't have an account? <a routerLink=\"/register\">Register Now</a></span>\r\n\t\t\t\t<button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"!loginForm.valid\">Login</button>\r\n\t\t\t</div>\r\n\t\t</form>\r\n\t</div>\r\n</div>"
+
+/***/ },
+
+/***/ 364:
+/***/ function(module, exports) {
+
+	module.exports = ":host {\n  display: flex;\n  align-items: center;\n  height: 100%; }\n  :host > .row {\n    flex: 1 1 100%; }\n  :host .register-text {\n    cursor: default;\n    font-size: 0.9rem;\n    margin-right: 0.5rem; }\n  :host > .alert {\n    position: fixed;\n    top: 40px;\n    left: 50%;\n    width: 35%;\n    min-width: 350px;\n    text-align: center;\n    margin-left: -175px;\n    opacity: 0;\n    transition: opacity ease-in-out 1s;\n    cursor: default; }\n    :host > .alert.show {\n      opacity: 1; }\n"
+
+/***/ },
+
+/***/ 365:
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Created by texpe on 13/01/2017.
+	 */
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(3);
+	var forms_1 = __webpack_require__(24);
+	var authProvider_1 = __webpack_require__(60);
+	var RegisterPage = (function () {
+	    function RegisterPage(authProivder, formBuilder) {
+	        this.authProivder = authProivder;
+	        this.formBuilder = formBuilder;
+	        this.data = {
+	            name: '',
+	            email: '',
+	            password: '',
+	            confirm_password: ''
+	        };
+	        this.registerForm = this.formBuilder.group({
+	            name: new forms_1.FormControl('', [forms_1.Validators.required]),
+	            email: new forms_1.FormControl('', [forms_1.Validators.required]),
+	            password: new forms_1.FormControl('', [forms_1.Validators.required]),
+	            confirm_password: new forms_1.FormControl('', [forms_1.Validators.required])
+	        });
+	    }
+	    RegisterPage.prototype.register = function () {
+	        this.authProivder.register(this.data).then(function (success) { return console.log("Register: " + success); });
+	    };
+	    return RegisterPage;
+	}());
+	RegisterPage = __decorate([
+	    core_1.Component({
+	        selector: 'page-register',
+	        template: __webpack_require__(366),
+	        styles: [__webpack_require__(367)]
+	    }),
+	    __metadata("design:paramtypes", [authProvider_1.AuthProvider, forms_1.FormBuilder])
+	], RegisterPage);
+	exports.RegisterPage = RegisterPage;
+
+
+/***/ },
+
+/***/ 366:
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"row\">\r\n\t<div class=\"col-md-6 offset-md-3\">\r\n\t\t<form (submit)=\"register()\" [formGroup]=\"registerForm\">\r\n\t\t\t<div class=\"form-group text-center\">\r\n\t\t\t\t<h1>Register</h1>\r\n\t\t\t</div>\r\n\r\n\t\t\t<div class=\"form-group row\">\r\n\t\t\t\t<div class=\"col-md-4 text-right\">Name</div>\r\n\t\t\t\t<div class=\"col-md-8\">\r\n\t\t\t\t\t<input type=\"text\" class=\"form-control\" formControlName=\"name\" [(ngModel)]=\"data.name\">\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\r\n\t\t\t<div class=\"form-group row\">\r\n\t\t\t\t<div class=\"col-md-4 text-right\">Email</div>\r\n\t\t\t\t<div class=\"col-md-8\">\r\n\t\t\t\t\t<input type=\"text\" class=\"form-control\" formControlName=\"email\" [(ngModel)]=\"data.email\">\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\r\n\t\t\t<div class=\"form-group row\">\r\n\t\t\t\t<div class=\"col-md-4 text-right\">Password</div>\r\n\t\t\t\t<div class=\"col-md-8\">\r\n\t\t\t\t\t<input type=\"password\" class=\"form-control\" formControlName=\"password\" [(ngModel)]=\"data.password\">\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\r\n\t\t\t<div class=\"form-group row\">\r\n\t\t\t\t<div class=\"col-md-4 text-right\">Confirm Password</div>\r\n\t\t\t\t<div class=\"col-md-8\">\r\n\t\t\t\t\t<input type=\"password\" class=\"form-control\" formControlName=\"confirm_password\"\r\n\t\t\t\t\t\t   [(ngModel)]=\"data.confirm_password\">\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\r\n\t\t\t<div class=\"form-group text-right\">\r\n\t\t\t\t<span class=\"login-text text-muted\">Already have an account? <a\r\n\t\t\t\t\t\trouterLink=\"/login\">Login Here</a></span>\r\n\t\t\t\t<button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"!registerForm.valid\">Register</button>\r\n\t\t\t</div>\r\n\t\t</form>\r\n\t</div>\r\n</div>"
+
+/***/ },
+
+/***/ 367:
+/***/ function(module, exports) {
+
+	module.exports = ":host {\n  display: flex;\n  align-items: center;\n  height: 100%; }\n  :host > .row {\n    flex: 1 1 100%; }\n  :host .login-text {\n    cursor: default;\n    font-size: 0.9rem;\n    margin-right: 0.5rem; }\n"
+
+/***/ },
+
+/***/ 368:
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function($) {/**
+	 * Created by texpe on 13/01/2017.
+	 */
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(3);
+	var chatProvider_1 = __webpack_require__(369);
+	var settingsProvider_1 = __webpack_require__(359);
+	var ChatPage = (function () {
+	    function ChatPage(chatProvider, settingsProvider) {
+	        var _this = this;
+	        this.chatProvider = chatProvider;
+	        this.settingsProvider = settingsProvider;
+	        this.connected = false;
+	        this.serviceStatus = [];
+	        this.messages = [];
+	        this.data = {
+	            message: ''
+	        };
+	        this._settings = {};
+	        this.scrollLocked = false;
+	        this.messages = this.chatProvider.getMessages;
+	        this.connected = this.chatProvider.getConnected;
+	        this.serviceStatus = this.chatProvider.getServiceStatus;
+	        this._settings = this.settingsProvider.settings;
+	        this.chatProvider.Messages.subscribe(function (value) {
+	            _this.messages = value;
+	            _this.scrollToBottom();
+	        });
+	        this.chatProvider.Connected.subscribe(function (value) { return _this.connected = value; });
+	        this.chatProvider.ServiceStatus.subscribe(function (value) { return _this.serviceStatus = value; });
+	        this.settingsProvider.Settings.subscribe(function (value) { return _this._settings = value; });
+	    }
+	    ChatPage.prototype.ngAfterViewInit = function () {
+	        $(this.messageContainer.nativeElement).on('mousewheel', function (e) {
+	            var $this = $(this);
+	            var scrollUp = e.originalEvent.deltaY < 0;
+	            var scrollHeight = this.scrollHeight - $this.height();
+	            if (scrollUp && $this.scrollTop() >= scrollHeight - 200) {
+	                $this.stop();
+	                this.scrollLocked = true;
+	            }
+	            else if (!scrollUp && $this.scrollTop() >= scrollHeight - 200)
+	                this.scrollLocked = false;
+	        });
+	    };
+	    ChatPage.prototype.toggleConnection = function () {
+	        if (!this.connected)
+	            this.chatProvider.join();
+	        else
+	            this.chatProvider.part();
+	    };
+	    ChatPage.prototype.sendMessage = function () {
+	        if (!this.data.message)
+	            return;
+	        this.chatProvider.send(this.data.message);
+	        this.data.message = '';
+	    };
+	    ChatPage.prototype.keyUp = function (e) {
+	        if (e.keyCode === 13) {
+	            if (this.data.message.trim().length <= 0)
+	                return;
+	            e.preventDefault();
+	            this.sendMessage();
+	        }
+	    };
+	    ChatPage.prototype.scrollToBottom = function () {
+	        var $messagesContainer = $(this.messageContainer.nativeElement);
+	        if (this.messages.length > 0 && !this.scrollLocked) {
+	            $messagesContainer.stop(true, true).animate({
+	                scrollTop: $messagesContainer[0].scrollHeight - ($messagesContainer.height() - 100)
+	            }, 500);
+	        }
+	    };
+	    return ChatPage;
+	}());
+	__decorate([
+	    core_1.ViewChild('messageContainer'),
+	    __metadata("design:type", core_1.ElementRef)
+	], ChatPage.prototype, "messageContainer", void 0);
+	ChatPage = __decorate([
+	    core_1.Component({
+	        selector: 'page-chat',
+	        template: __webpack_require__(422),
+	        styles: [__webpack_require__(423)]
+	    }),
+	    __metadata("design:paramtypes", [chatProvider_1.ChatProvider, settingsProvider_1.SettingsProvider])
+	], ChatPage);
+	exports.ChatPage = ChatPage;
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(358)))
+
+/***/ },
+
+/***/ 369:
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Created by texpe on 13/01/2017.
+	 */
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(3);
+	var http_1 = __webpack_require__(28);
+	var rxjs_1 = __webpack_require__(61);
+	var bttv_1 = __webpack_require__(370);
+	var authProvider_1 = __webpack_require__(60);
+	/// <reference path="../../typings/globals/socket.io-client.index.d.ts" />
+	var io = __webpack_require__(371);
+	var ChatProvider = (function () {
+	    function ChatProvider(authProvider, http) {
+	        var _this = this;
+	        this.authProvider = authProvider;
+	        this.http = http;
+	        this._token = null;
+	        this._socket = null;
+	        this._messages = [];
+	        this._connected = false;
+	        this._connecting = false;
+	        this._serviceStatus = [];
+	        this.Messages = new rxjs_1.Subject();
+	        this.Connected = new rxjs_1.Subject();
+	        this.ServiceStatus = new rxjs_1.Subject();
+	        this._token = this.authProvider.token;
+	        this.setupSocket();
+	        this.authProvider.isLoggedIn.subscribe(function (value) {
+	            _this._token = _this.authProvider.token;
+	            _this.setupSocket();
+	        });
+	    }
+	    ChatProvider.prototype.setupSocket = function () {
+	        var _this = this;
+	        if (!this._token)
+	            return;
+	        if (this._socket)
+	            this._socket.disconnect();
+	        var host = (core_1.isDevMode() ? 'http://localhost:8080' : 'https://uchatapi-frosenos.rhcloud.com:8443/') + '?token=' + this._token;
+	        this._socket = io.connect(host, {
+	            forceNew: true,
+	            transports: ['websocket', 'polling']
+	        });
+	        this._socket.on('connect', function () {
+	            console.log('Socket.io Connected');
+	            _this.join();
+	        });
+	        this._socket.on('join', function (data) {
+	            _this._connected = data;
+	            _this.Connected.next(_this._connected);
+	            _this._connecting = false;
+	        });
+	        this._socket.on('part', function (data) {
+	            _this._connected = data;
+	            _this.Connected.next(_this._connected);
+	            _this._connecting = false;
+	        });
+	        this._socket.on('message', function (data) {
+	            _this.parseImage(data.Message).then(function (url) {
+	                data.Message = {
+	                    Raw: data.Message,
+	                    Formatted: "<img src='" + url + "' class='img-fill' />"
+	                };
+	                data.Message.Formatted = _this.parseLinks(data.Message.Formatted);
+	                _this.addMessage(data);
+	            }).catch(function (err) {
+	                data.Message = {
+	                    Raw: data.Message,
+	                    Formatted: _this.parseEmotes(data.Message)
+	                };
+	                data.Message.Formatted = _this.parseLinks(data.Message.Formatted);
+	                _this.addMessage(data);
+	            });
+	        });
+	        this._socket.on('service', function (data) {
+	            _this._serviceStatus[data.Service] = data.Status;
+	            _this.ServiceStatus.next(_this._serviceStatus);
+	        });
+	    };
+	    ChatProvider.prototype.addMessage = function (data) {
+	        data.Timestamp = this.humanTimestamp();
+	        this._messages.push(data);
+	        if (this._messages.length > 100)
+	            this._messages.splice(0, this._messages.length - 100);
+	        this.Messages.next(this._messages);
+	    };
+	    ChatProvider.prototype.humanTimestamp = function () {
+	        var now = new Date();
+	        var hour = now.getHours(), minute = now.getMinutes(), isPM = now.getHours() >= 12;
+	        if (hour > 12)
+	            hour -= 12;
+	        if (hour === 0)
+	            hour = 12;
+	        return (hour < 10 && hour >= 0 ? '0' + hour : hour) + ':' + (minute < 10 ? '0' + minute : minute) + (isPM ? ' PM' : ' AM');
+	    };
+	    ChatProvider.prototype.join = function () {
+	        if (!this._socket || this._connecting)
+	            return false;
+	        this._connecting = true;
+	        this._socket.emit('join');
+	        return true;
+	    };
+	    ChatProvider.prototype.part = function () {
+	        if (!this._socket || this._connecting)
+	            return false;
+	        this._connecting = true;
+	        this._socket.emit('part');
+	        return true;
+	    };
+	    ChatProvider.prototype.send = function (message) {
+	        if (!this._token)
+	            return false;
+	        this._socket.emit('send', { Message: message });
+	        return true;
+	    };
+	    ChatProvider.prototype.messageHasMention = function (msg) {
+	        var name = this.getNameForPlatform(msg.Service);
+	        if (!name)
+	            return false;
+	        var reg = new RegExp('(?:^|\\W)(' + name + '+)(?!\\w)', 'gi');
+	        if (msg.Message.Raw.toLowerCase().match(reg))
+	            return true;
+	        return false;
+	    };
+	    ChatProvider.prototype.getNameForPlatform = function (platform) {
+	        var user = this.authProvider.user;
+	        if (platform.toLowerCase() === 'broadcaster')
+	            return 'Broadcaster';
+	        if (!user.Services[platform] || !user.Services[platform].Connected)
+	            return null;
+	        var userInfo = user.Services[platform].UserServiceInfo;
+	        return userInfo.UserName;
+	    };
+	    ChatProvider.prototype.parseEmotes = function (e) {
+	        var emotes = bttv_1.bttv.getEmotes();
+	        var bttvUrl = emotes.urlTemplate;
+	        for (var emote in emotes.emotes) {
+	            var data = emotes.emotes[emote];
+	            if (e.indexOf(data.code) < 0)
+	                continue;
+	            var url = ('http:' + bttvUrl).replace('{{id}}', data.id).replace('{{image}}', '1x');
+	            var reg = new RegExp('\\b' + data.code + '\\b', 'g');
+	            e = e.replace(reg, "<img class='twitch-emoji twitch-emoji-small' src='" + url + "' alt='" + data.code + "' />");
+	        }
+	        e = twitchEmoji.parse(e, {
+	            emojiSize: 'small'
+	        }).replace('https://', 'http://');
+	        return e;
+	    };
+	    ChatProvider.prototype.parseImage = function (e) {
+	        return new Promise(function (resolve, reject) {
+	            var match = e.trim().match(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)/gi);
+	            if (match.length <= 0)
+	                return reject();
+	            var url = match[0];
+	            if (e.trim() != url)
+	                return reject();
+	            if (url.startsWith('https:'))
+	                url = 'http:' + url.substr(6, url.length - 6);
+	            var img = new Image();
+	            img.className = 'img-fluid';
+	            img.onerror = function () {
+	                reject();
+	            };
+	            img.onload = function () {
+	                resolve(url);
+	            };
+	            img.src = url;
+	        });
+	    };
+	    ChatProvider.prototype.parseLinks = function (e) {
+	        e = e.trim();
+	        var regex = /<a.*?>(.*?)<\/a>/im;
+	        var match = regex.exec(e);
+	        var i = 0;
+	        while (match && i++ < 20) {
+	            var url = null;
+	            if (match[0].indexOf('href=') >= 0)
+	                url = (/href=["|'](.*)["|']/gi).exec(match[0])[1];
+	            else
+	                url = (/>(.*?)<\/a>/gi).exec(match[0])[1];
+	            e = e.replace(match[0], "<div class=\"chat-hyperlink\" href='javascript:;'>" + url + "</div>");
+	            match = regex.exec(e);
+	        }
+	        if (i >= 20)
+	            console.error("[0] Hyperlink detection might have exited before it could finish!");
+	        regex = /(?:^|[^'">])(https?|ftps?):\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)/gim;
+	        match = regex.exec(e);
+	        i = 0;
+	        while (match && i++ < 20) {
+	            e = e.replace(match[0], "<div class=\"chat-hyperlink\" href='javascript:;'>" + match[0].trim() + "</div>");
+	            match = regex.exec(e);
+	        }
+	        if (i >= 20)
+	            console.error("[1] Hyperlink detection might have exited before it could finish!");
+	        return e;
+	    };
+	    Object.defineProperty(ChatProvider.prototype, "getMessages", {
+	        get: function () {
+	            return this._messages;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(ChatProvider.prototype, "getConnected", {
+	        get: function () {
+	            return this._connected;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    Object.defineProperty(ChatProvider.prototype, "getServiceStatus", {
+	        get: function () {
+	            return this._serviceStatus;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    return ChatProvider;
+	}());
+	ChatProvider = __decorate([
+	    core_1.Injectable(),
+	    __metadata("design:paramtypes", [authProvider_1.AuthProvider, http_1.Http])
+	], ChatProvider);
+	exports.ChatProvider = ChatProvider;
+
+
+/***/ },
+
+/***/ 370:
+/***/ function(module, exports) {
+
+	"use strict";
+	var bttv = (function () {
+	    function bttv() {
+	    }
+	    bttv.getEmotes = function () {
+	        return {
+	            "status": 200,
+	            "urlTemplate": "//cdn.betterttv.net/emote/{{id}}/{{image}}",
+	            "emotes": [
+	                {
+	                    "id": "54fa925e01e468494b85b54d",
+	                    "code": "OhMyGoodness",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "54fa927801e468494b85b54e",
+	                    "code": "PancakeMix",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "54fa928f01e468494b85b54f",
+	                    "code": "PedoBear",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "54fa92a701e468494b85b550",
+	                    "code": "PokerFace",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "54fa92d701e468494b85b552",
+	                    "code": "RageFace",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "54fa92ee01e468494b85b553",
+	                    "code": "RebeccaBlack",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "54fa8f1401e468494b85b537",
+	                    "code": ":tf:",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "54fa8f4201e468494b85b538",
+	                    "code": "aPliS",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "54fa8fce01e468494b85b53c",
+	                    "code": "CiGrip",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "54fa8fb201e468494b85b53b",
+	                    "code": "CHAccepted",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "54fa90d601e468494b85b544",
+	                    "code": "FuckYea",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "54fa903b01e468494b85b53f",
+	                    "code": "DatSauce",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "54fa909b01e468494b85b542",
+	                    "code": "ForeverAlone",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "54fa90ba01e468494b85b543",
+	                    "code": "GabeN",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "54fa90f201e468494b85b545",
+	                    "code": "HailHelix",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "54fa913701e468494b85b546",
+	                    "code": "HerbPerve",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "54fa919901e468494b85b548",
+	                    "code": "iDog",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "54fa930801e468494b85b554",
+	                    "code": "rStrike",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "54fa932201e468494b85b555",
+	                    "code": "ShoopDaWhoop",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "54fa9cc901e468494b85b565",
+	                    "code": "SwedSwag",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "54fab45f633595ca4c713abc",
+	                    "code": "M&Mjc",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "54fab7d2633595ca4c713abf",
+	                    "code": "bttvNice",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "54fa934001e468494b85b556",
+	                    "code": "TopHam",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "54fa935601e468494b85b557",
+	                    "code": "TwaT",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "54fa93d001e468494b85b559",
+	                    "code": "WhatAYolk",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "54fa99b601e468494b85b55d",
+	                    "code": "WatChuSay",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "54faa50d01e468494b85b578",
+	                    "code": "Blackappa",
+	                    "channel": "night",
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": [],
+	                        "emoticonSet": "night"
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "54faa52f01e468494b85b579",
+	                    "code": "DogeWitIt",
+	                    "channel": "night",
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": [],
+	                        "emoticonSet": "night"
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "54faa4f101e468494b85b577",
+	                    "code": "BadAss",
+	                    "channel": "night",
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": [],
+	                        "emoticonSet": "night"
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "54fb603201abde735115ddb5",
+	                    "code": "SavageJerky",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "54fbf11001abde735115de66",
+	                    "code": "Kaged",
+	                    "channel": "night",
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": [],
+	                        "emoticonSet": "night"
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "54fbef6601abde735115de57",
+	                    "code": "HHydro",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "54fbefeb01abde735115de5b",
+	                    "code": "TaxiBro",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "54fbf00a01abde735115de5c",
+	                    "code": "BroBalt",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "54fbf02f01abde735115de5d",
+	                    "code": "ButterSauce",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "54fbf05a01abde735115de5e",
+	                    "code": "BaconEffect",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "54fbf07e01abde735115de5f",
+	                    "code": "SuchFraud",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "54fbf09c01abde735115de61",
+	                    "code": "CandianRage",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "54fbefc901abde735115de5a",
+	                    "code": "She'llBeRight",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "54fbefa901abde735115de59",
+	                    "code": "OhhhKee",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "55028cd2135896936880fdd7",
+	                    "code": "D:",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "5502874d135896936880fdd2",
+	                    "code": "SexPanda",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "5502883d135896936880fdd3",
+	                    "code": "(poolparty)",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "55028923135896936880fdd5",
+	                    "code": ":'(",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "550288fe135896936880fdd4",
+	                    "code": "(puke)",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "550292c0135896936880fdef",
+	                    "code": "bttvWink",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "550291a3135896936880fde3",
+	                    "code": "bttvAngry",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "550291be135896936880fde4",
+	                    "code": "bttvConfused",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "550291d4135896936880fde5",
+	                    "code": "bttvCool",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "55029200135896936880fde7",
+	                    "code": "bttvHappy",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "5502925d135896936880fdea",
+	                    "code": "bttvSad",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "55029272135896936880fdeb",
+	                    "code": "bttvSleep",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "55029288135896936880fdec",
+	                    "code": "bttvSurprised",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "5502929b135896936880fded",
+	                    "code": "bttvTongue",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "550292ad135896936880fdee",
+	                    "code": "bttvUnsure",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "550291ea135896936880fde6",
+	                    "code": "bttvGrin",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "55029215135896936880fde8",
+	                    "code": "bttvHeart",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "55029247135896936880fde9",
+	                    "code": "bttvTwink",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "550352766f86a5b26c281ba2",
+	                    "code": "VisLaud",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "550b225fff8ecee922d2a3b2",
+	                    "code": "(chompy)",
+	                    "channel": "night",
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": [],
+	                        "emoticonSet": "night"
+	                    },
+	                    "imageType": "gif"
+	                },
+	                {
+	                    "id": "5514afe362e6bd0027aede8a",
+	                    "code": "SoSerious",
+	                    "channel": "night",
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": [],
+	                        "emoticonSet": "night"
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "550b6b07ff8ecee922d2a3e7",
+	                    "code": "BatKappa",
+	                    "channel": "night",
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": [],
+	                        "emoticonSet": "night"
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "550b344bff8ecee922d2a3c1",
+	                    "code": "KaRappa",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "55189a5062e6bd0027aee082",
+	                    "code": "YetiZ",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "552d2fc2236a1aa17a996c5b",
+	                    "code": "miniJulia",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "55288e390fa35376704a4c7a",
+	                    "code": "motnahP",
+	                    "channel": "night",
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": [],
+	                        "emoticonSet": "night"
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "553b48a21f145f087fc15ca6",
+	                    "code": "sosGame",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "55471c2789d53f2d12781713",
+	                    "code": "CruW",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "555015b77676617e17dd2e8e",
+	                    "code": "RarePepe",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "54fbef8701abde735115de58",
+	                    "code": "iamsocal",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "555981336ba1901877765555",
+	                    "code": "haHAA",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "55b6524154eefd53777b2580",
+	                    "code": "FeelsBirthdayMan",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "55f324c47f08be9f0a63cce0",
+	                    "code": "RonSmug",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "560577560874de34757d2dc0",
+	                    "code": "KappaCool",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "5622aaef3286c42e57d8e4ab",
+	                    "code": "Zappa",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "5622ab523286c42e57d8e4b2",
+	                    "code": "SqShy",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "566c9eeb65dbbdab32ec052b",
+	                    "code": "BasedGod",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "566c9f3b65dbbdab32ec052e",
+	                    "code": "bUrself",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "566c9f6365dbbdab32ec0532",
+	                    "code": "ConcernDoge",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "566c9f9265dbbdab32ec0538",
+	                    "code": "FapFapFap",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "566c9fc265dbbdab32ec053b",
+	                    "code": "FeelsBadMan",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "566c9fde65dbbdab32ec053e",
+	                    "code": "FeelsGoodMan",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "566c9ff365dbbdab32ec0541",
+	                    "code": "FireSpeed",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "566ca00f65dbbdab32ec0544",
+	                    "code": "FishMoley",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "566ca02865dbbdab32ec0547",
+	                    "code": "Hhhehehe",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "566ca04265dbbdab32ec054a",
+	                    "code": "KKona",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "566ca06065dbbdab32ec054e",
+	                    "code": "NaM",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "566ca07965dbbdab32ec0552",
+	                    "code": "OhGod",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "566ca09365dbbdab32ec0555",
+	                    "code": "PoleDoge",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "566ca11a65dbbdab32ec0558",
+	                    "code": "tehPoleCat",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "566ca1a365dbbdab32ec055b",
+	                    "code": "AngelThump",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "566ca38765dbbdab32ec0560",
+	                    "code": "SourPls",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "gif"
+	                },
+	                {
+	                    "id": "567b00c61ddbe1786688a633",
+	                    "code": "LUL",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "56901914991f200c34ffa656",
+	                    "code": "SaltyCorn",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "56d937f7216793c63ec140cb",
+	                    "code": "FCreep",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "56f5be00d48006ba34f530a4",
+	                    "code": "VapeNation",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "56fa09f18eff3b595e93ac26",
+	                    "code": "ariW",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "5709ab688eff3b595e93c595",
+	                    "code": "notsquishY",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "5733ff12e72c3c0814233e20",
+	                    "code": "FeelsAmazingMan",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                },
+	                {
+	                    "id": "573d38b50ffbf6cc5cc38dc9",
+	                    "code": "DuckerZ",
+	                    "channel": null,
+	                    "restrictions": {
+	                        "channels": [],
+	                        "games": []
+	                    },
+	                    "imageType": "png"
+	                }
+	            ]
+	        };
+	    };
+	    return bttv;
+	}());
+	exports.bttv = bttv;
+
+
+/***/ },
+
+/***/ 371:
+/***/ function(module, exports, __webpack_require__) {
+
+	
+	/**
+	 * Module dependencies.
+	 */
+
+	var url = __webpack_require__(372);
+	var parser = __webpack_require__(377);
+	var Manager = __webpack_require__(388);
+	var debug = __webpack_require__(374)('socket.io-client');
+
+	/**
+	 * Module exports.
+	 */
+
+	module.exports = exports = lookup;
+
+	/**
+	 * Managers cache.
+	 */
+
+	var cache = exports.managers = {};
+
+	/**
+	 * Looks up an existing `Manager` for multiplexing.
+	 * If the user summons:
+	 *
+	 *   `io('http://localhost/a');`
+	 *   `io('http://localhost/b');`
+	 *
+	 * We reuse the existing instance based on same scheme/port/host,
+	 * and we initialize sockets for each namespace.
+	 *
+	 * @api public
+	 */
+
+	function lookup (uri, opts) {
+	  if (typeof uri === 'object') {
+	    opts = uri;
+	    uri = undefined;
+	  }
+
+	  opts = opts || {};
+
+	  var parsed = url(uri);
+	  var source = parsed.source;
+	  var id = parsed.id;
+	  var path = parsed.path;
+	  var sameNamespace = cache[id] && path in cache[id].nsps;
+	  var newConnection = opts.forceNew || opts['force new connection'] ||
+	                      false === opts.multiplex || sameNamespace;
+
+	  var io;
+
+	  if (newConnection) {
+	    debug('ignoring socket cache for %s', source);
+	    io = Manager(source, opts);
+	  } else {
+	    if (!cache[id]) {
+	      debug('new io instance for %s', source);
+	      cache[id] = Manager(source, opts);
+	    }
+	    io = cache[id];
+	  }
+	  if (parsed.query && !opts.query) {
+	    opts.query = parsed.query;
+	  } else if (opts && 'object' === typeof opts.query) {
+	    opts.query = encodeQueryString(opts.query);
+	  }
+	  return io.socket(parsed.path, opts);
+	}
+	/**
+	 *  Helper method to parse query objects to string.
+	 * @param {object} query
+	 * @returns {string}
+	 */
+	function encodeQueryString (obj) {
+	  var str = [];
+	  for (var p in obj) {
+	    if (obj.hasOwnProperty(p)) {
+	      str.push(encodeURIComponent(p) + '=' + encodeURIComponent(obj[p]));
+	    }
+	  }
+	  return str.join('&');
+	}
+	/**
+	 * Protocol version.
+	 *
+	 * @api public
+	 */
+
+	exports.protocol = parser.protocol;
+
+	/**
+	 * `connect`.
+	 *
+	 * @param {String} uri
+	 * @api public
+	 */
+
+	exports.connect = lookup;
+
+	/**
+	 * Expose constructors for standalone build.
+	 *
+	 * @api public
+	 */
+
+	exports.Manager = __webpack_require__(388);
+	exports.Socket = __webpack_require__(417);
+
+
+/***/ },
+
+/***/ 372:
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(global) {
+	/**
+	 * Module dependencies.
+	 */
+
+	var parseuri = __webpack_require__(373);
+	var debug = __webpack_require__(374)('socket.io-client:url');
+
+	/**
+	 * Module exports.
+	 */
+
+	module.exports = url;
+
+	/**
+	 * URL parser.
+	 *
+	 * @param {String} url
+	 * @param {Object} An object meant to mimic window.location.
+	 *                 Defaults to window.location.
+	 * @api public
+	 */
+
+	function url (uri, loc) {
+	  var obj = uri;
+
+	  // default to window.location
+	  loc = loc || global.location;
+	  if (null == uri) uri = loc.protocol + '//' + loc.host;
+
+	  // relative path support
+	  if ('string' === typeof uri) {
+	    if ('/' === uri.charAt(0)) {
+	      if ('/' === uri.charAt(1)) {
+	        uri = loc.protocol + uri;
+	      } else {
+	        uri = loc.host + uri;
+	      }
+	    }
+
+	    if (!/^(https?|wss?):\/\//.test(uri)) {
+	      debug('protocol-less url %s', uri);
+	      if ('undefined' !== typeof loc) {
+	        uri = loc.protocol + '//' + uri;
+	      } else {
+	        uri = 'https://' + uri;
+	      }
+	    }
+
+	    // parse
+	    debug('parse %s', uri);
+	    obj = parseuri(uri);
+	  }
+
+	  // make sure we treat `localhost:80` and `localhost` equally
+	  if (!obj.port) {
+	    if (/^(http|ws)$/.test(obj.protocol)) {
+	      obj.port = '80';
+	    } else if (/^(http|ws)s$/.test(obj.protocol)) {
+	      obj.port = '443';
+	    }
+	  }
+
+	  obj.path = obj.path || '/';
+
+	  var ipv6 = obj.host.indexOf(':') !== -1;
+	  var host = ipv6 ? '[' + obj.host + ']' : obj.host;
+
+	  // define unique id
+	  obj.id = obj.protocol + '://' + host + ':' + obj.port;
+	  // define href
+	  obj.href = obj.protocol + '://' + host + (loc && loc.port === obj.port ? '' : (':' + obj.port));
+
+	  return obj;
+	}
+
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+
+/***/ 373:
+/***/ function(module, exports) {
+
+	/**
+	 * Parses an URI
+	 *
+	 * @author Steven Levithan <stevenlevithan.com> (MIT license)
+	 * @api private
+	 */
+
+	var re = /^(?:(?![^:@]+:[^:@\/]*@)(http|https|ws|wss):\/\/)?((?:(([^:@]*)(?::([^:@]*))?)?@)?((?:[a-f0-9]{0,4}:){2,7}[a-f0-9]{0,4}|[^:\/?#]*)(?::(\d*))?)(((\/(?:[^?#](?![^?#\/]*\.[^?#\/.]+(?:[?#]|$)))*\/?)?([^?#\/]*))(?:\?([^#]*))?(?:#(.*))?)/;
+
+	var parts = [
+	    'source', 'protocol', 'authority', 'userInfo', 'user', 'password', 'host', 'port', 'relative', 'path', 'directory', 'file', 'query', 'anchor'
+	];
+
+	module.exports = function parseuri(str) {
+	    var src = str,
+	        b = str.indexOf('['),
+	        e = str.indexOf(']');
+
+	    if (b != -1 && e != -1) {
+	        str = str.substring(0, b) + str.substring(b, e).replace(/:/g, ';') + str.substring(e, str.length);
+	    }
+
+	    var m = re.exec(str || ''),
+	        uri = {},
+	        i = 14;
+
+	    while (i--) {
+	        uri[parts[i]] = m[i] || '';
+	    }
+
+	    if (b != -1 && e != -1) {
+	        uri.source = src;
+	        uri.host = uri.host.substring(1, uri.host.length - 1).replace(/;/g, ':');
+	        uri.authority = uri.authority.replace('[', '').replace(']', '').replace(/;/g, ':');
+	        uri.ipv6uri = true;
+	    }
+
+	    return uri;
+	};
+
+
+/***/ },
+
+/***/ 374:
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {
+	/**
+	 * This is the web browser implementation of `debug()`.
+	 *
+	 * Expose `debug()` as the module.
+	 */
+
+	exports = module.exports = __webpack_require__(375);
+	exports.log = log;
+	exports.formatArgs = formatArgs;
+	exports.save = save;
+	exports.load = load;
+	exports.useColors = useColors;
+	exports.storage = 'undefined' != typeof chrome
+	               && 'undefined' != typeof chrome.storage
+	                  ? chrome.storage.local
+	                  : localstorage();
+
+	/**
+	 * Colors.
+	 */
+
+	exports.colors = [
+	  'lightseagreen',
+	  'forestgreen',
+	  'goldenrod',
+	  'dodgerblue',
+	  'darkorchid',
+	  'crimson'
+	];
+
+	/**
+	 * Currently only WebKit-based Web Inspectors, Firefox >= v31,
+	 * and the Firebug extension (any Firefox version) are known
+	 * to support "%c" CSS customizations.
+	 *
+	 * TODO: add a `localStorage` variable to explicitly enable/disable colors
+	 */
+
+	function useColors() {
+	  // is webkit? http://stackoverflow.com/a/16459606/376773
+	  // document is undefined in react-native: https://github.com/facebook/react-native/pull/1632
+	  return (typeof document !== 'undefined' && 'WebkitAppearance' in document.documentElement.style) ||
+	    // is firebug? http://stackoverflow.com/a/398120/376773
+	    (window.console && (console.firebug || (console.exception && console.table))) ||
+	    // is firefox >= v31?
+	    // https://developer.mozilla.org/en-US/docs/Tools/Web_Console#Styling_messages
+	    (navigator.userAgent.toLowerCase().match(/firefox\/(\d+)/) && parseInt(RegExp.$1, 10) >= 31);
+	}
+
+	/**
+	 * Map %j to `JSON.stringify()`, since no Web Inspectors do that by default.
+	 */
+
+	exports.formatters.j = function(v) {
+	  try {
+	    return JSON.stringify(v);
+	  } catch (err) {
+	    return '[UnexpectedJSONParseError]: ' + err.message;
+	  }
+	};
+
+
+	/**
+	 * Colorize log arguments if enabled.
+	 *
+	 * @api public
+	 */
+
+	function formatArgs() {
+	  var args = arguments;
+	  var useColors = this.useColors;
+
+	  args[0] = (useColors ? '%c' : '')
+	    + this.namespace
+	    + (useColors ? ' %c' : ' ')
+	    + args[0]
+	    + (useColors ? '%c ' : ' ')
+	    + '+' + exports.humanize(this.diff);
+
+	  if (!useColors) return args;
+
+	  var c = 'color: ' + this.color;
+	  args = [args[0], c, 'color: inherit'].concat(Array.prototype.slice.call(args, 1));
+
+	  // the final "%c" is somewhat tricky, because there could be other
+	  // arguments passed either before or after the %c, so we need to
+	  // figure out the correct index to insert the CSS into
+	  var index = 0;
+	  var lastC = 0;
+	  args[0].replace(/%[a-z%]/g, function(match) {
+	    if ('%%' === match) return;
+	    index++;
+	    if ('%c' === match) {
+	      // we only are interested in the *last* %c
+	      // (the user may have provided their own)
+	      lastC = index;
+	    }
+	  });
+
+	  args.splice(lastC, 0, c);
+	  return args;
+	}
+
+	/**
+	 * Invokes `console.log()` when available.
+	 * No-op when `console.log` is not a "function".
+	 *
+	 * @api public
+	 */
+
+	function log() {
+	  // this hackery is required for IE8/9, where
+	  // the `console.log` function doesn't have 'apply'
+	  return 'object' === typeof console
+	    && console.log
+	    && Function.prototype.apply.call(console.log, console, arguments);
+	}
+
+	/**
+	 * Save `namespaces`.
+	 *
+	 * @param {String} namespaces
+	 * @api private
+	 */
+
+	function save(namespaces) {
+	  try {
+	    if (null == namespaces) {
+	      exports.storage.removeItem('debug');
+	    } else {
+	      exports.storage.debug = namespaces;
+	    }
+	  } catch(e) {}
+	}
+
+	/**
+	 * Load `namespaces`.
+	 *
+	 * @return {String} returns the previously persisted debug modes
+	 * @api private
+	 */
+
+	function load() {
+	  var r;
+	  try {
+	    return exports.storage.debug;
+	  } catch(e) {}
+
+	  // If debug isn't set in LS, and we're in Electron, try to load $DEBUG
+	  if (typeof process !== 'undefined' && 'env' in process) {
+	    return process.env.DEBUG;
+	  }
+	}
+
+	/**
+	 * Enable namespaces listed in `localStorage.debug` initially.
+	 */
+
+	exports.enable(load());
+
+	/**
+	 * Localstorage attempts to return the localstorage.
+	 *
+	 * This is necessary because safari throws
+	 * when a user disables cookies/localstorage
+	 * and you attempt to access it.
+	 *
+	 * @return {LocalStorage}
+	 * @api private
+	 */
+
+	function localstorage(){
+	  try {
+	    return window.localStorage;
+	  } catch (e) {}
+	}
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(297)))
+
+/***/ },
+
+/***/ 375:
+/***/ function(module, exports, __webpack_require__) {
+
+	
+	/**
+	 * This is the common logic for both the Node.js and web browser
+	 * implementations of `debug()`.
+	 *
+	 * Expose `debug()` as the module.
+	 */
+
+	exports = module.exports = debug.debug = debug;
+	exports.coerce = coerce;
+	exports.disable = disable;
+	exports.enable = enable;
+	exports.enabled = enabled;
+	exports.humanize = __webpack_require__(376);
+
+	/**
+	 * The currently active debug mode names, and names to skip.
+	 */
+
+	exports.names = [];
+	exports.skips = [];
+
+	/**
+	 * Map of special "%n" handling functions, for the debug "format" argument.
+	 *
+	 * Valid key names are a single, lowercased letter, i.e. "n".
+	 */
+
+	exports.formatters = {};
+
+	/**
+	 * Previously assigned color.
+	 */
+
+	var prevColor = 0;
+
+	/**
+	 * Previous log timestamp.
+	 */
+
+	var prevTime;
+
+	/**
+	 * Select a color.
+	 *
+	 * @return {Number}
+	 * @api private
+	 */
+
+	function selectColor() {
+	  return exports.colors[prevColor++ % exports.colors.length];
+	}
+
+	/**
+	 * Create a debugger with the given `namespace`.
+	 *
+	 * @param {String} namespace
+	 * @return {Function}
+	 * @api public
+	 */
+
+	function debug(namespace) {
+
+	  // define the `disabled` version
+	  function disabled() {
+	  }
+	  disabled.enabled = false;
+
+	  // define the `enabled` version
+	  function enabled() {
+
+	    var self = enabled;
+
+	    // set `diff` timestamp
+	    var curr = +new Date();
+	    var ms = curr - (prevTime || curr);
+	    self.diff = ms;
+	    self.prev = prevTime;
+	    self.curr = curr;
+	    prevTime = curr;
+
+	    // add the `color` if not set
+	    if (null == self.useColors) self.useColors = exports.useColors();
+	    if (null == self.color && self.useColors) self.color = selectColor();
+
+	    var args = new Array(arguments.length);
+	    for (var i = 0; i < args.length; i++) {
+	      args[i] = arguments[i];
+	    }
+
+	    args[0] = exports.coerce(args[0]);
+
+	    if ('string' !== typeof args[0]) {
+	      // anything else let's inspect with %o
+	      args = ['%o'].concat(args);
+	    }
+
+	    // apply any `formatters` transformations
+	    var index = 0;
+	    args[0] = args[0].replace(/%([a-z%])/g, function(match, format) {
+	      // if we encounter an escaped % then don't increase the array index
+	      if (match === '%%') return match;
+	      index++;
+	      var formatter = exports.formatters[format];
+	      if ('function' === typeof formatter) {
+	        var val = args[index];
+	        match = formatter.call(self, val);
+
+	        // now we need to remove `args[index]` since it's inlined in the `format`
+	        args.splice(index, 1);
+	        index--;
+	      }
+	      return match;
+	    });
+
+	    // apply env-specific formatting
+	    args = exports.formatArgs.apply(self, args);
+
+	    var logFn = enabled.log || exports.log || console.log.bind(console);
+	    logFn.apply(self, args);
+	  }
+	  enabled.enabled = true;
+
+	  var fn = exports.enabled(namespace) ? enabled : disabled;
+
+	  fn.namespace = namespace;
+
+	  return fn;
+	}
+
+	/**
+	 * Enables a debug mode by namespaces. This can include modes
+	 * separated by a colon and wildcards.
+	 *
+	 * @param {String} namespaces
+	 * @api public
+	 */
+
+	function enable(namespaces) {
+	  exports.save(namespaces);
+
+	  var split = (namespaces || '').split(/[\s,]+/);
+	  var len = split.length;
+
+	  for (var i = 0; i < len; i++) {
+	    if (!split[i]) continue; // ignore empty strings
+	    namespaces = split[i].replace(/[\\^$+?.()|[\]{}]/g, '\\$&').replace(/\*/g, '.*?');
+	    if (namespaces[0] === '-') {
+	      exports.skips.push(new RegExp('^' + namespaces.substr(1) + '$'));
+	    } else {
+	      exports.names.push(new RegExp('^' + namespaces + '$'));
+	    }
+	  }
+	}
+
+	/**
+	 * Disable debug output.
+	 *
+	 * @api public
+	 */
+
+	function disable() {
+	  exports.enable('');
+	}
+
+	/**
+	 * Returns true if the given mode name is enabled, false otherwise.
+	 *
+	 * @param {String} name
+	 * @return {Boolean}
+	 * @api public
+	 */
+
+	function enabled(name) {
+	  var i, len;
+	  for (i = 0, len = exports.skips.length; i < len; i++) {
+	    if (exports.skips[i].test(name)) {
+	      return false;
+	    }
+	  }
+	  for (i = 0, len = exports.names.length; i < len; i++) {
+	    if (exports.names[i].test(name)) {
+	      return true;
+	    }
+	  }
+	  return false;
+	}
+
+	/**
+	 * Coerce `val`.
+	 *
+	 * @param {Mixed} val
+	 * @return {Mixed}
+	 * @api private
+	 */
+
+	function coerce(val) {
+	  if (val instanceof Error) return val.stack || val.message;
+	  return val;
+	}
+
+
+/***/ },
+
+/***/ 376:
+/***/ function(module, exports) {
+
+	/**
+	 * Helpers.
+	 */
+
+	var s = 1000
+	var m = s * 60
+	var h = m * 60
+	var d = h * 24
+	var y = d * 365.25
+
+	/**
+	 * Parse or format the given `val`.
+	 *
+	 * Options:
+	 *
+	 *  - `long` verbose formatting [false]
+	 *
+	 * @param {String|Number} val
+	 * @param {Object} options
+	 * @throws {Error} throw an error if val is not a non-empty string or a number
+	 * @return {String|Number}
+	 * @api public
+	 */
+
+	module.exports = function (val, options) {
+	  options = options || {}
+	  var type = typeof val
+	  if (type === 'string' && val.length > 0) {
+	    return parse(val)
+	  } else if (type === 'number' && isNaN(val) === false) {
+	    return options.long ?
+				fmtLong(val) :
+				fmtShort(val)
+	  }
+	  throw new Error('val is not a non-empty string or a valid number. val=' + JSON.stringify(val))
+	}
+
+	/**
+	 * Parse the given `str` and return milliseconds.
+	 *
+	 * @param {String} str
+	 * @return {Number}
+	 * @api private
+	 */
+
+	function parse(str) {
+	  str = String(str)
+	  if (str.length > 10000) {
+	    return
+	  }
+	  var match = /^((?:\d+)?\.?\d+) *(milliseconds?|msecs?|ms|seconds?|secs?|s|minutes?|mins?|m|hours?|hrs?|h|days?|d|years?|yrs?|y)?$/i.exec(str)
+	  if (!match) {
+	    return
+	  }
+	  var n = parseFloat(match[1])
+	  var type = (match[2] || 'ms').toLowerCase()
+	  switch (type) {
+	    case 'years':
+	    case 'year':
+	    case 'yrs':
+	    case 'yr':
+	    case 'y':
+	      return n * y
+	    case 'days':
+	    case 'day':
+	    case 'd':
+	      return n * d
+	    case 'hours':
+	    case 'hour':
+	    case 'hrs':
+	    case 'hr':
+	    case 'h':
+	      return n * h
+	    case 'minutes':
+	    case 'minute':
+	    case 'mins':
+	    case 'min':
+	    case 'm':
+	      return n * m
+	    case 'seconds':
+	    case 'second':
+	    case 'secs':
+	    case 'sec':
+	    case 's':
+	      return n * s
+	    case 'milliseconds':
+	    case 'millisecond':
+	    case 'msecs':
+	    case 'msec':
+	    case 'ms':
+	      return n
+	    default:
+	      return undefined
+	  }
+	}
+
+	/**
+	 * Short format for `ms`.
+	 *
+	 * @param {Number} ms
+	 * @return {String}
+	 * @api private
+	 */
+
+	function fmtShort(ms) {
+	  if (ms >= d) {
+	    return Math.round(ms / d) + 'd'
+	  }
+	  if (ms >= h) {
+	    return Math.round(ms / h) + 'h'
+	  }
+	  if (ms >= m) {
+	    return Math.round(ms / m) + 'm'
+	  }
+	  if (ms >= s) {
+	    return Math.round(ms / s) + 's'
+	  }
+	  return ms + 'ms'
+	}
+
+	/**
+	 * Long format for `ms`.
+	 *
+	 * @param {Number} ms
+	 * @return {String}
+	 * @api private
+	 */
+
+	function fmtLong(ms) {
+	  return plural(ms, d, 'day') ||
+	    plural(ms, h, 'hour') ||
+	    plural(ms, m, 'minute') ||
+	    plural(ms, s, 'second') ||
+	    ms + ' ms'
+	}
+
+	/**
+	 * Pluralization helper.
+	 */
+
+	function plural(ms, n, name) {
+	  if (ms < n) {
+	    return
+	  }
+	  if (ms < n * 1.5) {
+	    return Math.floor(ms / n) + ' ' + name
+	  }
+	  return Math.ceil(ms / n) + ' ' + name + 's'
+	}
+
+
+/***/ },
+
+/***/ 377:
+/***/ function(module, exports, __webpack_require__) {
+
+	
+	/**
+	 * Module dependencies.
+	 */
+
+	var debug = __webpack_require__(378)('socket.io-parser');
+	var json = __webpack_require__(381);
+	var Emitter = __webpack_require__(384);
+	var binary = __webpack_require__(385);
+	var isBuf = __webpack_require__(387);
+
+	/**
+	 * Protocol version.
+	 *
+	 * @api public
+	 */
+
+	exports.protocol = 4;
+
+	/**
+	 * Packet types.
+	 *
+	 * @api public
+	 */
+
+	exports.types = [
+	  'CONNECT',
+	  'DISCONNECT',
+	  'EVENT',
+	  'ACK',
+	  'ERROR',
+	  'BINARY_EVENT',
+	  'BINARY_ACK'
+	];
+
+	/**
+	 * Packet type `connect`.
+	 *
+	 * @api public
+	 */
+
+	exports.CONNECT = 0;
+
+	/**
+	 * Packet type `disconnect`.
+	 *
+	 * @api public
+	 */
+
+	exports.DISCONNECT = 1;
+
+	/**
+	 * Packet type `event`.
+	 *
+	 * @api public
+	 */
+
+	exports.EVENT = 2;
+
+	/**
+	 * Packet type `ack`.
+	 *
+	 * @api public
+	 */
+
+	exports.ACK = 3;
+
+	/**
+	 * Packet type `error`.
+	 *
+	 * @api public
+	 */
+
+	exports.ERROR = 4;
+
+	/**
+	 * Packet type 'binary event'
+	 *
+	 * @api public
+	 */
+
+	exports.BINARY_EVENT = 5;
+
+	/**
+	 * Packet type `binary ack`. For acks with binary arguments.
+	 *
+	 * @api public
+	 */
+
+	exports.BINARY_ACK = 6;
+
+	/**
+	 * Encoder constructor.
+	 *
+	 * @api public
+	 */
+
+	exports.Encoder = Encoder;
+
+	/**
+	 * Decoder constructor.
+	 *
+	 * @api public
+	 */
+
+	exports.Decoder = Decoder;
+
+	/**
+	 * A socket.io Encoder instance
+	 *
+	 * @api public
+	 */
+
+	function Encoder() {}
+
+	/**
+	 * Encode a packet as a single string if non-binary, or as a
+	 * buffer sequence, depending on packet type.
+	 *
+	 * @param {Object} obj - packet object
+	 * @param {Function} callback - function to handle encodings (likely engine.write)
+	 * @return Calls callback with Array of encodings
+	 * @api public
+	 */
+
+	Encoder.prototype.encode = function(obj, callback){
+	  debug('encoding packet %j', obj);
+
+	  if (exports.BINARY_EVENT == obj.type || exports.BINARY_ACK == obj.type) {
+	    encodeAsBinary(obj, callback);
+	  }
+	  else {
+	    var encoding = encodeAsString(obj);
+	    callback([encoding]);
+	  }
+	};
+
+	/**
+	 * Encode packet as string.
+	 *
+	 * @param {Object} packet
+	 * @return {String} encoded
+	 * @api private
+	 */
+
+	function encodeAsString(obj) {
+	  var str = '';
+	  var nsp = false;
+
+	  // first is type
+	  str += obj.type;
+
+	  // attachments if we have them
+	  if (exports.BINARY_EVENT == obj.type || exports.BINARY_ACK == obj.type) {
+	    str += obj.attachments;
+	    str += '-';
+	  }
+
+	  // if we have a namespace other than `/`
+	  // we append it followed by a comma `,`
+	  if (obj.nsp && '/' != obj.nsp) {
+	    nsp = true;
+	    str += obj.nsp;
+	  }
+
+	  // immediately followed by the id
+	  if (null != obj.id) {
+	    if (nsp) {
+	      str += ',';
+	      nsp = false;
+	    }
+	    str += obj.id;
+	  }
+
+	  // json data
+	  if (null != obj.data) {
+	    if (nsp) str += ',';
+	    str += json.stringify(obj.data);
+	  }
+
+	  debug('encoded %j as %s', obj, str);
+	  return str;
+	}
+
+	/**
+	 * Encode packet as 'buffer sequence' by removing blobs, and
+	 * deconstructing packet into object with placeholders and
+	 * a list of buffers.
+	 *
+	 * @param {Object} packet
+	 * @return {Buffer} encoded
+	 * @api private
+	 */
+
+	function encodeAsBinary(obj, callback) {
+
+	  function writeEncoding(bloblessData) {
+	    var deconstruction = binary.deconstructPacket(bloblessData);
+	    var pack = encodeAsString(deconstruction.packet);
+	    var buffers = deconstruction.buffers;
+
+	    buffers.unshift(pack); // add packet info to beginning of data list
+	    callback(buffers); // write all the buffers
+	  }
+
+	  binary.removeBlobs(obj, writeEncoding);
+	}
+
+	/**
+	 * A socket.io Decoder instance
+	 *
+	 * @return {Object} decoder
+	 * @api public
+	 */
+
+	function Decoder() {
+	  this.reconstructor = null;
+	}
+
+	/**
+	 * Mix in `Emitter` with Decoder.
+	 */
+
+	Emitter(Decoder.prototype);
+
+	/**
+	 * Decodes an ecoded packet string into packet JSON.
+	 *
+	 * @param {String} obj - encoded packet
+	 * @return {Object} packet
+	 * @api public
+	 */
+
+	Decoder.prototype.add = function(obj) {
+	  var packet;
+	  if ('string' == typeof obj) {
+	    packet = decodeString(obj);
+	    if (exports.BINARY_EVENT == packet.type || exports.BINARY_ACK == packet.type) { // binary packet's json
+	      this.reconstructor = new BinaryReconstructor(packet);
+
+	      // no attachments, labeled binary but no binary data to follow
+	      if (this.reconstructor.reconPack.attachments === 0) {
+	        this.emit('decoded', packet);
+	      }
+	    } else { // non-binary full packet
+	      this.emit('decoded', packet);
+	    }
+	  }
+	  else if (isBuf(obj) || obj.base64) { // raw binary data
+	    if (!this.reconstructor) {
+	      throw new Error('got binary data when not reconstructing a packet');
+	    } else {
+	      packet = this.reconstructor.takeBinaryData(obj);
+	      if (packet) { // received final buffer
+	        this.reconstructor = null;
+	        this.emit('decoded', packet);
+	      }
+	    }
+	  }
+	  else {
+	    throw new Error('Unknown type: ' + obj);
+	  }
+	};
+
+	/**
+	 * Decode a packet String (JSON data)
+	 *
+	 * @param {String} str
+	 * @return {Object} packet
+	 * @api private
+	 */
+
+	function decodeString(str) {
+	  var p = {};
+	  var i = 0;
+
+	  // look up type
+	  p.type = Number(str.charAt(0));
+	  if (null == exports.types[p.type]) return error();
+
+	  // look up attachments if type binary
+	  if (exports.BINARY_EVENT == p.type || exports.BINARY_ACK == p.type) {
+	    var buf = '';
+	    while (str.charAt(++i) != '-') {
+	      buf += str.charAt(i);
+	      if (i == str.length) break;
+	    }
+	    if (buf != Number(buf) || str.charAt(i) != '-') {
+	      throw new Error('Illegal attachments');
+	    }
+	    p.attachments = Number(buf);
+	  }
+
+	  // look up namespace (if any)
+	  if ('/' == str.charAt(i + 1)) {
+	    p.nsp = '';
+	    while (++i) {
+	      var c = str.charAt(i);
+	      if (',' == c) break;
+	      p.nsp += c;
+	      if (i == str.length) break;
+	    }
+	  } else {
+	    p.nsp = '/';
+	  }
+
+	  // look up id
+	  var next = str.charAt(i + 1);
+	  if ('' !== next && Number(next) == next) {
+	    p.id = '';
+	    while (++i) {
+	      var c = str.charAt(i);
+	      if (null == c || Number(c) != c) {
+	        --i;
+	        break;
+	      }
+	      p.id += str.charAt(i);
+	      if (i == str.length) break;
+	    }
+	    p.id = Number(p.id);
+	  }
+
+	  // look up json data
+	  if (str.charAt(++i)) {
+	    p = tryParse(p, str.substr(i));
+	  }
+
+	  debug('decoded %s as %j', str, p);
+	  return p;
+	}
+
+	function tryParse(p, str) {
+	  try {
+	    p.data = json.parse(str);
+	  } catch(e){
+	    return error();
+	  }
+	  return p; 
+	};
+
+	/**
+	 * Deallocates a parser's resources
+	 *
+	 * @api public
+	 */
+
+	Decoder.prototype.destroy = function() {
+	  if (this.reconstructor) {
+	    this.reconstructor.finishedReconstruction();
+	  }
+	};
+
+	/**
+	 * A manager of a binary event's 'buffer sequence'. Should
+	 * be constructed whenever a packet of type BINARY_EVENT is
+	 * decoded.
+	 *
+	 * @param {Object} packet
+	 * @return {BinaryReconstructor} initialized reconstructor
+	 * @api private
+	 */
+
+	function BinaryReconstructor(packet) {
+	  this.reconPack = packet;
+	  this.buffers = [];
+	}
+
+	/**
+	 * Method to be called when binary data received from connection
+	 * after a BINARY_EVENT packet.
+	 *
+	 * @param {Buffer | ArrayBuffer} binData - the raw binary data received
+	 * @return {null | Object} returns null if more binary data is expected or
+	 *   a reconstructed packet object if all buffers have been received.
+	 * @api private
+	 */
+
+	BinaryReconstructor.prototype.takeBinaryData = function(binData) {
+	  this.buffers.push(binData);
+	  if (this.buffers.length == this.reconPack.attachments) { // done with buffer list
+	    var packet = binary.reconstructPacket(this.reconPack, this.buffers);
+	    this.finishedReconstruction();
+	    return packet;
+	  }
+	  return null;
+	};
+
+	/**
+	 * Cleans up binary packet reconstruction variables.
+	 *
+	 * @api private
+	 */
+
+	BinaryReconstructor.prototype.finishedReconstruction = function() {
+	  this.reconPack = null;
+	  this.buffers = [];
+	};
+
+	function error(data){
+	  return {
+	    type: exports.ERROR,
+	    data: 'parser error'
+	  };
+	}
+
+
+/***/ },
+
+/***/ 378:
+/***/ function(module, exports, __webpack_require__) {
+
+	
+	/**
+	 * This is the web browser implementation of `debug()`.
+	 *
+	 * Expose `debug()` as the module.
+	 */
+
+	exports = module.exports = __webpack_require__(379);
+	exports.log = log;
+	exports.formatArgs = formatArgs;
+	exports.save = save;
+	exports.load = load;
+	exports.useColors = useColors;
+	exports.storage = 'undefined' != typeof chrome
+	               && 'undefined' != typeof chrome.storage
+	                  ? chrome.storage.local
+	                  : localstorage();
+
+	/**
+	 * Colors.
+	 */
+
+	exports.colors = [
+	  'lightseagreen',
+	  'forestgreen',
+	  'goldenrod',
+	  'dodgerblue',
+	  'darkorchid',
+	  'crimson'
+	];
+
+	/**
+	 * Currently only WebKit-based Web Inspectors, Firefox >= v31,
+	 * and the Firebug extension (any Firefox version) are known
+	 * to support "%c" CSS customizations.
+	 *
+	 * TODO: add a `localStorage` variable to explicitly enable/disable colors
+	 */
+
+	function useColors() {
+	  // is webkit? http://stackoverflow.com/a/16459606/376773
+	  return ('WebkitAppearance' in document.documentElement.style) ||
+	    // is firebug? http://stackoverflow.com/a/398120/376773
+	    (window.console && (console.firebug || (console.exception && console.table))) ||
+	    // is firefox >= v31?
+	    // https://developer.mozilla.org/en-US/docs/Tools/Web_Console#Styling_messages
+	    (navigator.userAgent.toLowerCase().match(/firefox\/(\d+)/) && parseInt(RegExp.$1, 10) >= 31);
+	}
+
+	/**
+	 * Map %j to `JSON.stringify()`, since no Web Inspectors do that by default.
+	 */
+
+	exports.formatters.j = function(v) {
+	  return JSON.stringify(v);
+	};
+
+
+	/**
+	 * Colorize log arguments if enabled.
+	 *
+	 * @api public
+	 */
+
+	function formatArgs() {
+	  var args = arguments;
+	  var useColors = this.useColors;
+
+	  args[0] = (useColors ? '%c' : '')
+	    + this.namespace
+	    + (useColors ? ' %c' : ' ')
+	    + args[0]
+	    + (useColors ? '%c ' : ' ')
+	    + '+' + exports.humanize(this.diff);
+
+	  if (!useColors) return args;
+
+	  var c = 'color: ' + this.color;
+	  args = [args[0], c, 'color: inherit'].concat(Array.prototype.slice.call(args, 1));
+
+	  // the final "%c" is somewhat tricky, because there could be other
+	  // arguments passed either before or after the %c, so we need to
+	  // figure out the correct index to insert the CSS into
+	  var index = 0;
+	  var lastC = 0;
+	  args[0].replace(/%[a-z%]/g, function(match) {
+	    if ('%%' === match) return;
+	    index++;
+	    if ('%c' === match) {
+	      // we only are interested in the *last* %c
+	      // (the user may have provided their own)
+	      lastC = index;
+	    }
+	  });
+
+	  args.splice(lastC, 0, c);
+	  return args;
+	}
+
+	/**
+	 * Invokes `console.log()` when available.
+	 * No-op when `console.log` is not a "function".
+	 *
+	 * @api public
+	 */
+
+	function log() {
+	  // this hackery is required for IE8/9, where
+	  // the `console.log` function doesn't have 'apply'
+	  return 'object' === typeof console
+	    && console.log
+	    && Function.prototype.apply.call(console.log, console, arguments);
+	}
+
+	/**
+	 * Save `namespaces`.
+	 *
+	 * @param {String} namespaces
+	 * @api private
+	 */
+
+	function save(namespaces) {
+	  try {
+	    if (null == namespaces) {
+	      exports.storage.removeItem('debug');
+	    } else {
+	      exports.storage.debug = namespaces;
+	    }
+	  } catch(e) {}
+	}
+
+	/**
+	 * Load `namespaces`.
+	 *
+	 * @return {String} returns the previously persisted debug modes
+	 * @api private
+	 */
+
+	function load() {
+	  var r;
+	  try {
+	    r = exports.storage.debug;
+	  } catch(e) {}
+	  return r;
+	}
+
+	/**
+	 * Enable namespaces listed in `localStorage.debug` initially.
+	 */
+
+	exports.enable(load());
+
+	/**
+	 * Localstorage attempts to return the localstorage.
+	 *
+	 * This is necessary because safari throws
+	 * when a user disables cookies/localstorage
+	 * and you attempt to access it.
+	 *
+	 * @return {LocalStorage}
+	 * @api private
+	 */
+
+	function localstorage(){
+	  try {
+	    return window.localStorage;
+	  } catch (e) {}
+	}
+
+
+/***/ },
+
+/***/ 379:
+/***/ function(module, exports, __webpack_require__) {
+
+	
+	/**
+	 * This is the common logic for both the Node.js and web browser
+	 * implementations of `debug()`.
+	 *
+	 * Expose `debug()` as the module.
+	 */
+
+	exports = module.exports = debug;
+	exports.coerce = coerce;
+	exports.disable = disable;
+	exports.enable = enable;
+	exports.enabled = enabled;
+	exports.humanize = __webpack_require__(380);
+
+	/**
+	 * The currently active debug mode names, and names to skip.
+	 */
+
+	exports.names = [];
+	exports.skips = [];
+
+	/**
+	 * Map of special "%n" handling functions, for the debug "format" argument.
+	 *
+	 * Valid key names are a single, lowercased letter, i.e. "n".
+	 */
+
+	exports.formatters = {};
+
+	/**
+	 * Previously assigned color.
+	 */
+
+	var prevColor = 0;
+
+	/**
+	 * Previous log timestamp.
+	 */
+
+	var prevTime;
+
+	/**
+	 * Select a color.
+	 *
+	 * @return {Number}
+	 * @api private
+	 */
+
+	function selectColor() {
+	  return exports.colors[prevColor++ % exports.colors.length];
+	}
+
+	/**
+	 * Create a debugger with the given `namespace`.
+	 *
+	 * @param {String} namespace
+	 * @return {Function}
+	 * @api public
+	 */
+
+	function debug(namespace) {
+
+	  // define the `disabled` version
+	  function disabled() {
+	  }
+	  disabled.enabled = false;
+
+	  // define the `enabled` version
+	  function enabled() {
+
+	    var self = enabled;
+
+	    // set `diff` timestamp
+	    var curr = +new Date();
+	    var ms = curr - (prevTime || curr);
+	    self.diff = ms;
+	    self.prev = prevTime;
+	    self.curr = curr;
+	    prevTime = curr;
+
+	    // add the `color` if not set
+	    if (null == self.useColors) self.useColors = exports.useColors();
+	    if (null == self.color && self.useColors) self.color = selectColor();
+
+	    var args = Array.prototype.slice.call(arguments);
+
+	    args[0] = exports.coerce(args[0]);
+
+	    if ('string' !== typeof args[0]) {
+	      // anything else let's inspect with %o
+	      args = ['%o'].concat(args);
+	    }
+
+	    // apply any `formatters` transformations
+	    var index = 0;
+	    args[0] = args[0].replace(/%([a-z%])/g, function(match, format) {
+	      // if we encounter an escaped % then don't increase the array index
+	      if (match === '%%') return match;
+	      index++;
+	      var formatter = exports.formatters[format];
+	      if ('function' === typeof formatter) {
+	        var val = args[index];
+	        match = formatter.call(self, val);
+
+	        // now we need to remove `args[index]` since it's inlined in the `format`
+	        args.splice(index, 1);
+	        index--;
+	      }
+	      return match;
+	    });
+
+	    if ('function' === typeof exports.formatArgs) {
+	      args = exports.formatArgs.apply(self, args);
+	    }
+	    var logFn = enabled.log || exports.log || console.log.bind(console);
+	    logFn.apply(self, args);
+	  }
+	  enabled.enabled = true;
+
+	  var fn = exports.enabled(namespace) ? enabled : disabled;
+
+	  fn.namespace = namespace;
+
+	  return fn;
+	}
+
+	/**
+	 * Enables a debug mode by namespaces. This can include modes
+	 * separated by a colon and wildcards.
+	 *
+	 * @param {String} namespaces
+	 * @api public
+	 */
+
+	function enable(namespaces) {
+	  exports.save(namespaces);
+
+	  var split = (namespaces || '').split(/[\s,]+/);
+	  var len = split.length;
+
+	  for (var i = 0; i < len; i++) {
+	    if (!split[i]) continue; // ignore empty strings
+	    namespaces = split[i].replace(/\*/g, '.*?');
+	    if (namespaces[0] === '-') {
+	      exports.skips.push(new RegExp('^' + namespaces.substr(1) + '$'));
+	    } else {
+	      exports.names.push(new RegExp('^' + namespaces + '$'));
+	    }
+	  }
+	}
+
+	/**
+	 * Disable debug output.
+	 *
+	 * @api public
+	 */
+
+	function disable() {
+	  exports.enable('');
+	}
+
+	/**
+	 * Returns true if the given mode name is enabled, false otherwise.
+	 *
+	 * @param {String} name
+	 * @return {Boolean}
+	 * @api public
+	 */
+
+	function enabled(name) {
+	  var i, len;
+	  for (i = 0, len = exports.skips.length; i < len; i++) {
+	    if (exports.skips[i].test(name)) {
+	      return false;
+	    }
+	  }
+	  for (i = 0, len = exports.names.length; i < len; i++) {
+	    if (exports.names[i].test(name)) {
+	      return true;
+	    }
+	  }
+	  return false;
+	}
+
+	/**
+	 * Coerce `val`.
+	 *
+	 * @param {Mixed} val
+	 * @return {Mixed}
+	 * @api private
+	 */
+
+	function coerce(val) {
+	  if (val instanceof Error) return val.stack || val.message;
+	  return val;
+	}
+
+
+/***/ },
+
+/***/ 380:
+/***/ function(module, exports) {
+
+	/**
+	 * Helpers.
+	 */
+
+	var s = 1000;
+	var m = s * 60;
+	var h = m * 60;
+	var d = h * 24;
+	var y = d * 365.25;
+
+	/**
+	 * Parse or format the given `val`.
+	 *
+	 * Options:
+	 *
+	 *  - `long` verbose formatting [false]
+	 *
+	 * @param {String|Number} val
+	 * @param {Object} options
+	 * @return {String|Number}
+	 * @api public
+	 */
+
+	module.exports = function(val, options){
+	  options = options || {};
+	  if ('string' == typeof val) return parse(val);
+	  return options.long
+	    ? long(val)
+	    : short(val);
+	};
+
+	/**
+	 * Parse the given `str` and return milliseconds.
+	 *
+	 * @param {String} str
+	 * @return {Number}
+	 * @api private
+	 */
+
+	function parse(str) {
+	  str = '' + str;
+	  if (str.length > 10000) return;
+	  var match = /^((?:\d+)?\.?\d+) *(milliseconds?|msecs?|ms|seconds?|secs?|s|minutes?|mins?|m|hours?|hrs?|h|days?|d|years?|yrs?|y)?$/i.exec(str);
+	  if (!match) return;
+	  var n = parseFloat(match[1]);
+	  var type = (match[2] || 'ms').toLowerCase();
+	  switch (type) {
+	    case 'years':
+	    case 'year':
+	    case 'yrs':
+	    case 'yr':
+	    case 'y':
+	      return n * y;
+	    case 'days':
+	    case 'day':
+	    case 'd':
+	      return n * d;
+	    case 'hours':
+	    case 'hour':
+	    case 'hrs':
+	    case 'hr':
+	    case 'h':
+	      return n * h;
+	    case 'minutes':
+	    case 'minute':
+	    case 'mins':
+	    case 'min':
+	    case 'm':
+	      return n * m;
+	    case 'seconds':
+	    case 'second':
+	    case 'secs':
+	    case 'sec':
+	    case 's':
+	      return n * s;
+	    case 'milliseconds':
+	    case 'millisecond':
+	    case 'msecs':
+	    case 'msec':
+	    case 'ms':
+	      return n;
+	  }
+	}
+
+	/**
+	 * Short format for `ms`.
+	 *
+	 * @param {Number} ms
+	 * @return {String}
+	 * @api private
+	 */
+
+	function short(ms) {
+	  if (ms >= d) return Math.round(ms / d) + 'd';
+	  if (ms >= h) return Math.round(ms / h) + 'h';
+	  if (ms >= m) return Math.round(ms / m) + 'm';
+	  if (ms >= s) return Math.round(ms / s) + 's';
+	  return ms + 'ms';
+	}
+
+	/**
+	 * Long format for `ms`.
+	 *
+	 * @param {Number} ms
+	 * @return {String}
+	 * @api private
+	 */
+
+	function long(ms) {
+	  return plural(ms, d, 'day')
+	    || plural(ms, h, 'hour')
+	    || plural(ms, m, 'minute')
+	    || plural(ms, s, 'second')
+	    || ms + ' ms';
+	}
+
+	/**
+	 * Pluralization helper.
+	 */
+
+	function plural(ms, n, name) {
+	  if (ms < n) return;
+	  if (ms < n * 1.5) return Math.floor(ms / n) + ' ' + name;
+	  return Math.ceil(ms / n) + ' ' + name + 's';
+	}
+
+
+/***/ },
+
+/***/ 381:
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(module, global) {/*! JSON v3.3.2 | http://bestiejs.github.io/json3 | Copyright 2012-2014, Kit Cambridge | http://kit.mit-license.org */
+	;(function () {
+	  // Detect the `define` function exposed by asynchronous module loaders. The
+	  // strict `define` check is necessary for compatibility with `r.js`.
+	  var isLoader = "function" === "function" && __webpack_require__(383);
+
+	  // A set of types used to distinguish objects from primitives.
+	  var objectTypes = {
+	    "function": true,
+	    "object": true
+	  };
+
+	  // Detect the `exports` object exposed by CommonJS implementations.
+	  var freeExports = objectTypes[typeof exports] && exports && !exports.nodeType && exports;
+
+	  // Use the `global` object exposed by Node (including Browserify via
+	  // `insert-module-globals`), Narwhal, and Ringo as the default context,
+	  // and the `window` object in browsers. Rhino exports a `global` function
+	  // instead.
+	  var root = objectTypes[typeof window] && window || this,
+	      freeGlobal = freeExports && objectTypes[typeof module] && module && !module.nodeType && typeof global == "object" && global;
+
+	  if (freeGlobal && (freeGlobal["global"] === freeGlobal || freeGlobal["window"] === freeGlobal || freeGlobal["self"] === freeGlobal)) {
+	    root = freeGlobal;
+	  }
+
+	  // Public: Initializes JSON 3 using the given `context` object, attaching the
+	  // `stringify` and `parse` functions to the specified `exports` object.
+	  function runInContext(context, exports) {
+	    context || (context = root["Object"]());
+	    exports || (exports = root["Object"]());
+
+	    // Native constructor aliases.
+	    var Number = context["Number"] || root["Number"],
+	        String = context["String"] || root["String"],
+	        Object = context["Object"] || root["Object"],
+	        Date = context["Date"] || root["Date"],
+	        SyntaxError = context["SyntaxError"] || root["SyntaxError"],
+	        TypeError = context["TypeError"] || root["TypeError"],
+	        Math = context["Math"] || root["Math"],
+	        nativeJSON = context["JSON"] || root["JSON"];
+
+	    // Delegate to the native `stringify` and `parse` implementations.
+	    if (typeof nativeJSON == "object" && nativeJSON) {
+	      exports.stringify = nativeJSON.stringify;
+	      exports.parse = nativeJSON.parse;
+	    }
+
+	    // Convenience aliases.
+	    var objectProto = Object.prototype,
+	        getClass = objectProto.toString,
+	        isProperty, forEach, undef;
+
+	    // Test the `Date#getUTC*` methods. Based on work by @Yaffle.
+	    var isExtended = new Date(-3509827334573292);
+	    try {
+	      // The `getUTCFullYear`, `Month`, and `Date` methods return nonsensical
+	      // results for certain dates in Opera >= 10.53.
+	      isExtended = isExtended.getUTCFullYear() == -109252 && isExtended.getUTCMonth() === 0 && isExtended.getUTCDate() === 1 &&
+	        // Safari < 2.0.2 stores the internal millisecond time value correctly,
+	        // but clips the values returned by the date methods to the range of
+	        // signed 32-bit integers ([-2 ** 31, 2 ** 31 - 1]).
+	        isExtended.getUTCHours() == 10 && isExtended.getUTCMinutes() == 37 && isExtended.getUTCSeconds() == 6 && isExtended.getUTCMilliseconds() == 708;
+	    } catch (exception) {}
+
+	    // Internal: Determines whether the native `JSON.stringify` and `parse`
+	    // implementations are spec-compliant. Based on work by Ken Snyder.
+	    function has(name) {
+	      if (has[name] !== undef) {
+	        // Return cached feature test result.
+	        return has[name];
+	      }
+	      var isSupported;
+	      if (name == "bug-string-char-index") {
+	        // IE <= 7 doesn't support accessing string characters using square
+	        // bracket notation. IE 8 only supports this for primitives.
+	        isSupported = "a"[0] != "a";
+	      } else if (name == "json") {
+	        // Indicates whether both `JSON.stringify` and `JSON.parse` are
+	        // supported.
+	        isSupported = has("json-stringify") && has("json-parse");
+	      } else {
+	        var value, serialized = '{"a":[1,true,false,null,"\\u0000\\b\\n\\f\\r\\t"]}';
+	        // Test `JSON.stringify`.
+	        if (name == "json-stringify") {
+	          var stringify = exports.stringify, stringifySupported = typeof stringify == "function" && isExtended;
+	          if (stringifySupported) {
+	            // A test function object with a custom `toJSON` method.
+	            (value = function () {
+	              return 1;
+	            }).toJSON = value;
+	            try {
+	              stringifySupported =
+	                // Firefox 3.1b1 and b2 serialize string, number, and boolean
+	                // primitives as object literals.
+	                stringify(0) === "0" &&
+	                // FF 3.1b1, b2, and JSON 2 serialize wrapped primitives as object
+	                // literals.
+	                stringify(new Number()) === "0" &&
+	                stringify(new String()) == '""' &&
+	                // FF 3.1b1, 2 throw an error if the value is `null`, `undefined`, or
+	                // does not define a canonical JSON representation (this applies to
+	                // objects with `toJSON` properties as well, *unless* they are nested
+	                // within an object or array).
+	                stringify(getClass) === undef &&
+	                // IE 8 serializes `undefined` as `"undefined"`. Safari <= 5.1.7 and
+	                // FF 3.1b3 pass this test.
+	                stringify(undef) === undef &&
+	                // Safari <= 5.1.7 and FF 3.1b3 throw `Error`s and `TypeError`s,
+	                // respectively, if the value is omitted entirely.
+	                stringify() === undef &&
+	                // FF 3.1b1, 2 throw an error if the given value is not a number,
+	                // string, array, object, Boolean, or `null` literal. This applies to
+	                // objects with custom `toJSON` methods as well, unless they are nested
+	                // inside object or array literals. YUI 3.0.0b1 ignores custom `toJSON`
+	                // methods entirely.
+	                stringify(value) === "1" &&
+	                stringify([value]) == "[1]" &&
+	                // Prototype <= 1.6.1 serializes `[undefined]` as `"[]"` instead of
+	                // `"[null]"`.
+	                stringify([undef]) == "[null]" &&
+	                // YUI 3.0.0b1 fails to serialize `null` literals.
+	                stringify(null) == "null" &&
+	                // FF 3.1b1, 2 halts serialization if an array contains a function:
+	                // `[1, true, getClass, 1]` serializes as "[1,true,],". FF 3.1b3
+	                // elides non-JSON values from objects and arrays, unless they
+	                // define custom `toJSON` methods.
+	                stringify([undef, getClass, null]) == "[null,null,null]" &&
+	                // Simple serialization test. FF 3.1b1 uses Unicode escape sequences
+	                // where character escape codes are expected (e.g., `\b` => `\u0008`).
+	                stringify({ "a": [value, true, false, null, "\x00\b\n\f\r\t"] }) == serialized &&
+	                // FF 3.1b1 and b2 ignore the `filter` and `width` arguments.
+	                stringify(null, value) === "1" &&
+	                stringify([1, 2], null, 1) == "[\n 1,\n 2\n]" &&
+	                // JSON 2, Prototype <= 1.7, and older WebKit builds incorrectly
+	                // serialize extended years.
+	                stringify(new Date(-8.64e15)) == '"-271821-04-20T00:00:00.000Z"' &&
+	                // The milliseconds are optional in ES 5, but required in 5.1.
+	                stringify(new Date(8.64e15)) == '"+275760-09-13T00:00:00.000Z"' &&
+	                // Firefox <= 11.0 incorrectly serializes years prior to 0 as negative
+	                // four-digit years instead of six-digit years. Credits: @Yaffle.
+	                stringify(new Date(-621987552e5)) == '"-000001-01-01T00:00:00.000Z"' &&
+	                // Safari <= 5.1.5 and Opera >= 10.53 incorrectly serialize millisecond
+	                // values less than 1000. Credits: @Yaffle.
+	                stringify(new Date(-1)) == '"1969-12-31T23:59:59.999Z"';
+	            } catch (exception) {
+	              stringifySupported = false;
+	            }
+	          }
+	          isSupported = stringifySupported;
+	        }
+	        // Test `JSON.parse`.
+	        if (name == "json-parse") {
+	          var parse = exports.parse;
+	          if (typeof parse == "function") {
+	            try {
+	              // FF 3.1b1, b2 will throw an exception if a bare literal is provided.
+	              // Conforming implementations should also coerce the initial argument to
+	              // a string prior to parsing.
+	              if (parse("0") === 0 && !parse(false)) {
+	                // Simple parsing test.
+	                value = parse(serialized);
+	                var parseSupported = value["a"].length == 5 && value["a"][0] === 1;
+	                if (parseSupported) {
+	                  try {
+	                    // Safari <= 5.1.2 and FF 3.1b1 allow unescaped tabs in strings.
+	                    parseSupported = !parse('"\t"');
+	                  } catch (exception) {}
+	                  if (parseSupported) {
+	                    try {
+	                      // FF 4.0 and 4.0.1 allow leading `+` signs and leading
+	                      // decimal points. FF 4.0, 4.0.1, and IE 9-10 also allow
+	                      // certain octal literals.
+	                      parseSupported = parse("01") !== 1;
+	                    } catch (exception) {}
+	                  }
+	                  if (parseSupported) {
+	                    try {
+	                      // FF 4.0, 4.0.1, and Rhino 1.7R3-R4 allow trailing decimal
+	                      // points. These environments, along with FF 3.1b1 and 2,
+	                      // also allow trailing commas in JSON objects and arrays.
+	                      parseSupported = parse("1.") !== 1;
+	                    } catch (exception) {}
+	                  }
+	                }
+	              }
+	            } catch (exception) {
+	              parseSupported = false;
+	            }
+	          }
+	          isSupported = parseSupported;
+	        }
+	      }
+	      return has[name] = !!isSupported;
+	    }
+
+	    if (!has("json")) {
+	      // Common `[[Class]]` name aliases.
+	      var functionClass = "[object Function]",
+	          dateClass = "[object Date]",
+	          numberClass = "[object Number]",
+	          stringClass = "[object String]",
+	          arrayClass = "[object Array]",
+	          booleanClass = "[object Boolean]";
+
+	      // Detect incomplete support for accessing string characters by index.
+	      var charIndexBuggy = has("bug-string-char-index");
+
+	      // Define additional utility methods if the `Date` methods are buggy.
+	      if (!isExtended) {
+	        var floor = Math.floor;
+	        // A mapping between the months of the year and the number of days between
+	        // January 1st and the first of the respective month.
+	        var Months = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334];
+	        // Internal: Calculates the number of days between the Unix epoch and the
+	        // first day of the given month.
+	        var getDay = function (year, month) {
+	          return Months[month] + 365 * (year - 1970) + floor((year - 1969 + (month = +(month > 1))) / 4) - floor((year - 1901 + month) / 100) + floor((year - 1601 + month) / 400);
+	        };
+	      }
+
+	      // Internal: Determines if a property is a direct property of the given
+	      // object. Delegates to the native `Object#hasOwnProperty` method.
+	      if (!(isProperty = objectProto.hasOwnProperty)) {
+	        isProperty = function (property) {
+	          var members = {}, constructor;
+	          if ((members.__proto__ = null, members.__proto__ = {
+	            // The *proto* property cannot be set multiple times in recent
+	            // versions of Firefox and SeaMonkey.
+	            "toString": 1
+	          }, members).toString != getClass) {
+	            // Safari <= 2.0.3 doesn't implement `Object#hasOwnProperty`, but
+	            // supports the mutable *proto* property.
+	            isProperty = function (property) {
+	              // Capture and break the object's prototype chain (see section 8.6.2
+	              // of the ES 5.1 spec). The parenthesized expression prevents an
+	              // unsafe transformation by the Closure Compiler.
+	              var original = this.__proto__, result = property in (this.__proto__ = null, this);
+	              // Restore the original prototype chain.
+	              this.__proto__ = original;
+	              return result;
+	            };
+	          } else {
+	            // Capture a reference to the top-level `Object` constructor.
+	            constructor = members.constructor;
+	            // Use the `constructor` property to simulate `Object#hasOwnProperty` in
+	            // other environments.
+	            isProperty = function (property) {
+	              var parent = (this.constructor || constructor).prototype;
+	              return property in this && !(property in parent && this[property] === parent[property]);
+	            };
+	          }
+	          members = null;
+	          return isProperty.call(this, property);
+	        };
+	      }
+
+	      // Internal: Normalizes the `for...in` iteration algorithm across
+	      // environments. Each enumerated key is yielded to a `callback` function.
+	      forEach = function (object, callback) {
+	        var size = 0, Properties, members, property;
+
+	        // Tests for bugs in the current environment's `for...in` algorithm. The
+	        // `valueOf` property inherits the non-enumerable flag from
+	        // `Object.prototype` in older versions of IE, Netscape, and Mozilla.
+	        (Properties = function () {
+	          this.valueOf = 0;
+	        }).prototype.valueOf = 0;
+
+	        // Iterate over a new instance of the `Properties` class.
+	        members = new Properties();
+	        for (property in members) {
+	          // Ignore all properties inherited from `Object.prototype`.
+	          if (isProperty.call(members, property)) {
+	            size++;
+	          }
+	        }
+	        Properties = members = null;
+
+	        // Normalize the iteration algorithm.
+	        if (!size) {
+	          // A list of non-enumerable properties inherited from `Object.prototype`.
+	          members = ["valueOf", "toString", "toLocaleString", "propertyIsEnumerable", "isPrototypeOf", "hasOwnProperty", "constructor"];
+	          // IE <= 8, Mozilla 1.0, and Netscape 6.2 ignore shadowed non-enumerable
+	          // properties.
+	          forEach = function (object, callback) {
+	            var isFunction = getClass.call(object) == functionClass, property, length;
+	            var hasProperty = !isFunction && typeof object.constructor != "function" && objectTypes[typeof object.hasOwnProperty] && object.hasOwnProperty || isProperty;
+	            for (property in object) {
+	              // Gecko <= 1.0 enumerates the `prototype` property of functions under
+	              // certain conditions; IE does not.
+	              if (!(isFunction && property == "prototype") && hasProperty.call(object, property)) {
+	                callback(property);
+	              }
+	            }
+	            // Manually invoke the callback for each non-enumerable property.
+	            for (length = members.length; property = members[--length]; hasProperty.call(object, property) && callback(property));
+	          };
+	        } else if (size == 2) {
+	          // Safari <= 2.0.4 enumerates shadowed properties twice.
+	          forEach = function (object, callback) {
+	            // Create a set of iterated properties.
+	            var members = {}, isFunction = getClass.call(object) == functionClass, property;
+	            for (property in object) {
+	              // Store each property name to prevent double enumeration. The
+	              // `prototype` property of functions is not enumerated due to cross-
+	              // environment inconsistencies.
+	              if (!(isFunction && property == "prototype") && !isProperty.call(members, property) && (members[property] = 1) && isProperty.call(object, property)) {
+	                callback(property);
+	              }
+	            }
+	          };
+	        } else {
+	          // No bugs detected; use the standard `for...in` algorithm.
+	          forEach = function (object, callback) {
+	            var isFunction = getClass.call(object) == functionClass, property, isConstructor;
+	            for (property in object) {
+	              if (!(isFunction && property == "prototype") && isProperty.call(object, property) && !(isConstructor = property === "constructor")) {
+	                callback(property);
+	              }
+	            }
+	            // Manually invoke the callback for the `constructor` property due to
+	            // cross-environment inconsistencies.
+	            if (isConstructor || isProperty.call(object, (property = "constructor"))) {
+	              callback(property);
+	            }
+	          };
+	        }
+	        return forEach(object, callback);
+	      };
+
+	      // Public: Serializes a JavaScript `value` as a JSON string. The optional
+	      // `filter` argument may specify either a function that alters how object and
+	      // array members are serialized, or an array of strings and numbers that
+	      // indicates which properties should be serialized. The optional `width`
+	      // argument may be either a string or number that specifies the indentation
+	      // level of the output.
+	      if (!has("json-stringify")) {
+	        // Internal: A map of control characters and their escaped equivalents.
+	        var Escapes = {
+	          92: "\\\\",
+	          34: '\\"',
+	          8: "\\b",
+	          12: "\\f",
+	          10: "\\n",
+	          13: "\\r",
+	          9: "\\t"
+	        };
+
+	        // Internal: Converts `value` into a zero-padded string such that its
+	        // length is at least equal to `width`. The `width` must be <= 6.
+	        var leadingZeroes = "000000";
+	        var toPaddedString = function (width, value) {
+	          // The `|| 0` expression is necessary to work around a bug in
+	          // Opera <= 7.54u2 where `0 == -0`, but `String(-0) !== "0"`.
+	          return (leadingZeroes + (value || 0)).slice(-width);
+	        };
+
+	        // Internal: Double-quotes a string `value`, replacing all ASCII control
+	        // characters (characters with code unit values between 0 and 31) with
+	        // their escaped equivalents. This is an implementation of the
+	        // `Quote(value)` operation defined in ES 5.1 section 15.12.3.
+	        var unicodePrefix = "\\u00";
+	        var quote = function (value) {
+	          var result = '"', index = 0, length = value.length, useCharIndex = !charIndexBuggy || length > 10;
+	          var symbols = useCharIndex && (charIndexBuggy ? value.split("") : value);
+	          for (; index < length; index++) {
+	            var charCode = value.charCodeAt(index);
+	            // If the character is a control character, append its Unicode or
+	            // shorthand escape sequence; otherwise, append the character as-is.
+	            switch (charCode) {
+	              case 8: case 9: case 10: case 12: case 13: case 34: case 92:
+	                result += Escapes[charCode];
+	                break;
+	              default:
+	                if (charCode < 32) {
+	                  result += unicodePrefix + toPaddedString(2, charCode.toString(16));
+	                  break;
+	                }
+	                result += useCharIndex ? symbols[index] : value.charAt(index);
+	            }
+	          }
+	          return result + '"';
+	        };
+
+	        // Internal: Recursively serializes an object. Implements the
+	        // `Str(key, holder)`, `JO(value)`, and `JA(value)` operations.
+	        var serialize = function (property, object, callback, properties, whitespace, indentation, stack) {
+	          var value, className, year, month, date, time, hours, minutes, seconds, milliseconds, results, element, index, length, prefix, result;
+	          try {
+	            // Necessary for host object support.
+	            value = object[property];
+	          } catch (exception) {}
+	          if (typeof value == "object" && value) {
+	            className = getClass.call(value);
+	            if (className == dateClass && !isProperty.call(value, "toJSON")) {
+	              if (value > -1 / 0 && value < 1 / 0) {
+	                // Dates are serialized according to the `Date#toJSON` method
+	                // specified in ES 5.1 section 15.9.5.44. See section 15.9.1.15
+	                // for the ISO 8601 date time string format.
+	                if (getDay) {
+	                  // Manually compute the year, month, date, hours, minutes,
+	                  // seconds, and milliseconds if the `getUTC*` methods are
+	                  // buggy. Adapted from @Yaffle's `date-shim` project.
+	                  date = floor(value / 864e5);
+	                  for (year = floor(date / 365.2425) + 1970 - 1; getDay(year + 1, 0) <= date; year++);
+	                  for (month = floor((date - getDay(year, 0)) / 30.42); getDay(year, month + 1) <= date; month++);
+	                  date = 1 + date - getDay(year, month);
+	                  // The `time` value specifies the time within the day (see ES
+	                  // 5.1 section 15.9.1.2). The formula `(A % B + B) % B` is used
+	                  // to compute `A modulo B`, as the `%` operator does not
+	                  // correspond to the `modulo` operation for negative numbers.
+	                  time = (value % 864e5 + 864e5) % 864e5;
+	                  // The hours, minutes, seconds, and milliseconds are obtained by
+	                  // decomposing the time within the day. See section 15.9.1.10.
+	                  hours = floor(time / 36e5) % 24;
+	                  minutes = floor(time / 6e4) % 60;
+	                  seconds = floor(time / 1e3) % 60;
+	                  milliseconds = time % 1e3;
+	                } else {
+	                  year = value.getUTCFullYear();
+	                  month = value.getUTCMonth();
+	                  date = value.getUTCDate();
+	                  hours = value.getUTCHours();
+	                  minutes = value.getUTCMinutes();
+	                  seconds = value.getUTCSeconds();
+	                  milliseconds = value.getUTCMilliseconds();
+	                }
+	                // Serialize extended years correctly.
+	                value = (year <= 0 || year >= 1e4 ? (year < 0 ? "-" : "+") + toPaddedString(6, year < 0 ? -year : year) : toPaddedString(4, year)) +
+	                  "-" + toPaddedString(2, month + 1) + "-" + toPaddedString(2, date) +
+	                  // Months, dates, hours, minutes, and seconds should have two
+	                  // digits; milliseconds should have three.
+	                  "T" + toPaddedString(2, hours) + ":" + toPaddedString(2, minutes) + ":" + toPaddedString(2, seconds) +
+	                  // Milliseconds are optional in ES 5.0, but required in 5.1.
+	                  "." + toPaddedString(3, milliseconds) + "Z";
+	              } else {
+	                value = null;
+	              }
+	            } else if (typeof value.toJSON == "function" && ((className != numberClass && className != stringClass && className != arrayClass) || isProperty.call(value, "toJSON"))) {
+	              // Prototype <= 1.6.1 adds non-standard `toJSON` methods to the
+	              // `Number`, `String`, `Date`, and `Array` prototypes. JSON 3
+	              // ignores all `toJSON` methods on these objects unless they are
+	              // defined directly on an instance.
+	              value = value.toJSON(property);
+	            }
+	          }
+	          if (callback) {
+	            // If a replacement function was provided, call it to obtain the value
+	            // for serialization.
+	            value = callback.call(object, property, value);
+	          }
+	          if (value === null) {
+	            return "null";
+	          }
+	          className = getClass.call(value);
+	          if (className == booleanClass) {
+	            // Booleans are represented literally.
+	            return "" + value;
+	          } else if (className == numberClass) {
+	            // JSON numbers must be finite. `Infinity` and `NaN` are serialized as
+	            // `"null"`.
+	            return value > -1 / 0 && value < 1 / 0 ? "" + value : "null";
+	          } else if (className == stringClass) {
+	            // Strings are double-quoted and escaped.
+	            return quote("" + value);
+	          }
+	          // Recursively serialize objects and arrays.
+	          if (typeof value == "object") {
+	            // Check for cyclic structures. This is a linear search; performance
+	            // is inversely proportional to the number of unique nested objects.
+	            for (length = stack.length; length--;) {
+	              if (stack[length] === value) {
+	                // Cyclic structures cannot be serialized by `JSON.stringify`.
+	                throw TypeError();
+	              }
+	            }
+	            // Add the object to the stack of traversed objects.
+	            stack.push(value);
+	            results = [];
+	            // Save the current indentation level and indent one additional level.
+	            prefix = indentation;
+	            indentation += whitespace;
+	            if (className == arrayClass) {
+	              // Recursively serialize array elements.
+	              for (index = 0, length = value.length; index < length; index++) {
+	                element = serialize(index, value, callback, properties, whitespace, indentation, stack);
+	                results.push(element === undef ? "null" : element);
+	              }
+	              result = results.length ? (whitespace ? "[\n" + indentation + results.join(",\n" + indentation) + "\n" + prefix + "]" : ("[" + results.join(",") + "]")) : "[]";
+	            } else {
+	              // Recursively serialize object members. Members are selected from
+	              // either a user-specified list of property names, or the object
+	              // itself.
+	              forEach(properties || value, function (property) {
+	                var element = serialize(property, value, callback, properties, whitespace, indentation, stack);
+	                if (element !== undef) {
+	                  // According to ES 5.1 section 15.12.3: "If `gap` {whitespace}
+	                  // is not the empty string, let `member` {quote(property) + ":"}
+	                  // be the concatenation of `member` and the `space` character."
+	                  // The "`space` character" refers to the literal space
+	                  // character, not the `space` {width} argument provided to
+	                  // `JSON.stringify`.
+	                  results.push(quote(property) + ":" + (whitespace ? " " : "") + element);
+	                }
+	              });
+	              result = results.length ? (whitespace ? "{\n" + indentation + results.join(",\n" + indentation) + "\n" + prefix + "}" : ("{" + results.join(",") + "}")) : "{}";
+	            }
+	            // Remove the object from the traversed object stack.
+	            stack.pop();
+	            return result;
+	          }
+	        };
+
+	        // Public: `JSON.stringify`. See ES 5.1 section 15.12.3.
+	        exports.stringify = function (source, filter, width) {
+	          var whitespace, callback, properties, className;
+	          if (objectTypes[typeof filter] && filter) {
+	            if ((className = getClass.call(filter)) == functionClass) {
+	              callback = filter;
+	            } else if (className == arrayClass) {
+	              // Convert the property names array into a makeshift set.
+	              properties = {};
+	              for (var index = 0, length = filter.length, value; index < length; value = filter[index++], ((className = getClass.call(value)), className == stringClass || className == numberClass) && (properties[value] = 1));
+	            }
+	          }
+	          if (width) {
+	            if ((className = getClass.call(width)) == numberClass) {
+	              // Convert the `width` to an integer and create a string containing
+	              // `width` number of space characters.
+	              if ((width -= width % 1) > 0) {
+	                for (whitespace = "", width > 10 && (width = 10); whitespace.length < width; whitespace += " ");
+	              }
+	            } else if (className == stringClass) {
+	              whitespace = width.length <= 10 ? width : width.slice(0, 10);
+	            }
+	          }
+	          // Opera <= 7.54u2 discards the values associated with empty string keys
+	          // (`""`) only if they are used directly within an object member list
+	          // (e.g., `!("" in { "": 1})`).
+	          return serialize("", (value = {}, value[""] = source, value), callback, properties, whitespace, "", []);
+	        };
+	      }
+
+	      // Public: Parses a JSON source string.
+	      if (!has("json-parse")) {
+	        var fromCharCode = String.fromCharCode;
+
+	        // Internal: A map of escaped control characters and their unescaped
+	        // equivalents.
+	        var Unescapes = {
+	          92: "\\",
+	          34: '"',
+	          47: "/",
+	          98: "\b",
+	          116: "\t",
+	          110: "\n",
+	          102: "\f",
+	          114: "\r"
+	        };
+
+	        // Internal: Stores the parser state.
+	        var Index, Source;
+
+	        // Internal: Resets the parser state and throws a `SyntaxError`.
+	        var abort = function () {
+	          Index = Source = null;
+	          throw SyntaxError();
+	        };
+
+	        // Internal: Returns the next token, or `"$"` if the parser has reached
+	        // the end of the source string. A token may be a string, number, `null`
+	        // literal, or Boolean literal.
+	        var lex = function () {
+	          var source = Source, length = source.length, value, begin, position, isSigned, charCode;
+	          while (Index < length) {
+	            charCode = source.charCodeAt(Index);
+	            switch (charCode) {
+	              case 9: case 10: case 13: case 32:
+	                // Skip whitespace tokens, including tabs, carriage returns, line
+	                // feeds, and space characters.
+	                Index++;
+	                break;
+	              case 123: case 125: case 91: case 93: case 58: case 44:
+	                // Parse a punctuator token (`{`, `}`, `[`, `]`, `:`, or `,`) at
+	                // the current position.
+	                value = charIndexBuggy ? source.charAt(Index) : source[Index];
+	                Index++;
+	                return value;
+	              case 34:
+	                // `"` delimits a JSON string; advance to the next character and
+	                // begin parsing the string. String tokens are prefixed with the
+	                // sentinel `@` character to distinguish them from punctuators and
+	                // end-of-string tokens.
+	                for (value = "@", Index++; Index < length;) {
+	                  charCode = source.charCodeAt(Index);
+	                  if (charCode < 32) {
+	                    // Unescaped ASCII control characters (those with a code unit
+	                    // less than the space character) are not permitted.
+	                    abort();
+	                  } else if (charCode == 92) {
+	                    // A reverse solidus (`\`) marks the beginning of an escaped
+	                    // control character (including `"`, `\`, and `/`) or Unicode
+	                    // escape sequence.
+	                    charCode = source.charCodeAt(++Index);
+	                    switch (charCode) {
+	                      case 92: case 34: case 47: case 98: case 116: case 110: case 102: case 114:
+	                        // Revive escaped control characters.
+	                        value += Unescapes[charCode];
+	                        Index++;
+	                        break;
+	                      case 117:
+	                        // `\u` marks the beginning of a Unicode escape sequence.
+	                        // Advance to the first character and validate the
+	                        // four-digit code point.
+	                        begin = ++Index;
+	                        for (position = Index + 4; Index < position; Index++) {
+	                          charCode = source.charCodeAt(Index);
+	                          // A valid sequence comprises four hexdigits (case-
+	                          // insensitive) that form a single hexadecimal value.
+	                          if (!(charCode >= 48 && charCode <= 57 || charCode >= 97 && charCode <= 102 || charCode >= 65 && charCode <= 70)) {
+	                            // Invalid Unicode escape sequence.
+	                            abort();
+	                          }
+	                        }
+	                        // Revive the escaped character.
+	                        value += fromCharCode("0x" + source.slice(begin, Index));
+	                        break;
+	                      default:
+	                        // Invalid escape sequence.
+	                        abort();
+	                    }
+	                  } else {
+	                    if (charCode == 34) {
+	                      // An unescaped double-quote character marks the end of the
+	                      // string.
+	                      break;
+	                    }
+	                    charCode = source.charCodeAt(Index);
+	                    begin = Index;
+	                    // Optimize for the common case where a string is valid.
+	                    while (charCode >= 32 && charCode != 92 && charCode != 34) {
+	                      charCode = source.charCodeAt(++Index);
+	                    }
+	                    // Append the string as-is.
+	                    value += source.slice(begin, Index);
+	                  }
+	                }
+	                if (source.charCodeAt(Index) == 34) {
+	                  // Advance to the next character and return the revived string.
+	                  Index++;
+	                  return value;
+	                }
+	                // Unterminated string.
+	                abort();
+	              default:
+	                // Parse numbers and literals.
+	                begin = Index;
+	                // Advance past the negative sign, if one is specified.
+	                if (charCode == 45) {
+	                  isSigned = true;
+	                  charCode = source.charCodeAt(++Index);
+	                }
+	                // Parse an integer or floating-point value.
+	                if (charCode >= 48 && charCode <= 57) {
+	                  // Leading zeroes are interpreted as octal literals.
+	                  if (charCode == 48 && ((charCode = source.charCodeAt(Index + 1)), charCode >= 48 && charCode <= 57)) {
+	                    // Illegal octal literal.
+	                    abort();
+	                  }
+	                  isSigned = false;
+	                  // Parse the integer component.
+	                  for (; Index < length && ((charCode = source.charCodeAt(Index)), charCode >= 48 && charCode <= 57); Index++);
+	                  // Floats cannot contain a leading decimal point; however, this
+	                  // case is already accounted for by the parser.
+	                  if (source.charCodeAt(Index) == 46) {
+	                    position = ++Index;
+	                    // Parse the decimal component.
+	                    for (; position < length && ((charCode = source.charCodeAt(position)), charCode >= 48 && charCode <= 57); position++);
+	                    if (position == Index) {
+	                      // Illegal trailing decimal.
+	                      abort();
+	                    }
+	                    Index = position;
+	                  }
+	                  // Parse exponents. The `e` denoting the exponent is
+	                  // case-insensitive.
+	                  charCode = source.charCodeAt(Index);
+	                  if (charCode == 101 || charCode == 69) {
+	                    charCode = source.charCodeAt(++Index);
+	                    // Skip past the sign following the exponent, if one is
+	                    // specified.
+	                    if (charCode == 43 || charCode == 45) {
+	                      Index++;
+	                    }
+	                    // Parse the exponential component.
+	                    for (position = Index; position < length && ((charCode = source.charCodeAt(position)), charCode >= 48 && charCode <= 57); position++);
+	                    if (position == Index) {
+	                      // Illegal empty exponent.
+	                      abort();
+	                    }
+	                    Index = position;
+	                  }
+	                  // Coerce the parsed value to a JavaScript number.
+	                  return +source.slice(begin, Index);
+	                }
+	                // A negative sign may only precede numbers.
+	                if (isSigned) {
+	                  abort();
+	                }
+	                // `true`, `false`, and `null` literals.
+	                if (source.slice(Index, Index + 4) == "true") {
+	                  Index += 4;
+	                  return true;
+	                } else if (source.slice(Index, Index + 5) == "false") {
+	                  Index += 5;
+	                  return false;
+	                } else if (source.slice(Index, Index + 4) == "null") {
+	                  Index += 4;
+	                  return null;
+	                }
+	                // Unrecognized token.
+	                abort();
+	            }
+	          }
+	          // Return the sentinel `$` character if the parser has reached the end
+	          // of the source string.
+	          return "$";
+	        };
+
+	        // Internal: Parses a JSON `value` token.
+	        var get = function (value) {
+	          var results, hasMembers;
+	          if (value == "$") {
+	            // Unexpected end of input.
+	            abort();
+	          }
+	          if (typeof value == "string") {
+	            if ((charIndexBuggy ? value.charAt(0) : value[0]) == "@") {
+	              // Remove the sentinel `@` character.
+	              return value.slice(1);
+	            }
+	            // Parse object and array literals.
+	            if (value == "[") {
+	              // Parses a JSON array, returning a new JavaScript array.
+	              results = [];
+	              for (;; hasMembers || (hasMembers = true)) {
+	                value = lex();
+	                // A closing square bracket marks the end of the array literal.
+	                if (value == "]") {
+	                  break;
+	                }
+	                // If the array literal contains elements, the current token
+	                // should be a comma separating the previous element from the
+	                // next.
+	                if (hasMembers) {
+	                  if (value == ",") {
+	                    value = lex();
+	                    if (value == "]") {
+	                      // Unexpected trailing `,` in array literal.
+	                      abort();
+	                    }
+	                  } else {
+	                    // A `,` must separate each array element.
+	                    abort();
+	                  }
+	                }
+	                // Elisions and leading commas are not permitted.
+	                if (value == ",") {
+	                  abort();
+	                }
+	                results.push(get(value));
+	              }
+	              return results;
+	            } else if (value == "{") {
+	              // Parses a JSON object, returning a new JavaScript object.
+	              results = {};
+	              for (;; hasMembers || (hasMembers = true)) {
+	                value = lex();
+	                // A closing curly brace marks the end of the object literal.
+	                if (value == "}") {
+	                  break;
+	                }
+	                // If the object literal contains members, the current token
+	                // should be a comma separator.
+	                if (hasMembers) {
+	                  if (value == ",") {
+	                    value = lex();
+	                    if (value == "}") {
+	                      // Unexpected trailing `,` in object literal.
+	                      abort();
+	                    }
+	                  } else {
+	                    // A `,` must separate each object member.
+	                    abort();
+	                  }
+	                }
+	                // Leading commas are not permitted, object property names must be
+	                // double-quoted strings, and a `:` must separate each property
+	                // name and value.
+	                if (value == "," || typeof value != "string" || (charIndexBuggy ? value.charAt(0) : value[0]) != "@" || lex() != ":") {
+	                  abort();
+	                }
+	                results[value.slice(1)] = get(lex());
+	              }
+	              return results;
+	            }
+	            // Unexpected token encountered.
+	            abort();
+	          }
+	          return value;
+	        };
+
+	        // Internal: Updates a traversed object member.
+	        var update = function (source, property, callback) {
+	          var element = walk(source, property, callback);
+	          if (element === undef) {
+	            delete source[property];
+	          } else {
+	            source[property] = element;
+	          }
+	        };
+
+	        // Internal: Recursively traverses a parsed JSON object, invoking the
+	        // `callback` function for each value. This is an implementation of the
+	        // `Walk(holder, name)` operation defined in ES 5.1 section 15.12.2.
+	        var walk = function (source, property, callback) {
+	          var value = source[property], length;
+	          if (typeof value == "object" && value) {
+	            // `forEach` can't be used to traverse an array in Opera <= 8.54
+	            // because its `Object#hasOwnProperty` implementation returns `false`
+	            // for array indices (e.g., `![1, 2, 3].hasOwnProperty("0")`).
+	            if (getClass.call(value) == arrayClass) {
+	              for (length = value.length; length--;) {
+	                update(value, length, callback);
+	              }
+	            } else {
+	              forEach(value, function (property) {
+	                update(value, property, callback);
+	              });
+	            }
+	          }
+	          return callback.call(source, property, value);
+	        };
+
+	        // Public: `JSON.parse`. See ES 5.1 section 15.12.2.
+	        exports.parse = function (source, callback) {
+	          var result, value;
+	          Index = 0;
+	          Source = "" + source;
+	          result = get(lex());
+	          // If a JSON string contains multiple tokens, it is invalid.
+	          if (lex() != "$") {
+	            abort();
+	          }
+	          // Reset the parser state.
+	          Index = Source = null;
+	          return callback && getClass.call(callback) == functionClass ? walk((value = {}, value[""] = result, value), "", callback) : result;
+	        };
+	      }
+	    }
+
+	    exports["runInContext"] = runInContext;
+	    return exports;
+	  }
+
+	  if (freeExports && !isLoader) {
+	    // Export for CommonJS environments.
+	    runInContext(root, freeExports);
+	  } else {
+	    // Export for web browsers and JavaScript engines.
+	    var nativeJSON = root.JSON,
+	        previousJSON = root["JSON3"],
+	        isRestored = false;
+
+	    var JSON3 = runInContext(root, (root["JSON3"] = {
+	      // Public: Restores the original value of the global `JSON` object and
+	      // returns a reference to the `JSON3` object.
+	      "noConflict": function () {
+	        if (!isRestored) {
+	          isRestored = true;
+	          root.JSON = nativeJSON;
+	          root["JSON3"] = previousJSON;
+	          nativeJSON = previousJSON = null;
+	        }
+	        return JSON3;
+	      }
+	    }));
+
+	    root.JSON = {
+	      "parse": JSON3.parse,
+	      "stringify": JSON3.stringify
+	    };
+	  }
+
+	  // Export for asynchronous module loaders.
+	  if (isLoader) {
+	    !(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
+	      return JSON3;
+	    }.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	  }
+	}).call(this);
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(382)(module), (function() { return this; }())))
+
+/***/ },
+
+/***/ 382:
+/***/ function(module, exports) {
+
+	module.exports = function(module) {
+		if(!module.webpackPolyfill) {
+			module.deprecate = function() {};
+			module.paths = [];
+			// module.parent = undefined by default
+			module.children = [];
+			module.webpackPolyfill = 1;
+		}
+		return module;
+	}
+
+
+/***/ },
+
+/***/ 383:
+/***/ function(module, exports) {
+
+	/* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {module.exports = __webpack_amd_options__;
+
+	/* WEBPACK VAR INJECTION */}.call(exports, {}))
+
+/***/ },
+
+/***/ 384:
+/***/ function(module, exports) {
+
+	
+	/**
+	 * Expose `Emitter`.
+	 */
+
+	module.exports = Emitter;
+
+	/**
+	 * Initialize a new `Emitter`.
+	 *
+	 * @api public
+	 */
+
+	function Emitter(obj) {
+	  if (obj) return mixin(obj);
+	};
+
+	/**
+	 * Mixin the emitter properties.
+	 *
+	 * @param {Object} obj
+	 * @return {Object}
+	 * @api private
+	 */
+
+	function mixin(obj) {
+	  for (var key in Emitter.prototype) {
+	    obj[key] = Emitter.prototype[key];
+	  }
+	  return obj;
+	}
+
+	/**
+	 * Listen on the given `event` with `fn`.
+	 *
+	 * @param {String} event
+	 * @param {Function} fn
+	 * @return {Emitter}
+	 * @api public
+	 */
+
+	Emitter.prototype.on =
+	Emitter.prototype.addEventListener = function(event, fn){
+	  this._callbacks = this._callbacks || {};
+	  (this._callbacks[event] = this._callbacks[event] || [])
+	    .push(fn);
+	  return this;
+	};
+
+	/**
+	 * Adds an `event` listener that will be invoked a single
+	 * time then automatically removed.
+	 *
+	 * @param {String} event
+	 * @param {Function} fn
+	 * @return {Emitter}
+	 * @api public
+	 */
+
+	Emitter.prototype.once = function(event, fn){
+	  var self = this;
+	  this._callbacks = this._callbacks || {};
+
+	  function on() {
+	    self.off(event, on);
+	    fn.apply(this, arguments);
+	  }
+
+	  on.fn = fn;
+	  this.on(event, on);
+	  return this;
+	};
+
+	/**
+	 * Remove the given callback for `event` or all
+	 * registered callbacks.
+	 *
+	 * @param {String} event
+	 * @param {Function} fn
+	 * @return {Emitter}
+	 * @api public
+	 */
+
+	Emitter.prototype.off =
+	Emitter.prototype.removeListener =
+	Emitter.prototype.removeAllListeners =
+	Emitter.prototype.removeEventListener = function(event, fn){
+	  this._callbacks = this._callbacks || {};
+
+	  // all
+	  if (0 == arguments.length) {
+	    this._callbacks = {};
+	    return this;
+	  }
+
+	  // specific event
+	  var callbacks = this._callbacks[event];
+	  if (!callbacks) return this;
+
+	  // remove all handlers
+	  if (1 == arguments.length) {
+	    delete this._callbacks[event];
+	    return this;
+	  }
+
+	  // remove specific handler
+	  var cb;
+	  for (var i = 0; i < callbacks.length; i++) {
+	    cb = callbacks[i];
+	    if (cb === fn || cb.fn === fn) {
+	      callbacks.splice(i, 1);
+	      break;
+	    }
+	  }
+	  return this;
+	};
+
+	/**
+	 * Emit `event` with the given args.
+	 *
+	 * @param {String} event
+	 * @param {Mixed} ...
+	 * @return {Emitter}
+	 */
+
+	Emitter.prototype.emit = function(event){
+	  this._callbacks = this._callbacks || {};
+	  var args = [].slice.call(arguments, 1)
+	    , callbacks = this._callbacks[event];
+
+	  if (callbacks) {
+	    callbacks = callbacks.slice(0);
+	    for (var i = 0, len = callbacks.length; i < len; ++i) {
+	      callbacks[i].apply(this, args);
+	    }
+	  }
+
+	  return this;
+	};
+
+	/**
+	 * Return array of callbacks for `event`.
+	 *
+	 * @param {String} event
+	 * @return {Array}
+	 * @api public
+	 */
+
+	Emitter.prototype.listeners = function(event){
+	  this._callbacks = this._callbacks || {};
+	  return this._callbacks[event] || [];
+	};
+
+	/**
+	 * Check if this emitter has `event` handlers.
+	 *
+	 * @param {String} event
+	 * @return {Boolean}
+	 * @api public
+	 */
+
+	Emitter.prototype.hasListeners = function(event){
+	  return !! this.listeners(event).length;
+	};
+
+
+/***/ },
+
+/***/ 385:
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(global) {/*global Blob,File*/
+
+	/**
+	 * Module requirements
+	 */
+
+	var isArray = __webpack_require__(386);
+	var isBuf = __webpack_require__(387);
+
+	/**
+	 * Replaces every Buffer | ArrayBuffer in packet with a numbered placeholder.
+	 * Anything with blobs or files should be fed through removeBlobs before coming
+	 * here.
+	 *
+	 * @param {Object} packet - socket.io event packet
+	 * @return {Object} with deconstructed packet and list of buffers
+	 * @api public
+	 */
+
+	exports.deconstructPacket = function(packet){
+	  var buffers = [];
+	  var packetData = packet.data;
+
+	  function _deconstructPacket(data) {
+	    if (!data) return data;
+
+	    if (isBuf(data)) {
+	      var placeholder = { _placeholder: true, num: buffers.length };
+	      buffers.push(data);
+	      return placeholder;
+	    } else if (isArray(data)) {
+	      var newData = new Array(data.length);
+	      for (var i = 0; i < data.length; i++) {
+	        newData[i] = _deconstructPacket(data[i]);
+	      }
+	      return newData;
+	    } else if ('object' == typeof data && !(data instanceof Date)) {
+	      var newData = {};
+	      for (var key in data) {
+	        newData[key] = _deconstructPacket(data[key]);
+	      }
+	      return newData;
+	    }
+	    return data;
+	  }
+
+	  var pack = packet;
+	  pack.data = _deconstructPacket(packetData);
+	  pack.attachments = buffers.length; // number of binary 'attachments'
+	  return {packet: pack, buffers: buffers};
+	};
+
+	/**
+	 * Reconstructs a binary packet from its placeholder packet and buffers
+	 *
+	 * @param {Object} packet - event packet with placeholders
+	 * @param {Array} buffers - binary buffers to put in placeholder positions
+	 * @return {Object} reconstructed packet
+	 * @api public
+	 */
+
+	exports.reconstructPacket = function(packet, buffers) {
+	  var curPlaceHolder = 0;
+
+	  function _reconstructPacket(data) {
+	    if (data && data._placeholder) {
+	      var buf = buffers[data.num]; // appropriate buffer (should be natural order anyway)
+	      return buf;
+	    } else if (isArray(data)) {
+	      for (var i = 0; i < data.length; i++) {
+	        data[i] = _reconstructPacket(data[i]);
+	      }
+	      return data;
+	    } else if (data && 'object' == typeof data) {
+	      for (var key in data) {
+	        data[key] = _reconstructPacket(data[key]);
+	      }
+	      return data;
+	    }
+	    return data;
+	  }
+
+	  packet.data = _reconstructPacket(packet.data);
+	  packet.attachments = undefined; // no longer useful
+	  return packet;
+	};
+
+	/**
+	 * Asynchronously removes Blobs or Files from data via
+	 * FileReader's readAsArrayBuffer method. Used before encoding
+	 * data as msgpack. Calls callback with the blobless data.
+	 *
+	 * @param {Object} data
+	 * @param {Function} callback
+	 * @api private
+	 */
+
+	exports.removeBlobs = function(data, callback) {
+	  function _removeBlobs(obj, curKey, containingObject) {
+	    if (!obj) return obj;
+
+	    // convert any blob
+	    if ((global.Blob && obj instanceof Blob) ||
+	        (global.File && obj instanceof File)) {
+	      pendingBlobs++;
+
+	      // async filereader
+	      var fileReader = new FileReader();
+	      fileReader.onload = function() { // this.result == arraybuffer
+	        if (containingObject) {
+	          containingObject[curKey] = this.result;
+	        }
+	        else {
+	          bloblessData = this.result;
+	        }
+
+	        // if nothing pending its callback time
+	        if(! --pendingBlobs) {
+	          callback(bloblessData);
+	        }
+	      };
+
+	      fileReader.readAsArrayBuffer(obj); // blob -> arraybuffer
+	    } else if (isArray(obj)) { // handle array
+	      for (var i = 0; i < obj.length; i++) {
+	        _removeBlobs(obj[i], i, obj);
+	      }
+	    } else if (obj && 'object' == typeof obj && !isBuf(obj)) { // and object
+	      for (var key in obj) {
+	        _removeBlobs(obj[key], key, obj);
+	      }
+	    }
+	  }
+
+	  var pendingBlobs = 0;
+	  var bloblessData = data;
+	  _removeBlobs(bloblessData);
+	  if (!pendingBlobs) {
+	    callback(bloblessData);
+	  }
+	};
+
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+
+/***/ 386:
+/***/ function(module, exports) {
+
+	module.exports = Array.isArray || function (arr) {
+	  return Object.prototype.toString.call(arr) == '[object Array]';
+	};
+
+
+/***/ },
+
+/***/ 387:
+/***/ function(module, exports) {
+
+	/* WEBPACK VAR INJECTION */(function(global) {
+	module.exports = isBuf;
+
+	/**
+	 * Returns true if obj is a buffer or an arraybuffer.
+	 *
+	 * @api private
+	 */
+
+	function isBuf(obj) {
+	  return (global.Buffer && global.Buffer.isBuffer(obj)) ||
+	         (global.ArrayBuffer && obj instanceof ArrayBuffer);
+	}
+
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+
+/***/ 388:
+/***/ function(module, exports, __webpack_require__) {
+
+	
+	/**
+	 * Module dependencies.
+	 */
+
+	var eio = __webpack_require__(389);
+	var Socket = __webpack_require__(417);
+	var Emitter = __webpack_require__(406);
+	var parser = __webpack_require__(377);
+	var on = __webpack_require__(419);
+	var bind = __webpack_require__(420);
+	var debug = __webpack_require__(374)('socket.io-client:manager');
+	var indexOf = __webpack_require__(415);
+	var Backoff = __webpack_require__(421);
+
+	/**
+	 * IE6+ hasOwnProperty
+	 */
+
+	var has = Object.prototype.hasOwnProperty;
+
+	/**
+	 * Module exports
+	 */
+
+	module.exports = Manager;
+
+	/**
+	 * `Manager` constructor.
+	 *
+	 * @param {String} engine instance or engine uri/opts
+	 * @param {Object} options
+	 * @api public
+	 */
+
+	function Manager (uri, opts) {
+	  if (!(this instanceof Manager)) return new Manager(uri, opts);
+	  if (uri && ('object' === typeof uri)) {
+	    opts = uri;
+	    uri = undefined;
+	  }
+	  opts = opts || {};
+
+	  opts.path = opts.path || '/socket.io';
+	  this.nsps = {};
+	  this.subs = [];
+	  this.opts = opts;
+	  this.reconnection(opts.reconnection !== false);
+	  this.reconnectionAttempts(opts.reconnectionAttempts || Infinity);
+	  this.reconnectionDelay(opts.reconnectionDelay || 1000);
+	  this.reconnectionDelayMax(opts.reconnectionDelayMax || 5000);
+	  this.randomizationFactor(opts.randomizationFactor || 0.5);
+	  this.backoff = new Backoff({
+	    min: this.reconnectionDelay(),
+	    max: this.reconnectionDelayMax(),
+	    jitter: this.randomizationFactor()
+	  });
+	  this.timeout(null == opts.timeout ? 20000 : opts.timeout);
+	  this.readyState = 'closed';
+	  this.uri = uri;
+	  this.connecting = [];
+	  this.lastPing = null;
+	  this.encoding = false;
+	  this.packetBuffer = [];
+	  this.encoder = new parser.Encoder();
+	  this.decoder = new parser.Decoder();
+	  this.autoConnect = opts.autoConnect !== false;
+	  if (this.autoConnect) this.open();
+	}
+
+	/**
+	 * Propagate given event to sockets and emit on `this`
+	 *
+	 * @api private
+	 */
+
+	Manager.prototype.emitAll = function () {
+	  this.emit.apply(this, arguments);
+	  for (var nsp in this.nsps) {
+	    if (has.call(this.nsps, nsp)) {
+	      this.nsps[nsp].emit.apply(this.nsps[nsp], arguments);
+	    }
+	  }
+	};
+
+	/**
+	 * Update `socket.id` of all sockets
+	 *
+	 * @api private
+	 */
+
+	Manager.prototype.updateSocketIds = function () {
+	  for (var nsp in this.nsps) {
+	    if (has.call(this.nsps, nsp)) {
+	      this.nsps[nsp].id = this.engine.id;
+	    }
+	  }
+	};
+
+	/**
+	 * Mix in `Emitter`.
+	 */
+
+	Emitter(Manager.prototype);
+
+	/**
+	 * Sets the `reconnection` config.
+	 *
+	 * @param {Boolean} true/false if it should automatically reconnect
+	 * @return {Manager} self or value
+	 * @api public
+	 */
+
+	Manager.prototype.reconnection = function (v) {
+	  if (!arguments.length) return this._reconnection;
+	  this._reconnection = !!v;
+	  return this;
+	};
+
+	/**
+	 * Sets the reconnection attempts config.
+	 *
+	 * @param {Number} max reconnection attempts before giving up
+	 * @return {Manager} self or value
+	 * @api public
+	 */
+
+	Manager.prototype.reconnectionAttempts = function (v) {
+	  if (!arguments.length) return this._reconnectionAttempts;
+	  this._reconnectionAttempts = v;
+	  return this;
+	};
+
+	/**
+	 * Sets the delay between reconnections.
+	 *
+	 * @param {Number} delay
+	 * @return {Manager} self or value
+	 * @api public
+	 */
+
+	Manager.prototype.reconnectionDelay = function (v) {
+	  if (!arguments.length) return this._reconnectionDelay;
+	  this._reconnectionDelay = v;
+	  this.backoff && this.backoff.setMin(v);
+	  return this;
+	};
+
+	Manager.prototype.randomizationFactor = function (v) {
+	  if (!arguments.length) return this._randomizationFactor;
+	  this._randomizationFactor = v;
+	  this.backoff && this.backoff.setJitter(v);
+	  return this;
+	};
+
+	/**
+	 * Sets the maximum delay between reconnections.
+	 *
+	 * @param {Number} delay
+	 * @return {Manager} self or value
+	 * @api public
+	 */
+
+	Manager.prototype.reconnectionDelayMax = function (v) {
+	  if (!arguments.length) return this._reconnectionDelayMax;
+	  this._reconnectionDelayMax = v;
+	  this.backoff && this.backoff.setMax(v);
+	  return this;
+	};
+
+	/**
+	 * Sets the connection timeout. `false` to disable
+	 *
+	 * @return {Manager} self or value
+	 * @api public
+	 */
+
+	Manager.prototype.timeout = function (v) {
+	  if (!arguments.length) return this._timeout;
+	  this._timeout = v;
+	  return this;
+	};
+
+	/**
+	 * Starts trying to reconnect if reconnection is enabled and we have not
+	 * started reconnecting yet
+	 *
+	 * @api private
+	 */
+
+	Manager.prototype.maybeReconnectOnOpen = function () {
+	  // Only try to reconnect if it's the first time we're connecting
+	  if (!this.reconnecting && this._reconnection && this.backoff.attempts === 0) {
+	    // keeps reconnection from firing twice for the same reconnection loop
+	    this.reconnect();
+	  }
+	};
+
+	/**
+	 * Sets the current transport `socket`.
+	 *
+	 * @param {Function} optional, callback
+	 * @return {Manager} self
+	 * @api public
+	 */
+
+	Manager.prototype.open =
+	Manager.prototype.connect = function (fn, opts) {
+	  debug('readyState %s', this.readyState);
+	  if (~this.readyState.indexOf('open')) return this;
+
+	  debug('opening %s', this.uri);
+	  this.engine = eio(this.uri, this.opts);
+	  var socket = this.engine;
+	  var self = this;
+	  this.readyState = 'opening';
+	  this.skipReconnect = false;
+
+	  // emit `open`
+	  var openSub = on(socket, 'open', function () {
+	    self.onopen();
+	    fn && fn();
+	  });
+
+	  // emit `connect_error`
+	  var errorSub = on(socket, 'error', function (data) {
+	    debug('connect_error');
+	    self.cleanup();
+	    self.readyState = 'closed';
+	    self.emitAll('connect_error', data);
+	    if (fn) {
+	      var err = new Error('Connection error');
+	      err.data = data;
+	      fn(err);
+	    } else {
+	      // Only do this if there is no fn to handle the error
+	      self.maybeReconnectOnOpen();
+	    }
+	  });
+
+	  // emit `connect_timeout`
+	  if (false !== this._timeout) {
+	    var timeout = this._timeout;
+	    debug('connect attempt will timeout after %d', timeout);
+
+	    // set timer
+	    var timer = setTimeout(function () {
+	      debug('connect attempt timed out after %d', timeout);
+	      openSub.destroy();
+	      socket.close();
+	      socket.emit('error', 'timeout');
+	      self.emitAll('connect_timeout', timeout);
+	    }, timeout);
+
+	    this.subs.push({
+	      destroy: function () {
+	        clearTimeout(timer);
+	      }
+	    });
+	  }
+
+	  this.subs.push(openSub);
+	  this.subs.push(errorSub);
+
+	  return this;
+	};
+
+	/**
+	 * Called upon transport open.
+	 *
+	 * @api private
+	 */
+
+	Manager.prototype.onopen = function () {
+	  debug('open');
+
+	  // clear old subs
+	  this.cleanup();
+
+	  // mark as open
+	  this.readyState = 'open';
+	  this.emit('open');
+
+	  // add new subs
+	  var socket = this.engine;
+	  this.subs.push(on(socket, 'data', bind(this, 'ondata')));
+	  this.subs.push(on(socket, 'ping', bind(this, 'onping')));
+	  this.subs.push(on(socket, 'pong', bind(this, 'onpong')));
+	  this.subs.push(on(socket, 'error', bind(this, 'onerror')));
+	  this.subs.push(on(socket, 'close', bind(this, 'onclose')));
+	  this.subs.push(on(this.decoder, 'decoded', bind(this, 'ondecoded')));
+	};
+
+	/**
+	 * Called upon a ping.
+	 *
+	 * @api private
+	 */
+
+	Manager.prototype.onping = function () {
+	  this.lastPing = new Date();
+	  this.emitAll('ping');
+	};
+
+	/**
+	 * Called upon a packet.
+	 *
+	 * @api private
+	 */
+
+	Manager.prototype.onpong = function () {
+	  this.emitAll('pong', new Date() - this.lastPing);
+	};
+
+	/**
+	 * Called with data.
+	 *
+	 * @api private
+	 */
+
+	Manager.prototype.ondata = function (data) {
+	  this.decoder.add(data);
+	};
+
+	/**
+	 * Called when parser fully decodes a packet.
+	 *
+	 * @api private
+	 */
+
+	Manager.prototype.ondecoded = function (packet) {
+	  this.emit('packet', packet);
+	};
+
+	/**
+	 * Called upon socket error.
+	 *
+	 * @api private
+	 */
+
+	Manager.prototype.onerror = function (err) {
+	  debug('error', err);
+	  this.emitAll('error', err);
+	};
+
+	/**
+	 * Creates a new socket for the given `nsp`.
+	 *
+	 * @return {Socket}
+	 * @api public
+	 */
+
+	Manager.prototype.socket = function (nsp, opts) {
+	  var socket = this.nsps[nsp];
+	  if (!socket) {
+	    socket = new Socket(this, nsp, opts);
+	    this.nsps[nsp] = socket;
+	    var self = this;
+	    socket.on('connecting', onConnecting);
+	    socket.on('connect', function () {
+	      socket.id = self.engine.id;
+	    });
+
+	    if (this.autoConnect) {
+	      // manually call here since connecting evnet is fired before listening
+	      onConnecting();
+	    }
+	  }
+
+	  function onConnecting () {
+	    if (!~indexOf(self.connecting, socket)) {
+	      self.connecting.push(socket);
+	    }
+	  }
+
+	  return socket;
+	};
+
+	/**
+	 * Called upon a socket close.
+	 *
+	 * @param {Socket} socket
+	 */
+
+	Manager.prototype.destroy = function (socket) {
+	  var index = indexOf(this.connecting, socket);
+	  if (~index) this.connecting.splice(index, 1);
+	  if (this.connecting.length) return;
+
+	  this.close();
+	};
+
+	/**
+	 * Writes a packet.
+	 *
+	 * @param {Object} packet
+	 * @api private
+	 */
+
+	Manager.prototype.packet = function (packet) {
+	  debug('writing packet %j', packet);
+	  var self = this;
+	  if (packet.query && packet.type === 0) packet.nsp += '?' + packet.query;
+
+	  if (!self.encoding) {
+	    // encode, then write to engine with result
+	    self.encoding = true;
+	    this.encoder.encode(packet, function (encodedPackets) {
+	      for (var i = 0; i < encodedPackets.length; i++) {
+	        self.engine.write(encodedPackets[i], packet.options);
+	      }
+	      self.encoding = false;
+	      self.processPacketQueue();
+	    });
+	  } else { // add packet to the queue
+	    self.packetBuffer.push(packet);
+	  }
+	};
+
+	/**
+	 * If packet buffer is non-empty, begins encoding the
+	 * next packet in line.
+	 *
+	 * @api private
+	 */
+
+	Manager.prototype.processPacketQueue = function () {
+	  if (this.packetBuffer.length > 0 && !this.encoding) {
+	    var pack = this.packetBuffer.shift();
+	    this.packet(pack);
+	  }
+	};
+
+	/**
+	 * Clean up transport subscriptions and packet buffer.
+	 *
+	 * @api private
+	 */
+
+	Manager.prototype.cleanup = function () {
+	  debug('cleanup');
+
+	  var subsLength = this.subs.length;
+	  for (var i = 0; i < subsLength; i++) {
+	    var sub = this.subs.shift();
+	    sub.destroy();
+	  }
+
+	  this.packetBuffer = [];
+	  this.encoding = false;
+	  this.lastPing = null;
+
+	  this.decoder.destroy();
+	};
+
+	/**
+	 * Close the current socket.
+	 *
+	 * @api private
+	 */
+
+	Manager.prototype.close =
+	Manager.prototype.disconnect = function () {
+	  debug('disconnect');
+	  this.skipReconnect = true;
+	  this.reconnecting = false;
+	  if ('opening' === this.readyState) {
+	    // `onclose` will not fire because
+	    // an open event never happened
+	    this.cleanup();
+	  }
+	  this.backoff.reset();
+	  this.readyState = 'closed';
+	  if (this.engine) this.engine.close();
+	};
+
+	/**
+	 * Called upon engine close.
+	 *
+	 * @api private
+	 */
+
+	Manager.prototype.onclose = function (reason) {
+	  debug('onclose');
+
+	  this.cleanup();
+	  this.backoff.reset();
+	  this.readyState = 'closed';
+	  this.emit('close', reason);
+
+	  if (this._reconnection && !this.skipReconnect) {
+	    this.reconnect();
+	  }
+	};
+
+	/**
+	 * Attempt a reconnection.
+	 *
+	 * @api private
+	 */
+
+	Manager.prototype.reconnect = function () {
+	  if (this.reconnecting || this.skipReconnect) return this;
+
+	  var self = this;
+
+	  if (this.backoff.attempts >= this._reconnectionAttempts) {
+	    debug('reconnect failed');
+	    this.backoff.reset();
+	    this.emitAll('reconnect_failed');
+	    this.reconnecting = false;
+	  } else {
+	    var delay = this.backoff.duration();
+	    debug('will wait %dms before reconnect attempt', delay);
+
+	    this.reconnecting = true;
+	    var timer = setTimeout(function () {
+	      if (self.skipReconnect) return;
+
+	      debug('attempting reconnect');
+	      self.emitAll('reconnect_attempt', self.backoff.attempts);
+	      self.emitAll('reconnecting', self.backoff.attempts);
+
+	      // check again for the case socket closed in above events
+	      if (self.skipReconnect) return;
+
+	      self.open(function (err) {
+	        if (err) {
+	          debug('reconnect attempt error');
+	          self.reconnecting = false;
+	          self.reconnect();
+	          self.emitAll('reconnect_error', err.data);
+	        } else {
+	          debug('reconnect success');
+	          self.onreconnect();
+	        }
+	      });
+	    }, delay);
+
+	    this.subs.push({
+	      destroy: function () {
+	        clearTimeout(timer);
+	      }
+	    });
+	  }
+	};
+
+	/**
+	 * Called upon successful reconnect.
+	 *
+	 * @api private
+	 */
+
+	Manager.prototype.onreconnect = function () {
+	  var attempt = this.backoff.attempts;
+	  this.reconnecting = false;
+	  this.backoff.reset();
+	  this.updateSocketIds();
+	  this.emitAll('reconnect', attempt);
+	};
+
+
+/***/ },
+
+/***/ 389:
+/***/ function(module, exports, __webpack_require__) {
+
+	
+	module.exports = __webpack_require__(390);
+
+
+/***/ },
+
+/***/ 390:
+/***/ function(module, exports, __webpack_require__) {
+
+	
+	module.exports = __webpack_require__(391);
+
+	/**
+	 * Exports parser
+	 *
+	 * @api public
+	 *
+	 */
+	module.exports.parser = __webpack_require__(398);
+
+
+/***/ },
+
+/***/ 391:
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(global) {/**
+	 * Module dependencies.
+	 */
+
+	var transports = __webpack_require__(392);
+	var Emitter = __webpack_require__(406);
+	var debug = __webpack_require__(410)('engine.io-client:socket');
+	var index = __webpack_require__(415);
+	var parser = __webpack_require__(398);
+	var parseuri = __webpack_require__(373);
+	var parsejson = __webpack_require__(416);
+	var parseqs = __webpack_require__(407);
+
+	/**
+	 * Module exports.
+	 */
+
+	module.exports = Socket;
+
+	/**
+	 * Socket constructor.
+	 *
+	 * @param {String|Object} uri or options
+	 * @param {Object} options
+	 * @api public
+	 */
+
+	function Socket (uri, opts) {
+	  if (!(this instanceof Socket)) return new Socket(uri, opts);
+
+	  opts = opts || {};
+
+	  if (uri && 'object' === typeof uri) {
+	    opts = uri;
+	    uri = null;
+	  }
+
+	  if (uri) {
+	    uri = parseuri(uri);
+	    opts.hostname = uri.host;
+	    opts.secure = uri.protocol === 'https' || uri.protocol === 'wss';
+	    opts.port = uri.port;
+	    if (uri.query) opts.query = uri.query;
+	  } else if (opts.host) {
+	    opts.hostname = parseuri(opts.host).host;
+	  }
+
+	  this.secure = null != opts.secure ? opts.secure
+	    : (global.location && 'https:' === location.protocol);
+
+	  if (opts.hostname && !opts.port) {
+	    // if no port is specified manually, use the protocol default
+	    opts.port = this.secure ? '443' : '80';
+	  }
+
+	  this.agent = opts.agent || false;
+	  this.hostname = opts.hostname ||
+	    (global.location ? location.hostname : 'localhost');
+	  this.port = opts.port || (global.location && location.port
+	      ? location.port
+	      : (this.secure ? 443 : 80));
+	  this.query = opts.query || {};
+	  if ('string' === typeof this.query) this.query = parseqs.decode(this.query);
+	  this.upgrade = false !== opts.upgrade;
+	  this.path = (opts.path || '/engine.io').replace(/\/$/, '') + '/';
+	  this.forceJSONP = !!opts.forceJSONP;
+	  this.jsonp = false !== opts.jsonp;
+	  this.forceBase64 = !!opts.forceBase64;
+	  this.enablesXDR = !!opts.enablesXDR;
+	  this.timestampParam = opts.timestampParam || 't';
+	  this.timestampRequests = opts.timestampRequests;
+	  this.transports = opts.transports || ['polling', 'websocket'];
+	  this.readyState = '';
+	  this.writeBuffer = [];
+	  this.prevBufferLen = 0;
+	  this.policyPort = opts.policyPort || 843;
+	  this.rememberUpgrade = opts.rememberUpgrade || false;
+	  this.binaryType = null;
+	  this.onlyBinaryUpgrades = opts.onlyBinaryUpgrades;
+	  this.perMessageDeflate = false !== opts.perMessageDeflate ? (opts.perMessageDeflate || {}) : false;
+
+	  if (true === this.perMessageDeflate) this.perMessageDeflate = {};
+	  if (this.perMessageDeflate && null == this.perMessageDeflate.threshold) {
+	    this.perMessageDeflate.threshold = 1024;
+	  }
+
+	  // SSL options for Node.js client
+	  this.pfx = opts.pfx || null;
+	  this.key = opts.key || null;
+	  this.passphrase = opts.passphrase || null;
+	  this.cert = opts.cert || null;
+	  this.ca = opts.ca || null;
+	  this.ciphers = opts.ciphers || null;
+	  this.rejectUnauthorized = opts.rejectUnauthorized === undefined ? null : opts.rejectUnauthorized;
+	  this.forceNode = !!opts.forceNode;
+
+	  // other options for Node.js client
+	  var freeGlobal = typeof global === 'object' && global;
+	  if (freeGlobal.global === freeGlobal) {
+	    if (opts.extraHeaders && Object.keys(opts.extraHeaders).length > 0) {
+	      this.extraHeaders = opts.extraHeaders;
+	    }
+
+	    if (opts.localAddress) {
+	      this.localAddress = opts.localAddress;
+	    }
+	  }
+
+	  // set on handshake
+	  this.id = null;
+	  this.upgrades = null;
+	  this.pingInterval = null;
+	  this.pingTimeout = null;
+
+	  // set on heartbeat
+	  this.pingIntervalTimer = null;
+	  this.pingTimeoutTimer = null;
+
+	  this.open();
+	}
+
+	Socket.priorWebsocketSuccess = false;
+
+	/**
+	 * Mix in `Emitter`.
+	 */
+
+	Emitter(Socket.prototype);
+
+	/**
+	 * Protocol version.
+	 *
+	 * @api public
+	 */
+
+	Socket.protocol = parser.protocol; // this is an int
+
+	/**
+	 * Expose deps for legacy compatibility
+	 * and standalone browser access.
+	 */
+
+	Socket.Socket = Socket;
+	Socket.Transport = __webpack_require__(397);
+	Socket.transports = __webpack_require__(392);
+	Socket.parser = __webpack_require__(398);
+
+	/**
+	 * Creates transport of the given type.
+	 *
+	 * @param {String} transport name
+	 * @return {Transport}
+	 * @api private
+	 */
+
+	Socket.prototype.createTransport = function (name) {
+	  debug('creating transport "%s"', name);
+	  var query = clone(this.query);
+
+	  // append engine.io protocol identifier
+	  query.EIO = parser.protocol;
+
+	  // transport name
+	  query.transport = name;
+
+	  // session id if we already have one
+	  if (this.id) query.sid = this.id;
+
+	  var transport = new transports[name]({
+	    agent: this.agent,
+	    hostname: this.hostname,
+	    port: this.port,
+	    secure: this.secure,
+	    path: this.path,
+	    query: query,
+	    forceJSONP: this.forceJSONP,
+	    jsonp: this.jsonp,
+	    forceBase64: this.forceBase64,
+	    enablesXDR: this.enablesXDR,
+	    timestampRequests: this.timestampRequests,
+	    timestampParam: this.timestampParam,
+	    policyPort: this.policyPort,
+	    socket: this,
+	    pfx: this.pfx,
+	    key: this.key,
+	    passphrase: this.passphrase,
+	    cert: this.cert,
+	    ca: this.ca,
+	    ciphers: this.ciphers,
+	    rejectUnauthorized: this.rejectUnauthorized,
+	    perMessageDeflate: this.perMessageDeflate,
+	    extraHeaders: this.extraHeaders,
+	    forceNode: this.forceNode,
+	    localAddress: this.localAddress
+	  });
+
+	  return transport;
+	};
+
+	function clone (obj) {
+	  var o = {};
+	  for (var i in obj) {
+	    if (obj.hasOwnProperty(i)) {
+	      o[i] = obj[i];
+	    }
+	  }
+	  return o;
+	}
+
+	/**
+	 * Initializes transport to use and starts probe.
+	 *
+	 * @api private
+	 */
+	Socket.prototype.open = function () {
+	  var transport;
+	  if (this.rememberUpgrade && Socket.priorWebsocketSuccess && this.transports.indexOf('websocket') !== -1) {
+	    transport = 'websocket';
+	  } else if (0 === this.transports.length) {
+	    // Emit error on next tick so it can be listened to
+	    var self = this;
+	    setTimeout(function () {
+	      self.emit('error', 'No transports available');
+	    }, 0);
+	    return;
+	  } else {
+	    transport = this.transports[0];
+	  }
+	  this.readyState = 'opening';
+
+	  // Retry with the next transport if the transport is disabled (jsonp: false)
+	  try {
+	    transport = this.createTransport(transport);
+	  } catch (e) {
+	    this.transports.shift();
+	    this.open();
+	    return;
+	  }
+
+	  transport.open();
+	  this.setTransport(transport);
+	};
+
+	/**
+	 * Sets the current transport. Disables the existing one (if any).
+	 *
+	 * @api private
+	 */
+
+	Socket.prototype.setTransport = function (transport) {
+	  debug('setting transport %s', transport.name);
+	  var self = this;
+
+	  if (this.transport) {
+	    debug('clearing existing transport %s', this.transport.name);
+	    this.transport.removeAllListeners();
+	  }
+
+	  // set up transport
+	  this.transport = transport;
+
+	  // set up transport listeners
+	  transport
+	  .on('drain', function () {
+	    self.onDrain();
+	  })
+	  .on('packet', function (packet) {
+	    self.onPacket(packet);
+	  })
+	  .on('error', function (e) {
+	    self.onError(e);
+	  })
+	  .on('close', function () {
+	    self.onClose('transport close');
+	  });
+	};
+
+	/**
+	 * Probes a transport.
+	 *
+	 * @param {String} transport name
+	 * @api private
+	 */
+
+	Socket.prototype.probe = function (name) {
+	  debug('probing transport "%s"', name);
+	  var transport = this.createTransport(name, { probe: 1 });
+	  var failed = false;
+	  var self = this;
+
+	  Socket.priorWebsocketSuccess = false;
+
+	  function onTransportOpen () {
+	    if (self.onlyBinaryUpgrades) {
+	      var upgradeLosesBinary = !this.supportsBinary && self.transport.supportsBinary;
+	      failed = failed || upgradeLosesBinary;
+	    }
+	    if (failed) return;
+
+	    debug('probe transport "%s" opened', name);
+	    transport.send([{ type: 'ping', data: 'probe' }]);
+	    transport.once('packet', function (msg) {
+	      if (failed) return;
+	      if ('pong' === msg.type && 'probe' === msg.data) {
+	        debug('probe transport "%s" pong', name);
+	        self.upgrading = true;
+	        self.emit('upgrading', transport);
+	        if (!transport) return;
+	        Socket.priorWebsocketSuccess = 'websocket' === transport.name;
+
+	        debug('pausing current transport "%s"', self.transport.name);
+	        self.transport.pause(function () {
+	          if (failed) return;
+	          if ('closed' === self.readyState) return;
+	          debug('changing transport and sending upgrade packet');
+
+	          cleanup();
+
+	          self.setTransport(transport);
+	          transport.send([{ type: 'upgrade' }]);
+	          self.emit('upgrade', transport);
+	          transport = null;
+	          self.upgrading = false;
+	          self.flush();
+	        });
+	      } else {
+	        debug('probe transport "%s" failed', name);
+	        var err = new Error('probe error');
+	        err.transport = transport.name;
+	        self.emit('upgradeError', err);
+	      }
+	    });
+	  }
+
+	  function freezeTransport () {
+	    if (failed) return;
+
+	    // Any callback called by transport should be ignored since now
+	    failed = true;
+
+	    cleanup();
+
+	    transport.close();
+	    transport = null;
+	  }
+
+	  // Handle any error that happens while probing
+	  function onerror (err) {
+	    var error = new Error('probe error: ' + err);
+	    error.transport = transport.name;
+
+	    freezeTransport();
+
+	    debug('probe transport "%s" failed because of error: %s', name, err);
+
+	    self.emit('upgradeError', error);
+	  }
+
+	  function onTransportClose () {
+	    onerror('transport closed');
+	  }
+
+	  // When the socket is closed while we're probing
+	  function onclose () {
+	    onerror('socket closed');
+	  }
+
+	  // When the socket is upgraded while we're probing
+	  function onupgrade (to) {
+	    if (transport && to.name !== transport.name) {
+	      debug('"%s" works - aborting "%s"', to.name, transport.name);
+	      freezeTransport();
+	    }
+	  }
+
+	  // Remove all listeners on the transport and on self
+	  function cleanup () {
+	    transport.removeListener('open', onTransportOpen);
+	    transport.removeListener('error', onerror);
+	    transport.removeListener('close', onTransportClose);
+	    self.removeListener('close', onclose);
+	    self.removeListener('upgrading', onupgrade);
+	  }
+
+	  transport.once('open', onTransportOpen);
+	  transport.once('error', onerror);
+	  transport.once('close', onTransportClose);
+
+	  this.once('close', onclose);
+	  this.once('upgrading', onupgrade);
+
+	  transport.open();
+	};
+
+	/**
+	 * Called when connection is deemed open.
+	 *
+	 * @api public
+	 */
+
+	Socket.prototype.onOpen = function () {
+	  debug('socket open');
+	  this.readyState = 'open';
+	  Socket.priorWebsocketSuccess = 'websocket' === this.transport.name;
+	  this.emit('open');
+	  this.flush();
+
+	  // we check for `readyState` in case an `open`
+	  // listener already closed the socket
+	  if ('open' === this.readyState && this.upgrade && this.transport.pause) {
+	    debug('starting upgrade probes');
+	    for (var i = 0, l = this.upgrades.length; i < l; i++) {
+	      this.probe(this.upgrades[i]);
+	    }
+	  }
+	};
+
+	/**
+	 * Handles a packet.
+	 *
+	 * @api private
+	 */
+
+	Socket.prototype.onPacket = function (packet) {
+	  if ('opening' === this.readyState || 'open' === this.readyState ||
+	      'closing' === this.readyState) {
+	    debug('socket receive: type "%s", data "%s"', packet.type, packet.data);
+
+	    this.emit('packet', packet);
+
+	    // Socket is live - any packet counts
+	    this.emit('heartbeat');
+
+	    switch (packet.type) {
+	      case 'open':
+	        this.onHandshake(parsejson(packet.data));
+	        break;
+
+	      case 'pong':
+	        this.setPing();
+	        this.emit('pong');
+	        break;
+
+	      case 'error':
+	        var err = new Error('server error');
+	        err.code = packet.data;
+	        this.onError(err);
+	        break;
+
+	      case 'message':
+	        this.emit('data', packet.data);
+	        this.emit('message', packet.data);
+	        break;
+	    }
+	  } else {
+	    debug('packet received with socket readyState "%s"', this.readyState);
+	  }
+	};
+
+	/**
+	 * Called upon handshake completion.
+	 *
+	 * @param {Object} handshake obj
+	 * @api private
+	 */
+
+	Socket.prototype.onHandshake = function (data) {
+	  this.emit('handshake', data);
+	  this.id = data.sid;
+	  this.transport.query.sid = data.sid;
+	  this.upgrades = this.filterUpgrades(data.upgrades);
+	  this.pingInterval = data.pingInterval;
+	  this.pingTimeout = data.pingTimeout;
+	  this.onOpen();
+	  // In case open handler closes socket
+	  if ('closed' === this.readyState) return;
+	  this.setPing();
+
+	  // Prolong liveness of socket on heartbeat
+	  this.removeListener('heartbeat', this.onHeartbeat);
+	  this.on('heartbeat', this.onHeartbeat);
+	};
+
+	/**
+	 * Resets ping timeout.
+	 *
+	 * @api private
+	 */
+
+	Socket.prototype.onHeartbeat = function (timeout) {
+	  clearTimeout(this.pingTimeoutTimer);
+	  var self = this;
+	  self.pingTimeoutTimer = setTimeout(function () {
+	    if ('closed' === self.readyState) return;
+	    self.onClose('ping timeout');
+	  }, timeout || (self.pingInterval + self.pingTimeout));
+	};
+
+	/**
+	 * Pings server every `this.pingInterval` and expects response
+	 * within `this.pingTimeout` or closes connection.
+	 *
+	 * @api private
+	 */
+
+	Socket.prototype.setPing = function () {
+	  var self = this;
+	  clearTimeout(self.pingIntervalTimer);
+	  self.pingIntervalTimer = setTimeout(function () {
+	    debug('writing ping packet - expecting pong within %sms', self.pingTimeout);
+	    self.ping();
+	    self.onHeartbeat(self.pingTimeout);
+	  }, self.pingInterval);
+	};
+
+	/**
+	* Sends a ping packet.
+	*
+	* @api private
+	*/
+
+	Socket.prototype.ping = function () {
+	  var self = this;
+	  this.sendPacket('ping', function () {
+	    self.emit('ping');
+	  });
+	};
+
+	/**
+	 * Called on `drain` event
+	 *
+	 * @api private
+	 */
+
+	Socket.prototype.onDrain = function () {
+	  this.writeBuffer.splice(0, this.prevBufferLen);
+
+	  // setting prevBufferLen = 0 is very important
+	  // for example, when upgrading, upgrade packet is sent over,
+	  // and a nonzero prevBufferLen could cause problems on `drain`
+	  this.prevBufferLen = 0;
+
+	  if (0 === this.writeBuffer.length) {
+	    this.emit('drain');
+	  } else {
+	    this.flush();
+	  }
+	};
+
+	/**
+	 * Flush write buffers.
+	 *
+	 * @api private
+	 */
+
+	Socket.prototype.flush = function () {
+	  if ('closed' !== this.readyState && this.transport.writable &&
+	    !this.upgrading && this.writeBuffer.length) {
+	    debug('flushing %d packets in socket', this.writeBuffer.length);
+	    this.transport.send(this.writeBuffer);
+	    // keep track of current length of writeBuffer
+	    // splice writeBuffer and callbackBuffer on `drain`
+	    this.prevBufferLen = this.writeBuffer.length;
+	    this.emit('flush');
+	  }
+	};
+
+	/**
+	 * Sends a message.
+	 *
+	 * @param {String} message.
+	 * @param {Function} callback function.
+	 * @param {Object} options.
+	 * @return {Socket} for chaining.
+	 * @api public
+	 */
+
+	Socket.prototype.write =
+	Socket.prototype.send = function (msg, options, fn) {
+	  this.sendPacket('message', msg, options, fn);
+	  return this;
+	};
+
+	/**
+	 * Sends a packet.
+	 *
+	 * @param {String} packet type.
+	 * @param {String} data.
+	 * @param {Object} options.
+	 * @param {Function} callback function.
+	 * @api private
+	 */
+
+	Socket.prototype.sendPacket = function (type, data, options, fn) {
+	  if ('function' === typeof data) {
+	    fn = data;
+	    data = undefined;
+	  }
+
+	  if ('function' === typeof options) {
+	    fn = options;
+	    options = null;
+	  }
+
+	  if ('closing' === this.readyState || 'closed' === this.readyState) {
+	    return;
+	  }
+
+	  options = options || {};
+	  options.compress = false !== options.compress;
+
+	  var packet = {
+	    type: type,
+	    data: data,
+	    options: options
+	  };
+	  this.emit('packetCreate', packet);
+	  this.writeBuffer.push(packet);
+	  if (fn) this.once('flush', fn);
+	  this.flush();
+	};
+
+	/**
+	 * Closes the connection.
+	 *
+	 * @api private
+	 */
+
+	Socket.prototype.close = function () {
+	  if ('opening' === this.readyState || 'open' === this.readyState) {
+	    this.readyState = 'closing';
+
+	    var self = this;
+
+	    if (this.writeBuffer.length) {
+	      this.once('drain', function () {
+	        if (this.upgrading) {
+	          waitForUpgrade();
+	        } else {
+	          close();
+	        }
+	      });
+	    } else if (this.upgrading) {
+	      waitForUpgrade();
+	    } else {
+	      close();
+	    }
+	  }
+
+	  function close () {
+	    self.onClose('forced close');
+	    debug('socket closing - telling transport to close');
+	    self.transport.close();
+	  }
+
+	  function cleanupAndClose () {
+	    self.removeListener('upgrade', cleanupAndClose);
+	    self.removeListener('upgradeError', cleanupAndClose);
+	    close();
+	  }
+
+	  function waitForUpgrade () {
+	    // wait for upgrade to finish since we can't send packets while pausing a transport
+	    self.once('upgrade', cleanupAndClose);
+	    self.once('upgradeError', cleanupAndClose);
+	  }
+
+	  return this;
+	};
+
+	/**
+	 * Called upon transport error
+	 *
+	 * @api private
+	 */
+
+	Socket.prototype.onError = function (err) {
+	  debug('socket error %j', err);
+	  Socket.priorWebsocketSuccess = false;
+	  this.emit('error', err);
+	  this.onClose('transport error', err);
+	};
+
+	/**
+	 * Called upon transport close.
+	 *
+	 * @api private
+	 */
+
+	Socket.prototype.onClose = function (reason, desc) {
+	  if ('opening' === this.readyState || 'open' === this.readyState || 'closing' === this.readyState) {
+	    debug('socket close with reason: "%s"', reason);
+	    var self = this;
+
+	    // clear timers
+	    clearTimeout(this.pingIntervalTimer);
+	    clearTimeout(this.pingTimeoutTimer);
+
+	    // stop event from firing again for transport
+	    this.transport.removeAllListeners('close');
+
+	    // ensure transport won't stay open
+	    this.transport.close();
+
+	    // ignore further transport communication
+	    this.transport.removeAllListeners();
+
+	    // set ready state
+	    this.readyState = 'closed';
+
+	    // clear session id
+	    this.id = null;
+
+	    // emit close event
+	    this.emit('close', reason, desc);
+
+	    // clean buffers after, so users can still
+	    // grab the buffers on `close` event
+	    self.writeBuffer = [];
+	    self.prevBufferLen = 0;
+	  }
+	};
+
+	/**
+	 * Filters upgrades, returning only those matching client transports.
+	 *
+	 * @param {Array} server upgrades
+	 * @api private
+	 *
+	 */
+
+	Socket.prototype.filterUpgrades = function (upgrades) {
+	  var filteredUpgrades = [];
+	  for (var i = 0, j = upgrades.length; i < j; i++) {
+	    if (~index(this.transports, upgrades[i])) filteredUpgrades.push(upgrades[i]);
+	  }
+	  return filteredUpgrades;
+	};
+
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+
+/***/ 392:
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(global) {/**
+	 * Module dependencies
+	 */
+
+	var XMLHttpRequest = __webpack_require__(393);
+	var XHR = __webpack_require__(395);
+	var JSONP = __webpack_require__(412);
+	var websocket = __webpack_require__(413);
+
+	/**
+	 * Export transports.
+	 */
+
+	exports.polling = polling;
+	exports.websocket = websocket;
+
+	/**
+	 * Polling transport polymorphic constructor.
+	 * Decides on xhr vs jsonp based on feature detection.
+	 *
+	 * @api private
+	 */
+
+	function polling (opts) {
+	  var xhr;
+	  var xd = false;
+	  var xs = false;
+	  var jsonp = false !== opts.jsonp;
+
+	  if (global.location) {
+	    var isSSL = 'https:' === location.protocol;
+	    var port = location.port;
+
+	    // some user agents have empty `location.port`
+	    if (!port) {
+	      port = isSSL ? 443 : 80;
+	    }
+
+	    xd = opts.hostname !== location.hostname || port !== opts.port;
+	    xs = opts.secure !== isSSL;
+	  }
+
+	  opts.xdomain = xd;
+	  opts.xscheme = xs;
+	  xhr = new XMLHttpRequest(opts);
+
+	  if ('open' in xhr && !opts.forceJSONP) {
+	    return new XHR(opts);
+	  } else {
+	    if (!jsonp) throw new Error('JSONP disabled');
+	    return new JSONP(opts);
+	  }
+	}
+
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+
+/***/ 393:
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(global) {// browser shim for xmlhttprequest module
+
+	var hasCORS = __webpack_require__(394);
+
+	module.exports = function (opts) {
+	  var xdomain = opts.xdomain;
+
+	  // scheme must be same when usign XDomainRequest
+	  // http://blogs.msdn.com/b/ieinternals/archive/2010/05/13/xdomainrequest-restrictions-limitations-and-workarounds.aspx
+	  var xscheme = opts.xscheme;
+
+	  // XDomainRequest has a flow of not sending cookie, therefore it should be disabled as a default.
+	  // https://github.com/Automattic/engine.io-client/pull/217
+	  var enablesXDR = opts.enablesXDR;
+
+	  // XMLHttpRequest can be disabled on IE
+	  try {
+	    if ('undefined' !== typeof XMLHttpRequest && (!xdomain || hasCORS)) {
+	      return new XMLHttpRequest();
+	    }
+	  } catch (e) { }
+
+	  // Use XDomainRequest for IE8 if enablesXDR is true
+	  // because loading bar keeps flashing when using jsonp-polling
+	  // https://github.com/yujiosaka/socke.io-ie8-loading-example
+	  try {
+	    if ('undefined' !== typeof XDomainRequest && !xscheme && enablesXDR) {
+	      return new XDomainRequest();
+	    }
+	  } catch (e) { }
+
+	  if (!xdomain) {
+	    try {
+	      return new global[['Active'].concat('Object').join('X')]('Microsoft.XMLHTTP');
+	    } catch (e) { }
+	  }
+	};
+
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+
+/***/ 394:
+/***/ function(module, exports) {
+
+	
+	/**
+	 * Module exports.
+	 *
+	 * Logic borrowed from Modernizr:
+	 *
+	 *   - https://github.com/Modernizr/Modernizr/blob/master/feature-detects/cors.js
+	 */
+
+	try {
+	  module.exports = typeof XMLHttpRequest !== 'undefined' &&
+	    'withCredentials' in new XMLHttpRequest();
+	} catch (err) {
+	  // if XMLHttp support is disabled in IE then it will throw
+	  // when trying to create
+	  module.exports = false;
+	}
+
+
+/***/ },
+
+/***/ 395:
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(global) {/**
+	 * Module requirements.
+	 */
+
+	var XMLHttpRequest = __webpack_require__(393);
+	var Polling = __webpack_require__(396);
+	var Emitter = __webpack_require__(406);
+	var inherit = __webpack_require__(408);
+	var debug = __webpack_require__(410)('engine.io-client:polling-xhr');
+
+	/**
+	 * Module exports.
+	 */
+
+	module.exports = XHR;
+	module.exports.Request = Request;
+
+	/**
+	 * Empty function
+	 */
+
+	function empty () {}
+
+	/**
+	 * XHR Polling constructor.
+	 *
+	 * @param {Object} opts
+	 * @api public
+	 */
+
+	function XHR (opts) {
+	  Polling.call(this, opts);
+	  this.requestTimeout = opts.requestTimeout;
+
+	  if (global.location) {
+	    var isSSL = 'https:' === location.protocol;
+	    var port = location.port;
+
+	    // some user agents have empty `location.port`
+	    if (!port) {
+	      port = isSSL ? 443 : 80;
+	    }
+
+	    this.xd = opts.hostname !== global.location.hostname ||
+	      port !== opts.port;
+	    this.xs = opts.secure !== isSSL;
+	  } else {
+	    this.extraHeaders = opts.extraHeaders;
+	  }
+	}
+
+	/**
+	 * Inherits from Polling.
+	 */
+
+	inherit(XHR, Polling);
+
+	/**
+	 * XHR supports binary
+	 */
+
+	XHR.prototype.supportsBinary = true;
+
+	/**
+	 * Creates a request.
+	 *
+	 * @param {String} method
+	 * @api private
+	 */
+
+	XHR.prototype.request = function (opts) {
+	  opts = opts || {};
+	  opts.uri = this.uri();
+	  opts.xd = this.xd;
+	  opts.xs = this.xs;
+	  opts.agent = this.agent || false;
+	  opts.supportsBinary = this.supportsBinary;
+	  opts.enablesXDR = this.enablesXDR;
+
+	  // SSL options for Node.js client
+	  opts.pfx = this.pfx;
+	  opts.key = this.key;
+	  opts.passphrase = this.passphrase;
+	  opts.cert = this.cert;
+	  opts.ca = this.ca;
+	  opts.ciphers = this.ciphers;
+	  opts.rejectUnauthorized = this.rejectUnauthorized;
+	  opts.requestTimeout = this.requestTimeout;
+
+	  // other options for Node.js client
+	  opts.extraHeaders = this.extraHeaders;
+
+	  return new Request(opts);
+	};
+
+	/**
+	 * Sends data.
+	 *
+	 * @param {String} data to send.
+	 * @param {Function} called upon flush.
+	 * @api private
+	 */
+
+	XHR.prototype.doWrite = function (data, fn) {
+	  var isBinary = typeof data !== 'string' && data !== undefined;
+	  var req = this.request({ method: 'POST', data: data, isBinary: isBinary });
+	  var self = this;
+	  req.on('success', fn);
+	  req.on('error', function (err) {
+	    self.onError('xhr post error', err);
+	  });
+	  this.sendXhr = req;
+	};
+
+	/**
+	 * Starts a poll cycle.
+	 *
+	 * @api private
+	 */
+
+	XHR.prototype.doPoll = function () {
+	  debug('xhr poll');
+	  var req = this.request();
+	  var self = this;
+	  req.on('data', function (data) {
+	    self.onData(data);
+	  });
+	  req.on('error', function (err) {
+	    self.onError('xhr poll error', err);
+	  });
+	  this.pollXhr = req;
+	};
+
+	/**
+	 * Request constructor
+	 *
+	 * @param {Object} options
+	 * @api public
+	 */
+
+	function Request (opts) {
+	  this.method = opts.method || 'GET';
+	  this.uri = opts.uri;
+	  this.xd = !!opts.xd;
+	  this.xs = !!opts.xs;
+	  this.async = false !== opts.async;
+	  this.data = undefined !== opts.data ? opts.data : null;
+	  this.agent = opts.agent;
+	  this.isBinary = opts.isBinary;
+	  this.supportsBinary = opts.supportsBinary;
+	  this.enablesXDR = opts.enablesXDR;
+	  this.requestTimeout = opts.requestTimeout;
+
+	  // SSL options for Node.js client
+	  this.pfx = opts.pfx;
+	  this.key = opts.key;
+	  this.passphrase = opts.passphrase;
+	  this.cert = opts.cert;
+	  this.ca = opts.ca;
+	  this.ciphers = opts.ciphers;
+	  this.rejectUnauthorized = opts.rejectUnauthorized;
+
+	  // other options for Node.js client
+	  this.extraHeaders = opts.extraHeaders;
+
+	  this.create();
+	}
+
+	/**
+	 * Mix in `Emitter`.
+	 */
+
+	Emitter(Request.prototype);
+
+	/**
+	 * Creates the XHR object and sends the request.
+	 *
+	 * @api private
+	 */
+
+	Request.prototype.create = function () {
+	  var opts = { agent: this.agent, xdomain: this.xd, xscheme: this.xs, enablesXDR: this.enablesXDR };
+
+	  // SSL options for Node.js client
+	  opts.pfx = this.pfx;
+	  opts.key = this.key;
+	  opts.passphrase = this.passphrase;
+	  opts.cert = this.cert;
+	  opts.ca = this.ca;
+	  opts.ciphers = this.ciphers;
+	  opts.rejectUnauthorized = this.rejectUnauthorized;
+
+	  var xhr = this.xhr = new XMLHttpRequest(opts);
+	  var self = this;
+
+	  try {
+	    debug('xhr open %s: %s', this.method, this.uri);
+	    xhr.open(this.method, this.uri, this.async);
+	    try {
+	      if (this.extraHeaders) {
+	        xhr.setDisableHeaderCheck(true);
+	        for (var i in this.extraHeaders) {
+	          if (this.extraHeaders.hasOwnProperty(i)) {
+	            xhr.setRequestHeader(i, this.extraHeaders[i]);
+	          }
+	        }
+	      }
+	    } catch (e) {}
+	    if (this.supportsBinary) {
+	      // This has to be done after open because Firefox is stupid
+	      // http://stackoverflow.com/questions/13216903/get-binary-data-with-xmlhttprequest-in-a-firefox-extension
+	      xhr.responseType = 'arraybuffer';
+	    }
+
+	    if ('POST' === this.method) {
+	      try {
+	        if (this.isBinary) {
+	          xhr.setRequestHeader('Content-type', 'application/octet-stream');
+	        } else {
+	          xhr.setRequestHeader('Content-type', 'text/plain;charset=UTF-8');
+	        }
+	      } catch (e) {}
+	    }
+
+	    try {
+	      xhr.setRequestHeader('Accept', '*/*');
+	    } catch (e) {}
+
+	    // ie6 check
+	    if ('withCredentials' in xhr) {
+	      xhr.withCredentials = true;
+	    }
+
+	    if (this.requestTimeout) {
+	      xhr.timeout = this.requestTimeout;
+	    }
+
+	    if (this.hasXDR()) {
+	      xhr.onload = function () {
+	        self.onLoad();
+	      };
+	      xhr.onerror = function () {
+	        self.onError(xhr.responseText);
+	      };
+	    } else {
+	      xhr.onreadystatechange = function () {
+	        if (4 !== xhr.readyState) return;
+	        if (200 === xhr.status || 1223 === xhr.status) {
+	          self.onLoad();
+	        } else {
+	          // make sure the `error` event handler that's user-set
+	          // does not throw in the same tick and gets caught here
+	          setTimeout(function () {
+	            self.onError(xhr.status);
+	          }, 0);
+	        }
+	      };
+	    }
+
+	    debug('xhr data %s', this.data);
+	    xhr.send(this.data);
+	  } catch (e) {
+	    // Need to defer since .create() is called directly fhrom the constructor
+	    // and thus the 'error' event can only be only bound *after* this exception
+	    // occurs.  Therefore, also, we cannot throw here at all.
+	    setTimeout(function () {
+	      self.onError(e);
+	    }, 0);
+	    return;
+	  }
+
+	  if (global.document) {
+	    this.index = Request.requestsCount++;
+	    Request.requests[this.index] = this;
+	  }
+	};
+
+	/**
+	 * Called upon successful response.
+	 *
+	 * @api private
+	 */
+
+	Request.prototype.onSuccess = function () {
+	  this.emit('success');
+	  this.cleanup();
+	};
+
+	/**
+	 * Called if we have data.
+	 *
+	 * @api private
+	 */
+
+	Request.prototype.onData = function (data) {
+	  this.emit('data', data);
+	  this.onSuccess();
+	};
+
+	/**
+	 * Called upon error.
+	 *
+	 * @api private
+	 */
+
+	Request.prototype.onError = function (err) {
+	  this.emit('error', err);
+	  this.cleanup(true);
+	};
+
+	/**
+	 * Cleans up house.
+	 *
+	 * @api private
+	 */
+
+	Request.prototype.cleanup = function (fromError) {
+	  if ('undefined' === typeof this.xhr || null === this.xhr) {
+	    return;
+	  }
+	  // xmlhttprequest
+	  if (this.hasXDR()) {
+	    this.xhr.onload = this.xhr.onerror = empty;
+	  } else {
+	    this.xhr.onreadystatechange = empty;
+	  }
+
+	  if (fromError) {
+	    try {
+	      this.xhr.abort();
+	    } catch (e) {}
+	  }
+
+	  if (global.document) {
+	    delete Request.requests[this.index];
+	  }
+
+	  this.xhr = null;
+	};
+
+	/**
+	 * Called upon load.
+	 *
+	 * @api private
+	 */
+
+	Request.prototype.onLoad = function () {
+	  var data;
+	  try {
+	    var contentType;
+	    try {
+	      contentType = this.xhr.getResponseHeader('Content-Type').split(';')[0];
+	    } catch (e) {}
+	    if (contentType === 'application/octet-stream') {
+	      data = this.xhr.response || this.xhr.responseText;
+	    } else {
+	      if (!this.supportsBinary) {
+	        data = this.xhr.responseText;
+	      } else {
+	        try {
+	          data = String.fromCharCode.apply(null, new Uint8Array(this.xhr.response));
+	        } catch (e) {
+	          var ui8Arr = new Uint8Array(this.xhr.response);
+	          var dataArray = [];
+	          for (var idx = 0, length = ui8Arr.length; idx < length; idx++) {
+	            dataArray.push(ui8Arr[idx]);
+	          }
+
+	          data = String.fromCharCode.apply(null, dataArray);
+	        }
+	      }
+	    }
+	  } catch (e) {
+	    this.onError(e);
+	  }
+	  if (null != data) {
+	    this.onData(data);
+	  }
+	};
+
+	/**
+	 * Check if it has XDomainRequest.
+	 *
+	 * @api private
+	 */
+
+	Request.prototype.hasXDR = function () {
+	  return 'undefined' !== typeof global.XDomainRequest && !this.xs && this.enablesXDR;
+	};
+
+	/**
+	 * Aborts the request.
+	 *
+	 * @api public
+	 */
+
+	Request.prototype.abort = function () {
+	  this.cleanup();
+	};
+
+	/**
+	 * Aborts pending requests when unloading the window. This is needed to prevent
+	 * memory leaks (e.g. when using IE) and to ensure that no spurious error is
+	 * emitted.
+	 */
+
+	Request.requestsCount = 0;
+	Request.requests = {};
+
+	if (global.document) {
+	  if (global.attachEvent) {
+	    global.attachEvent('onunload', unloadHandler);
+	  } else if (global.addEventListener) {
+	    global.addEventListener('beforeunload', unloadHandler, false);
+	  }
+	}
+
+	function unloadHandler () {
+	  for (var i in Request.requests) {
+	    if (Request.requests.hasOwnProperty(i)) {
+	      Request.requests[i].abort();
+	    }
+	  }
+	}
+
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+
+/***/ 396:
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Module dependencies.
+	 */
+
+	var Transport = __webpack_require__(397);
+	var parseqs = __webpack_require__(407);
+	var parser = __webpack_require__(398);
+	var inherit = __webpack_require__(408);
+	var yeast = __webpack_require__(409);
+	var debug = __webpack_require__(410)('engine.io-client:polling');
+
+	/**
+	 * Module exports.
+	 */
+
+	module.exports = Polling;
+
+	/**
+	 * Is XHR2 supported?
+	 */
+
+	var hasXHR2 = (function () {
+	  var XMLHttpRequest = __webpack_require__(393);
+	  var xhr = new XMLHttpRequest({ xdomain: false });
+	  return null != xhr.responseType;
+	})();
+
+	/**
+	 * Polling interface.
+	 *
+	 * @param {Object} opts
+	 * @api private
+	 */
+
+	function Polling (opts) {
+	  var forceBase64 = (opts && opts.forceBase64);
+	  if (!hasXHR2 || forceBase64) {
+	    this.supportsBinary = false;
+	  }
+	  Transport.call(this, opts);
+	}
+
+	/**
+	 * Inherits from Transport.
+	 */
+
+	inherit(Polling, Transport);
+
+	/**
+	 * Transport name.
+	 */
+
+	Polling.prototype.name = 'polling';
+
+	/**
+	 * Opens the socket (triggers polling). We write a PING message to determine
+	 * when the transport is open.
+	 *
+	 * @api private
+	 */
+
+	Polling.prototype.doOpen = function () {
+	  this.poll();
+	};
+
+	/**
+	 * Pauses polling.
+	 *
+	 * @param {Function} callback upon buffers are flushed and transport is paused
+	 * @api private
+	 */
+
+	Polling.prototype.pause = function (onPause) {
+	  var self = this;
+
+	  this.readyState = 'pausing';
+
+	  function pause () {
+	    debug('paused');
+	    self.readyState = 'paused';
+	    onPause();
+	  }
+
+	  if (this.polling || !this.writable) {
+	    var total = 0;
+
+	    if (this.polling) {
+	      debug('we are currently polling - waiting to pause');
+	      total++;
+	      this.once('pollComplete', function () {
+	        debug('pre-pause polling complete');
+	        --total || pause();
+	      });
+	    }
+
+	    if (!this.writable) {
+	      debug('we are currently writing - waiting to pause');
+	      total++;
+	      this.once('drain', function () {
+	        debug('pre-pause writing complete');
+	        --total || pause();
+	      });
+	    }
+	  } else {
+	    pause();
+	  }
+	};
+
+	/**
+	 * Starts polling cycle.
+	 *
+	 * @api public
+	 */
+
+	Polling.prototype.poll = function () {
+	  debug('polling');
+	  this.polling = true;
+	  this.doPoll();
+	  this.emit('poll');
+	};
+
+	/**
+	 * Overloads onData to detect payloads.
+	 *
+	 * @api private
+	 */
+
+	Polling.prototype.onData = function (data) {
+	  var self = this;
+	  debug('polling got data %s', data);
+	  var callback = function (packet, index, total) {
+	    // if its the first message we consider the transport open
+	    if ('opening' === self.readyState) {
+	      self.onOpen();
+	    }
+
+	    // if its a close packet, we close the ongoing requests
+	    if ('close' === packet.type) {
+	      self.onClose();
+	      return false;
+	    }
+
+	    // otherwise bypass onData and handle the message
+	    self.onPacket(packet);
+	  };
+
+	  // decode payload
+	  parser.decodePayload(data, this.socket.binaryType, callback);
+
+	  // if an event did not trigger closing
+	  if ('closed' !== this.readyState) {
+	    // if we got data we're not polling
+	    this.polling = false;
+	    this.emit('pollComplete');
+
+	    if ('open' === this.readyState) {
+	      this.poll();
+	    } else {
+	      debug('ignoring poll - transport state "%s"', this.readyState);
+	    }
+	  }
+	};
+
+	/**
+	 * For polling, send a close packet.
+	 *
+	 * @api private
+	 */
+
+	Polling.prototype.doClose = function () {
+	  var self = this;
+
+	  function close () {
+	    debug('writing close packet');
+	    self.write([{ type: 'close' }]);
+	  }
+
+	  if ('open' === this.readyState) {
+	    debug('transport open - closing');
+	    close();
+	  } else {
+	    // in case we're trying to close while
+	    // handshaking is in progress (GH-164)
+	    debug('transport not open - deferring close');
+	    this.once('open', close);
+	  }
+	};
+
+	/**
+	 * Writes a packets payload.
+	 *
+	 * @param {Array} data packets
+	 * @param {Function} drain callback
+	 * @api private
+	 */
+
+	Polling.prototype.write = function (packets) {
+	  var self = this;
+	  this.writable = false;
+	  var callbackfn = function () {
+	    self.writable = true;
+	    self.emit('drain');
+	  };
+
+	  parser.encodePayload(packets, this.supportsBinary, function (data) {
+	    self.doWrite(data, callbackfn);
+	  });
+	};
+
+	/**
+	 * Generates uri for connection.
+	 *
+	 * @api private
+	 */
+
+	Polling.prototype.uri = function () {
+	  var query = this.query || {};
+	  var schema = this.secure ? 'https' : 'http';
+	  var port = '';
+
+	  // cache busting is forced
+	  if (false !== this.timestampRequests) {
+	    query[this.timestampParam] = yeast();
+	  }
+
+	  if (!this.supportsBinary && !query.sid) {
+	    query.b64 = 1;
+	  }
+
+	  query = parseqs.encode(query);
+
+	  // avoid port if default for schema
+	  if (this.port && (('https' === schema && Number(this.port) !== 443) ||
+	     ('http' === schema && Number(this.port) !== 80))) {
+	    port = ':' + this.port;
+	  }
+
+	  // prepend ? to query
+	  if (query.length) {
+	    query = '?' + query;
+	  }
+
+	  var ipv6 = this.hostname.indexOf(':') !== -1;
+	  return schema + '://' + (ipv6 ? '[' + this.hostname + ']' : this.hostname) + port + this.path + query;
+	};
+
+
+/***/ },
+
+/***/ 397:
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Module dependencies.
+	 */
+
+	var parser = __webpack_require__(398);
+	var Emitter = __webpack_require__(406);
+
+	/**
+	 * Module exports.
+	 */
+
+	module.exports = Transport;
+
+	/**
+	 * Transport abstract constructor.
+	 *
+	 * @param {Object} options.
+	 * @api private
+	 */
+
+	function Transport (opts) {
+	  this.path = opts.path;
+	  this.hostname = opts.hostname;
+	  this.port = opts.port;
+	  this.secure = opts.secure;
+	  this.query = opts.query;
+	  this.timestampParam = opts.timestampParam;
+	  this.timestampRequests = opts.timestampRequests;
+	  this.readyState = '';
+	  this.agent = opts.agent || false;
+	  this.socket = opts.socket;
+	  this.enablesXDR = opts.enablesXDR;
+
+	  // SSL options for Node.js client
+	  this.pfx = opts.pfx;
+	  this.key = opts.key;
+	  this.passphrase = opts.passphrase;
+	  this.cert = opts.cert;
+	  this.ca = opts.ca;
+	  this.ciphers = opts.ciphers;
+	  this.rejectUnauthorized = opts.rejectUnauthorized;
+	  this.forceNode = opts.forceNode;
+
+	  // other options for Node.js client
+	  this.extraHeaders = opts.extraHeaders;
+	  this.localAddress = opts.localAddress;
+	}
+
+	/**
+	 * Mix in `Emitter`.
+	 */
+
+	Emitter(Transport.prototype);
+
+	/**
+	 * Emits an error.
+	 *
+	 * @param {String} str
+	 * @return {Transport} for chaining
+	 * @api public
+	 */
+
+	Transport.prototype.onError = function (msg, desc) {
+	  var err = new Error(msg);
+	  err.type = 'TransportError';
+	  err.description = desc;
+	  this.emit('error', err);
+	  return this;
+	};
+
+	/**
+	 * Opens the transport.
+	 *
+	 * @api public
+	 */
+
+	Transport.prototype.open = function () {
+	  if ('closed' === this.readyState || '' === this.readyState) {
+	    this.readyState = 'opening';
+	    this.doOpen();
+	  }
+
+	  return this;
+	};
+
+	/**
+	 * Closes the transport.
+	 *
+	 * @api private
+	 */
+
+	Transport.prototype.close = function () {
+	  if ('opening' === this.readyState || 'open' === this.readyState) {
+	    this.doClose();
+	    this.onClose();
+	  }
+
+	  return this;
+	};
+
+	/**
+	 * Sends multiple packets.
+	 *
+	 * @param {Array} packets
+	 * @api private
+	 */
+
+	Transport.prototype.send = function (packets) {
+	  if ('open' === this.readyState) {
+	    this.write(packets);
+	  } else {
+	    throw new Error('Transport not open');
+	  }
+	};
+
+	/**
+	 * Called upon open
+	 *
+	 * @api private
+	 */
+
+	Transport.prototype.onOpen = function () {
+	  this.readyState = 'open';
+	  this.writable = true;
+	  this.emit('open');
+	};
+
+	/**
+	 * Called with data.
+	 *
+	 * @param {String} data
+	 * @api private
+	 */
+
+	Transport.prototype.onData = function (data) {
+	  var packet = parser.decodePacket(data, this.socket.binaryType);
+	  this.onPacket(packet);
+	};
+
+	/**
+	 * Called with a decoded packet.
+	 */
+
+	Transport.prototype.onPacket = function (packet) {
+	  this.emit('packet', packet);
+	};
+
+	/**
+	 * Called upon close.
+	 *
+	 * @api private
+	 */
+
+	Transport.prototype.onClose = function () {
+	  this.readyState = 'closed';
+	  this.emit('close');
+	};
+
+
+/***/ },
+
+/***/ 398:
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(global) {/**
+	 * Module dependencies.
+	 */
+
+	var keys = __webpack_require__(399);
+	var hasBinary = __webpack_require__(400);
+	var sliceBuffer = __webpack_require__(401);
+	var after = __webpack_require__(402);
+	var utf8 = __webpack_require__(403);
+
+	var base64encoder;
+	if (global && global.ArrayBuffer) {
+	  base64encoder = __webpack_require__(404);
+	}
+
+	/**
+	 * Check if we are running an android browser. That requires us to use
+	 * ArrayBuffer with polling transports...
+	 *
+	 * http://ghinda.net/jpeg-blob-ajax-android/
+	 */
+
+	var isAndroid = typeof navigator !== 'undefined' && /Android/i.test(navigator.userAgent);
+
+	/**
+	 * Check if we are running in PhantomJS.
+	 * Uploading a Blob with PhantomJS does not work correctly, as reported here:
+	 * https://github.com/ariya/phantomjs/issues/11395
+	 * @type boolean
+	 */
+	var isPhantomJS = typeof navigator !== 'undefined' && /PhantomJS/i.test(navigator.userAgent);
+
+	/**
+	 * When true, avoids using Blobs to encode payloads.
+	 * @type boolean
+	 */
+	var dontSendBlobs = isAndroid || isPhantomJS;
+
+	/**
+	 * Current protocol version.
+	 */
+
+	exports.protocol = 3;
+
+	/**
+	 * Packet types.
+	 */
+
+	var packets = exports.packets = {
+	    open:     0    // non-ws
+	  , close:    1    // non-ws
+	  , ping:     2
+	  , pong:     3
+	  , message:  4
+	  , upgrade:  5
+	  , noop:     6
+	};
+
+	var packetslist = keys(packets);
+
+	/**
+	 * Premade error packet.
+	 */
+
+	var err = { type: 'error', data: 'parser error' };
+
+	/**
+	 * Create a blob api even for blob builder when vendor prefixes exist
+	 */
+
+	var Blob = __webpack_require__(405);
+
+	/**
+	 * Encodes a packet.
+	 *
+	 *     <packet type id> [ <data> ]
+	 *
+	 * Example:
+	 *
+	 *     5hello world
+	 *     3
+	 *     4
+	 *
+	 * Binary is encoded in an identical principle
+	 *
+	 * @api private
+	 */
+
+	exports.encodePacket = function (packet, supportsBinary, utf8encode, callback) {
+	  if ('function' == typeof supportsBinary) {
+	    callback = supportsBinary;
+	    supportsBinary = false;
+	  }
+
+	  if ('function' == typeof utf8encode) {
+	    callback = utf8encode;
+	    utf8encode = null;
+	  }
+
+	  var data = (packet.data === undefined)
+	    ? undefined
+	    : packet.data.buffer || packet.data;
+
+	  if (global.ArrayBuffer && data instanceof ArrayBuffer) {
+	    return encodeArrayBuffer(packet, supportsBinary, callback);
+	  } else if (Blob && data instanceof global.Blob) {
+	    return encodeBlob(packet, supportsBinary, callback);
+	  }
+
+	  // might be an object with { base64: true, data: dataAsBase64String }
+	  if (data && data.base64) {
+	    return encodeBase64Object(packet, callback);
+	  }
+
+	  // Sending data as a utf-8 string
+	  var encoded = packets[packet.type];
+
+	  // data fragment is optional
+	  if (undefined !== packet.data) {
+	    encoded += utf8encode ? utf8.encode(String(packet.data)) : String(packet.data);
+	  }
+
+	  return callback('' + encoded);
+
+	};
+
+	function encodeBase64Object(packet, callback) {
+	  // packet data is an object { base64: true, data: dataAsBase64String }
+	  var message = 'b' + exports.packets[packet.type] + packet.data.data;
+	  return callback(message);
+	}
+
+	/**
+	 * Encode packet helpers for binary types
+	 */
+
+	function encodeArrayBuffer(packet, supportsBinary, callback) {
+	  if (!supportsBinary) {
+	    return exports.encodeBase64Packet(packet, callback);
+	  }
+
+	  var data = packet.data;
+	  var contentArray = new Uint8Array(data);
+	  var resultBuffer = new Uint8Array(1 + data.byteLength);
+
+	  resultBuffer[0] = packets[packet.type];
+	  for (var i = 0; i < contentArray.length; i++) {
+	    resultBuffer[i+1] = contentArray[i];
+	  }
+
+	  return callback(resultBuffer.buffer);
+	}
+
+	function encodeBlobAsArrayBuffer(packet, supportsBinary, callback) {
+	  if (!supportsBinary) {
+	    return exports.encodeBase64Packet(packet, callback);
+	  }
+
+	  var fr = new FileReader();
+	  fr.onload = function() {
+	    packet.data = fr.result;
+	    exports.encodePacket(packet, supportsBinary, true, callback);
+	  };
+	  return fr.readAsArrayBuffer(packet.data);
+	}
+
+	function encodeBlob(packet, supportsBinary, callback) {
+	  if (!supportsBinary) {
+	    return exports.encodeBase64Packet(packet, callback);
+	  }
+
+	  if (dontSendBlobs) {
+	    return encodeBlobAsArrayBuffer(packet, supportsBinary, callback);
+	  }
+
+	  var length = new Uint8Array(1);
+	  length[0] = packets[packet.type];
+	  var blob = new Blob([length.buffer, packet.data]);
+
+	  return callback(blob);
+	}
+
+	/**
+	 * Encodes a packet with binary data in a base64 string
+	 *
+	 * @param {Object} packet, has `type` and `data`
+	 * @return {String} base64 encoded message
+	 */
+
+	exports.encodeBase64Packet = function(packet, callback) {
+	  var message = 'b' + exports.packets[packet.type];
+	  if (Blob && packet.data instanceof global.Blob) {
+	    var fr = new FileReader();
+	    fr.onload = function() {
+	      var b64 = fr.result.split(',')[1];
+	      callback(message + b64);
+	    };
+	    return fr.readAsDataURL(packet.data);
+	  }
+
+	  var b64data;
+	  try {
+	    b64data = String.fromCharCode.apply(null, new Uint8Array(packet.data));
+	  } catch (e) {
+	    // iPhone Safari doesn't let you apply with typed arrays
+	    var typed = new Uint8Array(packet.data);
+	    var basic = new Array(typed.length);
+	    for (var i = 0; i < typed.length; i++) {
+	      basic[i] = typed[i];
+	    }
+	    b64data = String.fromCharCode.apply(null, basic);
+	  }
+	  message += global.btoa(b64data);
+	  return callback(message);
+	};
+
+	/**
+	 * Decodes a packet. Changes format to Blob if requested.
+	 *
+	 * @return {Object} with `type` and `data` (if any)
+	 * @api private
+	 */
+
+	exports.decodePacket = function (data, binaryType, utf8decode) {
+	  if (data === undefined) {
+	    return err;
+	  }
+	  // String data
+	  if (typeof data == 'string') {
+	    if (data.charAt(0) == 'b') {
+	      return exports.decodeBase64Packet(data.substr(1), binaryType);
+	    }
+
+	    if (utf8decode) {
+	      data = tryDecode(data);
+	      if (data === false) {
+	        return err;
+	      }
+	    }
+	    var type = data.charAt(0);
+
+	    if (Number(type) != type || !packetslist[type]) {
+	      return err;
+	    }
+
+	    if (data.length > 1) {
+	      return { type: packetslist[type], data: data.substring(1) };
+	    } else {
+	      return { type: packetslist[type] };
+	    }
+	  }
+
+	  var asArray = new Uint8Array(data);
+	  var type = asArray[0];
+	  var rest = sliceBuffer(data, 1);
+	  if (Blob && binaryType === 'blob') {
+	    rest = new Blob([rest]);
+	  }
+	  return { type: packetslist[type], data: rest };
+	};
+
+	function tryDecode(data) {
+	  try {
+	    data = utf8.decode(data);
+	  } catch (e) {
+	    return false;
+	  }
+	  return data;
+	}
+
+	/**
+	 * Decodes a packet encoded in a base64 string
+	 *
+	 * @param {String} base64 encoded message
+	 * @return {Object} with `type` and `data` (if any)
+	 */
+
+	exports.decodeBase64Packet = function(msg, binaryType) {
+	  var type = packetslist[msg.charAt(0)];
+	  if (!base64encoder) {
+	    return { type: type, data: { base64: true, data: msg.substr(1) } };
+	  }
+
+	  var data = base64encoder.decode(msg.substr(1));
+
+	  if (binaryType === 'blob' && Blob) {
+	    data = new Blob([data]);
+	  }
+
+	  return { type: type, data: data };
+	};
+
+	/**
+	 * Encodes multiple messages (payload).
+	 *
+	 *     <length>:data
+	 *
+	 * Example:
+	 *
+	 *     11:hello world2:hi
+	 *
+	 * If any contents are binary, they will be encoded as base64 strings. Base64
+	 * encoded strings are marked with a b before the length specifier
+	 *
+	 * @param {Array} packets
+	 * @api private
+	 */
+
+	exports.encodePayload = function (packets, supportsBinary, callback) {
+	  if (typeof supportsBinary == 'function') {
+	    callback = supportsBinary;
+	    supportsBinary = null;
+	  }
+
+	  var isBinary = hasBinary(packets);
+
+	  if (supportsBinary && isBinary) {
+	    if (Blob && !dontSendBlobs) {
+	      return exports.encodePayloadAsBlob(packets, callback);
+	    }
+
+	    return exports.encodePayloadAsArrayBuffer(packets, callback);
+	  }
+
+	  if (!packets.length) {
+	    return callback('0:');
+	  }
+
+	  function setLengthHeader(message) {
+	    return message.length + ':' + message;
+	  }
+
+	  function encodeOne(packet, doneCallback) {
+	    exports.encodePacket(packet, !isBinary ? false : supportsBinary, true, function(message) {
+	      doneCallback(null, setLengthHeader(message));
+	    });
+	  }
+
+	  map(packets, encodeOne, function(err, results) {
+	    return callback(results.join(''));
+	  });
+	};
+
+	/**
+	 * Async array map using after
+	 */
+
+	function map(ary, each, done) {
+	  var result = new Array(ary.length);
+	  var next = after(ary.length, done);
+
+	  var eachWithIndex = function(i, el, cb) {
+	    each(el, function(error, msg) {
+	      result[i] = msg;
+	      cb(error, result);
+	    });
+	  };
+
+	  for (var i = 0; i < ary.length; i++) {
+	    eachWithIndex(i, ary[i], next);
+	  }
+	}
+
+	/*
+	 * Decodes data when a payload is maybe expected. Possible binary contents are
+	 * decoded from their base64 representation
+	 *
+	 * @param {String} data, callback method
+	 * @api public
+	 */
+
+	exports.decodePayload = function (data, binaryType, callback) {
+	  if (typeof data != 'string') {
+	    return exports.decodePayloadAsBinary(data, binaryType, callback);
+	  }
+
+	  if (typeof binaryType === 'function') {
+	    callback = binaryType;
+	    binaryType = null;
+	  }
+
+	  var packet;
+	  if (data == '') {
+	    // parser error - ignoring payload
+	    return callback(err, 0, 1);
+	  }
+
+	  var length = ''
+	    , n, msg;
+
+	  for (var i = 0, l = data.length; i < l; i++) {
+	    var chr = data.charAt(i);
+
+	    if (':' != chr) {
+	      length += chr;
+	    } else {
+	      if ('' == length || (length != (n = Number(length)))) {
+	        // parser error - ignoring payload
+	        return callback(err, 0, 1);
+	      }
+
+	      msg = data.substr(i + 1, n);
+
+	      if (length != msg.length) {
+	        // parser error - ignoring payload
+	        return callback(err, 0, 1);
+	      }
+
+	      if (msg.length) {
+	        packet = exports.decodePacket(msg, binaryType, true);
+
+	        if (err.type == packet.type && err.data == packet.data) {
+	          // parser error in individual packet - ignoring payload
+	          return callback(err, 0, 1);
+	        }
+
+	        var ret = callback(packet, i + n, l);
+	        if (false === ret) return;
+	      }
+
+	      // advance cursor
+	      i += n;
+	      length = '';
+	    }
+	  }
+
+	  if (length != '') {
+	    // parser error - ignoring payload
+	    return callback(err, 0, 1);
+	  }
+
+	};
+
+	/**
+	 * Encodes multiple messages (payload) as binary.
+	 *
+	 * <1 = binary, 0 = string><number from 0-9><number from 0-9>[...]<number
+	 * 255><data>
+	 *
+	 * Example:
+	 * 1 3 255 1 2 3, if the binary contents are interpreted as 8 bit integers
+	 *
+	 * @param {Array} packets
+	 * @return {ArrayBuffer} encoded payload
+	 * @api private
+	 */
+
+	exports.encodePayloadAsArrayBuffer = function(packets, callback) {
+	  if (!packets.length) {
+	    return callback(new ArrayBuffer(0));
+	  }
+
+	  function encodeOne(packet, doneCallback) {
+	    exports.encodePacket(packet, true, true, function(data) {
+	      return doneCallback(null, data);
+	    });
+	  }
+
+	  map(packets, encodeOne, function(err, encodedPackets) {
+	    var totalLength = encodedPackets.reduce(function(acc, p) {
+	      var len;
+	      if (typeof p === 'string'){
+	        len = p.length;
+	      } else {
+	        len = p.byteLength;
+	      }
+	      return acc + len.toString().length + len + 2; // string/binary identifier + separator = 2
+	    }, 0);
+
+	    var resultArray = new Uint8Array(totalLength);
+
+	    var bufferIndex = 0;
+	    encodedPackets.forEach(function(p) {
+	      var isString = typeof p === 'string';
+	      var ab = p;
+	      if (isString) {
+	        var view = new Uint8Array(p.length);
+	        for (var i = 0; i < p.length; i++) {
+	          view[i] = p.charCodeAt(i);
+	        }
+	        ab = view.buffer;
+	      }
+
+	      if (isString) { // not true binary
+	        resultArray[bufferIndex++] = 0;
+	      } else { // true binary
+	        resultArray[bufferIndex++] = 1;
+	      }
+
+	      var lenStr = ab.byteLength.toString();
+	      for (var i = 0; i < lenStr.length; i++) {
+	        resultArray[bufferIndex++] = parseInt(lenStr[i]);
+	      }
+	      resultArray[bufferIndex++] = 255;
+
+	      var view = new Uint8Array(ab);
+	      for (var i = 0; i < view.length; i++) {
+	        resultArray[bufferIndex++] = view[i];
+	      }
+	    });
+
+	    return callback(resultArray.buffer);
+	  });
+	};
+
+	/**
+	 * Encode as Blob
+	 */
+
+	exports.encodePayloadAsBlob = function(packets, callback) {
+	  function encodeOne(packet, doneCallback) {
+	    exports.encodePacket(packet, true, true, function(encoded) {
+	      var binaryIdentifier = new Uint8Array(1);
+	      binaryIdentifier[0] = 1;
+	      if (typeof encoded === 'string') {
+	        var view = new Uint8Array(encoded.length);
+	        for (var i = 0; i < encoded.length; i++) {
+	          view[i] = encoded.charCodeAt(i);
+	        }
+	        encoded = view.buffer;
+	        binaryIdentifier[0] = 0;
+	      }
+
+	      var len = (encoded instanceof ArrayBuffer)
+	        ? encoded.byteLength
+	        : encoded.size;
+
+	      var lenStr = len.toString();
+	      var lengthAry = new Uint8Array(lenStr.length + 1);
+	      for (var i = 0; i < lenStr.length; i++) {
+	        lengthAry[i] = parseInt(lenStr[i]);
+	      }
+	      lengthAry[lenStr.length] = 255;
+
+	      if (Blob) {
+	        var blob = new Blob([binaryIdentifier.buffer, lengthAry.buffer, encoded]);
+	        doneCallback(null, blob);
+	      }
+	    });
+	  }
+
+	  map(packets, encodeOne, function(err, results) {
+	    return callback(new Blob(results));
+	  });
+	};
+
+	/*
+	 * Decodes data when a payload is maybe expected. Strings are decoded by
+	 * interpreting each byte as a key code for entries marked to start with 0. See
+	 * description of encodePayloadAsBinary
+	 *
+	 * @param {ArrayBuffer} data, callback method
+	 * @api public
+	 */
+
+	exports.decodePayloadAsBinary = function (data, binaryType, callback) {
+	  if (typeof binaryType === 'function') {
+	    callback = binaryType;
+	    binaryType = null;
+	  }
+
+	  var bufferTail = data;
+	  var buffers = [];
+
+	  var numberTooLong = false;
+	  while (bufferTail.byteLength > 0) {
+	    var tailArray = new Uint8Array(bufferTail);
+	    var isString = tailArray[0] === 0;
+	    var msgLength = '';
+
+	    for (var i = 1; ; i++) {
+	      if (tailArray[i] == 255) break;
+
+	      if (msgLength.length > 310) {
+	        numberTooLong = true;
+	        break;
+	      }
+
+	      msgLength += tailArray[i];
+	    }
+
+	    if(numberTooLong) return callback(err, 0, 1);
+
+	    bufferTail = sliceBuffer(bufferTail, 2 + msgLength.length);
+	    msgLength = parseInt(msgLength);
+
+	    var msg = sliceBuffer(bufferTail, 0, msgLength);
+	    if (isString) {
+	      try {
+	        msg = String.fromCharCode.apply(null, new Uint8Array(msg));
+	      } catch (e) {
+	        // iPhone Safari doesn't let you apply to typed arrays
+	        var typed = new Uint8Array(msg);
+	        msg = '';
+	        for (var i = 0; i < typed.length; i++) {
+	          msg += String.fromCharCode(typed[i]);
+	        }
+	      }
+	    }
+
+	    buffers.push(msg);
+	    bufferTail = sliceBuffer(bufferTail, msgLength);
+	  }
+
+	  var total = buffers.length;
+	  buffers.forEach(function(buffer, i) {
+	    callback(exports.decodePacket(buffer, binaryType, true), i, total);
+	  });
+	};
+
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+
+/***/ 399:
+/***/ function(module, exports) {
+
+	
+	/**
+	 * Gets the keys for an object.
+	 *
+	 * @return {Array} keys
+	 * @api private
+	 */
+
+	module.exports = Object.keys || function keys (obj){
+	  var arr = [];
+	  var has = Object.prototype.hasOwnProperty;
+
+	  for (var i in obj) {
+	    if (has.call(obj, i)) {
+	      arr.push(i);
+	    }
+	  }
+	  return arr;
+	};
+
+
+/***/ },
+
+/***/ 400:
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(global) {
+	/*
+	 * Module requirements.
+	 */
+
+	var isArray = __webpack_require__(386);
+
+	/**
+	 * Module exports.
+	 */
+
+	module.exports = hasBinary;
+
+	/**
+	 * Checks for binary data.
+	 *
+	 * Right now only Buffer and ArrayBuffer are supported..
+	 *
+	 * @param {Object} anything
+	 * @api public
+	 */
+
+	function hasBinary(data) {
+
+	  function _hasBinary(obj) {
+	    if (!obj) return false;
+
+	    if ( (global.Buffer && global.Buffer.isBuffer && global.Buffer.isBuffer(obj)) ||
+	         (global.ArrayBuffer && obj instanceof ArrayBuffer) ||
+	         (global.Blob && obj instanceof Blob) ||
+	         (global.File && obj instanceof File)
+	        ) {
+	      return true;
+	    }
+
+	    if (isArray(obj)) {
+	      for (var i = 0; i < obj.length; i++) {
+	          if (_hasBinary(obj[i])) {
+	              return true;
+	          }
+	      }
+	    } else if (obj && 'object' == typeof obj) {
+	      // see: https://github.com/Automattic/has-binary/pull/4
+	      if (obj.toJSON && 'function' == typeof obj.toJSON) {
+	        obj = obj.toJSON();
+	      }
+
+	      for (var key in obj) {
+	        if (Object.prototype.hasOwnProperty.call(obj, key) && _hasBinary(obj[key])) {
+	          return true;
+	        }
+	      }
+	    }
+
+	    return false;
+	  }
+
+	  return _hasBinary(data);
+	}
+
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+
+/***/ 401:
+/***/ function(module, exports) {
+
+	/**
+	 * An abstraction for slicing an arraybuffer even when
+	 * ArrayBuffer.prototype.slice is not supported
+	 *
+	 * @api public
+	 */
+
+	module.exports = function(arraybuffer, start, end) {
+	  var bytes = arraybuffer.byteLength;
+	  start = start || 0;
+	  end = end || bytes;
+
+	  if (arraybuffer.slice) { return arraybuffer.slice(start, end); }
+
+	  if (start < 0) { start += bytes; }
+	  if (end < 0) { end += bytes; }
+	  if (end > bytes) { end = bytes; }
+
+	  if (start >= bytes || start >= end || bytes === 0) {
+	    return new ArrayBuffer(0);
+	  }
+
+	  var abv = new Uint8Array(arraybuffer);
+	  var result = new Uint8Array(end - start);
+	  for (var i = start, ii = 0; i < end; i++, ii++) {
+	    result[ii] = abv[i];
+	  }
+	  return result.buffer;
+	};
+
+
+/***/ },
+
+/***/ 402:
+/***/ function(module, exports) {
+
+	module.exports = after
+
+	function after(count, callback, err_cb) {
+	    var bail = false
+	    err_cb = err_cb || noop
+	    proxy.count = count
+
+	    return (count === 0) ? callback() : proxy
+
+	    function proxy(err, result) {
+	        if (proxy.count <= 0) {
+	            throw new Error('after called too many times')
+	        }
+	        --proxy.count
+
+	        // after first error, rest are passed to err_cb
+	        if (err) {
+	            bail = true
+	            callback(err)
+	            // future error callbacks will go to error handler
+	            callback = err_cb
+	        } else if (proxy.count === 0 && !bail) {
+	            callback(null, result)
+	        }
+	    }
+	}
+
+	function noop() {}
+
+
+/***/ },
+
+/***/ 403:
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(module, global) {/*! https://mths.be/wtf8 v1.0.0 by @mathias */
+	;(function(root) {
+
+		// Detect free variables `exports`
+		var freeExports = typeof exports == 'object' && exports;
+
+		// Detect free variable `module`
+		var freeModule = typeof module == 'object' && module &&
+			module.exports == freeExports && module;
+
+		// Detect free variable `global`, from Node.js or Browserified code,
+		// and use it as `root`
+		var freeGlobal = typeof global == 'object' && global;
+		if (freeGlobal.global === freeGlobal || freeGlobal.window === freeGlobal) {
+			root = freeGlobal;
+		}
+
+		/*--------------------------------------------------------------------------*/
+
+		var stringFromCharCode = String.fromCharCode;
+
+		// Taken from https://mths.be/punycode
+		function ucs2decode(string) {
+			var output = [];
+			var counter = 0;
+			var length = string.length;
+			var value;
+			var extra;
+			while (counter < length) {
+				value = string.charCodeAt(counter++);
+				if (value >= 0xD800 && value <= 0xDBFF && counter < length) {
+					// high surrogate, and there is a next character
+					extra = string.charCodeAt(counter++);
+					if ((extra & 0xFC00) == 0xDC00) { // low surrogate
+						output.push(((value & 0x3FF) << 10) + (extra & 0x3FF) + 0x10000);
+					} else {
+						// unmatched surrogate; only append this code unit, in case the next
+						// code unit is the high surrogate of a surrogate pair
+						output.push(value);
+						counter--;
+					}
+				} else {
+					output.push(value);
+				}
+			}
+			return output;
+		}
+
+		// Taken from https://mths.be/punycode
+		function ucs2encode(array) {
+			var length = array.length;
+			var index = -1;
+			var value;
+			var output = '';
+			while (++index < length) {
+				value = array[index];
+				if (value > 0xFFFF) {
+					value -= 0x10000;
+					output += stringFromCharCode(value >>> 10 & 0x3FF | 0xD800);
+					value = 0xDC00 | value & 0x3FF;
+				}
+				output += stringFromCharCode(value);
+			}
+			return output;
+		}
+
+		/*--------------------------------------------------------------------------*/
+
+		function createByte(codePoint, shift) {
+			return stringFromCharCode(((codePoint >> shift) & 0x3F) | 0x80);
+		}
+
+		function encodeCodePoint(codePoint) {
+			if ((codePoint & 0xFFFFFF80) == 0) { // 1-byte sequence
+				return stringFromCharCode(codePoint);
+			}
+			var symbol = '';
+			if ((codePoint & 0xFFFFF800) == 0) { // 2-byte sequence
+				symbol = stringFromCharCode(((codePoint >> 6) & 0x1F) | 0xC0);
+			}
+			else if ((codePoint & 0xFFFF0000) == 0) { // 3-byte sequence
+				symbol = stringFromCharCode(((codePoint >> 12) & 0x0F) | 0xE0);
+				symbol += createByte(codePoint, 6);
+			}
+			else if ((codePoint & 0xFFE00000) == 0) { // 4-byte sequence
+				symbol = stringFromCharCode(((codePoint >> 18) & 0x07) | 0xF0);
+				symbol += createByte(codePoint, 12);
+				symbol += createByte(codePoint, 6);
+			}
+			symbol += stringFromCharCode((codePoint & 0x3F) | 0x80);
+			return symbol;
+		}
+
+		function wtf8encode(string) {
+			var codePoints = ucs2decode(string);
+			var length = codePoints.length;
+			var index = -1;
+			var codePoint;
+			var byteString = '';
+			while (++index < length) {
+				codePoint = codePoints[index];
+				byteString += encodeCodePoint(codePoint);
+			}
+			return byteString;
+		}
+
+		/*--------------------------------------------------------------------------*/
+
+		function readContinuationByte() {
+			if (byteIndex >= byteCount) {
+				throw Error('Invalid byte index');
+			}
+
+			var continuationByte = byteArray[byteIndex] & 0xFF;
+			byteIndex++;
+
+			if ((continuationByte & 0xC0) == 0x80) {
+				return continuationByte & 0x3F;
+			}
+
+			// If we end up here, it’s not a continuation byte.
+			throw Error('Invalid continuation byte');
+		}
+
+		function decodeSymbol() {
+			var byte1;
+			var byte2;
+			var byte3;
+			var byte4;
+			var codePoint;
+
+			if (byteIndex > byteCount) {
+				throw Error('Invalid byte index');
+			}
+
+			if (byteIndex == byteCount) {
+				return false;
+			}
+
+			// Read the first byte.
+			byte1 = byteArray[byteIndex] & 0xFF;
+			byteIndex++;
+
+			// 1-byte sequence (no continuation bytes)
+			if ((byte1 & 0x80) == 0) {
+				return byte1;
+			}
+
+			// 2-byte sequence
+			if ((byte1 & 0xE0) == 0xC0) {
+				var byte2 = readContinuationByte();
+				codePoint = ((byte1 & 0x1F) << 6) | byte2;
+				if (codePoint >= 0x80) {
+					return codePoint;
+				} else {
+					throw Error('Invalid continuation byte');
+				}
+			}
+
+			// 3-byte sequence (may include unpaired surrogates)
+			if ((byte1 & 0xF0) == 0xE0) {
+				byte2 = readContinuationByte();
+				byte3 = readContinuationByte();
+				codePoint = ((byte1 & 0x0F) << 12) | (byte2 << 6) | byte3;
+				if (codePoint >= 0x0800) {
+					return codePoint;
+				} else {
+					throw Error('Invalid continuation byte');
+				}
+			}
+
+			// 4-byte sequence
+			if ((byte1 & 0xF8) == 0xF0) {
+				byte2 = readContinuationByte();
+				byte3 = readContinuationByte();
+				byte4 = readContinuationByte();
+				codePoint = ((byte1 & 0x0F) << 0x12) | (byte2 << 0x0C) |
+					(byte3 << 0x06) | byte4;
+				if (codePoint >= 0x010000 && codePoint <= 0x10FFFF) {
+					return codePoint;
+				}
+			}
+
+			throw Error('Invalid WTF-8 detected');
+		}
+
+		var byteArray;
+		var byteCount;
+		var byteIndex;
+		function wtf8decode(byteString) {
+			byteArray = ucs2decode(byteString);
+			byteCount = byteArray.length;
+			byteIndex = 0;
+			var codePoints = [];
+			var tmp;
+			while ((tmp = decodeSymbol()) !== false) {
+				codePoints.push(tmp);
+			}
+			return ucs2encode(codePoints);
+		}
+
+		/*--------------------------------------------------------------------------*/
+
+		var wtf8 = {
+			'version': '1.0.0',
+			'encode': wtf8encode,
+			'decode': wtf8decode
+		};
+
+		// Some AMD build optimizers, like r.js, check for specific condition patterns
+		// like the following:
+		if (
+			true
+		) {
+			!(__WEBPACK_AMD_DEFINE_RESULT__ = function() {
+				return wtf8;
+			}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+		}	else if (freeExports && !freeExports.nodeType) {
+			if (freeModule) { // in Node.js or RingoJS v0.8.0+
+				freeModule.exports = wtf8;
+			} else { // in Narwhal or RingoJS v0.7.0-
+				var object = {};
+				var hasOwnProperty = object.hasOwnProperty;
+				for (var key in wtf8) {
+					hasOwnProperty.call(wtf8, key) && (freeExports[key] = wtf8[key]);
+				}
+			}
+		} else { // in Rhino or a web browser
+			root.wtf8 = wtf8;
+		}
+
+	}(this));
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(382)(module), (function() { return this; }())))
+
+/***/ },
+
+/***/ 404:
+/***/ function(module, exports) {
+
+	/*
+	 * base64-arraybuffer
+	 * https://github.com/niklasvh/base64-arraybuffer
+	 *
+	 * Copyright (c) 2012 Niklas von Hertzen
+	 * Licensed under the MIT license.
+	 */
+	(function(){
+	  "use strict";
+
+	  var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+
+	  // Use a lookup table to find the index.
+	  var lookup = new Uint8Array(256);
+	  for (var i = 0; i < chars.length; i++) {
+	    lookup[chars.charCodeAt(i)] = i;
+	  }
+
+	  exports.encode = function(arraybuffer) {
+	    var bytes = new Uint8Array(arraybuffer),
+	    i, len = bytes.length, base64 = "";
+
+	    for (i = 0; i < len; i+=3) {
+	      base64 += chars[bytes[i] >> 2];
+	      base64 += chars[((bytes[i] & 3) << 4) | (bytes[i + 1] >> 4)];
+	      base64 += chars[((bytes[i + 1] & 15) << 2) | (bytes[i + 2] >> 6)];
+	      base64 += chars[bytes[i + 2] & 63];
+	    }
+
+	    if ((len % 3) === 2) {
+	      base64 = base64.substring(0, base64.length - 1) + "=";
+	    } else if (len % 3 === 1) {
+	      base64 = base64.substring(0, base64.length - 2) + "==";
+	    }
+
+	    return base64;
+	  };
+
+	  exports.decode =  function(base64) {
+	    var bufferLength = base64.length * 0.75,
+	    len = base64.length, i, p = 0,
+	    encoded1, encoded2, encoded3, encoded4;
+
+	    if (base64[base64.length - 1] === "=") {
+	      bufferLength--;
+	      if (base64[base64.length - 2] === "=") {
+	        bufferLength--;
+	      }
+	    }
+
+	    var arraybuffer = new ArrayBuffer(bufferLength),
+	    bytes = new Uint8Array(arraybuffer);
+
+	    for (i = 0; i < len; i+=4) {
+	      encoded1 = lookup[base64.charCodeAt(i)];
+	      encoded2 = lookup[base64.charCodeAt(i+1)];
+	      encoded3 = lookup[base64.charCodeAt(i+2)];
+	      encoded4 = lookup[base64.charCodeAt(i+3)];
+
+	      bytes[p++] = (encoded1 << 2) | (encoded2 >> 4);
+	      bytes[p++] = ((encoded2 & 15) << 4) | (encoded3 >> 2);
+	      bytes[p++] = ((encoded3 & 3) << 6) | (encoded4 & 63);
+	    }
+
+	    return arraybuffer;
+	  };
+	})();
+
+
+/***/ },
+
+/***/ 405:
+/***/ function(module, exports) {
+
+	/* WEBPACK VAR INJECTION */(function(global) {/**
+	 * Create a blob builder even when vendor prefixes exist
+	 */
+
+	var BlobBuilder = global.BlobBuilder
+	  || global.WebKitBlobBuilder
+	  || global.MSBlobBuilder
+	  || global.MozBlobBuilder;
+
+	/**
+	 * Check if Blob constructor is supported
+	 */
+
+	var blobSupported = (function() {
+	  try {
+	    var a = new Blob(['hi']);
+	    return a.size === 2;
+	  } catch(e) {
+	    return false;
+	  }
+	})();
+
+	/**
+	 * Check if Blob constructor supports ArrayBufferViews
+	 * Fails in Safari 6, so we need to map to ArrayBuffers there.
+	 */
+
+	var blobSupportsArrayBufferView = blobSupported && (function() {
+	  try {
+	    var b = new Blob([new Uint8Array([1,2])]);
+	    return b.size === 2;
+	  } catch(e) {
+	    return false;
+	  }
+	})();
+
+	/**
+	 * Check if BlobBuilder is supported
+	 */
+
+	var blobBuilderSupported = BlobBuilder
+	  && BlobBuilder.prototype.append
+	  && BlobBuilder.prototype.getBlob;
+
+	/**
+	 * Helper function that maps ArrayBufferViews to ArrayBuffers
+	 * Used by BlobBuilder constructor and old browsers that didn't
+	 * support it in the Blob constructor.
+	 */
+
+	function mapArrayBufferViews(ary) {
+	  for (var i = 0; i < ary.length; i++) {
+	    var chunk = ary[i];
+	    if (chunk.buffer instanceof ArrayBuffer) {
+	      var buf = chunk.buffer;
+
+	      // if this is a subarray, make a copy so we only
+	      // include the subarray region from the underlying buffer
+	      if (chunk.byteLength !== buf.byteLength) {
+	        var copy = new Uint8Array(chunk.byteLength);
+	        copy.set(new Uint8Array(buf, chunk.byteOffset, chunk.byteLength));
+	        buf = copy.buffer;
+	      }
+
+	      ary[i] = buf;
+	    }
+	  }
+	}
+
+	function BlobBuilderConstructor(ary, options) {
+	  options = options || {};
+
+	  var bb = new BlobBuilder();
+	  mapArrayBufferViews(ary);
+
+	  for (var i = 0; i < ary.length; i++) {
+	    bb.append(ary[i]);
+	  }
+
+	  return (options.type) ? bb.getBlob(options.type) : bb.getBlob();
+	};
+
+	function BlobConstructor(ary, options) {
+	  mapArrayBufferViews(ary);
+	  return new Blob(ary, options || {});
+	};
+
+	module.exports = (function() {
+	  if (blobSupported) {
+	    return blobSupportsArrayBufferView ? global.Blob : BlobConstructor;
+	  } else if (blobBuilderSupported) {
+	    return BlobBuilderConstructor;
+	  } else {
+	    return undefined;
+	  }
+	})();
+
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+
+/***/ 406:
+/***/ function(module, exports, __webpack_require__) {
+
+	
+	/**
+	 * Expose `Emitter`.
+	 */
+
+	if (true) {
+	  module.exports = Emitter;
+	}
+
+	/**
+	 * Initialize a new `Emitter`.
+	 *
+	 * @api public
+	 */
+
+	function Emitter(obj) {
+	  if (obj) return mixin(obj);
+	};
+
+	/**
+	 * Mixin the emitter properties.
+	 *
+	 * @param {Object} obj
+	 * @return {Object}
+	 * @api private
+	 */
+
+	function mixin(obj) {
+	  for (var key in Emitter.prototype) {
+	    obj[key] = Emitter.prototype[key];
+	  }
+	  return obj;
+	}
+
+	/**
+	 * Listen on the given `event` with `fn`.
+	 *
+	 * @param {String} event
+	 * @param {Function} fn
+	 * @return {Emitter}
+	 * @api public
+	 */
+
+	Emitter.prototype.on =
+	Emitter.prototype.addEventListener = function(event, fn){
+	  this._callbacks = this._callbacks || {};
+	  (this._callbacks['$' + event] = this._callbacks['$' + event] || [])
+	    .push(fn);
+	  return this;
+	};
+
+	/**
+	 * Adds an `event` listener that will be invoked a single
+	 * time then automatically removed.
+	 *
+	 * @param {String} event
+	 * @param {Function} fn
+	 * @return {Emitter}
+	 * @api public
+	 */
+
+	Emitter.prototype.once = function(event, fn){
+	  function on() {
+	    this.off(event, on);
+	    fn.apply(this, arguments);
+	  }
+
+	  on.fn = fn;
+	  this.on(event, on);
+	  return this;
+	};
+
+	/**
+	 * Remove the given callback for `event` or all
+	 * registered callbacks.
+	 *
+	 * @param {String} event
+	 * @param {Function} fn
+	 * @return {Emitter}
+	 * @api public
+	 */
+
+	Emitter.prototype.off =
+	Emitter.prototype.removeListener =
+	Emitter.prototype.removeAllListeners =
+	Emitter.prototype.removeEventListener = function(event, fn){
+	  this._callbacks = this._callbacks || {};
+
+	  // all
+	  if (0 == arguments.length) {
+	    this._callbacks = {};
+	    return this;
+	  }
+
+	  // specific event
+	  var callbacks = this._callbacks['$' + event];
+	  if (!callbacks) return this;
+
+	  // remove all handlers
+	  if (1 == arguments.length) {
+	    delete this._callbacks['$' + event];
+	    return this;
+	  }
+
+	  // remove specific handler
+	  var cb;
+	  for (var i = 0; i < callbacks.length; i++) {
+	    cb = callbacks[i];
+	    if (cb === fn || cb.fn === fn) {
+	      callbacks.splice(i, 1);
+	      break;
+	    }
+	  }
+	  return this;
+	};
+
+	/**
+	 * Emit `event` with the given args.
+	 *
+	 * @param {String} event
+	 * @param {Mixed} ...
+	 * @return {Emitter}
+	 */
+
+	Emitter.prototype.emit = function(event){
+	  this._callbacks = this._callbacks || {};
+	  var args = [].slice.call(arguments, 1)
+	    , callbacks = this._callbacks['$' + event];
+
+	  if (callbacks) {
+	    callbacks = callbacks.slice(0);
+	    for (var i = 0, len = callbacks.length; i < len; ++i) {
+	      callbacks[i].apply(this, args);
+	    }
+	  }
+
+	  return this;
+	};
+
+	/**
+	 * Return array of callbacks for `event`.
+	 *
+	 * @param {String} event
+	 * @return {Array}
+	 * @api public
+	 */
+
+	Emitter.prototype.listeners = function(event){
+	  this._callbacks = this._callbacks || {};
+	  return this._callbacks['$' + event] || [];
+	};
+
+	/**
+	 * Check if this emitter has `event` handlers.
+	 *
+	 * @param {String} event
+	 * @return {Boolean}
+	 * @api public
+	 */
+
+	Emitter.prototype.hasListeners = function(event){
+	  return !! this.listeners(event).length;
+	};
+
+
+/***/ },
+
+/***/ 407:
+/***/ function(module, exports) {
+
+	/**
+	 * Compiles a querystring
+	 * Returns string representation of the object
+	 *
+	 * @param {Object}
+	 * @api private
+	 */
+
+	exports.encode = function (obj) {
+	  var str = '';
+
+	  for (var i in obj) {
+	    if (obj.hasOwnProperty(i)) {
+	      if (str.length) str += '&';
+	      str += encodeURIComponent(i) + '=' + encodeURIComponent(obj[i]);
+	    }
+	  }
+
+	  return str;
+	};
+
+	/**
+	 * Parses a simple querystring into an object
+	 *
+	 * @param {String} qs
+	 * @api private
+	 */
+
+	exports.decode = function(qs){
+	  var qry = {};
+	  var pairs = qs.split('&');
+	  for (var i = 0, l = pairs.length; i < l; i++) {
+	    var pair = pairs[i].split('=');
+	    qry[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1]);
+	  }
+	  return qry;
+	};
+
+
+/***/ },
+
+/***/ 408:
+/***/ function(module, exports) {
+
+	
+	module.exports = function(a, b){
+	  var fn = function(){};
+	  fn.prototype = b.prototype;
+	  a.prototype = new fn;
+	  a.prototype.constructor = a;
+	};
+
+/***/ },
+
+/***/ 409:
+/***/ function(module, exports) {
+
+	'use strict';
+
+	var alphabet = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_'.split('')
+	  , length = 64
+	  , map = {}
+	  , seed = 0
+	  , i = 0
+	  , prev;
+
+	/**
+	 * Return a string representing the specified number.
+	 *
+	 * @param {Number} num The number to convert.
+	 * @returns {String} The string representation of the number.
+	 * @api public
+	 */
+	function encode(num) {
+	  var encoded = '';
+
+	  do {
+	    encoded = alphabet[num % length] + encoded;
+	    num = Math.floor(num / length);
+	  } while (num > 0);
+
+	  return encoded;
+	}
+
+	/**
+	 * Return the integer value specified by the given string.
+	 *
+	 * @param {String} str The string to convert.
+	 * @returns {Number} The integer value represented by the string.
+	 * @api public
+	 */
+	function decode(str) {
+	  var decoded = 0;
+
+	  for (i = 0; i < str.length; i++) {
+	    decoded = decoded * length + map[str.charAt(i)];
+	  }
+
+	  return decoded;
+	}
+
+	/**
+	 * Yeast: A tiny growing id generator.
+	 *
+	 * @returns {String} A unique id.
+	 * @api public
+	 */
+	function yeast() {
+	  var now = encode(+new Date());
+
+	  if (now !== prev) return seed = 0, prev = now;
+	  return now +'.'+ encode(seed++);
+	}
+
+	//
+	// Map each character to its index.
+	//
+	for (; i < length; i++) map[alphabet[i]] = i;
+
+	//
+	// Expose the `yeast`, `encode` and `decode` functions.
+	//
+	yeast.encode = encode;
+	yeast.decode = decode;
+	module.exports = yeast;
+
+
+/***/ },
+
+/***/ 410:
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {
+	/**
+	 * This is the web browser implementation of `debug()`.
+	 *
+	 * Expose `debug()` as the module.
+	 */
+
+	exports = module.exports = __webpack_require__(411);
+	exports.log = log;
+	exports.formatArgs = formatArgs;
+	exports.save = save;
+	exports.load = load;
+	exports.useColors = useColors;
+	exports.storage = 'undefined' != typeof chrome
+	               && 'undefined' != typeof chrome.storage
+	                  ? chrome.storage.local
+	                  : localstorage();
+
+	/**
+	 * Colors.
+	 */
+
+	exports.colors = [
+	  'lightseagreen',
+	  'forestgreen',
+	  'goldenrod',
+	  'dodgerblue',
+	  'darkorchid',
+	  'crimson'
+	];
+
+	/**
+	 * Currently only WebKit-based Web Inspectors, Firefox >= v31,
+	 * and the Firebug extension (any Firefox version) are known
+	 * to support "%c" CSS customizations.
+	 *
+	 * TODO: add a `localStorage` variable to explicitly enable/disable colors
+	 */
+
+	function useColors() {
+	  // is webkit? http://stackoverflow.com/a/16459606/376773
+	  // document is undefined in react-native: https://github.com/facebook/react-native/pull/1632
+	  return (typeof document !== 'undefined' && 'WebkitAppearance' in document.documentElement.style) ||
+	    // is firebug? http://stackoverflow.com/a/398120/376773
+	    (window.console && (console.firebug || (console.exception && console.table))) ||
+	    // is firefox >= v31?
+	    // https://developer.mozilla.org/en-US/docs/Tools/Web_Console#Styling_messages
+	    (navigator.userAgent.toLowerCase().match(/firefox\/(\d+)/) && parseInt(RegExp.$1, 10) >= 31);
+	}
+
+	/**
+	 * Map %j to `JSON.stringify()`, since no Web Inspectors do that by default.
+	 */
+
+	exports.formatters.j = function(v) {
+	  try {
+	    return JSON.stringify(v);
+	  } catch (err) {
+	    return '[UnexpectedJSONParseError]: ' + err.message;
+	  }
+	};
+
+
+	/**
+	 * Colorize log arguments if enabled.
+	 *
+	 * @api public
+	 */
+
+	function formatArgs() {
+	  var args = arguments;
+	  var useColors = this.useColors;
+
+	  args[0] = (useColors ? '%c' : '')
+	    + this.namespace
+	    + (useColors ? ' %c' : ' ')
+	    + args[0]
+	    + (useColors ? '%c ' : ' ')
+	    + '+' + exports.humanize(this.diff);
+
+	  if (!useColors) return args;
+
+	  var c = 'color: ' + this.color;
+	  args = [args[0], c, 'color: inherit'].concat(Array.prototype.slice.call(args, 1));
+
+	  // the final "%c" is somewhat tricky, because there could be other
+	  // arguments passed either before or after the %c, so we need to
+	  // figure out the correct index to insert the CSS into
+	  var index = 0;
+	  var lastC = 0;
+	  args[0].replace(/%[a-z%]/g, function(match) {
+	    if ('%%' === match) return;
+	    index++;
+	    if ('%c' === match) {
+	      // we only are interested in the *last* %c
+	      // (the user may have provided their own)
+	      lastC = index;
+	    }
+	  });
+
+	  args.splice(lastC, 0, c);
+	  return args;
+	}
+
+	/**
+	 * Invokes `console.log()` when available.
+	 * No-op when `console.log` is not a "function".
+	 *
+	 * @api public
+	 */
+
+	function log() {
+	  // this hackery is required for IE8/9, where
+	  // the `console.log` function doesn't have 'apply'
+	  return 'object' === typeof console
+	    && console.log
+	    && Function.prototype.apply.call(console.log, console, arguments);
+	}
+
+	/**
+	 * Save `namespaces`.
+	 *
+	 * @param {String} namespaces
+	 * @api private
+	 */
+
+	function save(namespaces) {
+	  try {
+	    if (null == namespaces) {
+	      exports.storage.removeItem('debug');
+	    } else {
+	      exports.storage.debug = namespaces;
+	    }
+	  } catch(e) {}
+	}
+
+	/**
+	 * Load `namespaces`.
+	 *
+	 * @return {String} returns the previously persisted debug modes
+	 * @api private
+	 */
+
+	function load() {
+	  var r;
+	  try {
+	    return exports.storage.debug;
+	  } catch(e) {}
+
+	  // If debug isn't set in LS, and we're in Electron, try to load $DEBUG
+	  if (typeof process !== 'undefined' && 'env' in process) {
+	    return process.env.DEBUG;
+	  }
+	}
+
+	/**
+	 * Enable namespaces listed in `localStorage.debug` initially.
+	 */
+
+	exports.enable(load());
+
+	/**
+	 * Localstorage attempts to return the localstorage.
+	 *
+	 * This is necessary because safari throws
+	 * when a user disables cookies/localstorage
+	 * and you attempt to access it.
+	 *
+	 * @return {LocalStorage}
+	 * @api private
+	 */
+
+	function localstorage(){
+	  try {
+	    return window.localStorage;
+	  } catch (e) {}
+	}
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(297)))
+
+/***/ },
+
+/***/ 411:
+/***/ function(module, exports, __webpack_require__) {
+
+	
+	/**
+	 * This is the common logic for both the Node.js and web browser
+	 * implementations of `debug()`.
+	 *
+	 * Expose `debug()` as the module.
+	 */
+
+	exports = module.exports = debug.debug = debug;
+	exports.coerce = coerce;
+	exports.disable = disable;
+	exports.enable = enable;
+	exports.enabled = enabled;
+	exports.humanize = __webpack_require__(376);
+
+	/**
+	 * The currently active debug mode names, and names to skip.
+	 */
+
+	exports.names = [];
+	exports.skips = [];
+
+	/**
+	 * Map of special "%n" handling functions, for the debug "format" argument.
+	 *
+	 * Valid key names are a single, lowercased letter, i.e. "n".
+	 */
+
+	exports.formatters = {};
+
+	/**
+	 * Previously assigned color.
+	 */
+
+	var prevColor = 0;
+
+	/**
+	 * Previous log timestamp.
+	 */
+
+	var prevTime;
+
+	/**
+	 * Select a color.
+	 *
+	 * @return {Number}
+	 * @api private
+	 */
+
+	function selectColor() {
+	  return exports.colors[prevColor++ % exports.colors.length];
+	}
+
+	/**
+	 * Create a debugger with the given `namespace`.
+	 *
+	 * @param {String} namespace
+	 * @return {Function}
+	 * @api public
+	 */
+
+	function debug(namespace) {
+
+	  // define the `disabled` version
+	  function disabled() {
+	  }
+	  disabled.enabled = false;
+
+	  // define the `enabled` version
+	  function enabled() {
+
+	    var self = enabled;
+
+	    // set `diff` timestamp
+	    var curr = +new Date();
+	    var ms = curr - (prevTime || curr);
+	    self.diff = ms;
+	    self.prev = prevTime;
+	    self.curr = curr;
+	    prevTime = curr;
+
+	    // add the `color` if not set
+	    if (null == self.useColors) self.useColors = exports.useColors();
+	    if (null == self.color && self.useColors) self.color = selectColor();
+
+	    var args = new Array(arguments.length);
+	    for (var i = 0; i < args.length; i++) {
+	      args[i] = arguments[i];
+	    }
+
+	    args[0] = exports.coerce(args[0]);
+
+	    if ('string' !== typeof args[0]) {
+	      // anything else let's inspect with %o
+	      args = ['%o'].concat(args);
+	    }
+
+	    // apply any `formatters` transformations
+	    var index = 0;
+	    args[0] = args[0].replace(/%([a-z%])/g, function(match, format) {
+	      // if we encounter an escaped % then don't increase the array index
+	      if (match === '%%') return match;
+	      index++;
+	      var formatter = exports.formatters[format];
+	      if ('function' === typeof formatter) {
+	        var val = args[index];
+	        match = formatter.call(self, val);
+
+	        // now we need to remove `args[index]` since it's inlined in the `format`
+	        args.splice(index, 1);
+	        index--;
+	      }
+	      return match;
+	    });
+
+	    // apply env-specific formatting
+	    args = exports.formatArgs.apply(self, args);
+
+	    var logFn = enabled.log || exports.log || console.log.bind(console);
+	    logFn.apply(self, args);
+	  }
+	  enabled.enabled = true;
+
+	  var fn = exports.enabled(namespace) ? enabled : disabled;
+
+	  fn.namespace = namespace;
+
+	  return fn;
+	}
+
+	/**
+	 * Enables a debug mode by namespaces. This can include modes
+	 * separated by a colon and wildcards.
+	 *
+	 * @param {String} namespaces
+	 * @api public
+	 */
+
+	function enable(namespaces) {
+	  exports.save(namespaces);
+
+	  var split = (namespaces || '').split(/[\s,]+/);
+	  var len = split.length;
+
+	  for (var i = 0; i < len; i++) {
+	    if (!split[i]) continue; // ignore empty strings
+	    namespaces = split[i].replace(/[\\^$+?.()|[\]{}]/g, '\\$&').replace(/\*/g, '.*?');
+	    if (namespaces[0] === '-') {
+	      exports.skips.push(new RegExp('^' + namespaces.substr(1) + '$'));
+	    } else {
+	      exports.names.push(new RegExp('^' + namespaces + '$'));
+	    }
+	  }
+	}
+
+	/**
+	 * Disable debug output.
+	 *
+	 * @api public
+	 */
+
+	function disable() {
+	  exports.enable('');
+	}
+
+	/**
+	 * Returns true if the given mode name is enabled, false otherwise.
+	 *
+	 * @param {String} name
+	 * @return {Boolean}
+	 * @api public
+	 */
+
+	function enabled(name) {
+	  var i, len;
+	  for (i = 0, len = exports.skips.length; i < len; i++) {
+	    if (exports.skips[i].test(name)) {
+	      return false;
+	    }
+	  }
+	  for (i = 0, len = exports.names.length; i < len; i++) {
+	    if (exports.names[i].test(name)) {
+	      return true;
+	    }
+	  }
+	  return false;
+	}
+
+	/**
+	 * Coerce `val`.
+	 *
+	 * @param {Mixed} val
+	 * @return {Mixed}
+	 * @api private
+	 */
+
+	function coerce(val) {
+	  if (val instanceof Error) return val.stack || val.message;
+	  return val;
+	}
+
+
+/***/ },
+
+/***/ 412:
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(global) {
+	/**
+	 * Module requirements.
+	 */
+
+	var Polling = __webpack_require__(396);
+	var inherit = __webpack_require__(408);
+
+	/**
+	 * Module exports.
+	 */
+
+	module.exports = JSONPPolling;
+
+	/**
+	 * Cached regular expressions.
+	 */
+
+	var rNewline = /\n/g;
+	var rEscapedNewline = /\\n/g;
+
+	/**
+	 * Global JSONP callbacks.
+	 */
+
+	var callbacks;
+
+	/**
+	 * Noop.
+	 */
+
+	function empty () { }
+
+	/**
+	 * JSONP Polling constructor.
+	 *
+	 * @param {Object} opts.
+	 * @api public
+	 */
+
+	function JSONPPolling (opts) {
+	  Polling.call(this, opts);
+
+	  this.query = this.query || {};
+
+	  // define global callbacks array if not present
+	  // we do this here (lazily) to avoid unneeded global pollution
+	  if (!callbacks) {
+	    // we need to consider multiple engines in the same page
+	    if (!global.___eio) global.___eio = [];
+	    callbacks = global.___eio;
+	  }
+
+	  // callback identifier
+	  this.index = callbacks.length;
+
+	  // add callback to jsonp global
+	  var self = this;
+	  callbacks.push(function (msg) {
+	    self.onData(msg);
+	  });
+
+	  // append to query string
+	  this.query.j = this.index;
+
+	  // prevent spurious errors from being emitted when the window is unloaded
+	  if (global.document && global.addEventListener) {
+	    global.addEventListener('beforeunload', function () {
+	      if (self.script) self.script.onerror = empty;
+	    }, false);
+	  }
+	}
+
+	/**
+	 * Inherits from Polling.
+	 */
+
+	inherit(JSONPPolling, Polling);
+
+	/*
+	 * JSONP only supports binary as base64 encoded strings
+	 */
+
+	JSONPPolling.prototype.supportsBinary = false;
+
+	/**
+	 * Closes the socket.
+	 *
+	 * @api private
+	 */
+
+	JSONPPolling.prototype.doClose = function () {
+	  if (this.script) {
+	    this.script.parentNode.removeChild(this.script);
+	    this.script = null;
+	  }
+
+	  if (this.form) {
+	    this.form.parentNode.removeChild(this.form);
+	    this.form = null;
+	    this.iframe = null;
+	  }
+
+	  Polling.prototype.doClose.call(this);
+	};
+
+	/**
+	 * Starts a poll cycle.
+	 *
+	 * @api private
+	 */
+
+	JSONPPolling.prototype.doPoll = function () {
+	  var self = this;
+	  var script = document.createElement('script');
+
+	  if (this.script) {
+	    this.script.parentNode.removeChild(this.script);
+	    this.script = null;
+	  }
+
+	  script.async = true;
+	  script.src = this.uri();
+	  script.onerror = function (e) {
+	    self.onError('jsonp poll error', e);
+	  };
+
+	  var insertAt = document.getElementsByTagName('script')[0];
+	  if (insertAt) {
+	    insertAt.parentNode.insertBefore(script, insertAt);
+	  } else {
+	    (document.head || document.body).appendChild(script);
+	  }
+	  this.script = script;
+
+	  var isUAgecko = 'undefined' !== typeof navigator && /gecko/i.test(navigator.userAgent);
+
+	  if (isUAgecko) {
+	    setTimeout(function () {
+	      var iframe = document.createElement('iframe');
+	      document.body.appendChild(iframe);
+	      document.body.removeChild(iframe);
+	    }, 100);
+	  }
+	};
+
+	/**
+	 * Writes with a hidden iframe.
+	 *
+	 * @param {String} data to send
+	 * @param {Function} called upon flush.
+	 * @api private
+	 */
+
+	JSONPPolling.prototype.doWrite = function (data, fn) {
+	  var self = this;
+
+	  if (!this.form) {
+	    var form = document.createElement('form');
+	    var area = document.createElement('textarea');
+	    var id = this.iframeId = 'eio_iframe_' + this.index;
+	    var iframe;
+
+	    form.className = 'socketio';
+	    form.style.position = 'absolute';
+	    form.style.top = '-1000px';
+	    form.style.left = '-1000px';
+	    form.target = id;
+	    form.method = 'POST';
+	    form.setAttribute('accept-charset', 'utf-8');
+	    area.name = 'd';
+	    form.appendChild(area);
+	    document.body.appendChild(form);
+
+	    this.form = form;
+	    this.area = area;
+	  }
+
+	  this.form.action = this.uri();
+
+	  function complete () {
+	    initIframe();
+	    fn();
+	  }
+
+	  function initIframe () {
+	    if (self.iframe) {
+	      try {
+	        self.form.removeChild(self.iframe);
+	      } catch (e) {
+	        self.onError('jsonp polling iframe removal error', e);
+	      }
+	    }
+
+	    try {
+	      // ie6 dynamic iframes with target="" support (thanks Chris Lambacher)
+	      var html = '<iframe src="javascript:0" name="' + self.iframeId + '">';
+	      iframe = document.createElement(html);
+	    } catch (e) {
+	      iframe = document.createElement('iframe');
+	      iframe.name = self.iframeId;
+	      iframe.src = 'javascript:0';
+	    }
+
+	    iframe.id = self.iframeId;
+
+	    self.form.appendChild(iframe);
+	    self.iframe = iframe;
+	  }
+
+	  initIframe();
+
+	  // escape \n to prevent it from being converted into \r\n by some UAs
+	  // double escaping is required for escaped new lines because unescaping of new lines can be done safely on server-side
+	  data = data.replace(rEscapedNewline, '\\\n');
+	  this.area.value = data.replace(rNewline, '\\n');
+
+	  try {
+	    this.form.submit();
+	  } catch (e) {}
+
+	  if (this.iframe.attachEvent) {
+	    this.iframe.onreadystatechange = function () {
+	      if (self.iframe.readyState === 'complete') {
+	        complete();
+	      }
+	    };
+	  } else {
+	    this.iframe.onload = complete;
+	  }
+	};
+
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+
+/***/ 413:
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(global) {/**
+	 * Module dependencies.
+	 */
+
+	var Transport = __webpack_require__(397);
+	var parser = __webpack_require__(398);
+	var parseqs = __webpack_require__(407);
+	var inherit = __webpack_require__(408);
+	var yeast = __webpack_require__(409);
+	var debug = __webpack_require__(410)('engine.io-client:websocket');
+	var BrowserWebSocket = global.WebSocket || global.MozWebSocket;
+	var NodeWebSocket;
+	if (typeof window === 'undefined') {
+	  try {
+	    NodeWebSocket = __webpack_require__(414);
+	  } catch (e) { }
+	}
+
+	/**
+	 * Get either the `WebSocket` or `MozWebSocket` globals
+	 * in the browser or try to resolve WebSocket-compatible
+	 * interface exposed by `ws` for Node-like environment.
+	 */
+
+	var WebSocket = BrowserWebSocket;
+	if (!WebSocket && typeof window === 'undefined') {
+	  WebSocket = NodeWebSocket;
+	}
+
+	/**
+	 * Module exports.
+	 */
+
+	module.exports = WS;
+
+	/**
+	 * WebSocket transport constructor.
+	 *
+	 * @api {Object} connection options
+	 * @api public
+	 */
+
+	function WS (opts) {
+	  var forceBase64 = (opts && opts.forceBase64);
+	  if (forceBase64) {
+	    this.supportsBinary = false;
+	  }
+	  this.perMessageDeflate = opts.perMessageDeflate;
+	  this.usingBrowserWebSocket = BrowserWebSocket && !opts.forceNode;
+	  if (!this.usingBrowserWebSocket) {
+	    WebSocket = NodeWebSocket;
+	  }
+	  Transport.call(this, opts);
+	}
+
+	/**
+	 * Inherits from Transport.
+	 */
+
+	inherit(WS, Transport);
+
+	/**
+	 * Transport name.
+	 *
+	 * @api public
+	 */
+
+	WS.prototype.name = 'websocket';
+
+	/*
+	 * WebSockets support binary
+	 */
+
+	WS.prototype.supportsBinary = true;
+
+	/**
+	 * Opens socket.
+	 *
+	 * @api private
+	 */
+
+	WS.prototype.doOpen = function () {
+	  if (!this.check()) {
+	    // let probe timeout
+	    return;
+	  }
+
+	  var uri = this.uri();
+	  var protocols = void (0);
+	  var opts = {
+	    agent: this.agent,
+	    perMessageDeflate: this.perMessageDeflate
+	  };
+
+	  // SSL options for Node.js client
+	  opts.pfx = this.pfx;
+	  opts.key = this.key;
+	  opts.passphrase = this.passphrase;
+	  opts.cert = this.cert;
+	  opts.ca = this.ca;
+	  opts.ciphers = this.ciphers;
+	  opts.rejectUnauthorized = this.rejectUnauthorized;
+	  if (this.extraHeaders) {
+	    opts.headers = this.extraHeaders;
+	  }
+	  if (this.localAddress) {
+	    opts.localAddress = this.localAddress;
+	  }
+
+	  try {
+	    this.ws = this.usingBrowserWebSocket ? new WebSocket(uri) : new WebSocket(uri, protocols, opts);
+	  } catch (err) {
+	    return this.emit('error', err);
+	  }
+
+	  if (this.ws.binaryType === undefined) {
+	    this.supportsBinary = false;
+	  }
+
+	  if (this.ws.supports && this.ws.supports.binary) {
+	    this.supportsBinary = true;
+	    this.ws.binaryType = 'nodebuffer';
+	  } else {
+	    this.ws.binaryType = 'arraybuffer';
+	  }
+
+	  this.addEventListeners();
+	};
+
+	/**
+	 * Adds event listeners to the socket
+	 *
+	 * @api private
+	 */
+
+	WS.prototype.addEventListeners = function () {
+	  var self = this;
+
+	  this.ws.onopen = function () {
+	    self.onOpen();
+	  };
+	  this.ws.onclose = function () {
+	    self.onClose();
+	  };
+	  this.ws.onmessage = function (ev) {
+	    self.onData(ev.data);
+	  };
+	  this.ws.onerror = function (e) {
+	    self.onError('websocket error', e);
+	  };
+	};
+
+	/**
+	 * Writes data to socket.
+	 *
+	 * @param {Array} array of packets.
+	 * @api private
+	 */
+
+	WS.prototype.write = function (packets) {
+	  var self = this;
+	  this.writable = false;
+
+	  // encodePacket efficient as it uses WS framing
+	  // no need for encodePayload
+	  var total = packets.length;
+	  for (var i = 0, l = total; i < l; i++) {
+	    (function (packet) {
+	      parser.encodePacket(packet, self.supportsBinary, function (data) {
+	        if (!self.usingBrowserWebSocket) {
+	          // always create a new object (GH-437)
+	          var opts = {};
+	          if (packet.options) {
+	            opts.compress = packet.options.compress;
+	          }
+
+	          if (self.perMessageDeflate) {
+	            var len = 'string' === typeof data ? global.Buffer.byteLength(data) : data.length;
+	            if (len < self.perMessageDeflate.threshold) {
+	              opts.compress = false;
+	            }
+	          }
+	        }
+
+	        // Sometimes the websocket has already been closed but the browser didn't
+	        // have a chance of informing us about it yet, in that case send will
+	        // throw an error
+	        try {
+	          if (self.usingBrowserWebSocket) {
+	            // TypeError is thrown when passing the second argument on Safari
+	            self.ws.send(data);
+	          } else {
+	            self.ws.send(data, opts);
+	          }
+	        } catch (e) {
+	          debug('websocket closed before onclose event');
+	        }
+
+	        --total || done();
+	      });
+	    })(packets[i]);
+	  }
+
+	  function done () {
+	    self.emit('flush');
+
+	    // fake drain
+	    // defer to next tick to allow Socket to clear writeBuffer
+	    setTimeout(function () {
+	      self.writable = true;
+	      self.emit('drain');
+	    }, 0);
+	  }
+	};
+
+	/**
+	 * Called upon close
+	 *
+	 * @api private
+	 */
+
+	WS.prototype.onClose = function () {
+	  Transport.prototype.onClose.call(this);
+	};
+
+	/**
+	 * Closes socket.
+	 *
+	 * @api private
+	 */
+
+	WS.prototype.doClose = function () {
+	  if (typeof this.ws !== 'undefined') {
+	    this.ws.close();
+	  }
+	};
+
+	/**
+	 * Generates uri for connection.
+	 *
+	 * @api private
+	 */
+
+	WS.prototype.uri = function () {
+	  var query = this.query || {};
+	  var schema = this.secure ? 'wss' : 'ws';
+	  var port = '';
+
+	  // avoid port if default for schema
+	  if (this.port && (('wss' === schema && Number(this.port) !== 443) ||
+	    ('ws' === schema && Number(this.port) !== 80))) {
+	    port = ':' + this.port;
+	  }
+
+	  // append timestamp to URI
+	  if (this.timestampRequests) {
+	    query[this.timestampParam] = yeast();
+	  }
+
+	  // communicate binary support capabilities
+	  if (!this.supportsBinary) {
+	    query.b64 = 1;
+	  }
+
+	  query = parseqs.encode(query);
+
+	  // prepend ? to query
+	  if (query.length) {
+	    query = '?' + query;
+	  }
+
+	  var ipv6 = this.hostname.indexOf(':') !== -1;
+	  return schema + '://' + (ipv6 ? '[' + this.hostname + ']' : this.hostname) + port + this.path + query;
+	};
+
+	/**
+	 * Feature detection for WebSocket.
+	 *
+	 * @return {Boolean} whether this transport is available.
+	 * @api public
+	 */
+
+	WS.prototype.check = function () {
+	  return !!WebSocket && !('__initialize' in WebSocket && this.name === WS.prototype.name);
+	};
+
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+
+/***/ 414:
+/***/ function(module, exports) {
+
+	/* (ignored) */
+
+/***/ },
+
+/***/ 415:
+/***/ function(module, exports) {
+
+	
+	var indexOf = [].indexOf;
+
+	module.exports = function(arr, obj){
+	  if (indexOf) return arr.indexOf(obj);
+	  for (var i = 0; i < arr.length; ++i) {
+	    if (arr[i] === obj) return i;
+	  }
+	  return -1;
+	};
+
+/***/ },
+
+/***/ 416:
+/***/ function(module, exports) {
+
+	/* WEBPACK VAR INJECTION */(function(global) {/**
+	 * JSON parse.
+	 *
+	 * @see Based on jQuery#parseJSON (MIT) and JSON2
+	 * @api private
+	 */
+
+	var rvalidchars = /^[\],:{}\s]*$/;
+	var rvalidescape = /\\(?:["\\\/bfnrt]|u[0-9a-fA-F]{4})/g;
+	var rvalidtokens = /"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g;
+	var rvalidbraces = /(?:^|:|,)(?:\s*\[)+/g;
+	var rtrimLeft = /^\s+/;
+	var rtrimRight = /\s+$/;
+
+	module.exports = function parsejson(data) {
+	  if ('string' != typeof data || !data) {
+	    return null;
+	  }
+
+	  data = data.replace(rtrimLeft, '').replace(rtrimRight, '');
+
+	  // Attempt to parse using the native JSON parser first
+	  if (global.JSON && JSON.parse) {
+	    return JSON.parse(data);
+	  }
+
+	  if (rvalidchars.test(data.replace(rvalidescape, '@')
+	      .replace(rvalidtokens, ']')
+	      .replace(rvalidbraces, ''))) {
+	    return (new Function('return ' + data))();
+	  }
+	};
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+
+/***/ 417:
+/***/ function(module, exports, __webpack_require__) {
+
+	
+	/**
+	 * Module dependencies.
+	 */
+
+	var parser = __webpack_require__(377);
+	var Emitter = __webpack_require__(406);
+	var toArray = __webpack_require__(418);
+	var on = __webpack_require__(419);
+	var bind = __webpack_require__(420);
+	var debug = __webpack_require__(374)('socket.io-client:socket');
+	var hasBin = __webpack_require__(400);
+
+	/**
+	 * Module exports.
+	 */
+
+	module.exports = exports = Socket;
+
+	/**
+	 * Internal events (blacklisted).
+	 * These events can't be emitted by the user.
+	 *
+	 * @api private
+	 */
+
+	var events = {
+	  connect: 1,
+	  connect_error: 1,
+	  connect_timeout: 1,
+	  connecting: 1,
+	  disconnect: 1,
+	  error: 1,
+	  reconnect: 1,
+	  reconnect_attempt: 1,
+	  reconnect_failed: 1,
+	  reconnect_error: 1,
+	  reconnecting: 1,
+	  ping: 1,
+	  pong: 1
+	};
+
+	/**
+	 * Shortcut to `Emitter#emit`.
+	 */
+
+	var emit = Emitter.prototype.emit;
+
+	/**
+	 * `Socket` constructor.
+	 *
+	 * @api public
+	 */
+
+	function Socket (io, nsp, opts) {
+	  this.io = io;
+	  this.nsp = nsp;
+	  this.json = this; // compat
+	  this.ids = 0;
+	  this.acks = {};
+	  this.receiveBuffer = [];
+	  this.sendBuffer = [];
+	  this.connected = false;
+	  this.disconnected = true;
+	  if (opts && opts.query) {
+	    this.query = opts.query;
+	  }
+	  if (this.io.autoConnect) this.open();
+	}
+
+	/**
+	 * Mix in `Emitter`.
+	 */
+
+	Emitter(Socket.prototype);
+
+	/**
+	 * Subscribe to open, close and packet events
+	 *
+	 * @api private
+	 */
+
+	Socket.prototype.subEvents = function () {
+	  if (this.subs) return;
+
+	  var io = this.io;
+	  this.subs = [
+	    on(io, 'open', bind(this, 'onopen')),
+	    on(io, 'packet', bind(this, 'onpacket')),
+	    on(io, 'close', bind(this, 'onclose'))
+	  ];
+	};
+
+	/**
+	 * "Opens" the socket.
+	 *
+	 * @api public
+	 */
+
+	Socket.prototype.open =
+	Socket.prototype.connect = function () {
+	  if (this.connected) return this;
+
+	  this.subEvents();
+	  this.io.open(); // ensure open
+	  if ('open' === this.io.readyState) this.onopen();
+	  this.emit('connecting');
+	  return this;
+	};
+
+	/**
+	 * Sends a `message` event.
+	 *
+	 * @return {Socket} self
+	 * @api public
+	 */
+
+	Socket.prototype.send = function () {
+	  var args = toArray(arguments);
+	  args.unshift('message');
+	  this.emit.apply(this, args);
+	  return this;
+	};
+
+	/**
+	 * Override `emit`.
+	 * If the event is in `events`, it's emitted normally.
+	 *
+	 * @param {String} event name
+	 * @return {Socket} self
+	 * @api public
+	 */
+
+	Socket.prototype.emit = function (ev) {
+	  if (events.hasOwnProperty(ev)) {
+	    emit.apply(this, arguments);
+	    return this;
+	  }
+
+	  var args = toArray(arguments);
+	  var parserType = parser.EVENT; // default
+	  if (hasBin(args)) { parserType = parser.BINARY_EVENT; } // binary
+	  var packet = { type: parserType, data: args };
+
+	  packet.options = {};
+	  packet.options.compress = !this.flags || false !== this.flags.compress;
+
+	  // event ack callback
+	  if ('function' === typeof args[args.length - 1]) {
+	    debug('emitting packet with ack id %d', this.ids);
+	    this.acks[this.ids] = args.pop();
+	    packet.id = this.ids++;
+	  }
+
+	  if (this.connected) {
+	    this.packet(packet);
+	  } else {
+	    this.sendBuffer.push(packet);
+	  }
+
+	  delete this.flags;
+
+	  return this;
+	};
+
+	/**
+	 * Sends a packet.
+	 *
+	 * @param {Object} packet
+	 * @api private
+	 */
+
+	Socket.prototype.packet = function (packet) {
+	  packet.nsp = this.nsp;
+	  this.io.packet(packet);
+	};
+
+	/**
+	 * Called upon engine `open`.
+	 *
+	 * @api private
+	 */
+
+	Socket.prototype.onopen = function () {
+	  debug('transport is open - connecting');
+
+	  // write connect packet if necessary
+	  if ('/' !== this.nsp) {
+	    if (this.query) {
+	      this.packet({type: parser.CONNECT, query: this.query});
+	    } else {
+	      this.packet({type: parser.CONNECT});
+	    }
+	  }
+	};
+
+	/**
+	 * Called upon engine `close`.
+	 *
+	 * @param {String} reason
+	 * @api private
+	 */
+
+	Socket.prototype.onclose = function (reason) {
+	  debug('close (%s)', reason);
+	  this.connected = false;
+	  this.disconnected = true;
+	  delete this.id;
+	  this.emit('disconnect', reason);
+	};
+
+	/**
+	 * Called with socket packet.
+	 *
+	 * @param {Object} packet
+	 * @api private
+	 */
+
+	Socket.prototype.onpacket = function (packet) {
+	  if (packet.nsp !== this.nsp) return;
+
+	  switch (packet.type) {
+	    case parser.CONNECT:
+	      this.onconnect();
+	      break;
+
+	    case parser.EVENT:
+	      this.onevent(packet);
+	      break;
+
+	    case parser.BINARY_EVENT:
+	      this.onevent(packet);
+	      break;
+
+	    case parser.ACK:
+	      this.onack(packet);
+	      break;
+
+	    case parser.BINARY_ACK:
+	      this.onack(packet);
+	      break;
+
+	    case parser.DISCONNECT:
+	      this.ondisconnect();
+	      break;
+
+	    case parser.ERROR:
+	      this.emit('error', packet.data);
+	      break;
+	  }
+	};
+
+	/**
+	 * Called upon a server event.
+	 *
+	 * @param {Object} packet
+	 * @api private
+	 */
+
+	Socket.prototype.onevent = function (packet) {
+	  var args = packet.data || [];
+	  debug('emitting event %j', args);
+
+	  if (null != packet.id) {
+	    debug('attaching ack callback to event');
+	    args.push(this.ack(packet.id));
+	  }
+
+	  if (this.connected) {
+	    emit.apply(this, args);
+	  } else {
+	    this.receiveBuffer.push(args);
+	  }
+	};
+
+	/**
+	 * Produces an ack callback to emit with an event.
+	 *
+	 * @api private
+	 */
+
+	Socket.prototype.ack = function (id) {
+	  var self = this;
+	  var sent = false;
+	  return function () {
+	    // prevent double callbacks
+	    if (sent) return;
+	    sent = true;
+	    var args = toArray(arguments);
+	    debug('sending ack %j', args);
+
+	    var type = hasBin(args) ? parser.BINARY_ACK : parser.ACK;
+	    self.packet({
+	      type: type,
+	      id: id,
+	      data: args
+	    });
+	  };
+	};
+
+	/**
+	 * Called upon a server acknowlegement.
+	 *
+	 * @param {Object} packet
+	 * @api private
+	 */
+
+	Socket.prototype.onack = function (packet) {
+	  var ack = this.acks[packet.id];
+	  if ('function' === typeof ack) {
+	    debug('calling ack %s with %j', packet.id, packet.data);
+	    ack.apply(this, packet.data);
+	    delete this.acks[packet.id];
+	  } else {
+	    debug('bad ack %s', packet.id);
+	  }
+	};
+
+	/**
+	 * Called upon server connect.
+	 *
+	 * @api private
+	 */
+
+	Socket.prototype.onconnect = function () {
+	  this.connected = true;
+	  this.disconnected = false;
+	  this.emit('connect');
+	  this.emitBuffered();
+	};
+
+	/**
+	 * Emit buffered events (received and emitted).
+	 *
+	 * @api private
+	 */
+
+	Socket.prototype.emitBuffered = function () {
+	  var i;
+	  for (i = 0; i < this.receiveBuffer.length; i++) {
+	    emit.apply(this, this.receiveBuffer[i]);
+	  }
+	  this.receiveBuffer = [];
+
+	  for (i = 0; i < this.sendBuffer.length; i++) {
+	    this.packet(this.sendBuffer[i]);
+	  }
+	  this.sendBuffer = [];
+	};
+
+	/**
+	 * Called upon server disconnect.
+	 *
+	 * @api private
+	 */
+
+	Socket.prototype.ondisconnect = function () {
+	  debug('server disconnect (%s)', this.nsp);
+	  this.destroy();
+	  this.onclose('io server disconnect');
+	};
+
+	/**
+	 * Called upon forced client/server side disconnections,
+	 * this method ensures the manager stops tracking us and
+	 * that reconnections don't get triggered for this.
+	 *
+	 * @api private.
+	 */
+
+	Socket.prototype.destroy = function () {
+	  if (this.subs) {
+	    // clean subscriptions to avoid reconnections
+	    for (var i = 0; i < this.subs.length; i++) {
+	      this.subs[i].destroy();
+	    }
+	    this.subs = null;
+	  }
+
+	  this.io.destroy(this);
+	};
+
+	/**
+	 * Disconnects the socket manually.
+	 *
+	 * @return {Socket} self
+	 * @api public
+	 */
+
+	Socket.prototype.close =
+	Socket.prototype.disconnect = function () {
+	  if (this.connected) {
+	    debug('performing disconnect (%s)', this.nsp);
+	    this.packet({ type: parser.DISCONNECT });
+	  }
+
+	  // remove socket from pool
+	  this.destroy();
+
+	  if (this.connected) {
+	    // fire events
+	    this.onclose('io client disconnect');
+	  }
+	  return this;
+	};
+
+	/**
+	 * Sets the compress flag.
+	 *
+	 * @param {Boolean} if `true`, compresses the sending data
+	 * @return {Socket} self
+	 * @api public
+	 */
+
+	Socket.prototype.compress = function (compress) {
+	  this.flags = this.flags || {};
+	  this.flags.compress = compress;
+	  return this;
+	};
+
+
+/***/ },
+
+/***/ 418:
+/***/ function(module, exports) {
+
+	module.exports = toArray
+
+	function toArray(list, index) {
+	    var array = []
+
+	    index = index || 0
+
+	    for (var i = index || 0; i < list.length; i++) {
+	        array[i - index] = list[i]
+	    }
+
+	    return array
+	}
+
+
+/***/ },
+
+/***/ 419:
+/***/ function(module, exports) {
+
+	
+	/**
+	 * Module exports.
+	 */
+
+	module.exports = on;
+
+	/**
+	 * Helper for subscriptions.
+	 *
+	 * @param {Object|EventEmitter} obj with `Emitter` mixin or `EventEmitter`
+	 * @param {String} event name
+	 * @param {Function} callback
+	 * @api public
+	 */
+
+	function on (obj, ev, fn) {
+	  obj.on(ev, fn);
+	  return {
+	    destroy: function () {
+	      obj.removeListener(ev, fn);
+	    }
+	  };
+	}
+
+
+/***/ },
+
+/***/ 420:
+/***/ function(module, exports) {
+
+	/**
+	 * Slice reference.
+	 */
+
+	var slice = [].slice;
+
+	/**
+	 * Bind `obj` to `fn`.
+	 *
+	 * @param {Object} obj
+	 * @param {Function|String} fn or string
+	 * @return {Function}
+	 * @api public
+	 */
+
+	module.exports = function(obj, fn){
+	  if ('string' == typeof fn) fn = obj[fn];
+	  if ('function' != typeof fn) throw new Error('bind() requires a function');
+	  var args = slice.call(arguments, 2);
+	  return function(){
+	    return fn.apply(obj, args.concat(slice.call(arguments)));
+	  }
+	};
+
+
+/***/ },
+
+/***/ 421:
+/***/ function(module, exports) {
+
+	
+	/**
+	 * Expose `Backoff`.
+	 */
+
+	module.exports = Backoff;
+
+	/**
+	 * Initialize backoff timer with `opts`.
+	 *
+	 * - `min` initial timeout in milliseconds [100]
+	 * - `max` max timeout [10000]
+	 * - `jitter` [0]
+	 * - `factor` [2]
+	 *
+	 * @param {Object} opts
+	 * @api public
+	 */
+
+	function Backoff(opts) {
+	  opts = opts || {};
+	  this.ms = opts.min || 100;
+	  this.max = opts.max || 10000;
+	  this.factor = opts.factor || 2;
+	  this.jitter = opts.jitter > 0 && opts.jitter <= 1 ? opts.jitter : 0;
+	  this.attempts = 0;
+	}
+
+	/**
+	 * Return the backoff duration.
+	 *
+	 * @return {Number}
+	 * @api public
+	 */
+
+	Backoff.prototype.duration = function(){
+	  var ms = this.ms * Math.pow(this.factor, this.attempts++);
+	  if (this.jitter) {
+	    var rand =  Math.random();
+	    var deviation = Math.floor(rand * this.jitter * ms);
+	    ms = (Math.floor(rand * 10) & 1) == 0  ? ms - deviation : ms + deviation;
+	  }
+	  return Math.min(ms, this.max) | 0;
+	};
+
+	/**
+	 * Reset the number of attempts.
+	 *
+	 * @api public
+	 */
+
+	Backoff.prototype.reset = function(){
+	  this.attempts = 0;
+	};
+
+	/**
+	 * Set the minimum duration
+	 *
+	 * @api public
+	 */
+
+	Backoff.prototype.setMin = function(min){
+	  this.ms = min;
+	};
+
+	/**
+	 * Set the maximum duration
+	 *
+	 * @api public
+	 */
+
+	Backoff.prototype.setMax = function(max){
+	  this.max = max;
+	};
+
+	/**
+	 * Set the jitter
+	 *
+	 * @api public
+	 */
+
+	Backoff.prototype.setJitter = function(jitter){
+	  this.jitter = jitter;
+	};
+
+
+
+/***/ },
+
+/***/ 422:
+/***/ function(module, exports) {
+
+	module.exports = "<!--[ngStyle]=\"{ 'background-color': (_settings.ChromaKey.toLowerCase() === 'none' ? 'transparent' : _settings.ChromaKey) }\"-->\r\n<div class=\"container\">\r\n\t<div class=\"row header\">\r\n\t\t<div class=\"col-xs-3 col-sm-3 col-md-3 col-lg-3\">\r\n\t\t\t<h1>Chat</h1>\r\n\t\t</div>\r\n\r\n\t\t<div class=\"col-xs-12 col-sm-12 col-md-7 col-lg-7 row service-status\">\r\n\t\t\t<div class=\"col-md-3\">Beam:</div>\r\n\t\t\t<div class=\"col-md-3\"\r\n\t\t\t\t [ngClass]=\"serviceStatus.Beam === 'Connected' ? 'connected' : (serviceStatus.Beam === 'Connecting' ? 'pending' : 'disconnected')\">\r\n\t\t\t\t{{ serviceStatus.Beam || 'UNKNOWN' }}\r\n\t\t\t</div>\r\n\t\t\t<div class=\"col-md-3\">LiveEdu:</div>\r\n\t\t\t<div class=\"col-md-3\"\r\n\t\t\t\t [ngClass]=\"serviceStatus.Liveedu === 'Connected' ? 'connected' : (serviceStatus.Liveedu === 'Connecting' ? 'pending' : 'disconnected')\">\r\n\t\t\t\t{{ serviceStatus.Liveedu || 'UNKNOWN' }}\r\n\t\t\t</div>\r\n\t\t\t<div class=\"col-md-3\">Twitch:</div>\r\n\t\t\t<div class=\"col-md-3\"\r\n\t\t\t\t [ngClass]=\"serviceStatus.Twitch === 'Connected' ? 'connected' : (serviceStatus.Twitch === 'Connecting' ? 'pending' : 'disconnected')\">\r\n\t\t\t\t{{ serviceStatus.Twitch || 'UNKNOWN' }}\r\n\t\t\t</div>\r\n\t\t\t<div class=\"col-md-3\">Youtube:</div>\r\n\t\t\t<div class=\"col-md-3\"\r\n\t\t\t\t [ngClass]=\"serviceStatus.Youtube === 'Connected' ? 'connected' : (serviceStatus.Youtube === 'Connecting' ? 'pending' : 'disconnected')\">\r\n\t\t\t\t{{ serviceStatus.Youtube || 'UNKNOWN' }}\r\n\t\t\t</div>\r\n\t\t</div>\r\n\r\n\t\t<div class=\"col-xs-3 col-sm-3 col-md-2 col-lg-2 text-right\">\r\n\t\t\t<button type=\"button\" class=\"btn btn-sm\" (click)=\"toggleConnection()\"\r\n\t\t\t\t\t[ngClass]=\"{ 'btn-success': !connected, 'btn-danger': connected }\">\r\n\t\t\t\t{{ connected ? 'Disconnect' : 'Connect' }}\r\n\t\t\t</button>\r\n\t\t</div>\r\n\t</div>\r\n\r\n\t<div class=\"row message-container\" #messageContainer>\r\n\t\t<ul class=\"col-xs-12 col-sm-12 col-md-12 col-lg-12\">\r\n\t\t\t<li *ngFor=\"let message of messages\" class=\"message\"\r\n\t\t\t\t[ngStyle]=\"{ 'background-color': chatProvider.messageHasMention(message) ? _settings.MessageMentionBack : _settings.MessageBack }\">\r\n\t\t\t\t<div class=\"sender\">\r\n\t\t\t\t\t<span class=\"icon {{ message.UserInfo.isBroadcaster ? 'broadcaster' : message.Service.toLowerCase() }}\"></span>\r\n\t\t\t\t\t{{ message.UserInfo.isBroadcaster ? 'Broadcaster' : message.UserInfo.Username }}\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"timestamp\">{{ message.Timestamp }}</div>\r\n\t\t\t\t<div class=\"message\" [innerHTML]=\"message.Message.Formatted | unsafeHTML\"></div>\r\n\t\t\t</li>\r\n\t\t</ul>\r\n\t</div>\r\n\r\n\t<form (submit)=\"sendMessage()\" class=\"row send-message\">\r\n\t\t<div class=\"col-xs-10 col-sm-10 col-md-10 col-lg-10\">\r\n\t\t\t\t<textarea placeholder=\"Type here to send a message...\" [(ngModel)]=\"data.message\"\r\n\t\t\t\t\t\t  name=\"message\" (keyup)=\"keyUp($event)\"></textarea>\r\n\t\t</div>\r\n\r\n\t\t<div class=\"col-xs-2 col-sm-2 col-md-2 col-lg-2\">\r\n\t\t\t<button type=\"submit\" class=\"btn btn-primary btn-block\"\r\n\t\t\t\t\t[disabled]=\"!data.message || data.message.trim().length <= 0\">\r\n\t\t\t\tSend\r\n\t\t\t</button>\r\n\t\t</div>\r\n\t</form>\r\n</div>"
+
+/***/ },
+
+/***/ 423:
+/***/ function(module, exports) {
+
+	module.exports = "@media (max-width: 768px) {\n  .service-status {\n    display: none; } }\n\n:host {\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  overflow: hidden; }\n  :host > div {\n    display: flex;\n    flex-direction: column;\n    height: 100%;\n    padding: 0.5rem; }\n    :host > div .header {\n      margin: 0;\n      flex: 1 0 52px; }\n      :host > div .header .service-status {\n        font-size: 0.8rem; }\n        :host > div .header .service-status > div.connected {\n          color: limegreen;\n          padding-left: 0.25rem; }\n        :host > div .header .service-status > div.pending {\n          color: orange;\n          padding-left: 0.25rem; }\n        :host > div .header .service-status > div.disconnected {\n          color: red;\n          padding-left: 0.25rem; }\n    :host > div .message-container {\n      margin: 0;\n      flex: 1 1 100%;\n      overflow-x: hidden;\n      overflow-y: auto; }\n    :host > div .send-message {\n      margin: 0;\n      flex: 1 0 75px; }\n      :host > div .send-message .col-md-10 textarea {\n        width: 100%;\n        height: 100%;\n        resize: none;\n        border: solid 1px #4d4d4d;\n        background-color: #404040;\n        color: #FEFEFE; }\n      :host > div .send-message .col-md-2 {\n        padding: 0;\n        position: relative; }\n        :host > div .send-message .col-md-2 .btn {\n          position: absolute;\n          top: 50%;\n          margin-top: -19px; }\n  :host ul {\n    list-style: none;\n    padding: 0; }\n    :host ul > .message {\n      position: relative;\n      margin-bottom: 0.5rem;\n      padding: 0.5rem;\n      animation: MessageSlide ease-in-out forwards 0.5s;\n      background-color: rgba(0, 50, 175, 0.3); }\n      :host ul > .message.mention-self {\n        background-color: rgba(255, 75, 75, 0.4); }\n      :host ul > .message .sender {\n        font-size: 1.1rem;\n        margin-left: 0.5rem;\n        font-weight: 600;\n        letter-spacing: 1px; }\n        :host ul > .message .sender .icon {\n          position: relative;\n          top: 3px;\n          display: inline-block;\n          width: 20px;\n          height: 20px;\n          background-size: contain;\n          background-repeat: no-repeat;\n          background-position: 50%; }\n          :host ul > .message .sender .icon.beam {\n            background-image: url(\"imgs/chat-icons/beam-icon.png\"); }\n          :host ul > .message .sender .icon.liveedu {\n            background-image: url(\"imgs/chat-icons/liveedu-icon.png\"); }\n          :host ul > .message .sender .icon.twitch {\n            background-image: url(\"imgs/chat-icons/twitch-icon.png\"); }\n          :host ul > .message .sender .icon.youtube {\n            background-image: url(\"imgs/chat-icons/youtube-icon.png\"); }\n          :host ul > .message .sender .icon.broadcaster {\n            background-image: url(\"imgs/chat-icons/broadcaster-icon.png\"); }\n      :host ul > .message .timestamp {\n        position: absolute;\n        right: 1rem;\n        top: 0.5rem;\n        font-size: 0.9rem;\n        opacity: 0.5; }\n      :host ul > .message .message {\n        margin-left: 1rem;\n        word-wrap: break-word; }\n\n@keyframes MessageSlide {\n  0% {\n    transform: translateX(50%);\n    opacity: 0; }\n  100% {\n    transform: translateX(0);\n    opacity: 1; } }\n"
+
+/***/ },
+
+/***/ 424:
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function($) {/**
+	 * Created by texpe on 23/01/2017.
+	 */
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(3);
+	var infoProvider_1 = __webpack_require__(425);
+	var http_1 = __webpack_require__(28);
+	var DashboardPage = (function () {
+	    function DashboardPage(ngZone, infoProvider, http) {
+	        var _this = this;
+	        this.ngZone = ngZone;
+	        this.infoProvider = infoProvider;
+	        this.http = http;
+	        this.info = {};
+	        this.searchTimeout = null;
+	        this.searchResults = [];
+	        this.searching = false;
+	        this.saving = false;
+	        this.infoProvider.Info.subscribe(function (value) {
+	            _this.ngZone.run(function () { return _this.info = value; });
+	        });
+	    }
+	    DashboardPage.prototype.ngAfterViewInit = function () {
+	        $(this.historyDropdown.nativeElement).dropdown();
+	    };
+	    DashboardPage.prototype.save = function () {
+	        var _this = this;
+	        this.ngZone.run(function () { return _this.saving = true; });
+	        this.infoProvider.setInfo(this.info).then(function () {
+	            _this.ngZone.run(function () { return _this.saving = false; });
+	        });
+	    };
+	    DashboardPage.prototype.search = function () {
+	        var _this = this;
+	        if (this.searchTimeout) {
+	            clearTimeout(this.searchTimeout);
+	            this.searchTimeout = null;
+	        }
+	        this.searchTimeout = setTimeout(function () {
+	            _this.ngZone.run(function () { return _this.searching = true; });
+	            _this.infoProvider.search(_this.info.Category).then(function (results) {
+	                _this.ngZone.run(function () {
+	                    _this.searchResults = results;
+	                    _this.searching = false;
+	                });
+	            }).catch(function (err) {
+	                _this.ngZone.run(function () {
+	                    _this.searchResults = [];
+	                    _this.searching = false;
+	                });
+	            });
+	        }, 500);
+	    };
+	    DashboardPage.prototype.selectCategory = function (index) {
+	        this.info.Category = this.searchResults[index];
+	        this.searchResults = [];
+	    };
+	    DashboardPage.prototype.selectHistory = function (index) {
+	        var history = this.info.History[index];
+	        this.info.Title = history.Title;
+	        this.info.Category = history.Category;
+	    };
+	    DashboardPage.prototype.limitLength = function (e, l) {
+	        if (!e)
+	            return '';
+	        return (e.length <= l ? e : e.substr(0, l));
+	    };
+	    DashboardPage.prototype.optInStats = function () {
+	        alert("We're working on it... ^^");
+	    };
+	    return DashboardPage;
+	}());
+	__decorate([
+	    core_1.ViewChild('historyDropdown'),
+	    __metadata("design:type", core_1.ElementRef)
+	], DashboardPage.prototype, "historyDropdown", void 0);
+	DashboardPage = __decorate([
+	    core_1.Component({
+	        selector: 'page-dashboard',
+	        template: __webpack_require__(426),
+	        styles: [__webpack_require__(427)]
+	    }),
+	    __metadata("design:paramtypes", [core_1.NgZone, infoProvider_1.InfoProvider, http_1.Http])
+	], DashboardPage);
+	exports.DashboardPage = DashboardPage;
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(358)))
+
+/***/ },
+
+/***/ 425:
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Created by texpe on 23/01/2017.
+	 */
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(3);
+	var http_1 = __webpack_require__(28);
+	var rxjs_1 = __webpack_require__(61);
+	var authProvider_1 = __webpack_require__(60);
+	var InfoProvider = (function () {
+	    function InfoProvider(authProvider, http) {
+	        var _this = this;
+	        this.authProvider = authProvider;
+	        this.http = http;
+	        this._info = {};
+	        this.Info = new rxjs_1.Subject();
+	        this.getInfo();
+	        this.authProvider.User.subscribe(function (value) { return _this.getInfo(); });
+	    }
+	    InfoProvider.prototype.getInfo = function () {
+	        var _this = this;
+	        if (!this.authProvider.token)
+	            return;
+	        this.http.get(this.authProvider.api + '/dashboard?token=' + this.authProvider.token)
+	            .map(function (res) { return res.json(); })
+	            .subscribe(function (response) {
+	            _this._info = response.success ? response.info : {};
+	            _this.Info.next(_this._info);
+	        }, function (err) { return console.error(err); });
+	    };
+	    InfoProvider.prototype.setInfo = function (info) {
+	        var _this = this;
+	        return new Promise(function (resolve, reject) {
+	            _this.http.post(_this.authProvider.api + '/dashboard?token=' + _this.authProvider.token, info)
+	                .map(function (res) { return res.json(); })
+	                .subscribe(function (response) {
+	                _this._info = response.info;
+	                _this.Info.next(_this._info);
+	                resolve(null);
+	            }, function (err) {
+	                console.error(err);
+	                resolve(err);
+	            });
+	        });
+	    };
+	    InfoProvider.prototype.search = function (query) {
+	        var _this = this;
+	        return new Promise(function (resolve, reject) {
+	            _this.http.get(_this.authProvider.api + '/dashboard/search?token=' + _this.authProvider.token + '&q=' + query)
+	                .map(function (res) { return res.json(); })
+	                .subscribe(function (response) { return response.success ? resolve(response.results) : reject(null); }, function (err) { return reject(null); });
+	        });
+	    };
+	    Object.defineProperty(InfoProvider.prototype, "api", {
+	        get: function () {
+	            return this.authProvider.api;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    return InfoProvider;
+	}());
+	InfoProvider = __decorate([
+	    core_1.Injectable(),
+	    __metadata("design:paramtypes", [authProvider_1.AuthProvider, http_1.Http])
+	], InfoProvider);
+	exports.InfoProvider = InfoProvider;
+
+
+/***/ },
+
+/***/ 426:
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"card\">\r\n\t<div class=\"card-header\">\r\n\t\t<h4 class=\"float-left\">Stream Info</h4>\r\n\t\t<button type=\"button\" class=\"btn btn-success btn-sm float-right\" (click)=\"save()\">\r\n\t\t\t<span class=\"fa fa-spinner spinner\" *ngIf=\"saving\"></span>Save\r\n\t\t</button>\r\n\t</div>\r\n\r\n\t<div class=\"card-block\">\r\n\t\t<div class=\"form-group row\">\r\n\t\t\t<div class=\"col-md-4\">Title</div>\r\n\r\n\t\t\t<div class=\"col-md-8\">\r\n\t\t\t\t<textarea placeholder=\"Stream Title\" class=\"form-control\" [(ngModel)]=\"info.Title\"></textarea>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\r\n\t\t<div class=\"form-group row\">\r\n\t\t\t<div class=\"col-md-4\">Category</div>\r\n\r\n\t\t\t<div class=\"col-md-8\">\r\n\t\t\t\t<input type=\"text\" class=\"form-control\" placeholder=\"Game Name\" [(ngModel)]=\"info.Category\"\r\n\t\t\t\t\t   (keypress)=\"search()\" [ngClass]=\"{ 'results-open': searchResults.length > 0 }\">\r\n\t\t\t\t<span class=\"fa fa-spinner spinner float-right\" id=\"searchSpinner\" *ngIf=\"searching\"></span>\r\n\r\n\t\t\t\t<div class=\"form-control search-results scrollbar-inverse\" *ngIf=\"searchResults.length > 0\">\r\n\t\t\t\t\t<a class=\"dropdown-item\" href=\"javascript:;\"\r\n\t\t\t\t\t   *ngFor=\"let result of searchResults; let i = index\" (click)=\"selectCategory(i)\">\r\n\t\t\t\t\t\t{{ result }}\r\n\t\t\t\t\t</a>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\r\n\t\t<div class=\"form-group row\">\r\n\t\t\t<div class=\"col-md-4\">Delay</div>\r\n\r\n\t\t\t<div class=\"col-md-8\">\r\n\t\t\t\t<input type=\"number\" class=\"form-control\" min=\"0\" [(ngModel)]=\"info.Delay\">\r\n\t\t\t</div>\r\n\t\t</div>\r\n\r\n\t\t<div class=\"form-group row\">\r\n\t\t\t<div class=\"col-md-4 exclude-height\">Channel Feed</div>\r\n\r\n\t\t\t<div class=\"col-md-8\">\r\n\t\t\t\t<input type=\"checkbox\" [(ngModel)]=\"info.ChannelFeed\">\r\n\t\t\t</div>\r\n\t\t</div>\r\n\r\n\t\t<div class=\"form-group row\">\r\n\t\t\t<div class=\"col-md-4\">History</div>\r\n\r\n\t\t\t<div class=\"col-md-8\">\r\n\t\t\t\t<div class=\"dropdown\">\r\n\t\t\t\t\t<a class=\"btn btn-secondary dropdown-toggle\" href=\"javascript:;\" id=\"historyMenu\"\r\n\t\t\t\t\t   data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" #historyDropdown>\r\n\t\t\t\t\t\t{{ info.Category }} - {{ limitLength(info.Title, 25) }}\r\n\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t<div class=\"dropdown-menu\" aria-labelledby=\"historyMenu\">\r\n\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"javascript:;\" *ngFor=\"let history of info.History; let i = index\"\r\n\t\t\t\t\t\t   (click)=\"selectHistory(i)\">\r\n\t\t\t\t\t\t\t{{ history.Category }} - {{ limitLength(history.Title, 25) }}\r\n\t\t\t\t\t\t</a>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n\r\n<div class=\"card\">\r\n\t<div class=\"card-header\">\r\n\t\t<h4 class=\"float-left\">Statistics</h4>\r\n\t\t<small>(Provided by StreamerStats.com)</small>\r\n\t</div>\r\n\r\n\t<div class=\"card-block\">\r\n\t\t<div class=\"form-group row\">\r\n\t\t\t<div class=\"col-md-12\">\r\n\t\t\t\t<button type=\"button\" class=\"btn btn-primary\" (click)=\"optInStats()\">Opt In</button>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>"
+
+/***/ },
+
+/***/ 427:
+/***/ function(module, exports) {
+
+	module.exports = ":host .card {\n  margin: 15px 0; }\n\n:host .form-control.results-open {\n  border-bottom-left-radius: 0;\n  border-bottom-right-radius: 0;\n  border-color: transparent; }\n\n:host .search-results {\n  position: absolute;\n  z-index: 1;\n  width: calc(100% - 30px);\n  border-top-left-radius: 0;\n  border-top-right-radius: 0;\n  margin-top: -2px;\n  padding: 0;\n  max-height: 200px;\n  overflow-y: auto; }\n  :host .search-results > .dropdown-item {\n    padding: 0.5rem 1rem; }\n\n:host .col-md-4:not(.exclude-height) {\n  padding: 0.5rem 0.75rem;\n  line-height: 1.25rem; }\n"
+
+/***/ },
+
+/***/ 428:
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Created by texpe on 28/01/2017.
+	 */
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(3);
+	var commandsProvider_1 = __webpack_require__(429);
+	var CommandsPage = (function () {
+	    function CommandsPage(commandsProvider) {
+	        var _this = this;
+	        this.commandsProvider = commandsProvider;
+	        this.commands = [];
+	        this.newCommand = {};
+	        this.saving = false;
+	        this.editing = false;
+	        this.error = '';
+	        this.displayError = false;
+	        this.commands = this.commandsProvider.commands;
+	        this.commandsProvider.Commands.subscribe(function (value) { return _this.commands = value; });
+	    }
+	    CommandsPage.prototype.save = function () {
+	        var _this = this;
+	        this.saving = true;
+	        if (this.editing) {
+	            this.commandsProvider.updateCommand(this.newCommand)
+	                .then(function (result) {
+	                if (result.success)
+	                    _this.clearCommand();
+	                _this.editing = !result.success;
+	                _this.saving = false;
+	                _this.showError(result.errorMsg);
+	            }).catch(function () {
+	                _this.saving = false;
+	            });
+	        }
+	        else {
+	            this.commandsProvider.saveCommand(this.newCommand)
+	                .then(function (result) {
+	                if (result.success)
+	                    _this.clearCommand();
+	                _this.saving = false;
+	                _this.showError(result.errorMsg);
+	            }).catch(function () {
+	                _this.saving = false;
+	            });
+	        }
+	    };
+	    CommandsPage.prototype.clearCommand = function () {
+	        this.newCommand = {
+	            Input: '',
+	            Output: ''
+	        };
+	    };
+	    CommandsPage.prototype.deleteCommand = function (i) {
+	        this.commandsProvider.deleteCommand(this.commands[i]._id);
+	    };
+	    CommandsPage.prototype.editCommand = function (i, cancel) {
+	        if (cancel === void 0) { cancel = false; }
+	        if (cancel) {
+	            this.clearCommand();
+	            this.editing = false;
+	            this.displayError = false;
+	            this.error = '';
+	            return;
+	        }
+	        this.newCommand = {
+	            _id: this.commands[i]._id,
+	            Input: this.commands[i].Input,
+	            Output: this.commands[i].Output
+	        };
+	        this.editing = true;
+	    };
+	    CommandsPage.prototype.showError = function (msg) {
+	        var _this = this;
+	        if (!msg)
+	            return;
+	        this.error = msg;
+	        this.displayError = true;
+	        setTimeout(function () {
+	            _this.displayError = false;
+	            setTimeout(function () { return _this.error = ''; }, 500);
+	        }, 5000);
+	    };
+	    return CommandsPage;
+	}());
+	CommandsPage = __decorate([
+	    core_1.Component({
+	        selector: 'page-commands',
+	        template: __webpack_require__(430),
+	        styles: [__webpack_require__(431)]
+	    }),
+	    __metadata("design:paramtypes", [commandsProvider_1.CommandsProvider])
+	], CommandsPage);
+	exports.CommandsPage = CommandsPage;
+
+
+/***/ },
+
+/***/ 429:
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Created by texpe on 28/01/2017.
+	 */
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(3);
+	var rxjs_1 = __webpack_require__(61);
+	var http_1 = __webpack_require__(28);
+	var authProvider_1 = __webpack_require__(60);
+	var CommandsProvider = (function () {
+	    function CommandsProvider(http, authProvider) {
+	        this.http = http;
+	        this.authProvider = authProvider;
+	        this._commands = [];
+	        this.Commands = new rxjs_1.Subject();
+	        this.getCommands();
+	    }
+	    Object.defineProperty(CommandsProvider.prototype, "commands", {
+	        get: function () {
+	            return this._commands;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    CommandsProvider.prototype.getCommands = function () {
+	        var _this = this;
+	        this.http.get(this.authProvider.api + '/commands?token=' + this.authProvider.token)
+	            .map(function (res) { return res.json(); })
+	            .subscribe(function (data) {
+	            _this._commands = data.success ? data.commands : {};
+	            _this.Commands.next(_this._commands);
+	        }, function (err) { return console.error(err); });
+	    };
+	    CommandsProvider.prototype.saveCommand = function (data) {
+	        var _this = this;
+	        return new Promise(function (resolve, reject) {
+	            _this.http.post(_this.authProvider.api + '/commands?token=' + _this.authProvider.token, data)
+	                .map(function (res) { return res.json(); })
+	                .subscribe(function (data) {
+	                if (data.success) {
+	                    _this._commands.push(data.command);
+	                    _this.Commands.next(_this._commands);
+	                }
+	                resolve(data);
+	            }, function (err) {
+	                console.error(err);
+	                reject(false);
+	            });
+	        });
+	    };
+	    CommandsProvider.prototype.updateCommand = function (data) {
+	        var _this = this;
+	        return new Promise(function (resolve, reject) {
+	            _this.http.put(_this.authProvider.api + '/commands?token=' + _this.authProvider.token, data)
+	                .map(function (res) { return res.json(); })
+	                .subscribe(function (data) {
+	                if (data.success) {
+	                    for (var i = 0; i < _this._commands.length; i++) {
+	                        if (_this._commands[i]._id === data.command._id) {
+	                            _this._commands[i] = data.command;
+	                            break;
+	                        }
+	                    }
+	                    _this.Commands.next(_this._commands);
+	                }
+	                resolve(data);
+	            }, function (err) {
+	                console.log(err);
+	                reject(err);
+	            });
+	        });
+	    };
+	    CommandsProvider.prototype.deleteCommand = function (id) {
+	        var _this = this;
+	        return new Promise(function (resolve, reject) {
+	            _this.http.delete(_this.authProvider.api + '/commands?token=' + _this.authProvider.token + '&id=' + id)
+	                .map(function (res) { return res.json(); })
+	                .subscribe(function (data) {
+	                if (data.success) {
+	                    for (var i = 0; i < _this._commands.length; i++) {
+	                        if (_this._commands[i]._id === id) {
+	                            _this._commands.splice(i, 1);
+	                            break;
+	                        }
+	                    }
+	                }
+	                resolve(data.success);
+	            }, function (err) {
+	                console.error(err);
+	                reject(false);
+	            });
+	        });
+	    };
+	    return CommandsProvider;
+	}());
+	CommandsProvider = __decorate([
+	    core_1.Injectable(),
+	    __metadata("design:paramtypes", [http_1.Http, authProvider_1.AuthProvider])
+	], CommandsProvider);
+	exports.CommandsProvider = CommandsProvider;
+
+
+/***/ },
+
+/***/ 430:
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"card\">\r\n\t<div class=\"card-header row no-margin\">\r\n\t\t<div class=\"col-md-4\">\r\n\t\t\t<h4 class=\"float-left\">New Command</h4>\r\n\t\t</div>\r\n\r\n\t\t<div class=\"col-md-5 error-message\" [ngClass]=\"{ 'show': displayError }\">\r\n\t\t\t{{ error }}\r\n\t\t</div>\r\n\r\n\t\t<div class=\"col-md-3\">\r\n\t\t\t<button type=\"button\" class=\"btn btn-success btn-sm float-right\" (click)=\"save()\">\r\n\t\t\t\t<span class=\"fa fa-spinner spinner\" *ngIf=\"saving\"></span>Save\r\n\t\t\t</button>\r\n\t\t\t<button type=\"button\" class=\"btn btn-danger btn-sm float-right\" style=\"margin-right: 0.5rem;\"\r\n\t\t\t\t\t(click)=\"editCommand(-1, true)\"\r\n\t\t\t\t\t*ngIf=\"editing\">\r\n\t\t\t\tCancel\r\n\t\t\t</button>\r\n\t\t</div>\r\n\t</div>\r\n\r\n\t<div class=\"card-block\">\r\n\t\t<div class=\"form-group row\">\r\n\t\t\t<div class=\"col-md-4\">\r\n\t\t\t\tCommand\r\n\t\t\t</div>\r\n\r\n\t\t\t<div class=\"col-md-8\">\r\n\t\t\t\t<input type=\"text\" class=\"form-control\" [(ngModel)]=\"newCommand.Input\">\r\n\t\t\t</div>\r\n\t\t</div>\r\n\r\n\t\t<div class=\"form-group row\">\r\n\t\t\t<div class=\"col-md-4\">\r\n\t\t\t\tOutput\r\n\t\t\t</div>\r\n\r\n\t\t\t<div class=\"col-md-8\">\r\n\t\t\t\t<textarea type=\"text\" class=\"form-control\" [(ngModel)]=\"newCommand.Output\"></textarea>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n\r\n<div class=\"card\">\r\n\t<div class=\"card-header\">\r\n\t\t<h4>Commands</h4>\r\n\t</div>\r\n\r\n\t<div class=\"card-block\">\r\n\t\t<div class=\"row\" *ngFor=\"let command of commands; let i = index\">\r\n\t\t\t<div class=\"col-md-4\">{{ command.Input }}</div>\r\n\t\t\t<div class=\"col-md-6\">{{ command.Output }}</div>\r\n\r\n\t\t\t<div class=\"col-md-2 text-right\">\r\n\t\t\t\t<button type=\"button\" class=\"btn btn-warning btn-sm\" (click)=\"editCommand(i)\">\r\n\t\t\t\t\t<span class=\"fa fa-pencil\"></span>\r\n\t\t\t\t</button>\r\n\t\t\t\t<button type=\"button\" class=\"btn btn-danger btn-sm\" (click)=\"deleteCommand(i)\">\r\n\t\t\t\t\t<span class=\"fa fa-times\"></span>\r\n\t\t\t\t</button>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\r\n\t\t<div class=\"col-md-12\" *ngIf=\"!commands || commands.length <= 0\">\r\n\t\t\tYou don't have any commands yet\r\n\t\t</div>\r\n\t</div>\r\n</div>"
+
+/***/ },
+
+/***/ 431:
+/***/ function(module, exports) {
+
+	module.exports = ":host .card {\n  margin: 15px 0; }\n\n:host .row.no-margin {\n  margin: 0; }\n\n:host .row .btn.btn-sm {\n  margin-right: 0.5rem;\n  margin-bottom: 0.25rem; }\n\n:host .no-margin {\n  margin: 0; }\n\n:host .error-message {\n  opacity: 0;\n  text-align: center;\n  color: red;\n  line-height: 2rem;\n  transition: opacity ease-in-out 0.5s; }\n  :host .error-message.show {\n    opacity: 1; }\n"
+
+/***/ },
+
+/***/ 432:
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Created by texpe on 12/02/2017.
+	 */
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(3);
+	var platform_browser_1 = __webpack_require__(21);
+	var UnsafeHTMLPipe = (function () {
+	    function UnsafeHTMLPipe(domSanitizer) {
+	        this.domSanitizer = domSanitizer;
+	    }
+	    UnsafeHTMLPipe.prototype.transform = function (e) {
+	        return this.domSanitizer.bypassSecurityTrustHtml(e);
+	    };
+	    return UnsafeHTMLPipe;
+	}());
+	UnsafeHTMLPipe = __decorate([
+	    core_1.Pipe({ name: 'unsafeHTML' }),
+	    __metadata("design:paramtypes", [platform_browser_1.DomSanitizer])
+	], UnsafeHTMLPipe);
+	exports.UnsafeHTMLPipe = UnsafeHTMLPipe;
+
+
+/***/ }
+
+});
