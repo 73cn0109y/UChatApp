@@ -7,6 +7,7 @@ import { ChatProvider, Message } from "../../providers/chatProvider";
 import { SettingsProvider } from "../../providers/settingsProvider";
 
 declare var $: any;
+declare var open: any;
 
 @Component({
 	selector   : 'page-chat',
@@ -83,5 +84,10 @@ export class ChatPage implements AfterViewInit {
 				scrollTop: $messagesContainer[ 0 ].scrollHeight - ($messagesContainer.height() - 100)
 			}, 500);
 		}
+	}
+
+	private reconnectLiveCoding() {
+		if(this.serviceStatus.Liveedu.toLowerCase() !== 'Reconnect') return;
+		open('https://uchatapi-frosenos.rhcloud.com/api/services/connect/liveedu');
 	}
 }
