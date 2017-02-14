@@ -44,14 +44,13 @@ class GameManager {
 		this.client.on('message', data => {
 			if(!data.Message) return;
 
-			const isBroadcaster = data.isBroadcaster;
 			let message = data.Message.trim().split(' ');
 
 			if(message.length <= 0) return;
 
 			const command = message[1].toLowerCase().trim();
 
-			if(!isBroadcaster && this.broadcasterCommands.indexOf(command) >= 0)
+			if((!data.isBroadcaster && !data.isModerator) && this.broadcasterCommands.indexOf(command) >= 0)
 				return;
 
 			switch(command) {
@@ -111,6 +110,10 @@ class GameManager {
 			players[i] = players[i].trim();
 		this.currentGame.players = players;
 		this.client.send(`${players.length} player${players.length === 1 ? '' : 's'} have been entered into the game ${this.currentGame.name}`);
+
+		let player = players[0];
+		if(player === '$broadcaster') player = 'The Broadcaster';
+		setGameStatus(`${player}'s turn...`);
 	}
 }
 

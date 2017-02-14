@@ -52,6 +52,11 @@ class TicTacToe extends CoreGame {
 		this.tiles[square - 1] = this.playerTurn;
 
 		this.playerTurn = (this.playerTurn === 1 ? 2 : 1);
+
+		let player = this.players[this.playerTurn - 1];
+		if(player === '$broadcaster') player = 'The Broadcaster';
+		setGameStatus(`${player}'s turn...`);
+
 		return null;
 	}
 
@@ -61,8 +66,10 @@ class TicTacToe extends CoreGame {
 			if(this.drawAfterWon) {
 				this.stop();
 				winner = this.players[winner - 1];
-				if(winner === '$broadcaster') winner = 'The broadcaster';
-				return this.outputMessage(`${winner} has won!`);
+				if(winner === '$broadcaster') winner = 'The Broadcaster';
+				this.outputMessage(`${winner} has won!`);
+				setGameStatus(`${winner} has won!`);
+				return;
 			}
 			else this.drawAfterWon = true;
 		}
@@ -139,8 +146,8 @@ class TicTacToe extends CoreGame {
 		}
 		// Columns
 		for(let x = 0; x < 3; x++) {
-			const first = this.tiles[x * 3];
-			if(this.tiles[(x + 1) * 3] === first && this.tiles[(x + 2) * 3])
+			const first = this.tiles[x];
+			if(this.tiles[x + 3] === first && this.tiles[x + 6] === first)
 				return first;
 		}
 		// Diagonals

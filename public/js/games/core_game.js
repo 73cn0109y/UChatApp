@@ -29,8 +29,10 @@ class CoreGame {
 		if(this.client) this.client.send(message);
 	}
 
-	new() {
+	new(restart = false) {
 		this.outputMessage(`Starting new ${this.name} game...`);
+		if(!restart) this.players = [];
+		setGameStatus('Waiting for players');
 
 		this.state = 'playing';
 
@@ -39,13 +41,16 @@ class CoreGame {
 
 	stop() {
 		this.outputMessage(`Stopping ${this.name} game...`);
+		setGameStatus('No game is currently running');
 		this.state = 'stopped';
 	}
 
 	restart() {
 		this.outputMessage(`Restarting ${this.name} game...`);
+		setGameStatus('Restarting current game');
+		this.players = [];
 		this.state = 'restarting';
-		this.new();
+		this.new(true);
 	}
 
 	// Main logic loop

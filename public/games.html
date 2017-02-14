@@ -13,18 +13,44 @@
 			background-color: rgb(30, 30, 30);
 			-webkit-app-region: drag;
 		}
+
+		#gameCanvas {
+			position: absolute;
+			top: 30px;
+		}
+
+		#gameStatus {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 30px;
+			background-color: rgb(30, 30, 30);
+			color: rgb(230, 230, 230);
+			text-align: center;
+			text-transform: uppercase;
+			border-bottom: solid 1px black;
+			line-height: 30px;
+			font-size: 20px;
+		}
 	</style>
 	<link rel="stylesheet" href="./css/font-awesome.min.css">
 </head>
 
 <body>
+	<div id="gameStatus">No game is currently running</div>
 	<canvas id="gameCanvas"></canvas>
 </body>
 
 <script>
 	document.getElementById('gameCanvas').width = window.innerWidth;
-	document.getElementById('gameCanvas').height = window.innerHeight;
+	document.getElementById('gameCanvas').height = window.innerHeight - 30;
 
 	require('./js/gameManager');
+
+	function setGameStatus(status) {
+		console.log('Set Status: ' + status);
+		document.getElementById('gameStatus').innerHTML = status;
+	}
 </script>
 </html>
