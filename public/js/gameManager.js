@@ -55,7 +55,7 @@ class GameManager {
 
 			switch(command) {
 				case 'new':
-					if(message.length >= 3) this.newGame(message[2]);
+					if(message.length >= 3) this.newGame(message[2], message.slice(3));
 					return;
 				case 'stop':
 					return this.stopGame();
@@ -70,14 +70,14 @@ class GameManager {
 		});
 	}
 
-	newGame(name) {
+	newGame(name, args) {
 		name = name.toLowerCase();
 		if(this.currentGame)
 			return this.client.send(`There is currently a game of ${this.currentGame.name} in progress! Stop it first using the stop command.`);
 		if(!Games.hasOwnProperty(name))
 			return this.client.send(`Game '${name}' does not exist!`);
 
-		this.currentGame = new Games[name](this.client);
+		this.currentGame = new Games[name](this.client, args);
 		this.currentGame.new();
 	}
 

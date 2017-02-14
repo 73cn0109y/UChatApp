@@ -5,21 +5,36 @@
 const CoreGame = require('./core_game');
 
 class TicTacToe extends CoreGame {
-	constructor(client) {
-		super(client);
+	constructor(client, args) {
+		super(client, args);
+
 		this.name = 'TicTacToe';
 		this.drawRate = 5; // It's TicTacToe not fucking Battlefield
 		this.canvas.lineWidth = 5;
 		this.canvas.strokeStyle = 'rgb(200, 200, 200)';
-		this.setImage('imgs/games/tictactoe/background.png');
+		this.canvas.font = '24px serif';
+		//this.setImage('imgs/games/tictactoe/background.png');
 
-		this.tiles = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+		this.tiles = [];
+		this.gridSize = 5;
 		this.playerTurn = 1;
 		this.drawAfterWon = false;
+
+		let gridSize = parseInt(args[0]);
+		if(!isNaN(gridSize)) {
+			if(gridSize < 3) gridSize = 3;
+			if(gridSize > 5) gridSize = 5;
+			this.gridSize = gridSize;
+		}
 	}
 
 	new() {
-		this.tiles = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+		if(this.gridSize < 3) this.gridSize = 3;
+		if(this.gridSize > 6) this.gridSize = 5;
+
+		for(let i = 0; i < Math.pow(this.gridSize, 2); i++)
+			this.tiles[i] = 0;
+
 		this.playerTurn = 1;
 
 		super.new();
@@ -72,6 +87,14 @@ class TicTacToe extends CoreGame {
 				return;
 			}
 			else this.drawAfterWon = true;
+		} else if(winner <= -99) {
+			if(this.drawAfterWon) {
+				this.stop();
+				this.outputMessage(`This game was a tie`);
+				setGameStatus(`This game was a tie!`);
+				return;
+			}
+			else this.drawAfterWon = true;
 		}
 		super.update();
 	}
@@ -82,22 +105,62 @@ class TicTacToe extends CoreGame {
 		super.draw();
 
 		const tileSize = {
-			width: this.canvas.size.width / 3,
-			height: this.canvas.size.height / 3
+			width: this.canvas.size.width / this.gridSize,
+			height: this.canvas.size.height / this.gridSize
 		};
+
+		this.drawGrid(tileSize);
+		return;
 
 		this.canvas.context.fillStyle = 'rgb(30,30,30)';
 		for(let i = 0; i < this.tiles.length; i++) {
 			if(this.tiles[i] === 0) continue; // Not occupied
 
-			const row = Math.floor(i / 3);
-			const col = Math.floor(i % 3);
+			const row = Math.floor(i / this.gridSize);
+			const col = Math.floor(i % this.gridSize);
 
 			if(this.tiles[i] === 1) // Player 1 (X)
 				this.drawX(col, row, tileSize);
 			else if(this.tiles[i] === 2) // Player 2 (O)
 				this.drawO(col, row, tileSize);
 		}
+	}
+
+	drawGrid(tileSize) {
+		this.canvas.context.fillStyle = 'rgb(230,230,230)';
+
+		for(let i = 0; i < this.tiles.length; i++) {
+			if(this.tiles[i] !== 0) continue;
+
+			let x = (tileSize.width * Math.floor(i % this.gridSize));
+			let y = (tileSize.height * Math.floor(i / this.gridSize));
+
+			x += (tileSize.width / 8) * 3;
+			y += (tileSize.height / 8) * 5;
+
+			this.canvas.context.fillText((i + 1).toString(), x, y);
+		}
+
+		this.canvas.context.fillStyle = this.canvas.fillStyle;
+		this.canvas.context.lineWidth = 1;
+		this.canvas.context.beginPath();
+
+		for(let i = 0; i < this.gridSize - 1; i++) {
+			let x = tileSize.width * i;
+			let y = tileSize.height * i;
+
+			// Vertical
+			this.canvas.context.moveTo(x + tileSize.width, 0);
+			this.canvas.context.lineTo(x + tileSize.width, y + this.canvas.size.height);
+
+			// Horizontal
+			this.canvas.context.moveTo(0, y + tileSize.height);
+			this.canvas.context.lineTo(x + this.canvas.size.width, y + tileSize.height);
+		}
+
+		this.canvas.context.closePath();
+		this.canvas.context.stroke();
+		this.canvas.context.lineWidth = this.canvas.lineWidth;
 	}
 
 	drawX(row, col, tileSize) {
@@ -123,7 +186,6 @@ class TicTacToe extends CoreGame {
 	drawO(row, col, tileSize) {
 		let x = tileSize.width * row;
 		let y = tileSize.height * col;
-		let size = [(tileSize.width / 4) * 2, (tileSize.height / 4) * 2];
 
 		this.canvas.context.fillRect(x + 5, y + 5, tileSize.width - 10, tileSize.height - 10);
 
@@ -138,26 +200,86 @@ class TicTacToe extends CoreGame {
 	}
 
 	checkWinner() {
+		let isMatch = -1;
 		// Rows
-		for(let y = 0; y < 3; y++) {
-			const first = this.tiles[y * 3 + 0];
-			if(this.tiles[y * 3 + 1] === first && this.tiles[y * 3 + 2] === first)
-				return first;
+		for(let y = 0; y < this.gridSize; y++) {
+			const first = this.tiles[y * this.gridSize];
+			let rowMatch = true;
+			for(let x = 1; x < this.gridSize; x++) {
+				if(this.tiles[y * this.gridSize + x] !== first) {
+					rowMatch = false;
+					break;
+				}
+			}
+			if(rowMatch) return first;
 		}
-		// Columns
-		for(let x = 0; x < 3; x++) {
-			const first = this.tiles[x];
-			if(this.tiles[x + 3] === first && this.tiles[x + 6] === first)
-				return first;
+
+		// Cols
+		for(let x = 0; x < this.gridSize; x++) {
+			const first = this.tiles[x * this.gridSize];
+			let colMatch = true;
+			for(let y = 1; y < this.gridSize; y++) {
+				if(this.tiles[x * this.gridSize + y] !== first) {
+					colMatch = false;
+					break;
+				}
+			}
+			if(colMatch) return first;
 		}
+
 		// Diagonals
-		let diagFirst = this.tiles[0];
-		if(this.tiles[4] === diagFirst && this.tiles[8] === diagFirst)
-			return diagFirst;
-		diagFirst = this.tiles[2];
-		if(this.tiles[4] === diagFirst && this.tiles[6] === diagFirst)
-			return diagFirst;
-		return -1;
+		let diagMatch = this.tiles[0];
+		for(let i = 0; i < this.gridSize; i++) {
+			if(this.tiles[(this.gridSize + 1) * i] !== diagMatch) {
+				diagMatch = -1;
+				break;
+			}
+		}
+
+		if(diagMatch >= 0) return diagMatch;
+
+		for(let i = 0; i < this.gridSize; i++) {
+			if(this.tiles[(this.gridSize - 1) * (i + 1)] !== diagMatch) {
+				diagMatch = -1;
+				break;
+			}
+		}
+
+		if(diagMatch >= 0) return diagMatch;
+
+		/*// Rows
+		 for(let y = 0; y < 3; y++) {
+		 const first = this.tiles[y * 3 + 0];
+		 if(this.tiles[y * 3 + 1] === first && this.tiles[y * 3 + 2] === first)
+		 return first;
+		 }
+		 // Columns
+		 for(let x = 0; x < 3; x++) {
+		 const first = this.tiles[x];
+		 if(this.tiles[x + 3] === first && this.tiles[x + 6] === first)
+		 return first;
+		 }
+		 // Diagonals
+		 let diagFirst = this.tiles[0];
+		 if(this.tiles[4] === diagFirst && this.tiles[8] === diagFirst)
+		 return diagFirst;
+		 diagFirst = this.tiles[2];
+		 if(this.tiles[4] === diagFirst && this.tiles[6] === diagFirst)
+		 return diagFirst;*/
+
+		let tieTest = true;
+
+		for(let y = 0; y < this.gridSize; y++) {
+			for(let x = 0; x < this.gridSize; x++) {
+				if(this.tiles[y * this.gridSize + x] === 0) {
+					tieTest = false;
+					break;
+				}
+			}
+			if(!tieTest) break;
+		}
+
+		return (tieTest ? -99 : -1);
 	}
 
 	static getName() {

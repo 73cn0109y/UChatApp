@@ -3,8 +3,10 @@
  */
 
 class CoreGame {
-	constructor(client) {
+	constructor(client, args) {
 		this.client = client;
+		this.args = args;
+		
 		this.name = 'Unknown_Game';
 		this.state = 'stopped';
 		this.players = [];
@@ -21,7 +23,8 @@ class CoreGame {
 			backColor: 'transparent',
 			strokeStyle: 'rgb(0,0,0)',
 			backImage: null,
-			lineWidth: 1
+			lineWidth: 1,
+			font: '48px serif'
 		};
 	}
 
@@ -45,7 +48,6 @@ class CoreGame {
 		this.state = 'stopped';
 
 		this.canvas.context.clearRect(0, 0, this.canvas.size.width, this.canvas.size.height);
-		console.log('clear');
 	}
 
 	restart() {
@@ -59,7 +61,7 @@ class CoreGame {
 	// Main logic loop
 	update() {
 		if(this.state !== 'playing') return;
-		
+
 		this.draw();
 
 		// Update every 30 seconds
@@ -76,6 +78,7 @@ class CoreGame {
 		this.canvas.context.fillRect(0, 0, this.canvas.size.width, this.canvas.size.height);
 		this.canvas.context.lineWidth = this.canvas.lineWidth;
 		this.canvas.context.strokeStyle = this.canvas.strokeStyle;
+		this.canvas.context.font = this.canvas.font;
 
 		if(this.canvas.backImage)
 			this.canvas.context.drawImage(this.canvas.backImage, 0, 0, this.canvas.size.width, this.canvas.size.height);
