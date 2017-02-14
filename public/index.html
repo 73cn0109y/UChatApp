@@ -44,6 +44,6 @@
 	require('./js/vendor');
 	require('./js/app');
 
-	$('body').on('click', 'div.chat-hyperlink', (e) => open(e.target.innerHTML));
+	$('body').on('click', 'div.chat-hyperlink', (e) => window.npm.open(e.target.innerHTML));
 </script>
 </html>
