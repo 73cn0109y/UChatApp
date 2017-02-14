@@ -13,7 +13,6 @@ class TicTacToe extends CoreGame {
 		this.canvas.lineWidth = 5;
 		this.canvas.strokeStyle = 'rgb(200, 200, 200)';
 		this.canvas.font = '24px serif';
-		//this.setImage('imgs/games/tictactoe/background.png');
 
 		this.tiles = [];
 		this.gridSize = 5;
