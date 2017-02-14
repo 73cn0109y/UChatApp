@@ -7,7 +7,7 @@ import { ChatProvider, Message } from "../../providers/chatProvider";
 import { SettingsProvider } from "../../providers/settingsProvider";
 
 declare var $: any;
-declare var open: any;
+declare var npm: any;
 
 @Component({
 	selector   : 'page-chat',
@@ -88,6 +88,6 @@ export class ChatPage implements AfterViewInit {
 
 	private reconnectLiveCoding() {
 		if(this.serviceStatus.Liveedu.toLowerCase() !== 'Reconnect') return;
-		open('https://uchatapi-frosenos.rhcloud.com/api/services/connect/liveedu');
+		npm.open('https://uchatapi-frosenos.rhcloud.com/api/services/connect/liveedu');
 	}
 }

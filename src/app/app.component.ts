@@ -2,10 +2,9 @@
  * Created by texpe on 12/01/2017.
  */
 
-import { Component, ViewEncapsulation, NgZone } from '@angular/core';
+import { Component, ViewEncapsulation, NgZone, isDevMode } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
 import { AuthProvider } from "../providers/authProvider";
-
 
 @Component({
 	selector     : 'app',
@@ -28,5 +27,11 @@ export class AppComponent {
 					this.router.navigate([ '/login' ]);
 			}
 		});
+	}
+
+	private openGameWindow() {
+		const host = (isDevMode() ? 'http://localhost:8080/' : 'https://uchatapi-frosenos.rhcloud.com:8443/');
+		window.open('./games.html?token=' + this.authProvider.token + '&host=' + host, 'UChat - Game',
+			'width=400,height=300,minWidth=400,minHeight=300');
 	}
 }

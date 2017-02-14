@@ -9,9 +9,8 @@ import '@angular/router';
 // RxJS
 import 'rxjs';
 
+// Other vendors for example jQuery, Lodash or Bootstrap
+// You can import js, ts, css, sass, ...
 import 'jquery';
 import 'tether/dist/js/tether';
 import 'bootstrap/dist/js/bootstrap';
-
-// Other vendors for example jQuery, Lodash or Bootstrap
-// You can import js, ts, css, sass, ...
