@@ -43,6 +43,9 @@ class CoreGame {
 		this.outputMessage(`Stopping ${this.name} game...`);
 		setGameStatus('No game is currently running');
 		this.state = 'stopped';
+
+		this.canvas.context.clearRect(0, 0, this.canvas.size.width, this.canvas.size.height);
+		console.log('clear');
 	}
 
 	restart() {
@@ -55,10 +58,11 @@ class CoreGame {
 
 	// Main logic loop
 	update() {
+		if(this.state !== 'playing') return;
+		
 		this.draw();
 
 		// Update every 30 seconds
-		if(this.state !== 'playing') return;
 		setTimeout(() => {
 			this.update();
 		}, 1000 / this.drawRate);
