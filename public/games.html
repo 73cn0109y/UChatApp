@@ -48,8 +48,9 @@
 
 	require('./js/gameManager');
 
-	function setGameStatus(status) {
+	function setGameStatus(status, color) {
 		document.getElementById('gameStatus').innerHTML = status;
+		document.getElementById('gameStatus').style.color = (color || 'rgb(230, 230, 230)');
 	}
 </script>
 </html>

@@ -15,6 +15,7 @@ class TicTacToe extends CoreGame {
 		this.canvas.font = '24px serif';
 
 		this.tiles = [];
+		this.playerColors = ['rgb(50, 50, 200)', 'rgb(200, 50, 50)'];
 		this.gridSize = 3;
 		this.playerTurn = 1;
 		this.drawAfterWon = false;
@@ -36,7 +37,6 @@ class TicTacToe extends CoreGame {
 
 		this.playerTurn = 1;
 		this.font = (20 + ((5 - this.gridSize) * 4)) + 'px serif';
-		console.log(this.font);
 
 		super.new();
 	}
@@ -71,7 +71,7 @@ class TicTacToe extends CoreGame {
 
 		let player = this.players[this.playerTurn - 1];
 		if(player === '$broadcaster') player = 'The Broadcaster';
-		setGameStatus(`${player}'s turn...`);
+		setGameStatus(`${player}'s turn...`, this.playerColors[this.playerTurn - 1]);
 
 		return null;
 	}
@@ -84,7 +84,7 @@ class TicTacToe extends CoreGame {
 				winner = this.players[winner - 1];
 				if(winner === '$broadcaster') winner = 'The Broadcaster';
 				this.outputMessage(`${winner} has won!`);
-				setGameStatus(`${winner} has won!`);
+				setGameStatus(`${winner} has won!`, this.playerColors[winner - 1]);
 				return;
 			}
 			else this.drawAfterWon = true;
@@ -168,11 +168,10 @@ class TicTacToe extends CoreGame {
 		let y = tileSize.height * col;
 		let size = [(tileSize.width / 8) * 3, (tileSize.height / 4) * 2];
 
-		this.canvas.context.fillRect(x + 5, y + 5, tileSize.width - 10, tileSize.height - 10);
-
 		x += (tileSize.width / 8) * 2.5;
 		y += tileSize.height / 4;
 
+		this.canvas.context.strokeStyle = this.playerColors[0];
 		this.canvas.context.beginPath();
 		this.canvas.context.moveTo(x, y);
 		this.canvas.context.lineTo(x + size[0], y + size[1]);
@@ -181,22 +180,23 @@ class TicTacToe extends CoreGame {
 		this.canvas.context.closePath();
 
 		this.canvas.context.stroke();
+		this.canvas.context.strokeStyle = this.canvas.strokeStyle;
 	}
 
 	drawO(row, col, tileSize) {
 		let x = tileSize.width * row;
 		let y = tileSize.height * col;
 
-		this.canvas.context.fillRect(x + 5, y + 5, tileSize.width - 10, tileSize.height - 10);
-
 		x += tileSize.width / 2;
 		y += tileSize.height / 2;
 
+		this.canvas.context.strokeStyle = this.playerColors[1];
 		this.canvas.context.beginPath();
 		this.canvas.context.arc(x, y, 30 - ((this.gridSize - 3) * 7), 0, 2 * Math.PI);
 		this.canvas.context.closePath();
 
 		this.canvas.context.stroke();
+		this.canvas.context.strokeStyle = this.canvas.strokeStyle;
 	}
 
 	checkWinner() {
