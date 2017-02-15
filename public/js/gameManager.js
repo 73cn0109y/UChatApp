@@ -108,14 +108,19 @@ class GameManager {
 
 		data = data.split(' ');
 
-		if(data.length <= 2) return this.client.send('You need to specify at least 1 player!');
+		if(data.length < this.currentGame.minPlayers + 2)
+			return this.client.send(`You need to specify at least ${this.currentGame.minPlayers} player${this.currentGame.minPlayers === 1 ? '' : 's'}!`);
 
 		data = data.slice(2);
 
 		let players = [];
 
 		for(let i = 0; i < data.length; i++) {
-			if(players.indexOf(data[i]) >= 0) return this.client.send('You can\'t add the same player multiple times!');
+			if(i > this.currentGame.maxPlayer) {
+				this.client.send(`Some players weren\'t added to the game! ${this.currentGame.name} only supports ${this.currentGame.minPlayers}-${this.currentGame.maxPlayers} players.`);
+				break;
+			}
+			if(players.indexOf(data[i].trim()) >= 0) return this.client.send('You can\'t add the same player multiple times!');
 			players.push(data[i].trim());
 		}
 

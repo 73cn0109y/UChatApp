@@ -17,8 +17,9 @@ class TicTacToe extends CoreGame {
 		this.tiles = [];
 		this.playerColors = ['rgb(50, 50, 200)', 'rgb(200, 50, 50)'];
 		this.gridSize = 3;
-		this.playerTurn = 1;
 		this.drawAfterWon = false;
+
+		this.minPlayers = this.maxPlayers = 2;
 
 		let gridSize = parseInt(args[0]);
 		if(!isNaN(gridSize)) {
@@ -33,29 +34,18 @@ class TicTacToe extends CoreGame {
 		if(this.gridSize > 6) this.gridSize = 5;
 
 		for(let i = 0; i < Math.pow(this.gridSize, 2); i++)
-			this.tiles[i] = 0;
+			this.tiles[i] = -1;
 
-		this.playerTurn = 1;
+		this.playerTurn = 0;
 		this.canvas.font = (20 + ((5 - this.gridSize) * 4)) + 'px serif';
 
 		super.new();
 	}
 
 	processInput(data) {
-		if(this.players.length < 2)
-			return this.outputMessage('You need to add 2 players to the game!');
+		if(!super.processInput(data)) return;
 
 		let message = data.Message.split(' ');
-
-		let isPlayer = false;
-
-		if(!data.Sender && !data.isBroadcaster) return;
-		if(data.Sender && data.Sender.toLowerCase() === this.players[this.playerTurn - 1].toLowerCase())
-			isPlayer = true;
-		if(data.isBroadcaster && this.players[this.playerTurn - 1].toLowerCase() === '$broadcaster')
-			isPlayer = true;
-
-		if(!isPlayer) return;
 
 		if(message.length < 2) return this.outputMessage('Please specify what square you want to take!');
 
@@ -66,14 +56,7 @@ class TicTacToe extends CoreGame {
 			return this.outputMessage('That tile has already been taken!');
 
 		this.tiles[square - 1] = this.playerTurn;
-
-		this.playerTurn = (this.playerTurn === 1 ? 2 : 1);
-
-		let player = this.players[this.playerTurn - 1];
-		if(player === '$broadcaster') player = 'The Broadcaster';
-		setGameStatus(`${player}'s turn...`, this.playerColors[this.playerTurn - 1]);
-
-		return null;
+		super.endPlayerTurn();
 	}
 
 	update() {
@@ -81,17 +64,17 @@ class TicTacToe extends CoreGame {
 		if(winner > 0) {
 			if(this.drawAfterWon) {
 				this.stop();
-				winner = this.players[winner - 1];
-				if(winner === '$broadcaster') winner = 'The Broadcaster';
-				this.outputMessage(`${winner} has won!`);
-				setGameStatus(`${winner} has won!`, this.playerColors[winner - 1]);
+				let winnerName = this.players[winner];
+				if(winnerName === '$broadcaster') winnerName = 'The Broadcaster';
+				this.outputMessage(`${winnerName} has won!`);
+				setGameStatus(`${winnerName} has won!`, this.playerColors[winner]);
 				return;
 			}
 			else this.drawAfterWon = true;
 		} else if(winner <= -99) {
 			if(this.drawAfterWon) {
 				this.stop();
-				this.outputMessage(`This game was a tie`);
+				this.outputMessage(`This game was a tie!`);
 				setGameStatus(`This game was a tie!`);
 				return;
 			}
@@ -114,14 +97,14 @@ class TicTacToe extends CoreGame {
 
 		this.canvas.context.fillStyle = 'rgb(30,30,30)';
 		for(let i = 0; i < this.tiles.length; i++) {
-			if(this.tiles[i] === 0) continue; // Not occupied
+			if(this.tiles[i] < 0) continue; // Not occupied
 
 			const row = Math.floor(i / this.gridSize);
 			const col = Math.floor(i % this.gridSize);
 
-			if(this.tiles[i] === 1) // Player 1 (X)
+			if(this.tiles[i] === 0) // Player 1 (X)
 				this.drawX(col, row, tileSize);
-			else if(this.tiles[i] === 2) // Player 2 (O)
+			else if(this.tiles[i] === 1) // Player 2 (O)
 				this.drawO(col, row, tileSize);
 		}
 	}

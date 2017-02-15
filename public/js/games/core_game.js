@@ -13,8 +13,15 @@ class CoreGame extends EventEmitter {
 
 		this.name = 'Unknown_Game';
 		this.state = 'stopped';
-		this.players = [];
 		this.drawRate = 30; // 30 fps
+
+		this.players = [];
+		this.minPlayers = 1;
+		this.maxPlayers = 1;
+		this.playerTurn = 0;
+
+		// Timers
+		this.timers = {};
 
 		// Canvas
 		this.canvasElement = document.getElementById('gameCanvas');
@@ -52,10 +59,14 @@ class CoreGame extends EventEmitter {
 		this.state = 'stopped';
 		this.emit('finished', null);
 
-		this.canvas.context.clearRect(0, 0, this.canvas.size.width, this.canvas.size.height);
+		this.clearTimers();
+
+		//this.canvas.context.clearRect(0, 0, this.canvas.size.width, this.canvas.size.height);
 	}
 
 	restart() {
+		this.clearTimers();
+
 		this.outputMessage(`Restarting ${this.name} game...`);
 		setGameStatus('Restarting current game');
 		this.players = [];
@@ -70,7 +81,7 @@ class CoreGame extends EventEmitter {
 		this.draw();
 
 		// Update every 30 seconds
-		setTimeout(() => {
+		this.timers.update = setTimeout(() => {
 			this.update();
 		}, 1000 / this.drawRate);
 	}
@@ -91,8 +102,20 @@ class CoreGame extends EventEmitter {
 
 	// returning null is presumed to be a succesful parse
 	processInput(data) {
-		console.error(`${this.name} is not processing input!`);
-		return null;
+		if(this.players.length < this.minPlayers) {
+			this.outputMessage(`You need to add at least ${this.minPlayers} player${this.minPlayers === 1 ? '' : 's'} to the game!`);
+			return false;
+		}
+
+		let isPlayer = false;
+
+		if(!data.Sender && !data.isBroadcaster) return;
+		if(data.Sender && data.Sender.toLowerCase() === this.players[this.playerTurn].toLowerCase())
+			isPlayer = true;
+		if(data.isBroadcaster && this.players[this.playerTurn].toLowerCase() === '$broadcaster')
+			isPlayer = true;
+
+		return isPlayer;
 	}
 
 	setImage(url) {
@@ -102,6 +125,24 @@ class CoreGame extends EventEmitter {
 		img.height = this.canvas.size.height;
 
 		this.canvas.backImage = img;
+	}
+
+	endPlayerTurn() {
+		this.playerTurn++;
+		if(this.playerTurn >= this.players.length)
+			this.playerTurn = 0;
+
+		let player = this.players[this.playerTurn];
+		if(player === '$broadcaster') player = 'The Broadcaster';
+
+		setGameStatus(`${player}'s turn...`, this.playerColors[this.playerTurn]);
+	}
+
+	clearTimers() {
+		for(let timer in this.timers) {
+			clearTimeout(this.timers[timer]);
+			delete this.timers[timer];
+		}
 	}
 }
 
