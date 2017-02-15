@@ -51,7 +51,7 @@ class TicTacToe extends CoreGame {
 		const square = parseInt(message[1]);
 		if(isNaN(square)) return this.outputMessage('Please enter a valid number!');
 
-		if(this.tiles[square - 1] !== 0)
+		if(this.tiles[square - 1] >= 0)
 			return this.outputMessage('That tile has already been taken!');
 
 		this.tiles[square - 1] = this.playerTurn;
@@ -233,7 +233,7 @@ class TicTacToe extends CoreGame {
 		// Just checks if all tiles aren't 0
 		let tieTest = true;
 		for(let i = 0; i < this.tiles.length; i++) {
-			if(this.tiles[i] === 0) {
+			if(this.tiles[i] < 0) {
 				tieTest = false;
 				break;
 			}
