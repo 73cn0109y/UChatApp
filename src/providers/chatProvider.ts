@@ -124,7 +124,6 @@ export class ChatProvider {
 	removeMessage(index: number) {
 		if(index < 0 || index > this._messages.length - 1)
 			return;
-		window[ 'e' ] = this._messages;
 		let tmp = this._messages;
 		tmp.splice(index, 1);
 		this._messages = tmp;
