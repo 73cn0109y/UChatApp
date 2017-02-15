@@ -36,7 +36,7 @@ class TicTacToe extends CoreGame {
 			this.tiles[i] = 0;
 
 		this.playerTurn = 1;
-		this.font = (20 + ((5 - this.gridSize) * 4)) + 'px serif';
+		this.canvas.font = (20 + ((5 - this.gridSize) * 4)) + 'px serif';
 
 		super.new();
 	}
@@ -200,7 +200,6 @@ class TicTacToe extends CoreGame {
 	}
 
 	checkWinner() {
-		let isMatch = -1;
 		// Rows
 		for(let y = 0; y < this.gridSize; y++) {
 			const first = this.tiles[y * this.gridSize];
@@ -227,7 +226,8 @@ class TicTacToe extends CoreGame {
 			if(colMatch) return first;
 		}
 
-		// Diagonals
+		/* Diagonals */
+		// Left -> Right
 		let diagMatch = this.tiles[0];
 		for(let i = 0; i < this.gridSize; i++) {
 			if(this.tiles[(this.gridSize + 1) * i] !== diagMatch) {
@@ -235,28 +235,26 @@ class TicTacToe extends CoreGame {
 				break;
 			}
 		}
-
 		if(diagMatch >= 0) return diagMatch;
 
+		// Right -> Left
+		diagMatch = this.tiles[this.gridSize - 1];
 		for(let i = 0; i < this.gridSize; i++) {
 			if(this.tiles[(this.gridSize - 1) * (i + 1)] !== diagMatch) {
 				diagMatch = -1;
 				break;
 			}
 		}
-
 		if(diagMatch >= 0) return diagMatch;
 
+		// Test for tie
+		// Just checks if all tiles aren't 0
 		let tieTest = true;
-
-		for(let y = 0; y < this.gridSize; y++) {
-			for(let x = 0; x < this.gridSize; x++) {
-				if(this.tiles[y * this.gridSize + x] === 0) {
-					tieTest = false;
-					break;
-				}
+		for(let i = 0; i < this.tiles.length; i++) {
+			if(this.tiles[i] === 0) {
+				tieTest = false;
+				break;
 			}
-			if(!tieTest) break;
 		}
 
 		return (tieTest ? -99 : -1);

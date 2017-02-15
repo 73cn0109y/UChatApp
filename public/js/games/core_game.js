@@ -2,11 +2,15 @@
  * Created by texpe on 14/02/2017.
  */
 
-class CoreGame {
+const EventEmitter = require('events').EventEmitter;
+
+class CoreGame extends EventEmitter {
 	constructor(client, args) {
+		super();
+
 		this.client = client;
 		this.args = args;
-		
+
 		this.name = 'Unknown_Game';
 		this.state = 'stopped';
 		this.players = [];
@@ -46,6 +50,7 @@ class CoreGame {
 		this.outputMessage(`Stopping ${this.name} game...`);
 		setGameStatus('No game is currently running');
 		this.state = 'stopped';
+		this.emit('finished', null);
 
 		this.canvas.context.clearRect(0, 0, this.canvas.size.width, this.canvas.size.height);
 	}

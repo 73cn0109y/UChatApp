@@ -79,6 +79,11 @@ class GameManager {
 
 		this.currentGame = new Games[name](this.client, args);
 		this.currentGame.new();
+
+		this.currentGame.on('finished', () => {
+			delete this.currentGame;
+			this.currentGame = null;
+		});
 	}
 
 	stopGame() {
@@ -105,15 +110,21 @@ class GameManager {
 
 		if(data.length <= 2) return this.client.send('You need to specify at least 1 player!');
 
-		let players = data.slice(2);
-		for(let i = 0; i < players.length; i++)
-			players[i] = players[i].trim();
+		data = data.slice(2);
+
+		let players = [];
+
+		for(let i = 0; i < data.length; i++) {
+			if(players.indexOf(data[i]) >= 0) return this.client.send('You can\'t add the same player multiple times!');
+			players.push(data[i].trim());
+		}
+
 		this.currentGame.players = players;
 		this.client.send(`${players.length} player${players.length === 1 ? '' : 's'} have been entered into the game ${this.currentGame.name}`);
 
 		let player = players[0];
 		if(player === '$broadcaster') player = 'The Broadcaster';
-		setGameStatus(`${player}'s turn...`);
+		setGameStatus(`${player}'s turn...`, (this.currentGame.hasOwnProperty('playerColors') ? this.currentGame.playerColors[0] : null));
 	}
 }
 
