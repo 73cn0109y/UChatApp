@@ -112,7 +112,7 @@ class TicTacToe extends CoreGame {
 		this.canvas.context.fillStyle = 'rgb(230,230,230)';
 
 		for(let i = 0; i < this.tiles.length; i++) {
-			if(this.tiles[i] !== 0) continue;
+			if(this.tiles[i] >= 0) continue;
 
 			let x = (tileSize.width * Math.floor(i % this.gridSize));
 			let y = (tileSize.height * Math.floor(i / this.gridSize));
