@@ -12,7 +12,6 @@ class TicTacToe extends CoreGame {
 		this.drawRate = 5; // It's TicTacToe not fucking Battlefield
 		this.canvas.lineWidth = 5;
 		this.canvas.strokeStyle = 'rgb(200, 200, 200)';
-		this.canvas.font = '24px serif';
 
 		this.tiles = [];
 		this.playerColors = ['rgb(50, 50, 200)', 'rgb(200, 50, 50)'];

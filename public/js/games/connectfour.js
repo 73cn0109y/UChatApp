@@ -16,7 +16,6 @@ class ConnectFour extends CoreGame {
 		this.tiles = [];
 		this.playerColors = ['rgb(50, 50, 200)', 'rgb(200, 50, 50)'];
 		this.gridSize = 10;
-		this.playerTurn = 0;
 		this.drawAfterWon = false;
 
 		this.minPlayers = this.maxPlayers = 2;
