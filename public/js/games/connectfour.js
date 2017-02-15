@@ -165,12 +165,12 @@ class ConnectFour extends CoreGame {
 	checkWinner() {
 		// Rows
 		for(let y = 0; y < this.gridSize; y++) {
-			for(let x = 1; x < this.gridSize - 3; x++) {
-				const first = this.tiles[y * this.gridSize];
+			for(let x = 0; x < this.gridSize - 3; x++) {
+				const first = this.tiles[y * this.gridSize + x];
 				if(first < 0) continue;
-				if(this.tiles[y * this.gridSize + x] === first &&
-					this.tiles[y * this.gridSize + (x + 1)] === first &&
-					this.tiles[y * this.gridSize + (x + 2)] === first) {
+				if(this.tiles[y * this.gridSize + (x + 1)] === first &&
+					this.tiles[y * this.gridSize + (x + 2)] === first &&
+					this.tiles[y * this.gridSize + (x + 3)] === first) {
 					return first;
 				}
 			}
@@ -178,12 +178,12 @@ class ConnectFour extends CoreGame {
 
 		// Cols
 		for(let x = 0; x < this.gridSize - 3; x++) {
-			for(let y = 1; y < this.gridSize; y++) {
-				const first = this.tiles[x * this.gridSize];
+			for(let y = 0; y < this.gridSize; y++) {
+				const first = this.tiles[x * this.gridSize + y];
 				if(first < 0) continue;
-				if(this.tiles[(x * this.gridSize) + (y * this.gridSize)] === first &&
-					this.tiles[x * this.gridSize + ((y + 1) * this.gridSize)] === first &&
-					this.tiles[x * this.gridSize + ((y + 2) * this.gridSize)] === first)
+				if(this.tiles[(x * this.gridSize) + ((y + 1) * this.gridSize)] === first &&
+					this.tiles[x * this.gridSize + ((y + 2) * this.gridSize)] === first &&
+					this.tiles[x * this.gridSize + ((y + 3) * this.gridSize)] === first)
 					return first;
 			}
 		}
