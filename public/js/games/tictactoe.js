@@ -35,6 +35,7 @@ class TicTacToe extends CoreGame {
 			this.tiles[i] = 0;
 
 		this.playerTurn = 1;
+		this.font = (20 + ((5 - this.gridSize) * 4)) + 'px serif';
 
 		super.new();
 	}
@@ -191,7 +192,7 @@ class TicTacToe extends CoreGame {
 		y += tileSize.height / 2;
 
 		this.canvas.context.beginPath();
-		this.canvas.context.arc(x, y, 30, 0, 2 * Math.PI);
+		this.canvas.context.arc(x, y, 30 - ((this.gridSize - 3) * 1.5), 0, 2 * Math.PI);
 		this.canvas.context.closePath();
 
 		this.canvas.context.stroke();

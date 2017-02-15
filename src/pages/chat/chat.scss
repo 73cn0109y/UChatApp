@@ -136,10 +136,22 @@
 
       .timestamp {
         position: absolute;
-        right: 1rem;
+        right: 3rem;
         top: 0.5rem;
         font-size: 0.9rem;
         opacity: 0.5;
+      }
+
+      .delete-message {
+        position: absolute;
+        right: 1rem;
+        top: 0.5rem;
+        font-size: 1.3rem;
+        line-height: 1.3rem;
+        color: red;
+        font-weight: bold;
+        cursor: pointer;
+        padding: 0 0.5rem;
       }
 
       .message {

@@ -121,6 +121,15 @@ export class ChatProvider {
 		this.Messages.next(this._messages);
 	}
 
+	removeMessage(index: number) {
+		if(index < 0 || index > this._messages.length - 1)
+			return;
+		window[ 'e' ] = this._messages;
+		let tmp = this._messages;
+		tmp.splice(index, 1);
+		this._messages = tmp;
+	}
+
 	humanTimestamp(): string {
 		const now = new Date();
 		let hour   = now.getHours(),
