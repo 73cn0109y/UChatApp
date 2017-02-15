@@ -129,7 +129,7 @@ class GameManager {
 
 		let player = players[0];
 		if(player === '$broadcaster') player = 'The Broadcaster';
-		setGameStatus(`${player}'s turn...`, (this.currentGame.hasOwnProperty('playerColors') ? this.currentGame.playerColors[0] : null));
+		setGameStatus(`${player}'s turn`, (this.currentGame.hasOwnProperty('playerColors') ? this.currentGame.playerColors[0] : null));
 	}
 }
 

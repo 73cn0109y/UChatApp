@@ -135,7 +135,7 @@ class CoreGame extends EventEmitter {
 		let player = this.players[this.playerTurn];
 		if(player === '$broadcaster') player = 'The Broadcaster';
 
-		setGameStatus(`${player}'s turn...`, this.playerColors[this.playerTurn]);
+		setGameStatus(`${player}'s turn`, this.playerColors[this.playerTurn]);
 	}
 
 	clearTimers() {
