@@ -10,7 +10,8 @@ class ConnectFour extends CoreGame {
 
 		this.name = 'Connect Four';
 		this.drawRate = '5';
-		this.canvas.strokeStyle = 'rgb(200, 200, 200)';
+		this.canvas.backColor = 'rgb(30,30,30)';
+		this.canvas.strokeStyle = 'rgb(30,30,30)';
 
 		this.tiles = [];
 		this.playerColors = ['rgb(50, 50, 200)', 'rgb(200, 50, 50)'];
@@ -126,7 +127,7 @@ class ConnectFour extends CoreGame {
 			let x = originX + (size * Math.floor(i % this.gridSize)) + (size / 4);
 			let y = originY + (size * Math.floor(i / this.gridSize)) + ((size / 4) * 3);
 
-			this.canvas.context.fillStyle = 'rgb(230,230,230)';
+			this.canvas.context.fillStyle = this.canvas.strokeStyle;
 			this.canvas.context.fillText((i + 1).toString(), x, y);
 			this.canvas.context.fillStyle = this.canvas.fillStyle;
 		}
@@ -154,8 +155,8 @@ class ConnectFour extends CoreGame {
 		}
 	}
 
-	drawEllipse(x, y, size, color = 'rgb(30,30,30)') {
-		this.canvas.context.fillStyle = color;
+	drawEllipse(x, y, size, color) {
+		this.canvas.context.fillStyle = color || 'rgb(230,230,230)';
 		this.canvas.context.beginPath();
 		this.canvas.context.ellipse(x, y, size / 2, size / 2, 0, 0, Math.PI * 2);
 		this.canvas.context.closePath();
