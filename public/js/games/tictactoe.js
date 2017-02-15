@@ -15,7 +15,7 @@ class TicTacToe extends CoreGame {
 		this.canvas.font = '24px serif';
 
 		this.tiles = [];
-		this.gridSize = 5;
+		this.gridSize = 3;
 		this.playerTurn = 1;
 		this.drawAfterWon = false;
 
@@ -109,7 +109,6 @@ class TicTacToe extends CoreGame {
 		};
 
 		this.drawGrid(tileSize);
-		return;
 
 		this.canvas.context.fillStyle = 'rgb(30,30,30)';
 		for(let i = 0; i < this.tiles.length; i++) {
@@ -245,26 +244,6 @@ class TicTacToe extends CoreGame {
 		}
 
 		if(diagMatch >= 0) return diagMatch;
-
-		/*// Rows
-		 for(let y = 0; y < 3; y++) {
-		 const first = this.tiles[y * 3 + 0];
-		 if(this.tiles[y * 3 + 1] === first && this.tiles[y * 3 + 2] === first)
-		 return first;
-		 }
-		 // Columns
-		 for(let x = 0; x < 3; x++) {
-		 const first = this.tiles[x];
-		 if(this.tiles[x + 3] === first && this.tiles[x + 6] === first)
-		 return first;
-		 }
-		 // Diagonals
-		 let diagFirst = this.tiles[0];
-		 if(this.tiles[4] === diagFirst && this.tiles[8] === diagFirst)
-		 return diagFirst;
-		 diagFirst = this.tiles[2];
-		 if(this.tiles[4] === diagFirst && this.tiles[6] === diagFirst)
-		 return diagFirst;*/
 
 		let tieTest = true;
 
