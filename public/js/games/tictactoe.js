@@ -60,7 +60,7 @@ class TicTacToe extends CoreGame {
 
 	update() {
 		let winner = this.checkWinner();
-		if(winner > 0) {
+		if(winner >= 0) {
 			if(this.drawAfterWon) {
 				this.stop();
 				let winnerName = this.players[winner];
