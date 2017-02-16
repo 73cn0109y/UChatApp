@@ -10,7 +10,8 @@
     "dist-win32": "npm run build && electron-packager . uchat --platform=win32 --arch=ia32 --out=dist/ --overwrite",
     "dist-win64": "npm run build && electron-packager . uchat --platform=win32 --arch=x64 --out=dist/ --overwrite",
     "dist-linux32": "npm run build && electron-packager . uchat --platform=linux --arch=ia32 --out=dist/ --overwrite",
-    "dist-linux64": "npm run build && electron-packager . uchat --platform=linux --arch=x64 --out=dist/ --overwrite"
+    "dist-linux64": "npm run build && electron-packager . uchat --platform=linux --arch=x64 --out=dist/ --overwrite",
+	"update-linux64": "git stash && git pull && npm run dist-linux64"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
