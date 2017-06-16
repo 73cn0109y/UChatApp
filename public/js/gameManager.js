@@ -20,6 +20,7 @@ class GameManager {
 		this.currentGame = null;
 		this.client = null;
 		this.broadcasterCommands = ['new', 'stop', 'restart'];
+		this.clearCanvasTimeout = null;
 
 		let url = null, token = null;
 		let params = window.location.search;
@@ -77,12 +78,29 @@ class GameManager {
 		if(!Games.hasOwnProperty(name))
 			return this.client.send(`Game '${name}' does not exist!`);
 
+		if(this.clearCanvasTimeout) {
+			clearTimeout(this.clearCanvasTimeout)
+			this.clearCanvasTimeout = null;
+		}
+		
 		this.currentGame = new Games[name](this.client, args);
 		this.currentGame.new();
 
 		this.currentGame.on('finished', () => {
 			delete this.currentGame;
 			this.currentGame = null;
+			
+			if(this.clearCanvasTimeout) {
+				clearTimeout(this.clearCanvasTimeout);
+				this.clearCanvasTimeout = null;
+			}
+			
+			this.clearCanvasTimeout = setTimeout(() => {
+				const canvas = document.getElementById('gameCanvas').getContext('2d');
+				canvas.clearRect(0, 0, canvas.width, canvas.height);
+				clearCanvasTimeout(this.clearCanvasTimeout);
+				this.clearCanvasTimeout = null;
+			}, 1000 * 30);
 		});
 	}
 

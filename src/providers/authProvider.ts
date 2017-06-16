@@ -12,12 +12,12 @@ let ipc: any = electron.ipcRenderer;
 
 @Injectable()
 export class AuthProvider {
-	protected _api: string = (isDevMode() ? 'http://localhost:8080/api' : 'https://uchatapi-frosenos.rhcloud.com/api');
-	private _token: string = null;
-	private _user: any = {};
+	protected _api: string              = (isDevMode() ? 'http://localhost:8080/api' : 'https://uchatapi-frosenos.rhcloud.com/api');
+	private _token: string              = null;
+	private _user: any                  = {};
 	public isLoggedIn: Subject<boolean> = new Subject<boolean>();
-	public User: Subject<any> = new Subject<any>();
-	private _initialLogin: boolean = false;
+	public User: Subject<any>           = new Subject<any>();
+	private _initialLogin: boolean      = false;
 
 	constructor(private http: Http) {
 		this.getToken();
@@ -28,7 +28,7 @@ export class AuthProvider {
 
 		return new Promise((resolve, reject) => {
 			this.http.post(this._api + '/login', data).map((res: any) => res.json()).subscribe((data: any) => {
-				if(data.success) {
+				if (data.success) {
 					this.setToken(data.user.Token, true);
 					this.setUser(data.user);
 				}
@@ -45,7 +45,7 @@ export class AuthProvider {
 
 		return new Promise((resolve, reject) => {
 			this.http.post(this._api + '/login', data).map((res: any) => res.json()).subscribe((data: any) => {
-				if(data.success) this.setToken(data.user.Token, true);
+				if (data.success) this.setToken(data.user.Token, true);
 				resolve(data.success || false);
 			}, (err: any) => {
 				console.error(err);
@@ -55,8 +55,10 @@ export class AuthProvider {
 	}
 
 	private getToken() {
+		//return this.setToken('epcRgQ9RLrAYjtpRxn8hvsd3fo9uaCOQ', true);
 		ipc.once('get-token', (e: any, data: any) => {
-			if(data) this.validateToken(data);
+			console.log(data);
+			if (data) this.validateToken(data);
 			else this.setToken(null);
 		});
 		ipc.send('get-token');
@@ -71,7 +73,7 @@ export class AuthProvider {
 	private validateToken(e: string) {
 		this.http.post(this._api + '/token', { Token: e }).map((res: any) => res.json())
 			.subscribe((data: any) => {
-				if(data.success) this.setUser(data.user);
+				if (data.success) this.setUser(data.user);
 			}, err => console.error(err));
 	}
 
@@ -82,7 +84,7 @@ export class AuthProvider {
 	}
 
 	private setToken(e: string, ipcEmit: boolean = false) {
-		if(ipcEmit) {
+		if (ipcEmit) {
 			ipc.once('set-token', (e: any, data: any) => this.setToken(data.token || data));
 			ipc.send('set-token', { token: e });
 			return;
