@@ -201,7 +201,8 @@ export class ChatProvider {
 			else if (p2 >= 1000) color = 'green';
 			else if (p2 >= 100) color = 'purple';
 
-			return `<img src="http://static-cdn.jtvnw.net/bits/dark/animated/${color}/1" class="twitch-cheer">`;
+			return `<img src="http://static-cdn.jtvnw.net/bits/dark/animated/${color}/1" class="twitch-cheer">
+						<span style="color: ${color}; font-weight: bold;">${p2}</span>`;
 		});
 	}
 
